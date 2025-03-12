@@ -1,12 +1,108 @@
 @use "./config.scss" as config;
+@import url(https://fonts.googleapis.com/css?family=Inter+Tight:regular,500,600,700);
 
-// .tg-h1 {
-// 	font-size: 32px;
-// 	line-height: 1.3;
-// 	text-align: center;
-// }
-// .tg-regular {
-// 	font-size: 32px;
-// 	line-height: 1.3;
-// 	text-align: center;
-// }
+.h0 {
+  font-size: 86px;
+  font-weight: 700;
+  font-family: 'Inter Tight', sans-serif;
+}
+.h1 {
+  font-size: 77px;
+  font-weight: 700;
+  font-family: 'Inter Tight', sans-serif;
+}
+.h2 {
+  font-size: 55px;
+  font-weight: 700;
+  font-family: 'Inter Tight', sans-serif;
+}
+.h3 {
+  font-size: 50px;
+  font-weight: 600;
+  font-family: 'Inter Tight', sans-serif;
+}
+.h4 {
+  font-size: 40px;
+  font-weight: 600;
+  font-family: 'Inter Tight', sans-serif;
+}
+.h5 {
+  font-size: 36px;
+  font-weight: 500;
+  font-family: 'Inter Tight', sans-serif;
+}
+.h6 {
+  font-size: 26px;
+  font-weight: 600;
+  font-family: 'Inter Tight', sans-serif;
+}
+.text {
+  font-size: 20px;
+  font-weight: 600;
+  font-family: 'Inter Tight', sans-serif;
+}
+.text-small {
+  font-size: 16px;
+  font-weight: 500;
+  font-family: 'Inter Tight', sans-serif;
+}
+@media (max-width: config.$mbpT) {
+  .h0 {
+    font-size: 50px;
+  }
+  .h1 {
+    font-size: 60px;
+  }
+  .h2 {
+    font-size: 34px;
+  }
+  .h3 {
+    font-size: 32px;
+  }
+  .h4 {
+    font-size: 30px;
+  }
+  .h5 {
+    font-size: 26px;
+  }
+  .h6 {
+    font-size: 22px;
+    font-weight: 500;
+  }
+  .text {
+    font-size: 16px;
+  }
+  .text-small {
+    font-size: 12px;
+  }
+}
+@media (max-width: config.$mbpT) {
+  .h0 {
+    font-size: 26px;
+  }
+  .h1 {
+    font-size: 36px;
+  }
+  .h2 {
+    font-size: 22px;
+  }
+  .h3 {
+    font-size: 20px;
+  }
+  .h4 {
+    font-size: 18px;
+  }
+  .h5 {
+    font-size: 20px;
+  }
+  .h6 {
+    font-size: 16px;
+  }
+  .text {
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .text-small {
+    font-size: 10px;
+  }
+}
