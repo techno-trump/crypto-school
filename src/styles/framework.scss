@@ -276,6 +276,7 @@
 @media (max-width: config.$mbpT) {
 	.home-content__description {
 		color: var(--primary-color);
+		max-width: 530px;
 	}
 	.home-content__buttons {
 		gap: 20px;
