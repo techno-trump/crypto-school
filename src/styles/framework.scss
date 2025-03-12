@@ -195,10 +195,13 @@
 .button_small {
 	padding: 14px 25px;
 }
-.button_block {
+@mixin button_block {
 	display: block;
 	width: 100%;
 	flex: 0 0 100%;
+}
+.button_block {
+	@include button_block;
 }
 .button:disabled {
 	opacity: 0.5;
