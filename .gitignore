@@ -1,5 +1,4 @@
 # build output
-materials/
 
 # generated types
 .astro/
