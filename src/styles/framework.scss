@@ -16,6 +16,8 @@
 
 	--dark-300: #4B4F4B;
 
+	--header-height: 100px;
+	--footer-height: 100px;
 	--container-width: 1580px;
 	--container-padding: 30px;
 
@@ -255,43 +257,66 @@
 }
 
 // Blocks and Pages
-// .home-content {}
-.home-content__pretitle {
+.home-hero {
+	width: 100%;
+	height: calc(100dvh - var(--header-height) - var(--footer-height));
+	max-height: 100dvh;
+	overflow: hidden;
+	background: linear-gradient(180deg, #E2ECEF, #DFF6F2), #CBD7DB;
+}
+.home-hero .container {
+	padding-top: 200px;
+	position: relative;
+}
+.home-hero-image {
+	width: min(65%, 985px);
+	position: absolute;
+	top: 10px;
+	right: 0px;
+}
+.home-hero-image img {
+	max-width: 100%;
+}
+.home-hero-content {
+	position: relative;
+	z-index: 1;
+}
+.home-hero-content__pretitle {
 	color: var(--primary-color);
 }
-.home-content__title {
+.home-hero-content__title {
 	margin-top: -5px;
 	color: var(--primary-color);
 }
-.home-content__description {
+.home-hero-content__description {
 	margin-top: 5px;
 	max-width: 670px;
 	color: var(--dark-300);
 }
-.home-content__buttons {
+.home-hero-content__buttons {
 	margin-top: 40px;
 	display: flex;
 	align-items: center;
 	gap: 40px;
 }
 @media (max-width: config.$mbpT) {
-	.home-content__description {
+	.home-hero-content__description {
 		color: var(--primary-color);
 		max-width: 530px;
 	}
-	.home-content__buttons {
+	.home-hero-content__buttons {
 		gap: 20px;
 	}
 }
 @media (max-width: config.$mbpMM) {
-	.home-content__title {
+	.home-hero-content__title {
 		margin-top: 0px;
 	}
-	.home-content__buttons {
+	.home-hero-content__buttons {
 		flex-direction: column;
 		gap: 10px;
 	}
-	.home-content__buttons .button {
+	.home-hero-content__buttons .button {
 		@include button_block;
 	}
 }
