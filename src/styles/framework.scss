@@ -16,10 +16,9 @@
 
 	--container-width: 1580px;
 	--container-padding: 30px;
-}
-.light-theme {
-	--primary-color: var(--light-primary-color);
 
+	// temporary until themes are not implemented in js
+	--primary-color: var(--light-primary-color);
 	--background-gradient: var(--light-background-gradient);
 }
 @media (max-width: config.$mbpMM) {
