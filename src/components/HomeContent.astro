@@ -1,6 +1,5 @@
 ---
 import Button from './basic/Button.astro'
-import ButtonText from './basic/ButtonText.astro'
 
 ---
 <div class="home-content">
@@ -14,15 +13,15 @@ import ButtonText from './basic/ButtonText.astro'
 
   <div class="home-content__buttons">
     <Button filled big>
-      <ButtonText uppercase>
+      <span class="button__text button__text_uppercase">
         Купити курс
-      </ButtonText>
+      </span>
     </Button>
 
     <Button outlined big>
-      <ButtonText uppercase black>
+      <span class="button__text button__text_uppercase">
         У мене точно вийде?
-      </ButtonText>
+      </span>
     </Button>
   </div>
 </div>

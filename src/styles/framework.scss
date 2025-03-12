@@ -221,6 +221,7 @@
 }
 
 .button__text {
+	display: block;
 	font-family: 'Inter Tight', sans-serif;
 	font-weight: 600;
 	font-size: 18px;
@@ -287,5 +288,8 @@
 	.home-content__buttons {
 		flex-direction: column;
 		gap: 10px;
+	}
+	.home-content__buttons .button {
+		@include button_block;
 	}
 }
