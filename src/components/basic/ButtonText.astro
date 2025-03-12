@@ -1,0 +1,18 @@
+---
+interface Props {
+  black?: boolean
+  uppercase?: boolean
+}
+
+const { black, uppercase } = Astro.props
+
+---
+<span
+  class:list={[ 
+    'button__text', 
+    black && 'button__text_black', 
+    uppercase && 'button__text_uppercase' 
+  ]}
+>
+  <slot />
+</span>

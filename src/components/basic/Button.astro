@@ -1,0 +1,42 @@
+---
+interface Props {
+  filled?: boolean
+  outlined?: boolean
+
+  rounded?: boolean
+  centered?: boolean
+
+  big?: boolean
+  small?: boolean
+
+  disabled?: boolean
+}
+
+const { 
+  filled, 
+  outlined, 
+  
+  rounded,
+  centered,
+  
+  big, 
+  small,
+
+  disabled
+} = Astro.props
+
+---
+<button 
+  class:list={[ 
+    'button', 
+    filled && 'button_filled', 
+    outlined && 'button_outlined', 
+    rounded && 'button_rounded', 
+    centered && 'button_centered',
+    big && 'button_big',
+    small && 'button_small' 
+  ]}
+  disabled={disabled}
+>
+  <slot />
+</button>

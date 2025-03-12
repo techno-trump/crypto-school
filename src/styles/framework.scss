@@ -13,11 +13,19 @@
 	--light-background-gradient: linear-gradient(180deg, #E2ECEF, #DFF6F2); 
 
 	--white: #ffffff;
+
+	--container-width: 1580px;
+	--container-padding: 30px;
 }
 .light-theme {
 	--primary-color: var(--light-primary-color);
 
 	--background-gradient: var(--light-background-gradient);
+}
+@media (max-width: config.$mbpMM) {
+	:root {
+		--container-padding: 15px;
+	}
 }
 
 .btn {
@@ -147,6 +155,13 @@
 	&:not(#{&}_modal) {
 		pointer-events: none;
 	}
+}
+
+.container {
+	width: 100%;
+	max-width: var(--container-width);
+	padding: 0px var(--container-padding);
+	margin: 0 auto;
 }
 
 .button {
