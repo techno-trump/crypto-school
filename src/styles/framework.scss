@@ -195,8 +195,26 @@
 .button_small {
 	padding: 14px 25px;
 }
+.button_block {
+	display: block;
+	width: 100%;
+	flex: 0 0 100%;
+}
 .button:disabled {
 	opacity: 0.5;
+}
+@media (max-width: config.$mbpT) {
+	.button_big {
+		padding: 24px 40px;
+	}
+}
+@media (max-width: config.$mbpMM) {
+	.button {
+		padding: 10px 24px;
+	}
+	.button_big {
+		padding: 20px 40px;
+	}
 }
 
 .button__text {
@@ -219,6 +237,16 @@
 }
 .button__text_uppercase {
 	text-transform: uppercase;
+}
+@media (max-width: config.$mbpT) {
+	.button__text {
+		font-size: 16px;
+	}
+}
+@media (max-width: config.$mbpMM) {
+	.button__text {
+		font-size: 14px;
+	}
 }
 
 // Blocks and Pages
