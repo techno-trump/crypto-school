@@ -10,7 +10,10 @@
 	--brand-primary-color: #19a9dd;
 
 	--light-primary-color: #285335;
-	--light-background-gradient: linear-gradient(180deg, #E2ECEF, #DFF6F2); 
+
+	--light-home-background-gradient: linear-gradient(180deg, #E2ECEF, #DFF6F2), #CBD7DB; 
+	--light-background: linear-gradient(180deg, #E2ECEF, #C3F0CF), #E2ECEF;
+
 	--light-palette-gradient: linear-gradient(100deg, #FFFFFF2C, #FFFFFF);
 	--light-palette-outline: #FFFFFF;
 
@@ -25,7 +28,10 @@
 
 	// temporary until themes are not implemented in js
 	--primary-color: var(--light-primary-color);
-	--background-gradient: var(--light-background-gradient);
+
+	--home-background-gradient: var(--light-home-background-gradient);
+	--background: var(--light-background);
+
 	--palette-gradient: var(--light-palette-gradient);
 	--palette-outline: var(--light-palette-outline);
 }
