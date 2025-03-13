@@ -452,188 +452,190 @@ body {
 	}
 }
 
-.account-menu {
-	max-width: 350px;
-	display: flex;
-	flex-direction: column;
-	gap: 5px;
-}
-.account-menu_horizontal {
-	flex-direction: row;
-}
-.account-info {
-	@include palette-background(0.88);
-	
-	height: 100px;
-	width: 100%;
-
-	display: flex;
-	align-items: center;
-	gap: 20px;
-
-	padding: 10px 20px;
-}
-.account-info-avatar {
-	position: relative;
-	
-	flex: 0 0 70px;
-	width: 70px;
-	aspect-ratio: 1;
-	
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	
-	border: 1px solid var(--dark-700);
-	border-radius: 50%;
-}
-.account-info-avatar__circle {
-	background-color: var(--primary-color);
-	color: var(--white);
-	font-size: 25px;
-
-	display: flex;
-	align-items: center;
-	justify-content: center;
-
-	aspect-ratio: 1;
-	border-radius: 50%;
-	flex: 0 0 55px;
-}
-.account-info__content {
-	display: flex;
-	flex-direction: column;
-	gap: 2px;
-}
-.account-info-lessons {
-	display: flex;
-	align-items: center;
-	gap: 5px;
-}
-.account-info-lessons-icon {
-	font-size: 12px;
-	color: var(--primary-color);
-}
-.account-info-lessons-icon span {
-	display: block;
-}
-.account-info-lessons__amount {
-	color: var(--pr)
-}
-.account-info__name {
-	color: var(--dark-300);
-}
-.account-menu-item {
-	@include palette-background;
-
-	width: 100%;
-	height: 80px;
-	flex: 0 0 80px;
-
-	display: flex;
-	align-items: center;
-	gap: 15px;
-	
-	padding: 10px 20px;
-}
-.account-menu-item_active {
-	@include palette-background;
-	@include palette-active-background;
-}
-.account-menu-item__icon {
-	position: relative;
-	color: var(--primary-color);
-	font-size: 24px;
-	display: flex;
-	align-items: center;
-}
-.account-menu-item__name {
-	position: relative;
-	color: var(--primary-color);
-}
-@media (max-width: config.$mbpT) {
-	.account-menu {
-		max-width: 100%;
+.account {
+	&-menu {
+		max-width: 350px;
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+	}
+	&-menu_horizontal {
 		flex-direction: row;
-		flex-wrap: wrap;
 	}
-	.account-info {
-		flex: 0 1 calc((100% - 10px) / 3);
-		height: 70px;
-		gap: 10px;
-	}
-	.account-info-avatar {
-		flex: 0 0 40px;
-		width: 40px;
-	}
-	.account-info-avatar__circle {
-		flex: 0 0 32px;
-		font-size: 15px;
-	}
-	.account-menu-item {
-		height: 70px;
-		flex: 0 1 calc((100% - 10px) / 3);
-	}
-}
-@media (max-width: config.$mbpMM) {
-	.account-info {
-		flex: 1 1 auto;
-	}
-	.account-menu-item {
-		flex: 1 1 auto;
-	}
-}
-
-.account-greeting {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	gap: 32px;
-}
-.account-greeting__left {
-	flex: 1 1 auto;
-}
-.account-greeting__date {
-	color: var(--dark-300);
-	margin-bottom: 15px;
-	line-height: 1.2;
-}
-.account-greeting__name {
-	color: var(--primary-color);
-	line-height: 1.2;
-}
-.account-greeting-payment {
-	@include palette-background(0.88);
+	&-info {
+		@include palette-background(0.88);
+		
+		height: 100px;
+		width: 100%;
 	
-	flex: 1 1 auto;
-	padding: 20px 30px;
-
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	flex-wrap: wrap;
-	gap: 20px;
-}
-.account-greeting-payment__title {
-	color: var(--primary-color);
-}
-@media (max-width: config.$mbpT) {
-	.account-greeting__date {
-		margin-bottom: 10px;
+		display: flex;
+		align-items: center;
+		gap: 20px;
+	
+		padding: 10px 20px;
+		&-avatar {
+			position: relative;
+			
+			flex: 0 0 70px;
+			width: 70px;
+			aspect-ratio: 1;
+			
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			
+			border: 1px solid var(--dark-700);
+			border-radius: 50%;
+		}
+		&-avatar__circle {
+			background-color: var(--primary-color);
+			color: var(--white);
+			font-size: 25px;
+		
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		
+			aspect-ratio: 1;
+			border-radius: 50%;
+			flex: 0 0 55px;
+		}
+		&-info__content {
+			display: flex;
+			flex-direction: column;
+			gap: 2px;
+		}
+		&-lessons {
+			display: flex;
+			align-items: center;
+			gap: 5px;
+		}
+		&-lessons-icon {
+			font-size: 12px;
+			color: var(--primary-color);
+		}
+		&-lessons-icon span {
+			display: block;
+		}
+		&-lessons__amount {
+			color: var(--pr)
+		}
+		&-info__name {
+			color: var(--dark-300);
+		}
 	}
-	.account-greeting-payment {
-		padding: 20px 20px 25px 20px;
+	&-menu-item {
+		@include palette-background;
+	
+		width: 100%;
+		height: 80px;
+		flex: 0 0 80px;
+	
+		display: flex;
+		align-items: center;
+		gap: 15px;
+		
+		padding: 10px 20px;
 	}
-}
-@media (max-width: config.$mbpMM) {
-	.account-greeting {
+	&-menu-item_active {
+		@include palette-background;
+		@include palette-active-background;
+	}
+	&-menu-item__icon {
+		position: relative;
+		color: var(--primary-color);
+		font-size: 24px;
+		display: flex;
+		align-items: center;
+	}
+	&-menu-item__name {
+		position: relative;
+		color: var(--primary-color);
+	}
+	@media (max-width: config.$mbpT) {
+		&-menu {
+			max-width: 100%;
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+		&-info {
+			flex: 0 1 calc((100% - 10px) / 3);
+			height: 70px;
+			gap: 10px;
+		}
+		&-avatar {
+			flex: 0 0 40px;
+			width: 40px;
+		}
+		&-avatar__circle {
+			flex: 0 0 32px;
+			font-size: 15px;
+		}
+		&-menu-item {
+			height: 70px;
+			flex: 0 1 calc((100% - 10px) / 3);
+		}
+	}
+	@media (max-width: config.$mbpMM) {
+		&-info {
+			flex: 1 1 auto;
+		}
+		&-menu-item {
+			flex: 1 1 auto;
+		}
+	}
+	
+	&-greeting {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 32px;
+	}
+	&-greeting__left {
+		flex: 1 1 auto;
+	}
+	&-greeting__date {
+		color: var(--dark-300);
+		margin-bottom: 15px;
+		line-height: 1.2;
+	}
+	&-greeting__name {
+		color: var(--primary-color);
+		line-height: 1.2;
+	}
+	&-greeting-payment {
+		@include palette-background(0.88);
+		
+		flex: 1 1 auto;
+		padding: 20px 30px;
+	
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
 		flex-wrap: wrap;
 		gap: 20px;
 	}
-	.account-greeting-payment {
-		padding: 16px;
+	&-greeting-payment__title {
+		color: var(--primary-color);
 	}
-	.account-greeting-payment__title {
-		max-width: 90px;
+	@media (max-width: config.$mbpT) {
+		&-greeting__date {
+			margin-bottom: 10px;
+		}
+		&-greeting-payment {
+			padding: 20px 20px 25px 20px;
+		}
+	}
+	@media (max-width: config.$mbpMM) {
+		&-greeting {
+			flex-wrap: wrap;
+			gap: 20px;
+		}
+		&-greeting-payment {
+			padding: 16px;
+		}
+		&-greeting-payment__title {
+			max-width: 90px;
+		}
 	}
 }
