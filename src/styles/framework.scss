@@ -14,6 +14,9 @@
 	--light-border-color: #EEEEEE;
 
 	--light-primary-color: #285335;
+	--status-success: #75C132;
+	--status-warning: #F0AD3E;
+	--status-danger: #F03E3E;
 
 	--light-home-background-gradient: linear-gradient(180deg, #E2ECEF, #DFF6F2), #CBD7DB; 
 	--light-background: linear-gradient(180deg, #E2ECEF, #C3F0CF), #E2ECEF;
@@ -344,6 +347,37 @@ body {
 }
 .palette {
 	@include palette-background;
+}
+
+.status-line {
+	@include palette-background(0.88);
+
+	display: flex;
+	align-items: center;
+	padding: 22px 14px;
+
+	&-indicator {
+		align-self: stretch;
+		min-height: 35px;
+		width: 3px;
+		flex: 0 0 3px;
+		border-radius: 2px;
+
+		&_green {
+			background-color: var(--status-success);
+		}
+		&_orange {
+			background-color: var(--status-warning);
+		}
+		&_red {
+			background-color: var(--status-danger);
+		}
+	}
+	@media (max-width: config.$mbpMM) {
+		.status-line {
+			padding: 10px;
+		}
+	}
 }
 
 // Blocks and Pages
