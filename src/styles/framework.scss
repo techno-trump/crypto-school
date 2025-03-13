@@ -10,7 +10,12 @@
 	--brand-primary-color: #19a9dd;
 
 	--light-primary-color: #285335;
-	--light-background-gradient: linear-gradient(180deg, #E2ECEF, #DFF6F2); 
+
+	--light-home-background-gradient: linear-gradient(180deg, #E2ECEF, #DFF6F2), #CBD7DB; 
+	--light-background: linear-gradient(180deg, #E2ECEF, #C3F0CF), #E2ECEF;
+
+	--light-palette-gradient: linear-gradient(100deg, #FFFFFF2C, #FFFFFF);
+	--light-palette-outline: #FFFFFF;
 
 	--white: #ffffff;
 
@@ -23,7 +28,12 @@
 
 	// temporary until themes are not implemented in js
 	--primary-color: var(--light-primary-color);
-	--background-gradient: var(--light-background-gradient);
+
+	--home-background-gradient: var(--light-home-background-gradient);
+	--background: var(--light-background);
+
+	--palette-gradient: var(--light-palette-gradient);
+	--palette-outline: var(--light-palette-outline);
 }
 @media (max-width: config.$mbpT) {
 	:root {
@@ -197,7 +207,7 @@
 	justify-content: center;
 }
 .button_big {
-	padding: 30px 60px;
+	padding: 28px 60px;
 	border-radius: 8px;
 	font-size: 22px;
 	border-width: 2px;
@@ -218,7 +228,7 @@
 }
 @media (max-width: config.$mbpT) {
 	.button_big {
-		padding: 24px 40px;
+		padding: 22px 40px;
 	}
 }
 @media (max-width: config.$mbpMM) {
@@ -226,7 +236,7 @@
 		padding: 10px 24px;
 	}
 	.button_big {
-		padding: 20px 40px;
+		padding: 18px 40px;
 	}
 }
 
@@ -267,6 +277,29 @@
 	.button__text {
 		font-size: 14px;
 	}
+}
+
+@mixin palette-background($opacity: 0.77) {
+	overflow: hidden;
+	position: relative;
+	border-radius: 15px;
+	border: 1px solid var(--palette-outline);
+
+	&::before {
+		content: '';
+	
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	
+		background: var(--palette-gradient);
+		opacity: $opacity;
+	}
+}
+.palette {
+	@include palette-background;
 }
 
 // Blocks and Pages
