@@ -377,6 +377,9 @@
 	.home-hero-content__buttons {
 		gap: 20px;
 	}
+	.home-hero-content__buttons .button__text_black {
+		color: var(--primary-color);
+	}
 }
 @media (max-width: config.$mbpMM) {
 	.home-hero .container {
