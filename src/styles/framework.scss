@@ -215,7 +215,7 @@ body {
 	justify-content: center;
 }
 .button_big {
-	padding: 30px 60px;
+	padding: 28px 60px;
 	border-radius: 8px;
 	font-size: 22px;
 	border-width: 2px;
@@ -236,7 +236,7 @@ body {
 }
 @media (max-width: config.$mbpT) {
 	.button_big {
-		padding: 24px 40px;
+		padding: 22px 40px;
 	}
 }
 @media (max-width: config.$mbpMM) {
@@ -244,7 +244,7 @@ body {
 		padding: 10px 24px;
 	}
 	.button_big {
-		padding: 20px 40px;
+		padding: 18px 40px;
 	}
 }
 
