@@ -547,3 +547,31 @@ body {
 		flex: 1 1 auto;
 	}
 }
+
+.account-greeting {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 32px;
+}
+.account-greeting__left {
+	flex: 1 1 auto;
+}
+.account-greeting__date {
+	margin-bottom: 15px;
+	line-height: 1.2;
+}
+.account-greeting__name {
+	color: var(--primary-color);
+	line-height: 1.2;
+}
+.account-greeting-payment {
+	@include palette-background(0.88);
+	
+	flex: 1 1 auto;
+	padding: 20px 30px;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
