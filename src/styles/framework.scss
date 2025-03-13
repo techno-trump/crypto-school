@@ -215,66 +215,66 @@ body {
 	margin: 0 auto;
 }
 
+@mixin button_block {
+	display: block;
+	width: 100%;
+	flex: 0 0 100%;
+}
 .button {
 	display: flex;
 	align-items: center;
 	gap: 10px;
 	padding: 20px 40px;
 	border-radius: 5px;
-}
-.button_filled {
-	background-color: var(--primary-color);
-	border: 1px solid var(--primary-color);
-}
-.button_outlined {
-	border: 1px solid var(--primary-color);
-}
-.button_white {
-	background-color: var(--white);
-}
-.button_rounded {
-	border-radius: 100px;
-}
-.button_centered {
-	justify-content: center;
-}
-.button_big {
-	padding: 28px 60px;
-	border-radius: 8px;
-	font-size: 22px;
-	border-width: 2px;
-}
-.button_small {
-	padding: 12px 25px;
-}
-@mixin button_block {
-	display: block;
-	width: 100%;
-	flex: 0 0 100%;
-}
-.button_block {
-	@include button_block;
-}
-.button:disabled {
-	opacity: 0.5;
-}
-@media (max-width: config.$mbpT) {
-	.button_big {
-		padding: 22px 40px;
+	&_filled {
+		background-color: var(--primary-color);
+		border: 1px solid var(--primary-color);
 	}
-	.button_small {
-		padding: 10px 14px;
+	&_outlined {
+		border: 1px solid var(--primary-color);
 	}
-}
-@media (max-width: config.$mbpMM) {
-	.button {
-		padding: 10px 24px;
+	&_white {
+		background-color: var(--white);
 	}
-	.button_big {
-		padding: 18px 40px;
+	&_rounded {
+		border-radius: 100px;
 	}
-	.button_small {
-		padding: 7px 14px;
+	&_centered {
+		justify-content: center;
+	}
+	&_big {
+		padding: 28px 60px;
+		border-radius: 8px;
+		font-size: 22px;
+		border-width: 2px;
+	}
+	&_small {
+		padding: 12px 25px;
+	}
+	&_block {
+		@include button_block;
+	}
+	&:disabled {
+		opacity: 0.5;
+	}
+	@media (max-width: config.$mbpT) {
+		&_big {
+			padding: 22px 40px;
+		}
+		&_small {
+			padding: 10px 14px;
+		}
+	}
+	@media (max-width: config.$mbpMM) {
+		& {
+			padding: 10px 24px;
+		}
+		&_big {
+			padding: 18px 40px;
+		}
+		&_small {
+			padding: 7px 14px;
+		}
 	}
 }
 
@@ -284,36 +284,35 @@ body {
 	font-weight: 600;
 	font-size: 18px;
 	line-height: 1.2;
-}
-.button_big .button__text {
-	font-size: 22px;
-}
-.button__text {
 	color: var(--primary-color);
-}
-.button_filled .button__text {
-	color: var(--white);
-}
-.button__text.button__text_black {
-	color: var(--dark-100);
-}
-.dark-theme .button__text {
-	color: var(--white);
-}
-.button__text_uppercase {
-	text-transform: uppercase;
-}
-@media (max-width: config.$mbpT) {
-	.button__text {
-		font-size: 16px;
+
+	.button_big & {
+		font-size: 22px;
 	}
-	.button_big .button__text {
-		font-size: 18px;
+	.button_filled & {
+		color: var(--white);
 	}
-}
-@media (max-width: config.$mbpMM) {
-	.button__text {
-		font-size: 14px;
+	&.button__text_black {
+		color: var(--dark-100);
+	}
+	.dark-theme & {
+		color: var(--white);
+	}
+	&_uppercase {
+		text-transform: uppercase;
+	}
+	@media (max-width: config.$mbpT) {
+		& {
+			font-size: 16px;
+		}
+		.button_big & {
+			font-size: 18px;
+		}
+	}
+	@media (max-width: config.$mbpMM) {
+		& {
+			font-size: 14px;
+		}
 	}
 }
 
