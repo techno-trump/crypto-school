@@ -336,10 +336,6 @@ body {
 		background: var(--palette-gradient);
 		opacity: $opacity;
 	}
-
-	& > * {
-		position: relative;
-	}
 }
 @mixin palette-active-background($opacity: 1) {
 	&::before {
