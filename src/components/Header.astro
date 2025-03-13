@@ -3,5 +3,116 @@
 ---
 
 <header id="header" class="header">
-
+	<div class="container header__container">
+		<a href="." class="logo logo_header header__logo">
+			<figure>
+				<img src="img/logo.svg" class="logo__img" alt="Logo">
+				<figcaption aria-hidden="true">Main page</figcaption>
+			</figure>
+		</a>
+		<div class="header__lang languages">
+			<a href="" class="languages__item languages__item_active">UA</a>
+			<a href="" class="languages__item">RU</a>
+		</div>
+		<div class="header__menu portal-menu" data-drawer="main-menu">
+			<button type="button" class="portal-menu__toggle-btn burger-btn" data-drawer-toggle="main-menu"></button>
+			<menu class="portal-menu__menu" data-elem="drawer.panel">
+				<a href="" class="portal-menu__item">Навчання</a>
+				<a href="" class="portal-menu__item">Вартість</a>
+				<a href="" class="portal-menu__item">Ком'юніті</a>
+				<a href="" class="portal-menu__item">Відгуки</a>
+				<div class="portal-menu__group">
+					<a href="" class="portal-menu__main-group-item">Інфо</a>
+					<span class="portal-menu__group-icon icon-dropdown-arrow"></span>
+					<div class="portal-menu__group-drop-down">
+						<div class="portal-menu__group-drop-down-inner">
+							<a href="" class="portal-menu__item">Блог</a>
+							<a href="" class="portal-menu__item">Глюсарий</a>
+							<a href="" class="portal-menu__item">Криптовалюты</a>
+						</div>
+					</div>
+				</div>
+				<a href="" class="portal-menu__item">Навчання</a>
+			</menu>
+		</div>
+		<div class="header__social social-media">
+			<a href="" class="social-media__item"><span class="icon-telegram"></span></a>
+			<span class="social-media__separator"></span>
+			<a href="" class="social-media__item"><span class="icon-instagram"></span></a>
+			<span class="social-media__separator"></span>
+			<a href="" class="social-media__item"><span class="icon-youtube-filled"></span></a>
+			<span class="social-media__separator"></span>
+			<a href="" class="social-media__item"><span class="icon-twitter"></span></a>
+		</div>
+		<div class="header__theme-switch theme-switch">
+			<span class="theme-switch__icon icon-sun"></span>
+			<div class="theme-switch__switch">
+				<div class="theme-switch__thumb"></div>
+			</div>
+			<span class="theme-switch__icon icon-moon"></span>
+		</div>
+		<div class="header__cabinet-tools">
+			<div class="cabinet-menu" data-drawer="cabinet-menu">
+				<div class="cabinet-menu__toggle" data-drawer-toggle="cabinet-menu">
+					<span class="icon-thin-arrow-down cabinet-menu__toggle-icon"></span>
+					<div class="account-info-avatar cabinet-menu__avatar">
+						<div class="account-info-avatar__circle">
+							<span class="icon-profile"></span>
+						</div>
+					</div>
+				</div>
+				<div class="cabinet-menu__drop-down"  data-elem="drawer.panel">
+					<div class="account-menu account-menu_as-drop-down">
+						<div class="account-menu-item account-menu-item_active">
+							<div class="account-menu-item__icon">
+								<span class="icon-dashboard"></span>
+							</div>
+			
+							<div class="account-menu-item__name text">Dashboard</div>
+						</div>
+			
+						<div class="account-menu-item">
+							<div class="account-menu-item__icon">
+								<span class="icon-video-play"></span>
+							</div>
+			
+							<div class="account-menu-item__name text">Навчання</div>
+						</div>
+			
+						<div class="account-menu-item">
+							<div class="account-menu-item__icon">
+								<span class="icon-rate"></span>
+							</div>
+			
+							<div class="account-menu-item__name text">Мій тариф</div>
+						</div>
+			
+						<div class="account-menu-item">
+							<div class="account-menu-item__icon">
+								<span class="icon-referral"></span>
+							</div>
+			
+							<div class="account-menu-item__name text">Реферальна програма</div>
+						</div>
+			
+						<div class="account-menu-item">
+							<div class="account-menu-item__icon">
+								<span class="icon-settings"></span>
+							</div>
+			
+							<div class="account-menu-item__name text">Налаштування</div>
+						</div>
+			
+						<div class="account-menu-item">
+							<div class="account-menu-item__icon">
+								<span class="icon-exit"></span>
+							</div>
+			
+							<div class="account-menu-item__name text">Вийти</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </header>

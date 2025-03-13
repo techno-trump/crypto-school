@@ -4,10 +4,14 @@
 :root {
 	display: flex;
 	flex-direction: column;
-	font-family: "Montserrat";
+	font-family: "Inter Tight";
 	min-height: 100%;
 
+	--separator-color: #CACACA33;
+	--light-background-color: #FFFFFF;
+	--theme-switch-secondary-color: #E2EDEF;
 	--brand-primary-color: #19a9dd;
+	--light-border-color: #EEEEEE;
 
 	--light-primary-color: #285335;
 
@@ -55,6 +59,23 @@
 
 body {
 	background: var(--background);
+}
+.logo {
+	display: inline-block;
+	position: relative;
+	left: 0;
+	top: 0;
+	font-size: 0;
+	&_header {
+		width: 176px;
+	}
+	// &_invert {
+	// 	filter: invert(1);
+	// }
+	&__img {
+		width: 100%;
+		height: 100%;
+	}
 }
 
 .btn {
