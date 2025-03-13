@@ -1,12 +1,36 @@
 ---
-import HomeHeroContent from './HomeHeroContent.astro'
+import Button from './basic/Button.astro'
 
 const imageSrc = './assets/img/home-page-illustration-light.png'
 
 ---
 <div class="home-hero">
   <div class="container">
-    <HomeHeroContent />
+    <div class="home-hero-content">
+      <h1 class="h1 home-hero-content__title">
+        <span class="h2">ВАШ ГІД У СВІТ</span>
+        <span>КРИПТОВАЛЮТ</span>
+      </h1>
+    
+      <p class="text home-hero-content__description">
+        Наші продукти та сервіси допоможуть на кожному етапі криптана, 
+        щоб ваш шлях був простим та максимально ефективним
+      </p>
+    
+      <div class="home-hero-content__buttons">
+        <Button filled big>
+          <span class="button__text button__text_uppercase">
+            Купити курс
+          </span>
+        </Button>
+    
+        <Button outlined big>
+          <span class="button__text button__text_black button__text_uppercase">
+            У мене точно вийде?
+          </span>
+        </Button>
+      </div>
+    </div>
 
     <div class="home-hero-image">
       <img src={imageSrc} alt="user">  
