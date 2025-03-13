@@ -294,12 +294,12 @@
 	position: relative;
 	z-index: 1;
 }
-.home-hero-content__pretitle {
+.home-hero-content__title {
 	color: var(--primary-color);
 }
-.home-hero-content__title {
-	margin-top: -5px;
-	color: var(--primary-color);
+.home-hero-content__title span {
+	display: block;
+	line-height: 1.15;
 }
 .home-hero-content__description {
 	margin-top: 5px;
