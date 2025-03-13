@@ -2,6 +2,7 @@
 interface Props {
   filled?: boolean
   outlined?: boolean
+  white?: boolean
 
   rounded?: boolean
   centered?: boolean
@@ -14,7 +15,8 @@ interface Props {
 
 const { 
   filled, 
-  outlined, 
+  outlined,
+  white, 
   
   rounded,
   centered,
@@ -31,6 +33,7 @@ const {
     'button', 
     filled && 'button_filled', 
     outlined && 'button_outlined', 
+    white && 'button_white',
     rounded && 'button_rounded', 
     centered && 'button_centered',
     big && 'button_big',
