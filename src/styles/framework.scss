@@ -208,6 +208,9 @@ body {
 .button_outlined {
 	border: 1px solid var(--primary-color);
 }
+.button_white {
+	background-color: var(--white);
+}
 .button_rounded {
 	border-radius: 100px;
 }
@@ -265,7 +268,7 @@ body {
 	color: var(--white);
 }
 .button__text.button__text_black {
-	color: #160E0E;
+	color: var(--dark-100);
 }
 .dark-theme .button__text {
 	color: var(--white);
