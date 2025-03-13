@@ -245,7 +245,7 @@ body {
 	border-width: 2px;
 }
 .button_small {
-	padding: 14px 25px;
+	padding: 12px 25px;
 }
 @mixin button_block {
 	display: block;
@@ -262,6 +262,9 @@ body {
 	.button_big {
 		padding: 22px 40px;
 	}
+	.button_small {
+		padding: 10px 14px;
+	}
 }
 @media (max-width: config.$mbpMM) {
 	.button {
@@ -269,6 +272,9 @@ body {
 	}
 	.button_big {
 		padding: 18px 40px;
+	}
+	.button_small {
+		padding: 7px 14px;
 	}
 }
 
@@ -329,6 +335,10 @@ body {
 	
 		background: var(--palette-gradient);
 		opacity: $opacity;
+	}
+
+	& > * {
+		position: relative;
 	}
 }
 @mixin palette-active-background($opacity: 1) {
