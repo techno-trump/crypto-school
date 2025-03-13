@@ -339,6 +339,7 @@
 	z-index: 1;
 }
 .home-hero-content__title {
+	margin-bottom: 5px;
 	color: var(--primary-color);
 }
 .home-hero-content__title span {
@@ -346,12 +347,11 @@
 	line-height: 1.15;
 }
 .home-hero-content__description {
-	margin-top: 5px;
+	margin-bottom: 40px;
 	max-width: 670px;
 	color: var(--dark-300);
 }
 .home-hero-content__buttons {
-	margin-top: 40px;
 	display: flex;
 	align-items: center;
 	flex-wrap: wrap;
@@ -406,6 +406,9 @@
 	}
 	.home-hero-content__title {
 		margin-top: 0px;
+	}
+	.home-hero-content__description {
+		margin-bottom: 20px;
 	}
 	.home-hero-content__buttons {
 		flex-direction: column;
