@@ -429,6 +429,7 @@ body {
 	@include palette-background(0.88);
 	
 	height: 100px;
+	width: 100%;
 
 	display: flex;
 	align-items: center;
@@ -489,6 +490,7 @@ body {
 .account-menu-item {
 	@include palette-background;
 
+	width: 100%;
 	height: 80px;
 	flex: 0 0 80px;
 
@@ -512,4 +514,36 @@ body {
 .account-menu-item__name {
 	position: relative;
 	color: var(--primary-color);
+}
+@media (max-width: config.$mbpT) {
+	.account-menu {
+		max-width: 100%;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+	.account-info {
+		flex: 0 1 calc((100% - 10px) / 3);
+		height: 70px;
+		gap: 10px;
+	}
+	.account-info-avatar {
+		flex: 0 0 40px;
+		width: 40px;
+	}
+	.account-info-avatar__circle {
+		flex: 0 0 32px;
+		font-size: 15px;
+	}
+	.account-menu-item {
+		height: 70px;
+		flex: 0 1 calc((100% - 10px) / 3);
+	}
+}
+@media (max-width: config.$mbpMM) {
+	.account-info {
+		flex: 1 1 auto;
+	}
+	.account-menu-item {
+		flex: 1 1 auto;
+	}
 }
