@@ -561,6 +561,7 @@ body {
 	flex: 1 1 auto;
 }
 .account-greeting__date {
+	color: var(--dark-300);
 	margin-bottom: 15px;
 	line-height: 1.2;
 }
@@ -577,4 +578,29 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+.account-greeting-payment__title {
+	color: var(--primary-color);
+}
+@media (max-width: config.$mbpT) {
+	.account-greeting__date {
+		margin-bottom: 10px;
+	}
+	.account-greeting-payment {
+		padding: 20px 20px 25px 20px;
+	}
+}
+@media (max-width: config.$mbpMM) {
+	.account-greeting {
+		flex-wrap: wrap;
+		gap: 20px;
+	}
+	.account-greeting-payment {
+		padding: 16px;
+	}
+	.account-greeting-payment__title {
+		max-width: 90px;
+	}
 }
