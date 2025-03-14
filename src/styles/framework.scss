@@ -542,6 +542,20 @@ body {
 				}
 			}
 		}
+		@media (max-width: config.$mbpMM) {
+			gap: 16px;
+
+			&-column,
+			&-column-slice {
+				gap: 16px;
+			}
+
+			&-sidebar {
+				&__top {
+					display: none;
+				}
+			}
+		}
 	}
 
 	&-menu {
