@@ -717,4 +717,72 @@ body {
 			}
 		}
 	}
+	&-last-tasks {
+		@include palette-background(0.88);
+		padding: 30px;
+
+		&__title {
+			color: var(--primary-color);
+			margin-bottom: 30px;
+		}
+		&__items {
+			display: flex;
+			flex-direction: column;
+			gap: 5px;
+			margin-bottom: 30px;
+		}
+		&-item {
+			display: flex;
+			align-items: center;
+			gap: 14px;
+			padding-right: 20px;
+
+			&__body {
+				flex: 1 1 auto;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+			}
+			&__content {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+			}
+			&__pretitle {
+				color: var(--primary-color);
+				margin-bottom: 10px;
+			}
+			// &__title {}
+			&__subtitle {
+				margin-top: 5px;
+			}
+			&__details {
+				display: flex;
+				align-items: center;
+				gap: 15px;
+			}
+			&__amount {
+				color: var(--status-warning);
+			}
+			&__link {
+				flex: 0 0 30px;
+				width: 30px;
+				border-radius: 50%;
+				aspect-ratio: 1;
+				background-color: var(--primary-color);
+			}
+		}
+		&__more {
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 12px;
+			color: var(--primary-color);
+		}
+		&__more-icon {
+			font-size: 8px;
+			color: var(--status-warning);
+		}
+	}
 }

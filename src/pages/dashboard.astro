@@ -74,13 +74,89 @@ import Layout from 'src/layouts/Layout.astro'
     </div>
   </div>
 
-  <div class="status-line">
-    <div class="status-line-indicator status-line-indicator_green"></div>
-  </div>
-  <div class="status-line">
-    <div class="status-line-indicator status-line-indicator_orange"></div>
-  </div>
-  <div class="status-line">
-    <div class="status-line-indicator status-line-indicator_red"></div>
+  <div class="account-last-tasks">
+    <h5 class="account-last-tasks__title text">Останні завданя</h5>
+
+    <div class="account-last-tasks__items">
+      <div class="status-line account-last-tasks-item">
+        <div class="status-line-indicator status-line-indicator_green"></div>
+        <div class="account-last-tasks-item__body">
+          <div class="account-last-tasks-item__content">
+            <h6 class="account-last-tasks-item__title text">Відкритий</h6>
+          </div>
+
+          <div class="account-last-tasks-item__details">
+            <div class="account-last-tasks-item__amount">+5</div>
+            <div class="account-last-tasks-item__link">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="status-line account-last-tasks-item">
+        <div class="status-line-indicator status-line-indicator_orange"></div>
+        <div class="account-last-tasks-item__body">
+          <div class="account-last-tasks-item__content">
+            <div class="account-last-tasks-item__pretitle text-small">
+              Поток Crypto education Factory от Crypto |  Sjft  | Tools
+            </div>
+            <h6 class="account-last-tasks-item__title text">DEX  обзор universety tools</h6>
+            <div class="account-last-tasks-item__subtitle text-small">
+              Відкритий
+            </div>
+          </div>
+
+          <div class="account-last-tasks-item__details">
+            <div class="account-last-tasks-item__amount">+5</div>
+            <div class="account-last-tasks-item__link"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="status-line account-last-tasks-item">
+        <div class="status-line-indicator status-line-indicator_red"></div>
+        <div class="account-last-tasks-item__body">
+          <div class="account-last-tasks-item__content">
+            <div class="account-last-tasks-item__pretitle text-small">
+              Поток Crypto education Factory от Crypto |  Sjft  | Tools
+            </div>
+            <h6 class="account-last-tasks-item__title text">DEX  обзор universety tools</h6>
+            <div class="account-last-tasks-item__subtitle text-small">
+              Закрытый
+            </div>
+          </div>
+
+          <div class="account-last-tasks-item__details">
+            <div class="account-last-tasks-item__amount">+5</div>
+            <div class="account-last-tasks-item__link"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="status-line account-last-tasks-item">
+        <div class="status-line-indicator status-line-indicator_red"></div>
+        <div class="account-last-tasks-item__body">
+          <div class="account-last-tasks-item__content">
+            <div class="account-last-tasks-item__pretitle text-small">
+              Поток Crypto education Factory от Crypto |  Sjft  | Tools
+            </div>
+            <h6 class="account-last-tasks-item__title text">DEX  обзор universety tools</h6>
+            <div class="account-last-tasks-item__subtitle text-small">
+              Закрытый
+            </div>
+          </div>
+
+          <div class="account-last-tasks-item__details">
+            <div class="account-last-tasks-item__amount">+5</div>
+            <div class="account-last-tasks-item__link"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="account-last-tasks__more">
+      <span class="text-small">Показати ще</span>
+      <span class="icon-arrow-right-small account-last-tasks__more-icon"></span>
+    </div>
   </div>
 </Layout>
