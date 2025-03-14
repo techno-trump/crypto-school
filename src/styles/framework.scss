@@ -798,8 +798,11 @@ body {
 				display: flex;
 				align-items: center;
 				justify-content: space-between;
+				flex-wrap: wrap;
+				gap: 20px;
 			}
 			&__content {
+				min-height: 35px;
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
@@ -844,6 +847,42 @@ body {
 		&__more-icon {
 			font-size: 8px;
 			color: var(--status-warning);
+		}
+		@media (max-width: config.$mbpMM) {
+			padding: 16px;
+			
+			&__title {
+				margin-bottom: 24px;
+			}
+			&__items {
+				margin-bottom: 16px;
+			}
+			&-item {
+				padding: 10px;
+
+				&_minimal {
+					.account-last-tasks-item__body {
+						gap: 0px;
+					}
+				}
+				&__body {
+					flex-direction: column;
+					align-items: flex-start;
+				}
+				&__pretitle {
+					margin-bottom: 8px;
+				}
+				&__subtitle {
+					margin-top: 8px;
+				}
+				&__details {
+					gap: 8px;
+				}
+				&__link {
+					flex: 0 0 24px;
+					width: 24px;
+				}
+			}
 		}
 	}
 }
