@@ -558,6 +558,23 @@ body {
 		}
 	}
 
+	&-block {
+		@include palette-background(0.88);
+		padding: 30px;
+
+		&__title {
+			color: var(--primary-color);
+			margin-bottom: 30px;
+		}
+		@media (max-width: config.$mbpMM) {
+			padding: 16px;
+
+			&__title {
+				margin-bottom: 24px;
+			}
+		}
+	}
+
 	&-menu {
 		max-width: 350px;
 		display: flex;
@@ -746,6 +763,7 @@ body {
 			max-width: 90px;
 		}
 	}
+
 	&-statistics {
 		@include palette-background(0.88);
 
@@ -791,14 +809,8 @@ body {
 			}
 		}
 	}
-	&-last-tasks {
-		@include palette-background(0.88);
-		padding: 30px;
 
-		&__title {
-			color: var(--primary-color);
-			margin-bottom: 30px;
-		}
+	&-last-tasks {
 		&__items {
 			display: flex;
 			flex-direction: column;
@@ -880,11 +892,6 @@ body {
 			color: var(--status-warning);
 		}
 		@media (max-width: config.$mbpMM) {
-			padding: 16px;
-			
-			&__title {
-				margin-bottom: 24px;
-			}
 			&__items {
 				margin-bottom: 16px;
 			}
