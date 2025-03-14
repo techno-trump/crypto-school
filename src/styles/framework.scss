@@ -765,8 +765,6 @@ body {
 	}
 
 	&-statistics {
-		@include palette-background(0.88);
-
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
