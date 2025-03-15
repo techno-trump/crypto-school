@@ -934,4 +934,24 @@ body {
 			}
 		}
 	}
+
+	&-rating {
+		.icon {
+			color: var(--status-warning);
+			font-size: 20px;
+		}
+	}
+
+	.account-table {
+		&-head {
+			&__column {
+			}
+		}
+		&-body {
+			&__item {
+			}
+			&__column {
+			}
+		}
+	}
 }
