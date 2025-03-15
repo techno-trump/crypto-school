@@ -565,6 +565,13 @@ body {
 		&__title {
 			color: var(--primary-color);
 			margin-bottom: 30px;
+
+			display: flex;
+			align-items: center;
+			gap: 10px;
+		}
+		&__horizontal-row {
+			border: 0.3px solid #cbd7db80;
 		}
 		@media (max-width: config.$mbpMM) {
 			padding: 16px;
