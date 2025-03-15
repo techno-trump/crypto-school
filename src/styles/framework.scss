@@ -7571,6 +7571,10 @@ body {
 		margin-top: 15px;
 	}
 
+	&__main-label--wrapper {
+		margin-bottom: 15px;
+	}
+
 	&__main-input::placeholder,
 	&__safety-input::placeholder {
 		color: rgba(75, 79, 75, 0.4);
@@ -7686,7 +7690,7 @@ body {
 		&__data {
 			padding: 30px;
 		}
-		&__main-label--wrapper{
+		&__main-label--wrapper {
 			margin-bottom: 15px;
 		}
 		&__photo-mobile {
@@ -7707,17 +7711,17 @@ body {
 		&__photo-box {
 			margin-bottom: 20px;
 		}
-		
+
 		&__photo {
 			padding-left: 0;
 			padding-right: 0;
 			background: none;
 			backdrop-filter: none;
 			border: none;
-			border-bottom: 1px solid rgba(203, 215, 219, 0.50);
+			border-bottom: 1px solid rgba(203, 215, 219, 0.5);
 			flex: initial;
 		}
-		&__photo-right{
+		&__photo-right {
 			width: 100%;
 		}
 	}
@@ -7729,20 +7733,20 @@ body {
 			width: 100%;
 			padding: 16px;
 		}
-		
+
 		&__photo-left {
 			display: none;
 		}
-		&__main{
+		&__main {
 			padding-top: 15px;
 		}
-		&__safety{
+		&__safety {
 			margin-top: 30px;
 		}
-		&-title{
+		&-title {
 			padding-bottom: 15px;
 		}
-		&-btn{
+		&-btn {
 			margin-top: 15px;
 		}
 		&__photo-btn {
@@ -7784,16 +7788,12 @@ body {
 			width: 50%;
 			box-sizing: border-box;
 		}
-		&__main-label--wrapper {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			grid-gap: 15px;
-		}
+
 		&__main-label {
 			gap: 6px;
 		}
 		&__safety-input,
-		&__main-input{
+		&__main-input {
 			width: 100%;
 			padding: 10px;
 		}
@@ -7803,14 +7803,14 @@ body {
 		&__main-input::-ms-value,
 		&__safety-input::-ms-value,
 		&__main-input::placeholder,
-		&__safety-input::placeholder{
+		&__safety-input::placeholder {
 			font-size: 12px;
 		}
 		&__main-label + &__main-label {
 			margin-top: 0;
 		}
 		&__safety-btn,
-		&__main-btn{
+		&__main-btn {
 			align-self: auto;
 			display: inline-block;
 			padding: 15px 40px;
