@@ -1,6 +1,7 @@
 ---
 import AccountGreeting from 'src/components/AccountGreeting.astro'
 import AccountMenu from 'src/components/AccountMenu.astro'
+import Button from 'src/components/basic/Button.astro'
 import AccountLayout from 'src/layouts/AccountLayout.astro'
 import Layout from 'src/layouts/Layout.astro'
 
@@ -12,9 +13,56 @@ import Layout from 'src/layouts/Layout.astro'
 
       <AccountGreeting slot="center-top" />
 
-      <Fragment slot="center-bottom">
-        
-      </Fragment>
+      <div class="account-block account-rate" slot="center-bottom">
+        <h5 class="account-block__title h6">Мій тариф</h5>
+
+        <hr class="account-block__horizontal-row account-rate__horizontal-row">
+
+        <div class="account-rate-content">
+          <div class="account-rate-content__left">
+            <div class="account-rate__block account-rate-palette">
+              <div class="account-rate__property text-small">Дата закінчення передплати</div>
+              <div class="account-rate__value text">8 січня 2025 р.</div>
+            </div>
+
+            <div class="account-rate__column-left">
+              <div class="account-rate__block">
+                <div class="account-rate__property text-small">Дата реєстрації</div>
+                <div class="account-rate__value text">24 грудня 2024 г.</div>
+              </div>
+  
+              <div class="account-rate__block">
+                <div class="account-rate__property text-small">Дата підписки на тариф</div>
+                <div class="account-rate__value text">24 грудня 2024 г.</div>
+              </div>
+            </div>
+            
+            <div class="account-rate__buttons">
+              <Button filled rounded>
+                <span class="button__text">Продлити</span>
+              </Button>
+  
+              <Button outlined rounded>
+                <span class="button__text">Скасувати підписку</span>
+              </Button>
+            </div>
+          </div>
+
+          <div class="account-rate-content__right">
+            <div class="account-rate__column-right">
+              <div class="account-rate__block">
+                <div class="account-rate__property text-small">Тариф</div>
+                <div class="account-rate__value text">Усе включено</div>
+              </div>
+  
+              <div class="account-rate__block">
+                <div class="account-rate__property text-small">Кількість Creoin</div>
+                <div class="account-rate__value text">105</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </AccountLayout>
   </div>
 </Layout>
