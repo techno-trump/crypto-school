@@ -775,6 +775,7 @@ body {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		flex-wrap: wrap;
 		padding: 67px 85px;
 
 		&-item {
@@ -798,6 +799,9 @@ body {
 		}
 		&-item__description {
 			color: var(--dark-300);
+		}
+		@media (max-width: config.$mbpFooterCollapse) {
+			padding: 67px 30px;
 		}
 		@media (max-width: config.$mbpT) {
 			padding: 32px 42px;
