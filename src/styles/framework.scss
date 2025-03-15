@@ -941,17 +941,44 @@ body {
 			color: var(--status-warning);
 			font-size: 20px;
 		}
+		&-table {
+			--columns: 1fr 2fr 1fr;
+		}
 	}
 
-	.account-table {
+	&-table {
+		border-top: 1px solid #cbd7db80;
+		display: block;
+
 		&-head {
+			width: 100%;
+			display: grid;
+			grid-template-columns: var(--columns);
+			padding: 20px 0px;
+
+			tr {
+				display: contents;
+			}
+
 			&__column {
+				font-family: 'Inter Tight', sans-serif;
+				color: var(--dark-600);
+				font-size: 14px;
 			}
 		}
 		&-body {
+			display: contents;
+
 			&__item {
+				width: 100%;
+				display: grid;
+				grid-template-columns: var(--columns);
+				padding: 20px 0px;
 			}
 			&__column {
+				display: flex;
+				align-items: center;
+				gap: 15px;
 			}
 		}
 	}
