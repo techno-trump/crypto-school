@@ -873,7 +873,7 @@ body {
 				
 				background-color: var(--primary-color);
 				
-				padding-left: 1px;
+				padding-left: 2px;
 				display: flex;
 				align-items: center;
 				justify-content: center;
@@ -881,12 +881,13 @@ body {
 				font-size: 12px;
 
 				span {
+					display: block;
 					line-height: 1;
 				}
 			}
 		}
 		&__more {
-			width: 100%;
+			margin: 0 auto;
 			display: flex;
 			justify-content: center;
 			align-items: center;
