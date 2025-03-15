@@ -675,14 +675,12 @@ body {
 			}
 			&__icon {
 				position: relative;
-				color: var(--primary-color);
 				font-size: 24px;
 				display: flex;
 				align-items: center;
 			}
 			&__name {
 				position: relative;
-				color: var(--primary-color);
 			}
 		}
 		@media (max-width: config.$mbpT) {
