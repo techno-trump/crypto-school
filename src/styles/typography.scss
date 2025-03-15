@@ -106,3 +106,16 @@
     font-size: 10px;
   }
 }
+
+.color-primary {
+  color: var(--primary-color); 
+}
+.color-success {
+  color: var(--status-success);
+}
+.color-orange {
+  color: var(--status-warning);
+}
+.color-danger {
+  color: var(--status-danger);
+}
