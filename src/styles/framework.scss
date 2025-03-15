@@ -931,6 +931,18 @@ body {
 		}
 	}
 
+	&-more {
+		margin: 0 auto;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 12px;
+
+		&__icon {
+			font-size: 8px;
+		}
+	}
+
 	&-rating {
 		.icon {
 			color: var(--status-warning);
