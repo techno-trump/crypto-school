@@ -1,4 +1,5 @@
 ---
+import AccountMenu from 'src/components/AccountMenu.astro'
 import Button from 'src/components/basic/Button.astro'
 import Layout from 'src/layouts/Layout.astro'
 
@@ -8,72 +9,7 @@ import Layout from 'src/layouts/Layout.astro'
     <div class="account-layout">
       <div class="account-layout-column account-layout-sidebar">
         <div class="account-layout-column-slice account-layout-sidebar__top">
-          <div class="account-menu">
-            <div class="account-menu-info">
-              <div class="account-menu-info-avatar">
-                <div class="account-menu-info-avatar__circle">
-                  <span class="icon-profile"></span>
-                </div>
-              </div>
-              <div class="account-menu-info__content">
-                <div class="account-menu-info-lessons">
-                  <div class="account-menu-info-lessons-icon">
-                    <span class="icon-videos"></span>
-                  </div>
-                  <div class="account-menu-info-lessons__amount text-small">12 уроків</div>
-                </div>
-                <div class="account-menu-info__name text">Володимір</div>
-              </div>
-            </div>
-      
-            <a href="#" class="account-menu-item account-menu-item_active">
-              <div class="account-menu-item__icon">
-                <span class="icon-dashboard color-primary"></span>
-              </div>
-      
-              <div class="account-menu-item__name text color-primary">Dashboard</div>
-            </a>
-      
-            <a href="#" class="account-menu-item">
-              <div class="account-menu-item__icon">
-                <span class="icon-video-play color-primary"></span>
-              </div>
-      
-              <div class="account-menu-item__name text color-primary">Навчання</div>
-            </a>
-      
-            <a href="#" class="account-menu-item">
-              <div class="account-menu-item__icon">
-                <span class="icon-rate color-primary"></span>
-              </div>
-      
-              <div class="account-menu-item__name text color-primary">Мій тариф</div>
-            </a>
-      
-            <a href="#" class="account-menu-item">
-              <div class="account-menu-item__icon">
-                <span class="icon-referral color-primary"></span>
-              </div>
-      
-              <div class="account-menu-item__name text color-primary">Реферальна програма</div>
-            </a>
-      
-            <a href="#" class="account-menu-item">
-              <div class="account-menu-item__icon">
-                <span class="icon-settings color-primary"></span>
-              </div>
-      
-              <div class="account-menu-item__name text color-primary">Налаштування</div>
-            </a>
-      
-            <a href="#" class="account-menu-item">
-              <div class="account-menu-item__icon">
-                <span class="icon-exit color-primary"></span>
-              </div>
-      
-              <div class="account-menu-item__name text color-primary">Вийти</div>
-            </a>
-          </div>
+          <AccountMenu />
         </div>
 
         <div class="account-layout-column-slice account-layout-sidebar__bottom">
