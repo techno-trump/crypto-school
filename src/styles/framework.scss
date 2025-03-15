@@ -734,7 +734,6 @@ body {
 			line-height: 1.2;
 		}
 		&__name {
-			color: var(--primary-color);
 			line-height: 1.2;
 		}
 		&-payment {
@@ -748,9 +747,6 @@ body {
 			justify-content: space-between;
 			flex-wrap: wrap;
 			gap: 20px;
-		}
-		&-payment__title {
-			color: var(--primary-color);
 		}
 		@media (max-width: config.$mbpT) {
 			&__date {
