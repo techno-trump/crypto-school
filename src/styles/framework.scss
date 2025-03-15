@@ -591,6 +591,68 @@ body {
 		&_horizontal {
 			flex-direction: row;
 		}
+		&-info {
+			@include palette-background(0.88);
+			
+			height: 100px;
+			width: 100%;
+		
+			display: flex;
+			align-items: center;
+			gap: 20px;
+		
+			padding: 10px 20px;
+			&-avatar {
+				position: relative;
+				
+				flex: 0 0 70px;
+				width: 70px;
+				aspect-ratio: 1;
+				
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				
+				border: 1px solid var(--dark-700);
+				border-radius: 50%;
+			}
+			&-avatar__circle {
+				background-color: var(--primary-color);
+				color: var(--white);
+				font-size: 25px;
+			
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			
+				aspect-ratio: 1;
+				border-radius: 50%;
+				flex: 0 0 55px;
+			}
+			&-info__content {
+				display: flex;
+				flex-direction: column;
+				gap: 2px;
+			}
+			&-lessons {
+				display: flex;
+				align-items: center;
+				gap: 5px;
+			}
+			&-lessons-icon {
+				font-size: 12px;
+				color: var(--primary-color);
+			}
+			&-lessons-icon span {
+				display: block;
+			}
+			&-lessons__amount {
+				color: var(--pr)
+			}
+			&__name {
+				color: var(--dark-300);
+			}
+		}
 		&-item {
 			@include palette-background;
 		
@@ -620,71 +682,7 @@ body {
 				color: var(--primary-color);
 			}
 		}
-	}
-	&-info {
-		@include palette-background(0.88);
-		
-		height: 100px;
-		width: 100%;
-	
-		display: flex;
-		align-items: center;
-		gap: 20px;
-	
-		padding: 10px 20px;
-		&-avatar {
-			position: relative;
-			
-			flex: 0 0 70px;
-			width: 70px;
-			aspect-ratio: 1;
-			
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			
-			border: 1px solid var(--dark-700);
-			border-radius: 50%;
-		}
-		&-avatar__circle {
-			background-color: var(--primary-color);
-			color: var(--white);
-			font-size: 25px;
-		
-			display: flex;
-			align-items: center;
-			justify-content: center;
-		
-			aspect-ratio: 1;
-			border-radius: 50%;
-			flex: 0 0 55px;
-		}
-		&-info__content {
-			display: flex;
-			flex-direction: column;
-			gap: 2px;
-		}
-		&-lessons {
-			display: flex;
-			align-items: center;
-			gap: 5px;
-		}
-		&-lessons-icon {
-			font-size: 12px;
-			color: var(--primary-color);
-		}
-		&-lessons-icon span {
-			display: block;
-		}
-		&-lessons__amount {
-			color: var(--pr)
-		}
-		&__name {
-			color: var(--dark-300);
-		}
-	}
-	@media (max-width: config.$mbpT) {
-		&-menu {
+		@media (max-width: config.$mbpT) {
 			max-width: 100%;
 			flex-direction: row;
 			flex-wrap: wrap;
@@ -693,30 +691,30 @@ body {
 				flex: 0 1 calc((100% - 10px) / 3);
 				height: 70px;
 			}
-		}
-		&-info {
-			flex: 0 1 calc((100% - 10px) / 3);
-			padding: 10px;
-			height: 70px;
-			gap: 10px;
-
-			&-avatar {
-				flex: 0 0 40px;
-				width: 40px;
+			&-info {
+				flex: 0 1 calc((100% - 10px) / 3);
+				padding: 10px;
+				height: 70px;
+				gap: 10px;
+	
+				&-avatar {
+					flex: 0 0 40px;
+					width: 40px;
+				}
+				&-avatar__circle {
+					padding-top: 2px;
+					flex: 0 0 32px;
+					font-size: 14px;
+				}
 			}
-			&-avatar__circle {
-				padding-top: 2px;
-				flex: 0 0 32px;
-				font-size: 14px;
+		}
+		@media (max-width: 700px) {
+			&-info {
+				flex: 1 1 auto;
 			}
-		}
-	}
-	@media (max-width: 700px) {
-		&-info {
-			flex: 1 1 auto;
-		}
-		&-menu-item {
-			flex: 1 1 auto;
+			&-item {
+				flex: 1 1 auto;
+			}
 		}
 	}
 
