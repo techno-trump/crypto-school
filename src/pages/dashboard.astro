@@ -1,7 +1,7 @@
 ---
 import AccountGreeting from 'src/components/AccountGreeting.astro'
 import AccountMenu from 'src/components/AccountMenu.astro'
-import Button from 'src/components/basic/Button.astro'
+import AccountMore from 'src/components/basic/AccountMore.astro'
 import Layout from 'src/layouts/Layout.astro'
 
 ---
@@ -62,10 +62,7 @@ import Layout from 'src/layouts/Layout.astro'
               </tbody>
             </table>
 
-            <button class="account-more">
-              <span class="text-small color-primary">Показати ще</span>
-              <span class="icon-arrow-right-small color-orange account-more__icon"></span>
-            </button>
+            <AccountMore />
           </div>
         </div>
       </div>
@@ -189,10 +186,7 @@ import Layout from 'src/layouts/Layout.astro'
               </div>
             </div>
         
-            <button class="account-more">
-              <span class="text-small color-primary">Показати ще</span>
-              <span class="icon-arrow-right-small color-orange account-more__icon"></span>
-            </button>
+            <AccountMore />
           </div>
         </div>
       </div>
