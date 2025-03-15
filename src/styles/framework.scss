@@ -950,6 +950,7 @@ body {
 		}
 		&-table {
 			--columns: 1fr 2fr 1fr;
+			margin-bottom: 24px;
 
 			.account-table-body__column {
 				&:nth-child(1) {
@@ -993,6 +994,7 @@ body {
 			}
 			@media (max-width: config.$mbpMM) {
 				--columns: 1fr 2fr 1fr;
+				margin-bottom: 16px;
 				
 				.account-table-head__column {
 					&:nth-child(1) {
