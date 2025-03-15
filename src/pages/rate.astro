@@ -1,0 +1,20 @@
+---
+import AccountGreeting from 'src/components/AccountGreeting.astro'
+import AccountMenu from 'src/components/AccountMenu.astro'
+import AccountLayout from 'src/layouts/AccountLayout.astro'
+import Layout from 'src/layouts/Layout.astro'
+
+---
+<Layout title="Крипто школа" description="Крипто школа">
+  <div class="container">
+    <AccountLayout>
+      <AccountMenu slot="sidebar-top" />
+
+      <AccountGreeting slot="center-top" />
+
+      <Fragment slot="center-bottom">
+        
+      </Fragment>
+    </AccountLayout>
+  </div>
+</Layout>
