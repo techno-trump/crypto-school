@@ -1091,6 +1091,11 @@ body {
 		&_status &-body__item {
 			padding-left: 24px;
 		}
+		@media (max-width: config.$mbpT) {
+			&_status &-head__column:first-child {
+				margin-left: -40px;
+			}
+		}
 		@media (max-width: config.$mbpMM) {
 			&-body {
 				&__item {
@@ -1103,8 +1108,11 @@ body {
 				}
 			}
 			&_status &-head {
-				padding-left: 0px;
+				padding-left: 26px;
 				padding-right: 10px;
+			}
+			&_status &-head__column:first-child {
+				margin-left: -26px;
 			}
 			&_status &-body__item {
 				padding-left: 10px;
