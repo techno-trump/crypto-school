@@ -1,11 +1,17 @@
 ---
 import Button from './basic/Button.astro'
 
+interface Props {
+  title: string
+}
+
+const { title } = Astro.props
+
 ---
 <div class="account-greeting">
   <div class="account-greeting__left">
     <div class="account-greeting__date text">Четвер, 05 Грудня</div>
-    <h5 class="account-greeting__name h5 color-primary">Привіт, Володимір</h5>
+    <h5 class="account-greeting__name h5 color-primary">{title}</h5>
   </div>
 
   <div class="account-greeting-payment">
