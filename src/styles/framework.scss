@@ -1132,6 +1132,10 @@ body {
 			&_status &-body__item {
 				padding-left: 10px;
 			}
+			&_compressed &-head {
+				padding-top: 12px;
+				padding-bottom: 12px;
+			}
 		}
 	}
 
