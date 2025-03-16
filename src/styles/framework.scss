@@ -1171,9 +1171,36 @@ body {
 				}
 			}
 		}
+		@media (max-width: config.$mbpT) {
+			&-table {
+				--columns: 30fr 20fr 20fr 20fr;
+			}
+		}
 		@media (max-width: config.$mbpMM) {
 			&-table {
-				--columns: 2fr 2fr 3fr;
+				--columns: 2fr 2fr 4fr;
+			}
+		}
+	}
+
+	&-my-referrals {
+		&-table {
+			--columns: 25fr 30fr 50fr;
+		
+			&__status-default {
+				color: var(--dark-600);
+			}
+		}	
+		@media (min-width: config.$mbpT) {
+			&-table {
+				.text {
+					font-size: 16px;
+				}
+			}
+		}
+		@media (max-width: config.$mbpT) {
+			&-table {
+				--columns: 2fr 2fr 4fr;
 			}
 		}
 	}

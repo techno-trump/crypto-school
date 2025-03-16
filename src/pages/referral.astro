@@ -97,6 +97,56 @@ import Layout from 'src/layouts/Layout.astro'
             </tbody>
           </table>
         </div>
+
+        <div class="account-block account-block_compressed">
+          <h5 class="account-block__title text">Мої реферали</h5>
+          
+          <table class="account-table account-table_status account-table_compressed account-my-referrals-table">
+            <thead class="account-table-head">
+              <td class="account-table-head__column">Дата</td>
+              <td class="account-table-head__column">Ник <span class="hide-mobile">Telegram</span></td>
+              <td class="account-table-head__column">Статус</td>
+            </thead>
+
+            <tbody class="account-table-body">
+              <tr>
+                <td class="status-line">
+                  <div class="status-line-indicator status-line-indicator_green"></div>
+
+                  <div class="account-table-body__item">
+                    <div class="text color-primary"><span class="hide-mobile">24.05.2024</span> 16:30</div>
+                    <div class="text color-primary">@ho*****pce</div>
+                    <div class="text color-success">Успішно</div>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="status-line">
+                  <div class="status-line-indicator status-line-indicator_orange"></div>
+
+                  <div class="account-table-body__item">
+                    <div class="text color-primary"><span class="hide-mobile">24.05.2024</span> 16:30</div>
+                    <div class="text color-primary">@ho*****pce</div>
+                    <div class="text account-my-referrals-table__status-default">Зареєстрований</div>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="status-line">
+                  <div class="status-line-indicator status-line-indicator_orange"></div>
+
+                  <div class="account-table-body__item">
+                    <div class="text color-primary"><span class="hide-mobile">24.05.2024</span> 16:30</div>
+                    <div class="text color-primary">@ho*****pce</div>
+                    <div class="text account-my-referrals-table__status-default">Зареєстрований</div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </Fragment>
     </AccountLayout>
   </div>
