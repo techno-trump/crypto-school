@@ -1100,4 +1100,10 @@ body {
 			color: var(--dark-300);
 		}
 	}
+
+	&-last-payments {
+		&-table {
+			--columns: repeat(4, 1fr);
+		}
+	}
 }

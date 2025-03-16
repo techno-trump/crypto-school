@@ -16,7 +16,7 @@ import Layout from 'src/layouts/Layout.astro'
       />
 
       <Fragment slot="center-bottom">
-        <div class="account-block account-total-statistics">
+        <div class="account-block account-block_compressed account-total-statistics">
           <h5 class="account-block__title text">Загальна статистика</h5>
 
           <hr class="account-block__horizontal-row" />
@@ -42,6 +42,34 @@ import Layout from 'src/layouts/Layout.astro'
               <div class="text-small account-total-statistics__description">Доступно для виведення</div>
             </div>
           </div>
+        </div>
+
+        <div class="account-block account-block_compressed">
+          <h5 class="account-block__title text">Останні виплати</h5>
+          
+          <table class="account-table account-last-payments-table">
+            <thead class="account-table-head">
+              <td class="account-table-head__column">Дата</td>
+              <td class="account-table-head__column">Сумма виплати</td>
+              <td class="account-table-head__column">Статус виплати</td>
+              <td class="account-table-head__column">Коментар</td>
+            </thead>
+
+            <tbody class="account-table-body">
+              <tr>
+                <td class="status-line">
+                  <div class="status-line-indicator status-line-indicator_orange"></div>
+
+                  <div class="account-table-body__item">
+                    <div class="text-small color-primary">24.05.2024 16:30</div>
+                    <div class="text-small color-primary">$230</div>
+                    <div class="text-small color-orange">Виконується</div>
+                    <div class="text-small account-last-payments-table__comment">Виконується</div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </Fragment>
     </AccountLayout>
