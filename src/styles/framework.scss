@@ -1039,6 +1039,7 @@ body {
 			display: grid;
 			grid-template-columns: var(--columns);
 			padding: 20px 0px;
+			gap: 10px;
 
 			tr {
 				display: contents;
@@ -1059,6 +1060,7 @@ body {
 				width: 100%;
 				display: grid;
 				grid-template-columns: var(--columns);
+				gap: 10px;
 				
 				&_plain {
 					padding: 20px 0px;
