@@ -1074,9 +1074,6 @@ body {
 	}
 
 	&-rate {
-		&__horizontal-row {
-			margin-bottom: 30px;
-		}
 		&-content {
 			display: grid;
 			grid-template-columns: 1fr 1fr;
@@ -1151,9 +1148,6 @@ body {
 			}
 		}
 		@media (max-width: config.$mbpMM) {
-			&__horizontal-row {
-				margin-bottom: 16px;
-			}
 			&-content {
 				display: grid;
 				grid-template-columns: 1fr 1fr;
