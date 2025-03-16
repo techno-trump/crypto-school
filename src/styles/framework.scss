@@ -288,7 +288,6 @@ body {
 		}
 	}
 }
-
 .button__text {
 	display: block;
 	font-family: 'Inter Tight', sans-serif;
@@ -324,6 +323,22 @@ body {
 		& {
 			font-size: 14px;
 		}
+	}
+}
+
+@media (min-width: mixins.px(config.$mbpTNu + 1)) {
+	.hide-desktop {
+		display: none !important;
+	}
+}
+@media (max-width: config.$mbpT) and (min-width: mixins.px(config.$mbpMMNu + 1)) {
+	.hide-tablet {
+		display: none !important;
+	}
+}
+@media (max-width: config.$mbpMM) {
+	.hide-mobile {
+		display: none !important;
 	}
 }
 
@@ -384,6 +399,10 @@ body {
 	@media (max-width: config.$mbpMM) {
 		.status-line {
 			padding: 10px;
+		
+			&-indicator {
+				min-height: 20px;
+			}
 		}
 	}
 }
@@ -1039,6 +1058,7 @@ body {
 			display: grid;
 			grid-template-columns: var(--columns);
 			padding: 20px 0px;
+			gap: 10px;
 
 			tr {
 				display: contents;
@@ -1059,6 +1079,7 @@ body {
 				width: 100%;
 				display: grid;
 				grid-template-columns: var(--columns);
+				gap: 10px;
 				
 				&_plain {
 					padding: 20px 0px;
@@ -1083,6 +1104,19 @@ body {
 				gap: 15px;
 			}
 		}
+
+		&_status &-head {
+			padding-left: 40px;
+			padding-right: 14px;
+		}
+		&_status &-body__item {
+			padding-left: 24px;
+		}
+		@media (max-width: config.$mbpT) {
+			&_status &-head__column:first-child {
+				margin-left: -40px;
+			}
+		}
 		@media (max-width: config.$mbpMM) {
 			&-body {
 				&__item {
@@ -1093,6 +1127,16 @@ body {
 						background: var(--light-table-hover);
 					}
 				}
+			}
+			&_status &-head {
+				padding-left: 26px;
+				padding-right: 10px;
+			}
+			&_status &-head__column:first-child {
+				margin-left: -26px;
+			}
+			&_status &-body__item {
+				padding-left: 10px;
 			}
 		}
 	}
