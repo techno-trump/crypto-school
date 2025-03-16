@@ -1051,6 +1051,7 @@ body {
 			width: 100%;
 			display: grid;
 			grid-template-columns: var(--columns);
+			align-items: center;
 			padding: 20px 0px;
 			gap: 10px;
 
@@ -1073,6 +1074,7 @@ body {
 				width: 100%;
 				display: grid;
 				grid-template-columns: var(--columns);
+				align-items: center;
 				gap: 10px;
 				
 				&_plain {
