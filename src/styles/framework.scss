@@ -397,12 +397,10 @@ body {
 		}
 	}
 	@media (max-width: config.$mbpMM) {
-		.status-line {
-			padding: 10px;
-		
-			&-indicator {
-				min-height: 20px;
-			}
+		padding: 10px;
+	
+		&-indicator {
+			min-height: 20px;
 		}
 	}
 }
