@@ -1156,6 +1156,19 @@ body {
 		&__description {
 			color: var(--dark-300);
 		}
+		@media (max-width: config.$mbpT) {
+			&__content {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				grid-template-rows: 1fr 1fr;
+				gap: 30px;
+			}
+		}
+		@media (max-width: config.$mbpMM) {
+			&__content {
+				gap: 16px;
+			}
+		}
 	}
 
 	&-last-payments {
