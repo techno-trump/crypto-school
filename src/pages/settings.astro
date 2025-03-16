@@ -122,7 +122,7 @@ import Layout from 'src/layouts/Layout.astro'
 									class='settings__photo-box'
 									onclick="document.getElementById('fileInput').click()"
 								>
-									<span class='icon-download'>⬇️</span>
+									<span class='settings__icon-download'>⬇️</span>
 									<p class='settings__photo-description'>
 										Завантажити фотографію<br />для профілю
 									</p>
@@ -133,63 +133,63 @@ import Layout from 'src/layouts/Layout.astro'
 										accept='image/*'
 										onchange='previewImage(event)'
 									/>
-									<img id='preview'/>
+									<img id='preview' />
 								</div>
-								<div class="settings__photo-content">
-                  <div class="settings__photo-texts">
-                    <p class='settings__photo-text'>
-                      Розмір обкладинки повинен бути не менший 200х200 px і не
-                      більший ніж 5 Мб. Формат обкладинки JPG, PNG
-                    </p>
-                    <p class='settings__photo-text'>
-                      Після завантаження натисніть “Зберегти”
-                    </p>
-                  </div>
-                  <button class='settings__photo-btn settings-btn'>
-                    Зберегти
-                  </button>
-                </div>
+								<div class='settings__photo-content'>
+									<div class='settings__photo-texts'>
+										<p class='settings__photo-text'>
+											Розмір обкладинки повинен бути не менший 200х200 px і не
+											більший ніж 5 Мб. Формат обкладинки JPG, PNG
+										</p>
+										<p class='settings__photo-text'>
+											Після завантаження натисніть “Зберегти”
+										</p>
+									</div>
+									<button class='settings__photo-btn settings-btn'>
+										Зберегти
+									</button>
+								</div>
 							</div>
 						</div>
 						<form class='settings__main'>
 							<h6 class='settings__main-title settings-title'>Основні</h6>
-							<div class="settings__main-label--wrapper">
-                <label class='settings__main-label'>
-                  <p class='settings__main-text'>Ник</p>
-                  <input
-                    class='settings__main-input type='
-                    text'
-                    placeholder='Ник'
-                    value='Володимир'
-                  />
-                </label>
-                <label class='settings__main-label' for=''>
-                  <p class='settings__main-text'>E-mail</p>
-                  <input
-                    class='settings__main-input'
-                    type='email'
-                    placeholder='E-mail'
-                    value='hello@gmail.com'
-                  />
-                </label>
-                <label class='settings__main-label' for=''>
-                  <p class='settings__main-text'>Телеграм</p>
-                  <input
-                    class='settings__main-input'
-                    type='text'
-                    placeholder='@username'
-                  />
-                </label>
-                <label class='settings__main-label' for=''>
-                  <p class='settings__main-text'>Дискорд</p>
-                  <input
-                    class='settings__main-input'
-                    type='text'
-                    placeholder='@username'
-                  />
-                </label>
-              </div>
-							<label class='settings__main-label' for=''>
+							<div class='settings__main-label--wrapper'>
+								<label class='settings__main-label'>
+									<p class='settings__main-text'>Ник</p>
+									<input
+										class='settings__main-input type='
+										text'
+										placeholder='Ник'
+										value='Володимир'
+									/>
+								</label>
+								<label class='settings__main-label' for=''>
+									<p class='settings__main-text'>E-mail</p>
+									<input
+										class='settings__main-input'
+										type='email'
+										placeholder='E-mail'
+										value='hello@gmail.com'
+									/>
+								</label>
+								<label class='settings__main-label' for=''>
+									<p class='settings__main-text'>Телеграм</p>
+									<input
+										class='settings__main-input'
+										type='text'
+										placeholder='@username'
+									/>
+								</label>
+								<label class='settings__main-label' for=''>
+									<p class='settings__main-text'>Дискорд</p>
+									<input
+										class='settings__main-input'
+										type='text'
+										placeholder='@username'
+									/>
+								</label>
+							</div>
+							<label class='settings__main-label settings__main-label--crypto' for=''>
 								<p class='settings__main-text'>Криптокошелек</p>
 								<input
 									class='settings__main-input'
@@ -202,6 +202,7 @@ import Layout from 'src/layouts/Layout.astro'
 								Зберегти
 							</button>
 						</form>
+						<hr class='settings__data-hr' />
 						<form class='settings__safety'>
 							<h6 class='settings__safety-title settings-title'>Безпека</h6>
 							<input
