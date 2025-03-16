@@ -1009,7 +1009,7 @@ body {
 					}
 				}
 			}
-			@media (min-width: config.$mbpFooterCollapse) {
+			@media (min-width: mixins.px(config.$mbpTNu + 1)) {
 				.account-table-body__column {
 					&:nth-child(3) {
 						font-weight: 600;
