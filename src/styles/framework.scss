@@ -288,7 +288,6 @@ body {
 		}
 	}
 }
-
 .button__text {
 	display: block;
 	font-family: 'Inter Tight', sans-serif;
@@ -324,6 +323,22 @@ body {
 		& {
 			font-size: 14px;
 		}
+	}
+}
+
+@media (min-width: mixins.px(config.$mbpTNu + 1)) {
+	.hide-desktop {
+		display: none !important;
+	}
+}
+@media (max-width: config.$mbpT) and (min-width: mixins.px(config.$mbpMMNu + 1)) {
+	.hide-tablet {
+		display: none !important;
+	}
+}
+@media (max-width: config.$mbpMM) {
+	.hide-mobile {
+		display: none !important;
 	}
 }
 
