@@ -1067,4 +1067,21 @@ body {
 			}
 		}
 	}
+
+	&-total-statistics {
+		&__content {
+			display: flex;
+			justify-content: space-between;
+		}
+		&__item {
+			flex: 1 1 auto;
+			max-width: 200px;
+			display: flex;
+			flex-direction: column;
+			gap: 5px;
+		}
+		&__description {
+			color: var(--dark-300);
+		}
+	}
 }
