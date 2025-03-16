@@ -1059,16 +1059,21 @@ body {
 				width: 100%;
 				display: grid;
 				grid-template-columns: var(--columns);
-				padding: 20px 0px;
-				border-radius: 12px;
-
-				border: 1px solid transparent;
-				cursor: pointer;
-
-				@media (hover: hover) {
-					&:hover {
-						background: var(--light-table-hover);
+				
+				&_plain {
+					padding: 20px 0px;
+					border-radius: 12px;
+					border: 1px solid transparent;
+				}
+				&_hoverable {
+					@media (hover: hover) {
+						&:hover {
+							background: var(--light-table-hover);
+						}
 					}
+				}
+				&_clickable {
+					cursor: pointer;
 				}
 			}
 			&__column {
@@ -1081,8 +1086,12 @@ body {
 		@media (max-width: config.$mbpMM) {
 			&-body {
 				&__item {
-					background: var(--light-table-hover);
-					padding: 10px 0px;
+					&_plain {
+						padding: 10px 0px;
+					}
+					&_hoverable {
+						background: var(--light-table-hover);
+					}
 				}
 			}
 		}
