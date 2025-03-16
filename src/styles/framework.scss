@@ -331,12 +331,12 @@ body {
 		display: none !important;
 	}
 }
-@media (max-width: config.$mbpT) and (min-width: mixins.px(config.$mbpMMNu + 1)) {
+@media (max-width: config.$mbpT) and (min-width: config.$mbpM) {
 	.hide-tablet {
 		display: none !important;
 	}
 }
-@media (max-width: config.$mbpMM) {
+@media (max-width: mixins.px(config.$mbpMNu - 1)) {
 	.hide-mobile {
 		display: none !important;
 	}
