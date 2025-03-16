@@ -1113,6 +1113,18 @@ body {
 	&-last-payments {
 		&-table {
 			--columns: repeat(4, 1fr);
+
+			&-head {
+				padding-left: 40px;
+				padding-right: 14px;
+			}
+			&__comment {
+				color: var(--dark-600);
+			}
+
+			.account-table-body__item {
+				padding-left: 24px;
+			}
 		}
 	}
 }

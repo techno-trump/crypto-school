@@ -48,7 +48,7 @@ import Layout from 'src/layouts/Layout.astro'
           <h5 class="account-block__title text">Останні виплати</h5>
           
           <table class="account-table account-last-payments-table">
-            <thead class="account-table-head">
+            <thead class="account-table-head account-last-payments-table-head">
               <td class="account-table-head__column">Дата</td>
               <td class="account-table-head__column">Сумма виплати</td>
               <td class="account-table-head__column">Статус виплати</td>
@@ -64,7 +64,33 @@ import Layout from 'src/layouts/Layout.astro'
                     <div class="text-small color-primary">24.05.2024 16:30</div>
                     <div class="text-small color-primary">$230</div>
                     <div class="text-small color-orange">Виконується</div>
-                    <div class="text-small account-last-payments-table__comment">Виконується</div>
+                    <div class="text-small account-last-payments-table__comment"></div>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="status-line">
+                  <div class="status-line-indicator status-line-indicator_orange"></div>
+
+                  <div class="account-table-body__item">
+                    <div class="text-small color-primary">24.05.2024 16:30</div>
+                    <div class="text-small color-primary">$130</div>
+                    <div class="text-small color-success">Успішно</div>
+                    <div class="text-small account-last-payments-table__comment"></div>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="status-line">
+                  <div class="status-line-indicator status-line-indicator_orange"></div>
+
+                  <div class="account-table-body__item">
+                    <div class="text-small color-primary">24.05.2024 16:30</div>
+                    <div class="text-small color-primary">$230</div>
+                    <div class="text-small color-danger">Помилка</div>
+                    <div class="text-small account-last-payments-table__comment">Неправильні реквізити</div>
                   </div>
                 </td>
               </tr>
