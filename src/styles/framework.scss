@@ -1055,6 +1055,7 @@ body {
 			width: 100%;
 			display: grid;
 			grid-template-columns: var(--columns);
+			align-items: center;
 			padding: 20px 0px;
 			gap: 10px;
 
@@ -1077,6 +1078,7 @@ body {
 				width: 100%;
 				display: grid;
 				grid-template-columns: var(--columns);
+				align-items: center;
 				gap: 10px;
 				
 				&_plain {
@@ -1135,6 +1137,10 @@ body {
 			}
 			&_status &-body__item {
 				padding-left: 10px;
+			}
+			&_compressed &-head {
+				padding-top: 12px;
+				padding-bottom: 12px;
 			}
 		}
 	}
