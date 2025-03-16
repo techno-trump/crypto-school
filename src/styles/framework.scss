@@ -1083,6 +1083,14 @@ body {
 				gap: 15px;
 			}
 		}
+
+		&_status &-head {
+			padding-left: 40px;
+			padding-right: 14px;
+		}
+		&_status &-body__item {
+			padding-left: 24px;
+		}
 		@media (max-width: config.$mbpMM) {
 			&-body {
 				&__item {
@@ -1093,6 +1101,13 @@ body {
 						background: var(--light-table-hover);
 					}
 				}
+			}
+			&_status &-head {
+				padding-left: 0px;
+				padding-right: 10px;
+			}
+			&_status &-body__item {
+				padding-left: 10px;
 			}
 		}
 	}
