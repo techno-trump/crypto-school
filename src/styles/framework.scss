@@ -7538,10 +7538,6 @@ body {
 		gap: 15px;
 	}
 
-	&__main-text,
-	&__safety-text {
-		margin-bottom: 5px;
-	}
 	&__safety {
 		margin-top: 60px;
 	}
@@ -7807,7 +7803,7 @@ body {
 			font-size: 12px;
 		}
 		&__main-label + &__main-label {
-			margin-top: 0;
+			margin-top: 15px;
 		}
 		&__safety-btn,
 		&__main-btn {
