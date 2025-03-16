@@ -1145,5 +1145,22 @@ body {
 				color: var(--dark-600);
 			}
 		}
+		@media (min-width: config.$mbpT) {
+			&-table {
+				.text {
+					font-size: 16px;
+				}
+			}
+		}
+		@media (max-width: config.$mbpMM) {
+			&-table {
+				--columns: 2fr 2fr 3fr;
+
+				.account-table-head__column:last-child,
+				&__comment {
+					display: none;
+				}
+			}
+		}
 	}
 }
