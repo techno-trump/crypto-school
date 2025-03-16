@@ -1,0 +1,23 @@
+---
+---
+<div class="account-layout">
+  <div class="account-layout-column account-layout-sidebar">
+    <div class="account-layout-column-slice account-layout-sidebar__top">
+      <slot name="sidebar-top" />
+    </div>
+
+    <div class="account-layout-column-slice account-layout-sidebar__bottom">
+      <slot name="sidebar-bottom" />
+    </div>
+  </div>
+
+  <div class="account-layout-column account-layout-center">
+    <div class="account-layout-column-slice account-layout-center__top">
+      <slot name="center-top" />
+    </div>
+
+    <div class="account-layout-column-slice account-layout-center-bottom">
+      <slot name="center-bottom" />
+    </div>
+  </div>
+</div>

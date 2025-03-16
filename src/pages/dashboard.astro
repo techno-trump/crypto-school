@@ -1,201 +1,186 @@
 ---
+import AccountLayout from 'src/layouts/AccountLayout.astro'
 import AccountGreeting from 'src/components/AccountGreeting.astro'
 import AccountMenu from 'src/components/AccountMenu.astro'
-import Button from 'src/components/basic/Button.astro'
+import AccountMore from 'src/components/basic/AccountMore.astro'
 import Layout from 'src/layouts/Layout.astro'
 
 ---
 <Layout title="Крипто школа" description="Крипто школа">
   <div class="container">
-    <div class="account-layout">
-      <div class="account-layout-column account-layout-sidebar">
-        <div class="account-layout-column-slice account-layout-sidebar__top">
-          <AccountMenu />
-        </div>
+    <AccountLayout>
+      <AccountMenu slot="sidebar-top" />
 
-        <div class="account-layout-column-slice account-layout-sidebar__bottom">
-          <div class="account-block account-rating">
-            <h5 class="account-block__title">
-              <span class="icon-thunder color-orange"></span>
-              <span class="text">Рейтинг</span>
-            </h5>
-  
-            <table class="account-table account-rating-table">
-              <thead class="account-table-head">
-                <td class="account-table-head__column">Місце</td>
-                <td class="account-table-head__column">Імя та призвище</td>
-                <td class="account-table-head__column">Creoin</td>
-              </thead>
-              <tbody class="account-table-body">
-                <tr class="account-table-body__item">
-                  <td class="account-table-body__column text-small color-primary">1</td>
-                  <td class="account-table-body__column text-small">danicon01</td>
-                  <td class="account-table-body__column color-orange">
-                    <span class="text-small color-orange">+5</span>
-                    <img src="./assets/img/dashboard/statistics-star.svg">
-                  </td>
-                </tr>
-                <tr class="account-table-body__item">
-                  <td class="account-table-body__column text-small color-primary">2</td>
-                  <td class="account-table-body__column text-small">danicon01</td>
-                  <td class="account-table-body__column color-orange">
-                    <span class="text-small color-orange">+5</span>
-                    <img src="./assets/img/dashboard/statistics-star.svg">
-                  </td>
-                </tr>
-                <tr class="account-table-body__item">
-                  <td class="account-table-body__column text-small color-primary">3</td>
-                  <td class="account-table-body__column text-small">danicon01</td>
-                  <td class="account-table-body__column color-orange">
-                    <span class="text-small color-orange">+5</span>
-                    <img src="./assets/img/dashboard/statistics-star.svg">
-                  </td>
-                </tr>
-                <tr class="account-table-body__item">
-                  <td class="account-table-body__column text-small color-primary">4</td>
-                  <td class="account-table-body__column text-small">danicon01</td>
-                  <td class="account-table-body__column color-orange">
-                    <span class="text-small color-orange">+5</span>
-                    <img src="./assets/img/dashboard/statistics-star.svg">
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+      <div class="account-block account-rating" slot="sidebar-bottom">
+        <h5 class="account-block__title">
+          <span class="icon-thunder color-orange"></span>
+          <span class="text">Рейтинг</span>
+        </h5>
 
-            <button class="account-more">
-              <span class="text-small color-primary">Показати ще</span>
-              <span class="icon-arrow-right-small color-orange account-more__icon"></span>
-            </button>
-          </div>
-        </div>
+        <table class="account-table account-rating-table">
+          <thead class="account-table-head">
+            <td class="account-table-head__column">Місце</td>
+            <td class="account-table-head__column">Імя та призвище</td>
+            <td class="account-table-head__column">Creoin</td>
+          </thead>
+          <tbody class="account-table-body">
+            <tr class="account-table-body__item">
+              <td class="account-table-body__column text-small color-primary">1</td>
+              <td class="account-table-body__column text-small">danicon01</td>
+              <td class="account-table-body__column color-orange">
+                <span class="text-small color-orange">+5</span>
+                <img src="./assets/img/dashboard/statistics-star.svg">
+              </td>
+            </tr>
+            <tr class="account-table-body__item">
+              <td class="account-table-body__column text-small color-primary">2</td>
+              <td class="account-table-body__column text-small">danicon01</td>
+              <td class="account-table-body__column color-orange">
+                <span class="text-small color-orange">+5</span>
+                <img src="./assets/img/dashboard/statistics-star.svg">
+              </td>
+            </tr>
+            <tr class="account-table-body__item">
+              <td class="account-table-body__column text-small color-primary">3</td>
+              <td class="account-table-body__column text-small">danicon01</td>
+              <td class="account-table-body__column color-orange">
+                <span class="text-small color-orange">+5</span>
+                <img src="./assets/img/dashboard/statistics-star.svg">
+              </td>
+            </tr>
+            <tr class="account-table-body__item">
+              <td class="account-table-body__column text-small color-primary">4</td>
+              <td class="account-table-body__column text-small">danicon01</td>
+              <td class="account-table-body__column color-orange">
+                <span class="text-small color-orange">+5</span>
+                <img src="./assets/img/dashboard/statistics-star.svg">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <AccountMore />
       </div>
 
-      <div class="account-layout-column account-layout-center">
-        <div class="account-layout-column-slice account-layout-center__top">
-          <AccountGreeting />
-        </div>
+      <AccountGreeting slot="center-top" />
 
-        <div class="account-layout-column-slice account-layout-center-bottom">
-          <div class="account-block account-statistics">
-            <div class="account-statistics-item">
-              <div class="account-statistics-item__icon">
-                <img src="./assets/img/dashboard/statistics-star.svg" alt="">
-              </div>
-              <h5 class="account-statistics-item__value h5 color-primary">341</h5>
-              <div class="account-statistics-item__description text-small">Отримано поінтів</div>
+      <Fragment slot="center-bottom">
+        <div class="account-block account-statistics">
+          <div class="account-statistics-item">
+            <div class="account-statistics-item__icon">
+              <img src="./assets/img/dashboard/statistics-star.svg" alt="">
             </div>
-      
-            <div class="account-statistics-item">
-              <div class="account-statistics-item__icon">
-                <img src="./assets/img/dashboard/statistics-calendar.svg" alt="">
-              </div>
-              <h5 class="account-statistics-item__value h5 color-primary">304</h5>
-              <div class="account-statistics-item__description text-small">Днів на проєкті</div>
-            </div>
-      
-            <div class="account-statistics-item">
-              <div class="account-statistics-item__icon">
-                <img src="./assets/img/dashboard/statistics-profit.svg" alt="">
-              </div>
-              <h5 class="account-statistics-item__value h5 color-primary">6</h5>
-              <div class="account-statistics-item__description text-small">Місце в рейтингу</div>
-            </div>
+            <h5 class="account-statistics-item__value h5 color-primary">341</h5>
+            <div class="account-statistics-item__description text-small">Отримано поінтів</div>
           </div>
-
-          <div class="account-block">
-            <h5 class="account-block__title text">Останні завданя</h5>
-        
-            <div class="account-last-tasks__items">
-              <div class="status-line account-last-tasks-item account-last-tasks-item_minimal">
-                <div class="status-line-indicator status-line-indicator_green"></div>
-                <div class="account-last-tasks-item__body">
-                  <div class="account-last-tasks-item__content">
-                    <h6 class="account-last-tasks-item__title text">Відкритий</h6>
-                  </div>
-        
-                  <div class="account-last-tasks-item__details">
-                    <div class="text-small color-orange">+5</div>
-                    <button class="account-last-tasks-item__link">
-                      <span class="icon-play-triangle-right"></span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-        
-              <div class="status-line account-last-tasks-item">
-                <div class="status-line-indicator status-line-indicator_orange"></div>
-                <div class="account-last-tasks-item__body">
-                  <div class="account-last-tasks-item__content">
-                    <div class="account-last-tasks-item__pretitle text-small color-primary">
-                      Поток Crypto education Factory от Crypto |  Sjft  | Tools
-                    </div>
-                    <h6 class="account-last-tasks-item__title text">DEX  обзор universety tools</h6>
-                    <div class="account-last-tasks-item__subtitle text-small">
-                      Відкритий
-                    </div>
-                  </div>
-        
-                  <div class="account-last-tasks-item__details">
-                    <div class="text-small color-orange">+5</div>
-                    <button class="account-last-tasks-item__link">
-                      <span class="icon-play-triangle-right"></span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-        
-              <div class="status-line account-last-tasks-item">
-                <div class="status-line-indicator status-line-indicator_red"></div>
-                <div class="account-last-tasks-item__body">
-                  <div class="account-last-tasks-item__content">
-                    <div class="account-last-tasks-item__pretitle text-small color-primary">
-                      Поток Crypto education Factory от Crypto |  Sjft  | Tools
-                    </div>
-                    <h6 class="account-last-tasks-item__title text">DEX  обзор universety tools</h6>
-                    <div class="account-last-tasks-item__subtitle text-small">
-                      Закрытый
-                    </div>
-                  </div>
-        
-                  <div class="account-last-tasks-item__details">
-                    <div class="text-small color-orange">+5</div>
-                    <button class="account-last-tasks-item__link">
-                      <span class="icon-play-triangle-right"></span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-        
-              <div class="status-line account-last-tasks-item">
-                <div class="status-line-indicator status-line-indicator_red"></div>
-                <div class="account-last-tasks-item__body">
-                  <div class="account-last-tasks-item__content">
-                    <div class="account-last-tasks-item__pretitle text-small color-primary">
-                      Поток Crypto education Factory от Crypto |  Sjft  | Tools
-                    </div>
-                    <h6 class="account-last-tasks-item__title text">DEX  обзор universety tools</h6>
-                    <div class="account-last-tasks-item__subtitle text-small">
-                      Закрытый
-                    </div>
-                  </div>
-        
-                  <div class="account-last-tasks-item__details">
-                    <div class="text-small color-orange">+5</div>
-                    <button class="account-last-tasks-item__link">
-                      <span class="icon-play-triangle-right"></span>
-                    </button>
-                  </div>
-                </div>
-              </div>
+    
+          <div class="account-statistics-item">
+            <div class="account-statistics-item__icon">
+              <img src="./assets/img/dashboard/statistics-calendar.svg" alt="">
             </div>
-        
-            <button class="account-more">
-              <span class="text-small color-primary">Показати ще</span>
-              <span class="icon-arrow-right-small color-orange account-more__icon"></span>
-            </button>
+            <h5 class="account-statistics-item__value h5 color-primary">304</h5>
+            <div class="account-statistics-item__description text-small">Днів на проєкті</div>
+          </div>
+    
+          <div class="account-statistics-item">
+            <div class="account-statistics-item__icon">
+              <img src="./assets/img/dashboard/statistics-profit.svg" alt="">
+            </div>
+            <h5 class="account-statistics-item__value h5 color-primary">6</h5>
+            <div class="account-statistics-item__description text-small">Місце в рейтингу</div>
           </div>
         </div>
-      </div>
-    </div>
+
+        <div class="account-block">
+          <h5 class="account-block__title text">Останні завданя</h5>
+      
+          <div class="account-last-tasks__items">
+            <div class="status-line account-last-tasks-item account-last-tasks-item_minimal">
+              <div class="status-line-indicator status-line-indicator_green"></div>
+              <div class="account-last-tasks-item__body">
+                <div class="account-last-tasks-item__content">
+                  <h6 class="account-last-tasks-item__title text">Відкритий</h6>
+                </div>
+      
+                <div class="account-last-tasks-item__details">
+                  <div class="text-small color-orange">+5</div>
+                  <button class="account-last-tasks-item__link">
+                    <span class="icon-play-triangle-right"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+      
+            <div class="status-line account-last-tasks-item">
+              <div class="status-line-indicator status-line-indicator_orange"></div>
+              <div class="account-last-tasks-item__body">
+                <div class="account-last-tasks-item__content">
+                  <div class="account-last-tasks-item__pretitle text-small color-primary">
+                    Поток Crypto education Factory от Crypto |  Sjft  | Tools
+                  </div>
+                  <h6 class="account-last-tasks-item__title text">DEX  обзор universety tools</h6>
+                  <div class="account-last-tasks-item__subtitle text-small">
+                    Відкритий
+                  </div>
+                </div>
+      
+                <div class="account-last-tasks-item__details">
+                  <div class="text-small color-orange">+5</div>
+                  <button class="account-last-tasks-item__link">
+                    <span class="icon-play-triangle-right"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+      
+            <div class="status-line account-last-tasks-item">
+              <div class="status-line-indicator status-line-indicator_red"></div>
+              <div class="account-last-tasks-item__body">
+                <div class="account-last-tasks-item__content">
+                  <div class="account-last-tasks-item__pretitle text-small color-primary">
+                    Поток Crypto education Factory от Crypto |  Sjft  | Tools
+                  </div>
+                  <h6 class="account-last-tasks-item__title text">DEX  обзор universety tools</h6>
+                  <div class="account-last-tasks-item__subtitle text-small">
+                    Закрытый
+                  </div>
+                </div>
+      
+                <div class="account-last-tasks-item__details">
+                  <div class="text-small color-orange">+5</div>
+                  <button class="account-last-tasks-item__link">
+                    <span class="icon-play-triangle-right"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+      
+            <div class="status-line account-last-tasks-item">
+              <div class="status-line-indicator status-line-indicator_red"></div>
+              <div class="account-last-tasks-item__body">
+                <div class="account-last-tasks-item__content">
+                  <div class="account-last-tasks-item__pretitle text-small color-primary">
+                    Поток Crypto education Factory от Crypto |  Sjft  | Tools
+                  </div>
+                  <h6 class="account-last-tasks-item__title text">DEX  обзор universety tools</h6>
+                  <div class="account-last-tasks-item__subtitle text-small">
+                    Закрытый
+                  </div>
+                </div>
+      
+                <div class="account-last-tasks-item__details">
+                  <div class="text-small color-orange">+5</div>
+                  <button class="account-last-tasks-item__link">
+                    <span class="icon-play-triangle-right"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+          <AccountMore />
+        </div>
+      </Fragment>
+    </AccountLayout>
   </div>
 </Layout>
