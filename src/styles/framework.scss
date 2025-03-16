@@ -577,12 +577,17 @@ body {
 		}
 		&__horizontal-row {
 			border: 0.3px solid var(--light-horizontal-row);
+			margin-bottom: 30px;
 		}
 		@media (max-width: config.$mbpMM) {
 			padding: 16px;
 
 			&__title {
 				margin-bottom: 24px;
+			}
+			&__horizontal-row {
+				border: 0.3px solid var(--light-horizontal-row);
+				margin-bottom: 16px;
 			}
 		}
 	}
