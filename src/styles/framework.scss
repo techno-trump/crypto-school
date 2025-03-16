@@ -575,15 +575,26 @@ body {
 			align-items: center;
 			gap: 10px;
 		}
+		&_compressed &__title {
+			margin-bottom: 20px;
+		}
 		&__horizontal-row {
 			border: 0.3px solid var(--light-horizontal-row);
 			margin-bottom: 30px;
+		}
+		@media (max-width: config.$mbpT) {
+			&_compressed &__title {
+				margin-bottom: 30px;
+			}
 		}
 		@media (max-width: config.$mbpMM) {
 			padding: 16px;
 
 			&__title {
-				margin-bottom: 24px;
+				margin-bottom: 20px;
+			}
+			&_compressed &__title {
+				margin-bottom: 16px;
 			}
 			&__horizontal-row {
 				border: 0.3px solid var(--light-horizontal-row);
