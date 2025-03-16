@@ -50,9 +50,9 @@ import Layout from 'src/layouts/Layout.astro'
           <table class="account-table account-table_status account-last-payments-table">
             <thead class="account-table-head">
               <td class="account-table-head__column">Дата</td>
-              <td class="account-table-head__column">Сумма виплати</td>
-              <td class="account-table-head__column">Статус виплати</td>
-              <td class="account-table-head__column">Коментар</td>
+              <td class="account-table-head__column">Сумма <span class="hide-mobile">виплати</span></td>
+              <td class="account-table-head__column">Статус <span class="hide-mobile">виплати</span></td>
+              <td class="account-table-head__column hide-mobile">Коментар</td>
             </thead>
 
             <tbody class="account-table-body">
@@ -61,10 +61,10 @@ import Layout from 'src/layouts/Layout.astro'
                   <div class="status-line-indicator status-line-indicator_orange"></div>
 
                   <div class="account-table-body__item">
-                    <div class="text color-primary">24.05.2024 16:30</div>
+                    <div class="text color-primary"><span class="hide-mobile">24.05.2024</span> 16:30</div>
                     <div class="text color-primary">$230</div>
                     <div class="text color-orange">Виконується</div>
-                    <div class="text account-last-payments-table__comment"></div>
+                    <div class="text account-last-payments-table__comment hide-mobile"></div>
                   </div>
                 </td>
               </tr>
@@ -74,10 +74,10 @@ import Layout from 'src/layouts/Layout.astro'
                   <div class="status-line-indicator status-line-indicator_green"></div>
 
                   <div class="account-table-body__item">
-                    <div class="text color-primary">24.05.2024 16:30</div>
+                    <div class="text color-primary"><span class="hide-mobile">24.05.2024</span> 16:30</div>
                     <div class="text color-primary">$130</div>
                     <div class="text color-success">Успішно</div>
-                    <div class="text account-last-payments-table__comment"></div>
+                    <div class="text account-last-payments-table__comment hide-mobile"></div>
                   </div>
                 </td>
               </tr>
@@ -87,10 +87,10 @@ import Layout from 'src/layouts/Layout.astro'
                   <div class="status-line-indicator status-line-indicator_red"></div>
 
                   <div class="account-table-body__item">
-                    <div class="text color-primary">24.05.2024 16:30</div>
+                    <div class="text color-primary"><span class="hide-mobile">24.05.2024</span> 16:30</div>
                     <div class="text color-primary">$230</div>
                     <div class="text color-danger">Помилка</div>
-                    <div class="text account-last-payments-table__comment">Неправильні реквізити</div>
+                    <div class="text account-last-payments-table__comment hide-mobile">Неправильні реквізити</div>
                   </div>
                 </td>
               </tr>
