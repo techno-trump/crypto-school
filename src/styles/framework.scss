@@ -1540,4 +1540,162 @@ body {
 			column-gap: 10px;
 		}
 	}
+
+	&-total-statistics {
+		&__content {
+			display: flex;
+			justify-content: space-between;
+		}
+		&__item {
+			flex: 1 1 auto;
+			max-width: 200px;
+			display: flex;
+			flex-direction: column;
+			gap: 5px;
+		}
+		&__description {
+			color: var(--dark-300);
+		}
+		@media (max-width: config.$mbpT) {
+			&__content {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				grid-template-rows: 1fr 1fr;
+				gap: 30px;
+			}
+		}
+		@media (max-width: config.$mbpMM) {
+			&__content {
+				gap: 16px;
+			}
+		}
+	}
+
+	&-last-payments {
+		&-table {
+			--columns: 25fr 20fr 20fr 35fr;
+
+			&__comment {
+				color: var(--dark-600);
+			}
+		}
+		@media (min-width: config.$mbpT) {
+			&-table {
+				.text {
+					font-size: 16px;
+				}
+			}
+		}
+		@media (max-width: config.$mbpT) {
+			&-table {
+				--columns: 30fr 20fr 20fr 20fr;
+			}
+		}
+		@media (max-width: config.$mbpMM) {
+			&-table {
+				--columns: 2fr 2fr 4fr;
+			}
+		}
+	}
+
+	&-my-referrals {
+		&-table {
+			--columns: 25fr 30fr 50fr;
+		
+			&__status-default {
+				color: var(--dark-600);
+			}
+		}	
+		@media (min-width: config.$mbpT) {
+			&-table {
+				.text {
+					font-size: 16px;
+				}
+			}
+		}
+		@media (max-width: config.$mbpT) {
+			&-table {
+				--columns: 2fr 2fr 4fr;
+			}
+		}
+	}
+}
+
+.account-total-statistics {
+	&__content {
+		display: flex;
+		justify-content: space-between;
+	}
+	&__item {
+		flex: 1 1 auto;
+		max-width: 200px;
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+	}
+	&__description {
+		color: var(--dark-300);
+	}
+	@media (max-width: config.$mbpT) {
+		&__content {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: 1fr 1fr;
+			gap: 30px;
+		}
+	}
+	@media (max-width: config.$mbpMM) {
+		&__content {
+			gap: 16px;
+		}
+	}
+}
+
+.account-last-payments {
+	&-table {
+		--columns: 25fr 20fr 20fr 35fr;
+
+		&__comment {
+			color: var(--dark-600);
+		}
+	}
+	@media (min-width: config.$mbpT) {
+		&-table {
+			.text {
+				font-size: 16px;
+			}
+		}
+	}
+	@media (max-width: config.$mbpT) {
+		&-table {
+			--columns: 30fr 20fr 20fr 20fr;
+		}
+	}
+	@media (max-width: config.$mbpMM) {
+		&-table {
+			--columns: 2fr 2fr 4fr;
+		}
+	}
+}
+
+.account-my-referrals {
+	&-table {
+		--columns: 25fr 30fr 50fr;
+	
+		&__status-default {
+			color: var(--dark-600);
+		}
+	}	
+	@media (min-width: config.$mbpT) {
+		&-table {
+			.text {
+				font-size: 16px;
+			}
+		}
+	}
+	@media (max-width: config.$mbpT) {
+		&-table {
+			--columns: 2fr 2fr 4fr;
+		}
+	}
 }
