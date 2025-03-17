@@ -9,11 +9,25 @@
 
 	--separator-color: #CACACA33;
 	--light-background-color: #FFFFFF;
-	--theme-switch-secondary-color: #E2EDEF;
+	
 	--brand-primary-color: #19a9dd;
 	--light-border-color: #EEEEEE;
 
-	--light-primary-color: #285335;
+	--primary-color: #285335;
+	--hover-primary-color: #37804D;
+
+	// Theme switch
+	--theme-switch-icons-color: #E2EDEF;
+	--theme-switch-body-color: #E2EDEF;
+	--theme-switch-thumb-color: var(--primary-color);
+	--theme-switch-hover-thumb-color: var(--hover-primary-color);
+
+	// Docked theme switch
+	--docked-theme-switch-icons-color: white;
+	--docked-theme-switch-body-color: white;
+	--docked-theme-switch-thumb-color: var(--primary-color);
+	--docked-theme-switch-hover-thumb-color: var(--hover-primary-color);
+
 	--status-success: #75C132;
 	--status-warning: #F0AD3E;
 	--status-danger: #F03E3E;
@@ -24,6 +38,23 @@
 	--light-palette-gradient: linear-gradient(to right bottom, #FFFFFF2C, #FFFFFF);
 	--light-palette-active-gradient: linear-gradient(to right bottom, #FFFFFF2C 0%, #EDF9F247 47%, #D8F2E3 100%);
 	--light-palette-outline: #FFFFFF;
+	--light-dimmed-palette-outline: #EFEFEF;
+
+	--header-top-color: #D2DEE1;
+	--header-main-background: white;
+	--header-text-color: black;
+	--header-hover-text-color: var(--primary-color);
+	--header-separator-color: #CACACA33;
+	--header-social-color: var(--primary-color);
+	--header-social-hover-color: var(--hover-primary-color);
+
+	--login-btn-color: black;
+	--login-btn-icon-color: var(--primary-color);
+	--login-btn-border-color: var(--primary-color);
+
+	--login-btn-hover-color: black;
+	--login-btn-hover-icon-color: var(--hover-primary-color);
+	--login-btn-hover-border-color: var(--hover-primary-color);
 
 	--light-horizontal-row: #cbd7db80;
 
@@ -32,12 +63,6 @@
 	--white: #ffffff;
 	--black: #000000;
 
-	--dark-100: #160E0E;
-	--dark-200: #515050;
-	--dark-300: #4B4F4B;
-	--dark-500: #919191;
-	--dark-600: #B0B0B0;
-	--dark-700: #C8D4D8;
 
 	--header-height: 100px;
 	--footer-height: 100px;
@@ -45,7 +70,15 @@
 	--container-padding: 30px;
 
 	// temporary until themes are not implemented in js
-	--primary-color: var(--light-primary-color);
+	--dimmed-palette-outline: var(--light-dimmed-palette-outline);
+
+	
+
+	--portal-menu-dropdown-background-color: #FFFFFF;
+	--portal-menu-dropdown-border-color: #EEEEEE;
+	--portal-menu-group-arrow-color: currentColor;
+
+	--mobile-menu-item-active-background: linear-gradient(182deg, rgba(255, 255, 255, 0.44) 36.43%, #D8F2E3 87.54%);
 
 	--home-background-gradient: var(--light-home-background-gradient);
 	--background: var(--light-background);
@@ -53,6 +86,42 @@
 	--palette-gradient: var(--light-palette-gradient);
 	--palette-active-gradient: var(--light-palette-active-gradient);
 	--palette-outline: var(--light-palette-outline);
+
+	--burger-btn-color: white;
+	--burger-btn-hover-color: var(--primary-color);
+
+}
+html[data-theme="dark"] {
+	--primary-color: #3150FF;
+	--hover-primary-color: #3150ffda;
+
+	--header-main-background: linear-gradient(152.86deg, rgba(81, 81, 81, 0.396) 25.99%, rgba(29, 29, 29, 0.9) 100.03%);
+
+	// Theme switch
+	--theme-switch-icons-color: #E2EDEF;
+	--theme-switch-body-color: #E2EDEF;
+	--theme-switch-thumb-color: var(--primary-color);
+	--theme-switch-hover-thumb-color: var(--hover-primary-color);
+
+	// Docked theme switch
+	--docked-theme-switch-icons-color: #E2EDEF;
+	--docked-theme-switch-body-color: #4C4C4C;
+	--docked-theme-switch-thumb-color: var(--primary-color);
+	--docked-theme-switch-hover-thumb-color: var(--hover-primary-color);
+
+	--header-top-color: #414141;
+	--header-text-color: white;
+	--header-separator-color: #FFFFFF1A;
+
+	--header-social-color: #FFFFFF;
+	--header-social-hover-color: var(--primary-color);
+
+	--portal-menu-dropdown-background-color: #323232;
+	--portal-menu-dropdown-border-color: #EEEEEE;
+	--portal-menu-group-arrow-color: var(--primary-color);
+
+	--login-btn-color: var(--primary-color);
+	--login-btn-hover-color: var(--hover-primary-color);
 }
 @media (max-width: config.$mbpT) {
 	:root {
@@ -79,6 +148,12 @@ body {
 	font-size: 0;
 	&_header {
 		width: 176px;
+		@media (max-width: config.$mbpT) {
+			width: 140px;
+		}
+		@media (max-width: config.$mbpM) {
+			width: 120px;
+		}
 	}
 	// &_invert {
 	// 	filter: invert(1);
@@ -86,43 +161,6 @@ body {
 	&__img {
 		width: 100%;
 		height: 100%;
-	}
-}
-
-.btn {
-	display: inline-block;
-	white-space: nowrap;
-	transition: color 0.3s, background-color 0.3s, transform 0.3s, opacity 0.3s, box-shadow 0.3s, border-color 0.3s;
-	color: var(--color, black);
-	background-color: var(--bg-color, transparent);
-	cursor: pointer;
-	text-align: center;
-	&_primary {
-		--color: var(--light-900);
-		--bg-color: var(--dark-900);
-		--hover-bg-color: var(--dark-907);
-		padding: 14px 20px;
-		border-radius: 5px;
-	}
-	&_social {
-		padding: 4px;
-	}
-	&_social &__icon {
-		font-size: 24px;
-	}
-	@media (any-hover: hover) {
-		&:hover {
-			color: var(--hover-color, var(--color));
-			--bg-color: var(--hover-bg-color);
-			//background-color: var(--hover-bg-color, var(--bg-color, transparent));
-			transform: var(--hover-transform, none);
-			opacity: var(--hover-opacity, 1);
-			//box-shadow: 5px 5px 15px 0px var(--hover-shadow-color, transparent);
-			border-color: var(--hover-border-color, var(--border-color, transparent));
-		}
-	}
-	&:disabled {
-		opacity: 0.6;
 	}
 }
 .ratio-wrap {
@@ -300,11 +338,22 @@ body {
 	flex: 0 0 100%;
 }
 .button {
+	color: var(--color, currentColor);
 	display: flex;
 	align-items: center;
 	gap: 10px;
 	padding: 20px 40px;
 	border-radius: 5px;
+	transition: border-color 0.3s, color 0.3s;
+	@media (any-hover: hover) {
+		&:hover {
+			color: var(--hover-color, var(--color));
+			border-color: var(--hover-border-color, var(--border-color, transparent));
+		}
+		&:hover &__icon {
+			color: var(--hover-icon-color);
+		}
+	}
 	&_filled {
 		background-color: var(--primary-color);
 		border: 1px solid var(--primary-color);
@@ -328,10 +377,17 @@ body {
 		border-width: 2px;
 	}
 	&_small {
-		padding: 12px 25px;
+		gap: 6px;
+		border-radius: 8px;
+		padding: 14px 25px;
 	}
 	&_block {
 		@include button_block;
+	}
+	&__icon {
+		color: var(--icon-color);
+		font-size: 1.1em;
+		transition: color 0.3s;
 	}
 	&:disabled {
 		opacity: 0.5;
@@ -414,7 +470,7 @@ body {
 	overflow: hidden;
 	position: relative;
 	border-radius: 15px;
-	border: 1px solid var(--palette-outline);
+	border: 1px solid var(--border-color, var(--palette-outline));
 
 	&::before {
 		content: '';
@@ -802,67 +858,6 @@ body {
 			color: var(--dark-300);
 		}
 	}
-	&-item {
-		@include palette-background;
-	
-		width: 100%;
-		height: 80px;
-		flex: 0 0 80px;
-	
-		display: flex;
-		align-items: center;
-		gap: 15px;
-		
-		padding: 10px 20px;
-
-		&_active {
-			@include palette-background;
-			@include palette-active-background;
-		}
-		&__icon {
-			position: relative;
-			font-size: 24px;
-			display: flex;
-			align-items: center;
-		}
-		&__name {
-			position: relative;
-		}
-	}
-	@media (max-width: config.$mbpT) {
-		max-width: 100%;
-		flex-direction: row;
-		flex-wrap: wrap;
-
-		&-item {
-			flex: 0 1 calc((100% - 10px) / 3);
-			height: 70px;
-		}
-		&-info {
-			flex: 0 1 calc((100% - 10px) / 3);
-			padding: 10px;
-			height: 70px;
-			gap: 10px;
-
-			&-avatar {
-				flex: 0 0 40px;
-				width: 40px;
-			}
-			&-avatar__circle {
-				padding-top: 2px;
-				flex: 0 0 32px;
-				font-size: 14px;
-			}
-		}
-	}
-	@media (max-width: 700px) {
-		&-info {
-			flex: 1 1 auto;
-		}
-		&-item {
-			flex: 1 1 auto;
-		}
-	}
 }
 
 .account-greeting {
@@ -1139,5 +1134,160 @@ body {
 				}
 			}
 		}
+	}
+}
+.account-menu {
+	max-width: 350px;
+	display: grid;
+	grid-auto-columns: 100%;
+	gap: 5px;
+
+	&_as-drop-down {
+		--border-color: var(--dimmed-palette-outline);
+		grid-auto-columns: max-content;
+	}
+
+	&_horizontal {
+		flex-direction: row;
+	}
+	@media (max-width: config.$mbpT) {
+		max-width: 100%;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+}
+.account-menu-info {
+	@include palette-background(0.88);
+	
+	height: 100px;
+	width: 100%;
+
+	display: flex;
+	align-items: center;
+	gap: 20px;
+
+	padding: 10px 20px;
+	
+	&-info__content {
+		display: flex;
+		flex-direction: column;
+		gap: 2px;
+	}
+	&-lessons {
+		display: flex;
+		align-items: center;
+		gap: 5px;
+	}
+	&-lessons-icon {
+		font-size: 12px;
+		color: var(--primary-color);
+	}
+	&-lessons-icon span {
+		display: block;
+	}
+	&-lessons__amount {
+		color: var(--pr)
+	}
+	&__name {
+		color: var(--dark-300);
+	}
+	@media (max-width: config.$mbpT) {
+		flex: 0 1 calc((100% - 10px) / 3);
+		padding: 10px;
+		height: 70px;
+		gap: 10px;
+
+		&-avatar {
+			flex: 0 0 40px;
+			width: 40px;
+		}
+		&-avatar__circle {
+			padding-top: 2px;
+			flex: 0 0 32px;
+			font-size: 14px;
+		}
+	}
+	@media (max-width: 700px) {
+		flex: 1 1 auto;
+	}
+}
+
+.account-menu-info-avatar {
+	--size: 70px;
+	position: relative;
+	
+	flex-basis: var(--size);
+	width: var(--size);
+	height: var(--size);
+	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+	border: 1px solid var(--dark-700);
+	border-radius: 50%;
+	@media (max-width: config.$mbpT) {
+		--size: 40px;
+	}
+	@media (any-hover: hover) {
+		&:hover &__circle {
+			background-color: var(--hover-primary-color);
+		}
+	}
+	&__circle {
+		background-color: var(--primary-color);
+		color: var(--white);
+		font-size: 25px;
+	
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	
+		flex-basis: calc(var(--size) * 0.8);
+		width: calc(var(--size) * 0.8);
+		height: calc(var(--size) * 0.8);
+		border-radius: 50%;
+
+		transition: background-color 0.3s;
+
+		@media (max-width: config.$mbpT) {
+			padding-top: 2px;
+			font-size: 14px;
+		}
+	}
+}
+
+.account-menu-item {
+	@include palette-background;
+
+	width: 100%;
+	height: 80px;
+	//flex: 0 0 80px;
+
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	
+	padding: 10px 20px;
+
+	&_active {
+		@include palette-background;
+		@include palette-active-background;
+	}
+	&__icon {
+		position: relative;
+		font-size: 24px;
+		display: flex;
+		align-items: center;
+	}
+	&__name {
+		position: relative;
+	}
+	@media (max-width: config.$mbpT) {
+		flex: 0 1 calc((100% - 10px) / 3);
+		height: 70px;
+	}
+	@media (max-width: 700px) {
+		flex: 1 1 auto;
 	}
 }
