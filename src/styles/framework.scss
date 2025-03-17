@@ -63,6 +63,12 @@
 	--white: #ffffff;
 	--black: #000000;
 
+	--dark-100: #160E0E;
+	--dark-200: #515050;
+	--dark-300: #4B4F4B;
+	--dark-500: #919191;
+	--dark-600: #B0B0B0;
+	--dark-700: #C8D4D8;
 
 	--header-height: 100px;
 	--footer-height: 100px;
@@ -73,12 +79,13 @@
 	--dimmed-palette-outline: var(--light-dimmed-palette-outline);
 
 	
-
+	--portal-menu-color: var(--primary-color);
 	--portal-menu-dropdown-background-color: #FFFFFF;
 	--portal-menu-dropdown-border-color: #EEEEEE;
 	--portal-menu-group-arrow-color: currentColor;
+	--portal-menu-item-border-color: #EFEFEF;
 
-	--mobile-menu-item-active-background: linear-gradient(182deg, rgba(255, 255, 255, 0.44) 36.43%, #D8F2E3 87.54%);
+	--portal-menu-item-hover-background: linear-gradient(182deg, rgba(255, 255, 255, 0.44) 36.43%, #D8F2E3 87.54%);
 
 	--home-background-gradient: var(--light-home-background-gradient);
 	--background: var(--light-background);
@@ -87,8 +94,14 @@
 	--palette-active-gradient: var(--light-palette-active-gradient);
 	--palette-outline: var(--light-palette-outline);
 
-	--burger-btn-color: white;
-	--burger-btn-hover-color: var(--primary-color);
+	--burger-btn-color: var(--primary-color);
+	--burger-btn-hover-color: var(--hover-primary-color);
+
+	--cabinet-dropdown-background: white;
+	--cabinet-menu-item-color: var(--primary-color);
+	--cabinet-menu-item-border-color: #EFEFEF;
+	--cabinet-menu-item-hover-color: white;
+	--cabinet-menu-item-hover-background: linear-gradient(182deg, rgba(255, 255, 255, 0.44) 36.43%, #D8F2E3 87.54%);
 
 }
 html[data-theme="dark"] {
@@ -116,12 +129,26 @@ html[data-theme="dark"] {
 	--header-social-color: #FFFFFF;
 	--header-social-hover-color: var(--primary-color);
 
+	--portal-menu-color: white;
 	--portal-menu-dropdown-background-color: #323232;
+	--portal-menu-item-background: linear-gradient(152.86deg, rgba(134, 134, 134, 0.286) 25.99%, rgba(63, 63, 63, 0.65) 100.03%);
+	--portal-menu-item-hover-background: #FFFFFF4D;
 	--portal-menu-dropdown-border-color: #EEEEEE;
 	--portal-menu-group-arrow-color: var(--primary-color);
+	--portal-menu-item-border-color: #7D7D7D;
 
-	--login-btn-color: var(--primary-color);
-	--login-btn-hover-color: var(--hover-primary-color);
+	--login-btn-color: white;
+	--login-btn-hover-color: white;
+
+	--burger-btn-color: white;
+	--burger-btn-hover-color: var(--hover-primary-color);
+
+	--cabinet-dropdown-background: linear-gradient(152.86deg, rgba(81, 81, 81, 0.308) 25.99%, rgba(29, 29, 29, 0.7) 100.03%);
+	--cabinet-menu-item-color: white;
+	--cabinet-menu-item-border-color: #7D7D7D;
+	--cabinet-menu-item-hover-color: white;
+	--cabinet-menu-item-background: linear-gradient(152.86deg, rgba(134, 134, 134, 0.286) 25.99%, rgba(63, 63, 63, 0.65) 100.03%);
+	--cabinet-menu-item-hover-background: linear-gradient(84.38deg, #2F2F2F -4.21%, #7D7D7D 99.93%);
 }
 @media (max-width: config.$mbpT) {
 	:root {
@@ -793,6 +820,13 @@ body {
 	flex-direction: column;
 	gap: 5px;
 
+	&_as-drop-down {
+		@media (max-width: config.$mbpM) {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+
 	&_horizontal {
 		flex-direction: row;
 	}
@@ -1258,10 +1292,10 @@ body {
 }
 
 .account-menu-item {
-	@include palette-background;
-
+	overflow: hidden;
+	position: relative;
 	width: 100%;
-	height: 80px;
+	// height: 80px;
 	//flex: 0 0 80px;
 
 	display: flex;
@@ -1270,9 +1304,44 @@ body {
 	
 	padding: 10px 20px;
 
-	&_active {
-		@include palette-background;
-		@include palette-active-background;
+	border-radius: 15px;
+	border: 1px solid var(--border-color, var(--palette-outline));
+
+	&::before {
+		content: '';
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		transition: opacity 0.3s;
+	}
+	&_drop-down {
+		color: var(--cabinet-menu-item-color);
+		border: 1px solid var(--cabinet-menu-item-border-color);
+		background: var(--cabinet-menu-item-background);
+		padding: 28px 24px;
+		@media (max-width: config.$mbpT) {
+			padding: 20px 24px;
+		}
+		@media (max-width: config.$mbpM) {
+			border-radius: 12px;
+			padding: 18px 12px;
+		}
+	}
+	
+	&_drop-down::before {
+		background: var(--cabinet-menu-item-hover-background);
+	}
+	&_active::before {
+		opacity: 0.9;
+	}
+	@media (any-hover: hover) {
+		&:hover::before {
+			opacity: 0.9;
+		}
 	}
 	&__icon {
 		position: relative;
@@ -1283,10 +1352,10 @@ body {
 	&__name {
 		position: relative;
 	}
-	@media (max-width: config.$mbpT) {
-		flex: 0 1 calc((100% - 10px) / 3);
-		height: 70px;
-	}
+	// @media (max-width: config.$mbpT) {
+	// 	flex: 0 1 calc((100% - 10px) / 3);
+	// 	height: 70px;
+	// }
 	@media (max-width: 700px) {
 		flex: 1 1 auto;
 	}
