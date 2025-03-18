@@ -81,7 +81,10 @@
 
 	// Separators
 	--horizontal-row-color: #cbd7db80;
+	
+	// Table 
 	--table-hover-gradient: linear-gradient(to top, #D9EBDF3A, #D0E7D72B);
+	--table-header-column-color: var(--dark-600);
 
 	// Portal
 	--portal-menu-color: var(--primary-color);
@@ -154,7 +157,10 @@ html[data-theme="dark"] {
 
 	// Separators
 	--horizontal-row-color: #FFFFFF22;
+	
+	// Table 
 	--table-hover-gradient: linear-gradient(to top, #D9EBDF3A, #D0E7D72B);
+	--table-header-column-color: #FFFFFF80;
 
 	// Portal
 	--portal-menu-color: white;
@@ -753,7 +759,7 @@ body {
 
 		&__column {
 			font-family: 'Inter Tight', sans-serif;
-			color: var(--dark-600);
+			color: var(--table-header-column-color);
 			font-size: 14px;
 		}
 	}
