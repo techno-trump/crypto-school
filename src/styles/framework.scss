@@ -33,6 +33,9 @@
 	--primary-color: #285335;
 	--hover-primary-color: #37804D;
 
+	// Texts
+	--text-primary-color: var(--primary-color);
+
 	// Theme switch
 	--theme-switch-icons-color: #E2EDEF;
 	--theme-switch-body-color: #E2EDEF;
@@ -100,6 +103,16 @@
 	--cabinet-menu-item-background: transparent;
 	--cabinet-menu-item-hover-background: linear-gradient(182deg, rgba(255, 255, 255, 0.44) 36.43%, #D8F2E3 87.54%);
 
+	// Account Menu
+	--account-menu-color: var(--primary-color);
+	
+	// Section
+	--section-title-color: var(--white);
+
+	// Rating 
+	--rating-title-icon-color: var(--status-warning);
+	--rating-second-column-text-color: var(--dark-200);
+	--rating-third-column-text-color: var(--primary-color);
 }
 html[data-theme="dark"] {
 	--primary-color: #3150FF;
@@ -107,6 +120,9 @@ html[data-theme="dark"] {
 
 	--header-main-background: linear-gradient(152.86deg, rgba(81, 81, 81, 0.396) 25.99%, rgba(29, 29, 29, 0.9) 100.03%);
 
+	// Texts
+	--text-primary-color: var(--white);
+	
 	// Theme switch
 	--theme-switch-icons-color: #E2EDEF;
 	--theme-switch-body-color: #E2EDEF;
@@ -126,15 +142,19 @@ html[data-theme="dark"] {
 	// Palette
 	--palette-gradient: linear-gradient(to bottom, #5151512C, #1D1D1D);
 	--palette-active-gradient: linear-gradient(to bottom, #DADADA32 0%, #000000);
-	--palette-outline: #FFFFFF;
+	--palette-outline: #3d3d3d;
 	--dimmed-palette-outline: #EFEFEF;
 
 	// Header
 	--header-top-color: #414141;
 	--header-text-color: white;
-	--header-separator-color: #FFFFFF1A;
+	--header-separator-color: #FFFFFF22;
 	--header-social-color: #FFFFFF;
 	--header-social-hover-color: var(--primary-color);
+
+	// Separators
+	--horizontal-row-color: #FFFFFF22;
+	--table-hover-gradient: linear-gradient(to top, #D9EBDF3A, #D0E7D72B);
 
 	// Portal
 	--portal-menu-color: white;
@@ -160,6 +180,17 @@ html[data-theme="dark"] {
 	--cabinet-menu-item-hover-color: white;
 	--cabinet-menu-item-background: linear-gradient(152.86deg, rgba(134, 134, 134, 0.286) 25.99%, rgba(63, 63, 63, 0.65) 100.03%);
 	--cabinet-menu-item-hover-background: linear-gradient(84.38deg, #2F2F2F -4.21%, #7D7D7D 99.93%);
+
+	// Account Menu
+	--account-menu-color: var(--white);
+
+	// Section
+	--section-title-color: var(--white);
+
+	// Rating
+	--rating-title-icon-color: var(--white);
+	--rating-second-column-text-color: var(--white);
+	--rating-third-column-text-color: #A7B4FF;
 }
 @media (max-width: config.$mbpT) {
 	:root {
@@ -655,7 +686,7 @@ body {
 	padding: 30px;
 
 	&__title {
-		color: var(--primary-color);
+		color: var(--text-primary-color);
 		margin-bottom: 30px;
 
 		display: flex;
@@ -1293,7 +1324,7 @@ body {
 
 .account-rating {
 	.icon {
-		color: var(--status-warning);
+		color: var(--rating-title-icon-color);
 		font-size: 20px;
 	}
 	&-table {
@@ -1305,12 +1336,13 @@ body {
 				padding-left: 10px;
 			}
 			&:nth-child(2) {
-				color: var(--dark-200);
+				color: var(--rating-second-column-text-color);
 			}
 			&:nth-child(3) {
 				span {
 					display: block;
 					padding-top: 3px;
+					color: var(--rating-third-column-text-color);
 				}
 				img {
 					max-height: 30px;
