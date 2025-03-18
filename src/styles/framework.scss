@@ -116,6 +116,9 @@
 	--rating-title-icon-color: var(--status-warning);
 	--rating-second-column-text-color: var(--dark-200);
 	--rating-third-column-text-color: var(--primary-color);
+
+	// Statistics
+	--statistics-description-color: var(--dark-300);
 }
 html[data-theme="dark"] {
 	--primary-color: #3150FF;
@@ -197,6 +200,9 @@ html[data-theme="dark"] {
 	--rating-title-icon-color: var(--white);
 	--rating-second-column-text-color: var(--white);
 	--rating-third-column-text-color: #A7B4FF;
+
+	// Statistics
+	--statistics-description-color: #FFFFFF80;
 }
 @media (max-width: config.$mbpT) {
 	:root {
@@ -1194,7 +1200,7 @@ body {
 		margin-bottom: 5px;
 	}
 	&-item__description {
-		color: var(--dark-300);
+		color: var(--statistics-description-color);
 	}
 	@media (max-width: config.$mbpT) {
 		padding: 32px 42px;
