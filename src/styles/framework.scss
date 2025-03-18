@@ -1264,6 +1264,10 @@ body {
 			color: var(--greeting-button-text);
 			font-weight: 600;
 			font-size: 14px;
+
+			span {
+				display: block;
+			}
 		}
 	}
 	@media (min-width: config.$mbpT) {
@@ -1792,7 +1796,7 @@ body {
 			display: none;
 		}
 		&__footer {
-			margin-top: 5px;
+			margin-top: 0px;
 			grid-template-columns: repeat(2, 1fr);
 		}
 	}
@@ -1800,12 +1804,12 @@ body {
 .range-slider {
 	--thumb-size: 25px;
 	--track-height: 8px;
-	--progress: 40%;
+	--progress: 50%;
 
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  height: var(--track-height);
+  height: var(--thumb-size);
   width: 100%;
   background: transparent;
 
@@ -1850,4 +1854,8 @@ body {
     cursor: pointer;
     z-index: 1;
   }
+	@media (max-width: config.$mbpMM) {
+		--thumb-size: 16px;
+		--track-height: 4px;
+	}
 }
