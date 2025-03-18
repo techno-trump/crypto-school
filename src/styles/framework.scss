@@ -7,6 +7,23 @@
 	font-family: "Inter Tight";
 	min-height: 100%;
 
+	// Basic
+	--white: #ffffff;
+	--black: #000000;
+
+	--dark-100: #160E0E;
+	--dark-200: #515050;
+	--dark-300: #4B4F4B;
+	--dark-500: #919191;
+	--dark-600: #B0B0B0;
+	--dark-700: #C8D4D8;
+
+	--header-height: 100px;
+	--footer-height: 100px;
+	--container-width: 1580px;
+	--container-padding: 30px;
+
+	// Shared
 	--separator-color: #CACACA33;
 	--light-background-color: #FFFFFF;
 	
@@ -32,14 +49,17 @@
 	--status-warning: #F0AD3E;
 	--status-danger: #F03E3E;
 
-	--light-home-background-gradient: linear-gradient(180deg, #E2ECEF, #DFF6F2), #CBD7DB; 
-	--light-background: linear-gradient(180deg, #E2ECEF, #C3F0CF), #E2ECEF;
+	// Home page
+	--home-background-gradient: linear-gradient(180deg, #E2ECEF, #DFF6F2), #CBD7DB; 
+	--background: linear-gradient(180deg, #E2ECEF, #C3F0CF), #E2ECEF;
 
-	--light-palette-gradient: linear-gradient(to right bottom, #FFFFFF2C, #FFFFFF);
-	--light-palette-active-gradient: linear-gradient(to right bottom, #FFFFFF2C 0%, #EDF9F247 47%, #D8F2E3 100%);
-	--light-palette-outline: #FFFFFF;
-	--light-dimmed-palette-outline: #EFEFEF;
+	// Palette
+	--palette-gradient: linear-gradient(to right bottom, #FFFFFF2C, #FFFFFF);
+	--palette-active-gradient: linear-gradient(to right bottom, #FFFFFF2C 0%, #EDF9F247 47%, #D8F2E3 100%);
+	--palette-outline: #FFFFFF;
+	--dimmed-palette-outline: #EFEFEF;
 
+	// Header
 	--header-top-color: #D2DEE1;
 	--header-main-background: white;
 	--header-text-color: black;
@@ -48,55 +68,31 @@
 	--header-social-color: var(--primary-color);
 	--header-social-hover-color: var(--hover-primary-color);
 
+	// Login
 	--login-btn-color: black;
 	--login-btn-icon-color: var(--primary-color);
 	--login-btn-border-color: var(--primary-color);
-
 	--login-btn-hover-color: black;
 	--login-btn-hover-icon-color: var(--hover-primary-color);
 	--login-btn-hover-border-color: var(--hover-primary-color);
 
-	--light-horizontal-row: #cbd7db80;
+	// Separators
+	--horizontal-row-color: #cbd7db80;
+	--table-hover-gradient: linear-gradient(to top, #D9EBDF3A, #D0E7D72B);
 
-	--light-table-hover: linear-gradient(to top, #D9EBDF3A, #D0E7D72B);
-
-	--white: #ffffff;
-	--black: #000000;
-
-	--dark-100: #160E0E;
-	--dark-200: #515050;
-	--dark-300: #4B4F4B;
-	--dark-500: #919191;
-	--dark-600: #B0B0B0;
-	--dark-700: #C8D4D8;
-
-	--header-height: 100px;
-	--footer-height: 100px;
-	--container-width: 1580px;
-	--container-padding: 30px;
-
-	// temporary until themes are not implemented in js
-	--dimmed-palette-outline: var(--light-dimmed-palette-outline);
-
-	
+	// Portal
 	--portal-menu-color: var(--primary-color);
 	--portal-menu-dropdown-background-color: #FFFFFF;
 	--portal-menu-dropdown-border-color: #EEEEEE;
 	--portal-menu-group-arrow-color: currentColor;
 	--portal-menu-item-border-color: #EFEFEF;
-
 	--portal-menu-item-hover-background: linear-gradient(182deg, rgba(255, 255, 255, 0.44) 36.43%, #D8F2E3 87.54%);
 
-	--home-background-gradient: var(--light-home-background-gradient);
-	--background: var(--light-background);
-
-	--palette-gradient: var(--light-palette-gradient);
-	--palette-active-gradient: var(--light-palette-active-gradient);
-	--palette-outline: var(--light-palette-outline);
-
+	// Burger
 	--burger-btn-color: var(--primary-color);
 	--burger-btn-hover-color: var(--hover-primary-color);
 
+	// Cabinet
 	--cabinet-dropdown-background: white;
 	--cabinet-menu-item-color: var(--primary-color);
 	--cabinet-menu-item-border-color: #EFEFEF;
@@ -123,13 +119,24 @@ html[data-theme="dark"] {
 	--docked-theme-switch-thumb-color: var(--primary-color);
 	--docked-theme-switch-hover-thumb-color: var(--hover-primary-color);
 
+	// Home page
+	--home-background-gradient: linear-gradient(180deg, #E2ECEF, #DFF6F2), #CBD7DB; 
+	--background: #030303;
+
+	// Palette
+	--palette-gradient: linear-gradient(to bottom, #5151512C, #1D1D1D);
+	--palette-active-gradient: linear-gradient(to bottom, #DADADA32 0%, #000000);
+	--palette-outline: #FFFFFF;
+	--dimmed-palette-outline: #EFEFEF;
+
+	// Header
 	--header-top-color: #414141;
 	--header-text-color: white;
 	--header-separator-color: #FFFFFF1A;
-
 	--header-social-color: #FFFFFF;
 	--header-social-hover-color: var(--primary-color);
 
+	// Portal
 	--portal-menu-color: white;
 	--portal-menu-dropdown-background-color: #323232;
 	--portal-menu-item-background: linear-gradient(152.86deg, rgba(134, 134, 134, 0.286) 25.99%, rgba(63, 63, 63, 0.65) 100.03%);
@@ -138,12 +145,15 @@ html[data-theme="dark"] {
 	--portal-menu-group-arrow-color: var(--primary-color);
 	--portal-menu-item-border-color: #7D7D7D;
 
+	// Login
 	--login-btn-color: white;
 	--login-btn-hover-color: white;
 
+	// Burger
 	--burger-btn-color: white;
 	--burger-btn-hover-color: var(--hover-primary-color);
 
+	// Cabinet
 	--cabinet-dropdown-background: linear-gradient(152.86deg, rgba(81, 81, 81, 0.308) 25.99%, rgba(29, 29, 29, 0.7) 100.03%);
 	--cabinet-menu-item-color: white;
 	--cabinet-menu-item-border-color: #7D7D7D;
@@ -497,9 +507,9 @@ body {
 .palette {
 	--opacity: 0.77;
 	--active-opacity: 0.9;
-	--border-color: var(--white);
-	--background: var(--light-palette-gradient);
-	--active-background: var(--light-palette-active-gradient);
+	--border-color: var(--palette-outline);
+	--background: var(--palette-gradient);
+	--active-background: var(--palette-active-gradient);
 
 	overflow: hidden;
 	position: relative;
@@ -656,7 +666,7 @@ body {
 		margin-bottom: 20px;
 	}
 	&__horizontal-row {
-		border: 0.3px solid var(--light-horizontal-row);
+		border: 0.3px solid var(--horizontal-row-color);
 		margin-bottom: 30px;
 	}
 	@media (max-width: config.$mbpT) {
@@ -674,7 +684,7 @@ body {
 			margin-bottom: 16px;
 		}
 		&__horizontal-row {
-			border: 0.3px solid var(--light-horizontal-row);
+			border: 0.3px solid var(--horizontal-row-color);
 			margin-bottom: 16px;
 		}
 	}
@@ -695,7 +705,7 @@ body {
 }
 
 .account-table {
-	border-top: 1px solid var(--light-horizontal-row);
+	border-top: 1px solid var(--horizontal-row-color);
 	display: block;
 
 	&-head {
@@ -736,7 +746,7 @@ body {
 			&_hoverable {
 				@media (hover: hover) {
 					&:hover {
-						background: var(--light-table-hover);
+						background: var(--table-hover-gradient);
 					}
 				}
 			}
@@ -771,7 +781,7 @@ body {
 					padding: 10px 0px;
 				}
 				&_hoverable {
-					background: var(--light-table-hover);
+					background: var(--table-hover-gradient);
 				}
 			}
 		}
