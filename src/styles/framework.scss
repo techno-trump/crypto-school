@@ -122,6 +122,9 @@
 
 	// Greeting
 	--greeting-date-color: var(--dark-300);
+
+	// More
+	--more-link-icon-color: var(--status-warning);
 }
 html[data-theme="dark"] {
 	--primary-color: #3150FF;
@@ -209,6 +212,9 @@ html[data-theme="dark"] {
 	
 	// Greeting
 	--greeting-date-color: #FFFFFF80;
+
+	// More
+	--more-link-icon-color: var(--primary-color);
 }
 @media (max-width: config.$mbpT) {
 	:root {
@@ -745,10 +751,9 @@ body {
 	justify-content: center;
 	align-items: center;
 	gap: 12px;
-	color: var(--primary-color);
 
 	&__icon {
-		color: var(--status-warning);
+		color: var(--more-link-icon-color);
 		font-size: 8px;
 	}
 }
