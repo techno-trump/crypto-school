@@ -146,6 +146,11 @@
 	--menu-info-lessons-icon-color: var(--primary-color);
 	--menu-info-lessons-text-color: var(--dark-100);
 	--menu-info-name-color: var(--dark-300);
+
+	// Rate
+	--rate-palette-background: var(--palette-gradient);
+	--rate-text-primary-color: var(--dark-300);
+	--rate-text-secondary-color: var(--dark-300);
 }
 html[data-theme="dark"] {
 	--primary-color: #3150FF;
@@ -257,6 +262,11 @@ html[data-theme="dark"] {
 	--menu-info-lessons-icon-color: var(--white);
 	--menu-info-lessons-text-color: #FFFFFF80;
 	--menu-info-name-color: var(--white);
+
+	// Rate
+	--rate-palette-background: linear-gradient(to right bottom, #8686862C, #3F3F3F);
+	--rate-text-primary-color: var(--white);
+	--rate-text-secondary-color: var(--white);
 }
 @media (max-width: config.$mbpT) {
 	:root {
@@ -553,7 +563,7 @@ body {
 	font-weight: 600;
 	font-size: 18px;
 	line-height: 1.2;
-	color: var(--primary-color);
+	color: var(--text-primary-color);
 
 	.button_big & {
 		font-size: 22px;
@@ -1477,12 +1487,15 @@ body {
 		flex-direction: column;
 		gap: 40px;
 	}
+	&-palette {
+		--background: var(--rate-palette-background);
+	}
 	&__property {
-		color: var(--dark-300);
+		color: var(--rate-text-secondary-color);
 		opacity: 0.6;
 	}
 	&__value {
-		color: var(--dark-300);
+		color: var(--rate-text-primary-color);
 	}
 	&__column-left,
 	&__column-right {
