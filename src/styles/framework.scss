@@ -170,6 +170,13 @@
 	--range-thumb-background: var(--hover-primary-color);
 	--range-thumb-tip-color: var(--dark-500);
 	--range-caption-color: var(--dark-200);
+
+	// Discount constructor
+	--discount-constructor-block-background: var(--palette-gradient);
+	--discount-constructor-block-opacity: 0.88;
+	--discount-constructor-reference-title-color: var(--dark-300);
+	--discount-constructor-input-color: var(--hover-primary-color);
+	--discount-constructor-input-placeholder-color: var(--dark-300);
 }
 html[data-theme="dark"] {
 	--primary-color: #3150FF;
@@ -299,6 +306,13 @@ html[data-theme="dark"] {
 	--range-thumb-background: linear-gradient(to right bottom, #0026FF, #001799);
 	--range-thumb-tip-color: var(--dark-500);
 	--range-caption-color: var(--dark-200);
+
+	// Discount constructor
+	--discount-constructor-block-background: linear-gradient(to right bottom, #8686862C, #3F3F3F);
+	--discount-constructor-block-opacity: 0.65;
+	--discount-constructor-reference-title-color: var(--white);
+	--discount-constructor-input-color: var(--white);
+	--discount-constructor-input-placeholder-color: var(--dark-300);
 }
 @media (max-width: config.$mbpT) {
 	:root {
@@ -541,9 +555,6 @@ body {
 	&_white {
 		background-color: var(--white);
 	}
-	&_rounded {
-		border-radius: 100px;
-	}
 	&_centered {
 		justify-content: center;
 	}
@@ -557,6 +568,9 @@ body {
 		gap: 6px;
 		border-radius: 8px;
 		padding: 14px 25px;
+	}
+	&_rounded {
+		border-radius: 100px;
 	}
 	&_block {
 		@include button_block;
@@ -703,13 +717,14 @@ body {
 	}
 
 	&_hide-desktop {
-		@media (min-width: config.$mbpTNu) {
+		@media (min-width: mixins.px(config.$mbpTNu + 1)) {
 			border: none;
 			position: static;
 			overflow: auto;
 			border-radius: 0px;
 			&::before,
 			&::after {
+				display: none;
 				position: static;
 				z-index: auto;
 				left: auto;
@@ -727,6 +742,7 @@ body {
 			border-radius: 0px;
 			&::before,
 			&::after {
+				display: none;
 				position: static;
 				z-index: auto;
 				left: auto;
@@ -744,6 +760,7 @@ body {
 			border-radius: 0px;
 			&::before,
 			&::after {
+				display: none;
 				position: static;
 				z-index: auto;
 				left: auto;
@@ -1742,7 +1759,6 @@ body {
 		width: 100%;
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
-		align-items: self-end;
 	}
 	&__caption {
 		color: var(--range-caption-color);
@@ -1752,7 +1768,7 @@ body {
 	}
 	&__tip {
 		color: var(--range-thumb-tip-color);
-		padding-bottom: 5px;
+		transform: translateY(-25px);
 		text-align: center;
 	}
 	&__caption_right {
@@ -1768,7 +1784,10 @@ body {
 			gap: 60px;
 		}
 		&__footer {
-			margin-top: 10px;
+			margin-top: 15px;
+		}
+		&__tip {
+			transform: translateY(-5px);
 		}
 	}
 	@media (max-width: config.$mbpMM) {
@@ -1857,5 +1876,93 @@ body {
 	@media (max-width: config.$mbpMM) {
 		--thumb-size: 16px;
 		--track-height: 4px;
+	}
+}
+
+.account-discount-constructor {
+	&__separator {
+		margin-top: 30px;
+	}
+	@media (max-width: config.$mbpMM) {
+		&__separator {
+			display: none;
+		}
+	}
+}
+.account-discount-constructor-reference {
+	margin-top: 30px;
+
+	&__label {
+		display: block;
+		margin-bottom: 30px;
+	}
+	&__block {
+		--background: var(--discount-constructor-block-background);
+		--opacity: var(--discount-constructor-block-opacity);
+		
+		padding: 10px 10px 10px 30px;
+		
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+	&__input-block {
+		--background: var(--discount-constructor-block-background);
+		--opacity: var(--discount-constructor-block-opacity);
+		
+		display: block;
+		flex: 1 1 auto;
+	}
+	&__input {
+		display: block;		
+		width: 100%;
+		font-size: 16px !important;
+		
+		background-color: transparent;
+		color: var(--discount-constructor-input-color);
+	}
+	@media (max-width: config.$mbpT) {
+		&__label {
+			margin-bottom: 15px;
+			color: var(--discount-constructor-reference-title-color);
+		}
+		&__block {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 30px;
+			padding: 0px;
+		}
+		&__input-block {
+			width: 100%;
+			padding: 25px 30px;
+		}
+		&__input {
+			font-size: 14px !important;
+		}
+		button {
+			padding: 20px 40px;
+		}
+	}
+	@media (max-width: config.$mbpMM) {
+		margin-top: 20px;
+		&__label {
+			margin-bottom: 5px;
+		}
+		&__block {
+			gap: 15px;
+		}
+		&__input-block {
+			padding: 10px;
+		}
+		&__input {
+			font-size: 12px !important;
+		}
+		button {
+			padding: 10px;
+			display: block;
+			width: 100%;
+		}
 	}
 }

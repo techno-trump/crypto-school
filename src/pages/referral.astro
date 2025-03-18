@@ -3,6 +3,7 @@ import AccountLayout from 'src/layouts/AccountLayout.astro'
 import AccountGreeting from 'src/components/AccountGreeting.astro'
 import AccountMenu from 'src/components/AccountMenu.astro'
 import Layout from 'src/layouts/Layout.astro'
+import Button from 'src/components/basic/Button.astro'
 
 ---
 <Layout title="Крипто школа" description="Крипто школа">
@@ -16,12 +17,12 @@ import Layout from 'src/layouts/Layout.astro'
       />
 
       <Fragment slot="center-bottom">
-        <div class="account-block palette account-block_compressed">
-          <h5 class="account-block__title">Конструктор знижок</h5>
+        <div class="account-block palette account-block_compressed account-discount-constructor">
+          <h5 class="account-block__title text">Конструктор знижок</h5>
 
           <hr class="account-block__horizontal-row" />
 
-          <div class="range">
+          <div class="range account-discount-constructor__range">
             <div class="range__body">
               <div class="range__value range__value_left color-primary text">
                 <span data-left="">20</span>%
@@ -43,6 +44,21 @@ import Layout from 'src/layouts/Layout.astro'
             </div>
           </div>
 
+          <hr class="account-block__horizontal-row account-discount-constructor__separator" />
+
+          <div class="account-discount-constructor-reference">
+            <label for="discount-constructor-input" class="account-discount-constructor-reference__label text color-primary">Ваше реферальне посилання</label>
+
+            <label for="discount-constructor-input" class="account-discount-constructor-reference__block palette palette_hide-tablet palette_hide-mobile">
+              <div class="account-discount-constructor-reference__input-block palette palette_hide-desktop">
+                <input id="discount-constructor-input" placeholder="Ваше посилання" type="text" class="account-discount-constructor-reference__input text-small">
+              </div>
+
+              <Button filled rounded small>
+                <span class="button__text">Снігерувати</span>
+              </Button>
+            </label>
+          </div>
         </div>
 
         <div class="account-block palette account-block_compressed account-total-statistics">
