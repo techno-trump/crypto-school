@@ -129,6 +129,14 @@
 	// Status line
 	--status-line-background: var(--palette-gradient);
 	--status-line-palette-opacity: 0.88;
+
+	// Last tasks
+	--last-tasks-pretitle-color: var(--primary-color);
+	--last-tasks-title-color: var(--dark-200);
+	--last-tasks-subtitle-color: var(--dark-500);
+	--last-tasks-amount-color: var(--status-warning);
+	--last-tasks-reference-background: var(--primary-color);
+	--last-tasks-reference-color: var(--white); 
 }
 html[data-theme="dark"] {
 	--primary-color: #3150FF;
@@ -223,6 +231,14 @@ html[data-theme="dark"] {
 	// Status line
 	--status-line-background: linear-gradient(to right bottom, #8686862C, #3F3F3F);
 	--status-line-palette-opacity: 0.65;
+
+	// Last tasks
+	--last-tasks-pretitle-color: #A7B4FF;
+	--last-tasks-title-color: var(--white);
+	--last-tasks-subtitle-color: #FFFFFF80;
+	--last-tasks-amount-color: #A7B4FF;
+	--last-tasks-reference-background: linear-gradient(to right bottom, #0026FF, #001799);
+	--last-tasks-reference-color: var(--white);
 }
 @media (max-width: config.$mbpT) {
 	:root {
@@ -1266,15 +1282,15 @@ body {
 			justify-content: center;
 		}
 		&__pretitle {
-			color: var(--primary-color);
+			color: var(--last-tasks-pretitle-color);
 			margin-bottom: 10px;
 			line-height: 1.3;
 		}
 		&__title {
-			color: var(--dark-200);
+			color: var(--last-tasks-title-color);
 		}
 		&__subtitle {
-			color: var(--dark-500);
+			color: var(--last-tasks-subtitle-color);
 			margin-top: 5px;
 			line-height: 1.3;
 		}
@@ -1283,6 +1299,9 @@ body {
 			align-items: center;
 			gap: 15px;
 		}
+		&__amount {
+			color: var(--last-tasks-amount-color);
+		}
 		&__link {
 			flex: 0 0 30px;
 			width: 30px;
@@ -1290,13 +1309,13 @@ body {
 			border-radius: 50%;
 			aspect-ratio: 1;
 			
-			background-color: var(--primary-color);
+			background: var(--last-tasks-reference-background);
 			
 			padding-left: 2px;
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			color: var(--white);
+			color: var(--last-tasks-reference-color);
 			font-size: 12px;
 
 			span {
