@@ -128,6 +128,7 @@
 
 	// Status line
 	--status-line-background: var(--palette-gradient);
+	--status-line-active-background: var(--white);
 	--status-line-palette-opacity: 0.88;
 
 	// Last tasks
@@ -230,6 +231,7 @@ html[data-theme="dark"] {
 	
 	// Status line
 	--status-line-background: linear-gradient(to right bottom, #8686862C, #3F3F3F);
+	--status-line-active-background: #FFFFFF40;
 	--status-line-palette-opacity: 0.65;
 
 	// Last tasks
@@ -619,6 +621,8 @@ body {
 	}
 
 	&_hoverable {
+		cursor: pointer;
+		
 		@media (any-hover: hover) {
 			&:hover {
 				&::before {
@@ -696,6 +700,7 @@ body {
 .status-line {
 	// for palette
 	--background: var(--status-line-background);
+	--active-background: var(--status-line-active-background);
 	--opacity: var(--status-line-palette-opacity);
 
 	display: flex;
