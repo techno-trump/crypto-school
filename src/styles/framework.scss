@@ -122,6 +122,8 @@
 
 	// Greeting
 	--greeting-date-color: var(--dark-300);
+	--greeting-button-background: var(--white);
+	--greeting-button-text: var(--primary-color);
 
 	// More
 	--more-link-icon-color: var(--status-warning);
@@ -247,6 +249,8 @@ html[data-theme="dark"] {
 	
 	// Greeting
 	--greeting-date-color: #FFFFFF80;
+	--greeting-button-background: linear-gradient(to right bottom, #0026FF, #001799);
+	--greeting-button-text: var(--white);
 
 	// More
 	--more-link-icon-color: var(--primary-color);
@@ -1234,6 +1238,24 @@ body {
 		justify-content: space-between;
 		flex-wrap: wrap;
 		gap: 20px;
+
+		&__button {
+			background: var(--greeting-button-background);
+			border-radius: 100px;
+			padding: 13px 25px;
+	
+			font-family: 'Inter Tight', sans-serif;
+			color: var(--greeting-button-text);
+			font-weight: 600;
+			font-size: 14px;
+		}
+	}
+	@media (min-width: config.$mbpT) {
+		&-payment {
+			&__button {
+				font-size: 14px;
+			}
+		}
 	}
 	@media (max-width: config.$mbpT) {
 		&__date {
@@ -1241,6 +1263,11 @@ body {
 		}
 		&-payment {
 			padding: 20px 20px 25px 20px;
+			
+			&__button {
+				padding: 9px 14px;	
+				border-radius: 5px;
+			}
 		}
 	}
 	@media (max-width: config.$mbpMM) {
@@ -1249,6 +1276,10 @@ body {
 		
 		&-payment {
 			padding: 16px;
+
+			&__button {
+				padding: 7px 14px;	
+			}
 		}
 		&-payment__title {
 			max-width: 90px;
