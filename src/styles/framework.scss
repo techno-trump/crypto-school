@@ -101,6 +101,7 @@
 	--cabinet-menu-item-color: var(--primary-color);
 	--cabinet-menu-item-border-color: #EFEFEF;
 	--cabinet-menu-item-hover-color: white;
+	--cabinet-menu-item-background: transparent;
 	--cabinet-menu-item-hover-background: linear-gradient(182deg, rgba(255, 255, 255, 0.44) 36.43%, #D8F2E3 87.54%);
 
 }
@@ -495,6 +496,7 @@ body {
 
 .palette {
 	--opacity: 0.77;
+	--active-opacity: 0.9;
 	--border-color: var(--white);
 	--background: var(--light-palette-gradient);
 	--active-background: var(--light-palette-active-gradient);
@@ -525,6 +527,28 @@ body {
 		background: var(--active-background);
 		opacity: 0;
 		z-index: -1;
+	}
+
+	&_hoverable {
+		@media (any-hover: hover) {
+			&:hover {
+				&::before {
+					opacity: 0;
+				}
+				&::after {
+					opacity: var(--active-opacity);
+				}
+			}
+		}
+	}
+
+	&_active {
+		&::before {
+			opacity: 0;
+		}
+		&::after {
+			opacity: var(--active-opacity);
+		}
 	}
 
 	&_hide-desktop {
@@ -1008,24 +1032,17 @@ body {
 	padding: 27px 20px;
 
 	border-radius: 15px;
-	border: 1px solid var(--border-color, var(--palette-outline));
 
-	&::before {
-		content: '';
-		position: absolute;
-		z-index: -1;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		opacity: 0;
-		transition: opacity 0.3s;
-	}
 	&_drop-down {
+		--opacity: 0;
+		--active-opacity: 0.9;
+		--border-color: var(--cabinet-menu-item-border-color);
+		--background: var(--cabinet-menu-item-background);
+		--active-background: var(--cabinet-menu-item-hover-background);
+
 		color: var(--cabinet-menu-item-color);
-		border: 1px solid var(--cabinet-menu-item-border-color);
-		background: var(--cabinet-menu-item-background);
 		padding: 28px 24px;
+
 		@media (max-width: config.$mbpT) {
 			padding: 20px 24px;
 		}
@@ -1034,23 +1051,7 @@ body {
 			padding: 18px 12px;
 		}
 	}
-	&_layout {
-		&::before {
-			opacity: var(--opacity);
-		}
-	}
 	
-	&_drop-down::before {
-		background: var(--cabinet-menu-item-hover-background);
-	}
-	&_active::before {
-		opacity: 0.9;
-	}
-	@media (any-hover: hover) {
-		&:hover::before {
-			opacity: 0.9;
-		}
-	}
 	&__icon {
 		position: relative;
 		font-size: 24px;
