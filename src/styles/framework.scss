@@ -151,6 +151,9 @@
 	--rate-palette-background: var(--palette-gradient);
 	--rate-text-primary-color: var(--dark-300);
 	--rate-text-secondary-color: var(--dark-300);
+
+	// Total statistics
+	--total-statistics-description: var(--dark-300);
 }
 html[data-theme="dark"] {
 	--primary-color: #3150FF;
@@ -267,6 +270,9 @@ html[data-theme="dark"] {
 	--rate-palette-background: linear-gradient(to right bottom, #8686862C, #3F3F3F);
 	--rate-text-primary-color: var(--white);
 	--rate-text-secondary-color: var(--white);
+	
+	// Total statistics
+	--total-statistics-description: #FFFFFF80;
 }
 @media (max-width: config.$mbpT) {
 	:root {
@@ -1593,7 +1599,7 @@ body {
 		gap: 5px;
 	}
 	&__description {
-		color: var(--dark-300);
+		color: var(--total-statistics-description);
 	}
 	@media (max-width: config.$mbpT) {
 		&__content {
