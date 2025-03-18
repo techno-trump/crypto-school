@@ -16,6 +16,32 @@ import Layout from 'src/layouts/Layout.astro'
       />
 
       <Fragment slot="center-bottom">
+        <div class="account-block palette">
+
+          <div class="range">
+            <div class="range__body">
+              <div class="range__value range__value_left color-primary text">
+                <span data-left="">20</span>%
+              </div>
+
+              <input class="range-slider range__control" type="range" min="0" max="40" step="0.1" />
+              
+              <div class="range__value range__value_right color-primary text">
+                <span data-right="">20</span>%
+              </div>
+            </div>
+
+            <div class="range__footer">
+              <div class="range__caption range__caption_left text-small">Ваш REF-BACK</div>
+              <div class="range__tip text-small">
+                <span data-left="">20</span>% на <span data-right="">20</span>%
+              </div>
+              <div class="range__caption range__caption_right text-small">Знижка реферала</div>
+            </div>
+          </div>
+
+        </div>
+
         <div class="account-block palette account-block_compressed account-total-statistics">
           <h5 class="account-block__title text">Загальна статистика</h5>
 

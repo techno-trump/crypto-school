@@ -8,6 +8,7 @@ import { isMobile } from "./utils.js";
 // import initDisclosures from "./disclosure.js";
 // import Lenis from 'lenis';
 
+import './range.js';
 
 window.app = window.app || {};
 window.app.hoverMedia = window.matchMedia("(any-hover: hover)");
