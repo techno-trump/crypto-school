@@ -154,6 +154,12 @@
 
 	// Total statistics
 	--total-statistics-description: var(--dark-300);
+
+	// Last payments
+	--last-payments-table-comment-color: var(--dark-600);
+
+	// My referrals
+	--my-referral-table-comment-color: #FFFFFF80;
 }
 html[data-theme="dark"] {
 	--primary-color: #3150FF;
@@ -1621,7 +1627,7 @@ body {
 		--columns: 25fr 20fr 20fr 35fr;
 
 		&__comment {
-			color: var(--dark-600);
+			color: var(--last-payments-table-comment-color);
 		}
 	}
 	@media (min-width: config.$mbpT) {
@@ -1648,7 +1654,7 @@ body {
 		--columns: 25fr 30fr 50fr;
 	
 		&__status-default {
-			color: var(--dark-600);
+			color: var(--my-referral-table-comment-color);
 		}
 	}	
 	@media (min-width: config.$mbpT) {
