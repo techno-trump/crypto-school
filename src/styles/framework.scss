@@ -119,6 +119,9 @@
 
 	// Statistics
 	--statistics-description-color: var(--dark-300);
+
+	// Greeting
+	--greeting-date-color: var(--dark-300);
 }
 html[data-theme="dark"] {
 	--primary-color: #3150FF;
@@ -203,6 +206,9 @@ html[data-theme="dark"] {
 
 	// Statistics
 	--statistics-description-color: #FFFFFF80;
+	
+	// Greeting
+	--greeting-date-color: #FFFFFF80;
 }
 @media (max-width: config.$mbpT) {
 	:root {
@@ -1133,7 +1139,7 @@ body {
 		flex: 1 1 auto;
 	}
 	&__date {
-		color: var(--dark-300);
+		color: var(--statistics-description-color);
 		margin-bottom: 15px;
 		line-height: 1.2;
 	}
