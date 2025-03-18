@@ -125,6 +125,10 @@
 
 	// More
 	--more-link-icon-color: var(--status-warning);
+
+	// Status line
+	--status-line-background: var(--palette-gradient);
+	--status-line-palette-opacity: 0.88;
 }
 html[data-theme="dark"] {
 	--primary-color: #3150FF;
@@ -215,6 +219,10 @@ html[data-theme="dark"] {
 
 	// More
 	--more-link-icon-color: var(--primary-color);
+	
+	// Status line
+	--status-line-background: linear-gradient(to right bottom, #8686862C, #3F3F3F);
+	--status-line-palette-opacity: 0.65;
 }
 @media (max-width: config.$mbpT) {
 	:root {
@@ -671,7 +679,8 @@ body {
 
 .status-line {
 	// for palette
-	--opacity: 0.88;
+	--background: var(--status-line-background);
+	--opacity: var(--status-line-palette-opacity);
 
 	display: flex;
 	align-items: center;
