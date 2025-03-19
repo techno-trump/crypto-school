@@ -1,1 +1,61 @@
 @use "./config.scss" as config;
+
+.footer {
+  background: var(--footer-background);
+  padding: 40px 0px;
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+  }
+  &__copyright {
+    color: var(--footer-copyright-color);
+    font-size: 14px;
+  }
+  &__payment {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  &__payment-item {
+    max-height: 17px;
+  }
+  &__scroll-up {
+    justify-self: flex-end;
+  }
+}
+.scroll-up {
+  --size: 28px;
+  --icon-size: 12px;
+
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  &__text {
+    display: block;
+    color: var(--footer-scroll-top-text-color);
+    text-wrap: nowrap;
+  }
+  &__icon {
+    flex: 0 0 var(--size);
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--footer-scroll-top-background-color);
+    color: var(--footer-scroll-top-icon-color);
+    font-size: var(--icon-size);
+    padding-bottom: calc(0.07 * var(--size));
+
+    span {
+      display: block;
+      transform-origin: center;
+      transform: rotateZ(180deg);
+    }
+  }
+}

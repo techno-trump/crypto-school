@@ -177,6 +177,14 @@
 	--discount-constructor-reference-title-color: var(--dark-300);
 	--discount-constructor-input-color: var(--hover-primary-color);
 	--discount-constructor-input-placeholder-color: var(--dark-300);
+
+	// Footer
+	--footer-background: var(--primary-color);
+	--footer-copyright-color: var(--white);
+	--footer-payment-text-color: var(--white);
+	--footer-scroll-top-text-color: var(--white);
+	--footer-scroll-top-background-color: #C8D4D8;
+	--footer-scroll-top-icon-color: var(--primary-color);
 }
 html[data-theme="dark"] {
 	--primary-color: #3150FF;
@@ -313,6 +321,14 @@ html[data-theme="dark"] {
 	--discount-constructor-reference-title-color: var(--white);
 	--discount-constructor-input-color: var(--white);
 	--discount-constructor-input-placeholder-color: var(--dark-300);
+
+	// Footer
+	--footer-background: linear-gradient(to right, #011EC580, #110C6080);
+	--footer-copyright-color: #9FA8B0;
+	--footer-payment-text-color: var(--white);
+	--footer-scroll-top-text-color: #9FA8B0;
+	--footer-scroll-top-background-color: #0B1B75;
+	--footer-scroll-top-icon-color: var(--white); 
 }
 @media (max-width: config.$mbpT) {
 	:root {
