@@ -6,11 +6,11 @@
 
   &__container {
     display: grid;
+    align-items: center;
     grid-template-columns: 1fr 2fr 1fr;
   }
   &__copyright {
     color: var(--footer-copyright-color);
-    font-size: 14px;
   }
   &__payment {
     display: flex;
@@ -24,6 +24,34 @@
   }
   &__scroll-up {
     justify-self: flex-end;
+  }
+  @media (min-width: config.$mbpT) {
+    &__copyright {
+      font-size: 14px;
+    }
+  }
+  @media (max-width: config.$mbpT) {
+    padding: 35px 0px;
+  }
+  @media (max-width: config.$mbpM) {
+    padding: 30px 0px;
+    
+    &__container {
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    &__copyright {
+      grid-column: 1 / 1;
+      grid-row: 2 / 2;
+    }
+    &__payment {
+      grid-column: 1 / -1;
+      grid-row: 1 / 1;
+    }
+    &__scroll-up {
+      grid-column: 2 / 2;
+      grid-row: 2 / 2;
+    }
   }
 }
 .scroll-up {
@@ -57,5 +85,8 @@
       transform-origin: center;
       transform: rotateZ(180deg);
     }
+  }
+  @media (max-width: config.$mbpT) {
+    gap: 10px;
   }
 }
