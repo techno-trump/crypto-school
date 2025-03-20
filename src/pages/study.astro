@@ -1,0 +1,80 @@
+---
+import AccountMenu from 'src/components/AccountMenu.astro'
+import Layout from 'src/layouts/Layout.astro'
+
+---
+<Layout title="Крипто школа" description="Крипто школа">
+  <div class="container study__container">
+    <AccountMenu horizontal />
+
+    <h5 class="h5 color-primary study__title">Основи Crypto Education</h5>
+
+    <div class="study__modules">
+      <div class="study-module study-module_opened">
+        <div class="study-module__summary">
+          <div class="study-module__left">
+            <div class="study-module__number">Модуль 1</div>
+            <div class="study-module__name text color-primary">Основи</div>
+          </div>
+
+          <div class="study-module__right">
+            <div class="study-module__amount text">5 уроків</div>
+            <div class="study-module__toggler">
+              <span class="icon-nav-arrow-right"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="study-module__dropdown">
+          <div class="study-module__lessons">
+            <div class="study-module__lesson study-module__lesson_done">
+              <div class="study-module__lesson-check">
+                <span class="icon-check-arrow"></span>
+              </div>
+              <div class="study-module__lesson-left">
+                <div class="study-module__lesson-number text">1</div>
+                <div class="study-module__lesson-name text">Знакомство с нами</div>
+              </div>
+              <div class="study-module__lesson-status text-small">виконаний</div>
+            </div>
+
+            <div class="study-module__lesson study-module__lesson_done">
+              <div class="study-module__lesson-check">
+                <span class="icon-check-arrow"></span>
+              </div>
+              <div class="study-module__lesson-left">
+                <div class="study-module__lesson-number text">2</div>
+                <div class="study-module__lesson-name text">Що таке крипта</div>
+              </div>
+              <div class="study-module__lesson-status text-small">виконаний</div>
+            </div>
+
+            <div class="study-module__lesson study-module__lesson_in-process">
+              <div class="study-module__lesson-left">
+                <div class="study-module__lesson-number text">3</div>
+                <div class="study-module__lesson-name text">Что такое блокчейн?</div>
+              </div>
+              <div class="study-module__lesson-status text-small">У процесі</div>
+            </div>
+
+            <div class="study-module__lesson study-module__lesson_locked">
+              <div class="study-module__lesson-left">
+                <div class="study-module__lesson-number text">4</div>
+                <div class="study-module__lesson-name text">Токены и монеты — в чем разница?</div>
+              </div>
+              <div class="study-module__lesson-status text-small">Недоступний</div>
+            </div>
+
+            <div class="study-module__lesson study-module__lesson_locked">
+              <div class="study-module__lesson-left">
+                <div class="study-module__lesson-number text">5</div>
+                <div class="study-module__lesson-name text">Експлорер</div>
+              </div>
+              <div class="study-module__lesson-status text-small">Недоступний</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

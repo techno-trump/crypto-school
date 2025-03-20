@@ -185,6 +185,36 @@
 	--footer-scroll-top-text-color: var(--white);
 	--footer-scroll-top-background-color: #C8D4D8;
 	--footer-scroll-top-icon-color: var(--primary-color);
+
+	// Study module
+	--study-module-background: var(--white);
+	--study-module-amount-background: linear-gradient(to top, #59B9762F, #59B97600), #E2ECEF;
+	--study-module-amount-color: var(--primary-color);
+	--study-module-toggler-color: var(--primary-color);
+	--study-module-separator: #CBD7DB80;
+
+	// Study module lesson
+	--study-module-lesson-border-width: 2px;
+	--study-module-lesson-check-background: var(--primary-color);
+	--study-module-lesson-check-color: var(--white);
+	--study-module-lesson-done-background: #D5EDE3E1;
+	--study-module-lesson-done-border-color: var(--primary-color);
+	--study-module-lesson-done-number-background: var(--white);
+	--study-module-lesson-done-number-color: var(--primary-color);
+	--study-module-lesson-done-title-color: var(--primary-color);
+	--study-module-lesson-done-status-color: var(--black);
+	--study-module-lesson-in-process-background: var(--white);
+	--study-module-lesson-in-process-border-color: var(--primary-color);
+	--study-module-lesson-in-process-number-background: linear-gradient(to top, #59B9762F, #59B97600), #E2ECEF;
+	--study-module-lesson-in-process-number-color: var(--primary-color);
+	--study-module-lesson-in-process-title-color: var(--primary-color);
+	--study-module-lesson-in-process-status-color: var(--status-warning);
+	--study-module-lesson-locked-background: #F2F2F2;
+	--study-module-lesson-locked-border-color: var(--primary-color);
+	--study-module-lesson-locked-number-background: linear-gradient(to top, #59B9762F, #59B97600), #E2ECEF;
+	--study-module-lesson-locked-number-color: var(--primary-color);
+	--study-module-lesson-locked-title-color: var(--primary-color);
+	--study-module-lesson-locked-status-color: var(--black);
 }
 html[data-theme="dark"] {
 	--primary-color: #3150FF;
@@ -329,6 +359,36 @@ html[data-theme="dark"] {
 	--footer-scroll-top-text-color: #9FA8B0;
 	--footer-scroll-top-background-color: #0B1B75;
 	--footer-scroll-top-icon-color: var(--white); 
+
+	// Study module
+	--study-module-background: linear-gradient(to right bottom, #5151514E, #1D1D1D46);
+	--study-module-amount-background: var(--primary-color);
+	--study-module-amount-color: var(--white);
+	--study-module-toggler-color: var(--white);
+	--study-module-separator: #FFFFFF0A;
+
+	// Study module lesson
+	--study-module-lesson-border-width: 0.5px;
+	--study-module-lesson-check-background: var(--primary-color);
+	--study-module-lesson-check-color: var(--white);
+	--study-module-lesson-done-background: linear-gradient(to top, #95959530, #DADADA20);
+	--study-module-lesson-done-border-color: #545454;
+	--study-module-lesson-done-number-background: #686868;
+	--study-module-lesson-done-number-color: var(--white);
+	--study-module-lesson-done-title-color: var(--white);
+	--study-module-lesson-done-status-color: #FFFFFF80;
+	--study-module-lesson-in-process-background: linear-gradient(to left top, #86868630, #3F3F3FA6);
+	--study-module-lesson-in-process-border-color: #545454;
+	--study-module-lesson-in-process-number-background: #686868;
+	--study-module-lesson-in-process-number-color: var(--white);
+	--study-module-lesson-in-process-title-color: var(--white);
+	--study-module-lesson-in-process-status-color: var(--status-warning);
+	--study-module-lesson-locked-background: linear-gradient(to right bottom, #8686861C, #3F3F3FA6);
+	--study-module-lesson-locked-border-color: #545454;
+	--study-module-lesson-locked-number-background: #686868;
+	--study-module-lesson-locked-number-color: var(--white);
+	--study-module-lesson-locked-title-color: var(--white);
+	--study-module-lesson-locked-status-color: #FFFFFF80;
 }
 @media (max-width: config.$mbpT) {
 	:root {
@@ -1097,7 +1157,10 @@ body {
 	}
 
 	&_horizontal {
+		width: 100%;
+		max-width: none;
 		flex-direction: row;
+		flex-wrap: wrap;
 	}
 	@media (max-width: config.$mbpT) {
 		max-width: 100%;
@@ -1117,6 +1180,11 @@ body {
 	gap: 20px;
 
 	padding: 15px 20px;
+
+	.account-menu_horizontal & {
+		max-width: 300px;
+		padding: 10px 16px;
+	}
 	
 	&-info__content {
 		display: flex;
@@ -1137,7 +1205,7 @@ body {
 		display: block;
 	}
 	&-lessons__amount {
-		color: var(--pr)
+		color: var(--menu-info-lessons-text-color);
 	}
 	&__name {
 		color: var(--menu-info-name-color);
@@ -1176,6 +1244,11 @@ body {
 	
 	border: 1px solid var(--menu-info-avatar-border-color);
 	border-radius: 50%;
+
+	.account-menu_horizontal & {
+		--size: 50px;
+	}
+
 	@media (max-width: config.$mbpT) {
 		--size: 40px;
 	}
@@ -1220,6 +1293,11 @@ body {
 	padding: 27px 20px;
 
 	border-radius: 15px;
+
+	.account-menu_horizontal & {
+		max-width: 300px;
+		padding: 21px 14px;
+	}
 
 	&_drop-down {
 		--opacity: 0;
@@ -1980,5 +2058,198 @@ body {
 			display: block;
 			width: 100%;
 		}
+	}
+}
+
+.study {
+	&__container {
+		padding-top: 40px;
+		padding-bottom: 80px;
+	}
+	&__title {
+		margin-top: 40px;
+		margin-bottom: 40px;
+	}
+	&__modules {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+}
+.study-module {
+	width: 100%;
+	padding: 0px 36px;
+	border-radius: 15px;
+	background: var(--study-module-background);
+	
+	&__summary {
+		padding: 30px 0px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	&_opened &__summary {
+		border-bottom: 1px solid var(--study-module-separator);
+	}
+	&__left {
+		display: flex;
+		align-items: center;
+		gap: 25px;
+	}
+	&__number {
+		white-space: nowrap;
+		padding: 9px 21px;
+		border-radius: 100px;
+		background-color: var(--status-warning);
+		color: var(--white);
+	}
+	&__name {
+		white-space: nowrap;
+	}
+	&__right {
+		display: flex;
+		align-items: center;
+		gap: 20px;
+	}
+	&__amount {
+		white-space: nowrap;
+		padding: 9px 21px;
+		border-radius: 100px;
+		background: var(--study-module-amount-background);
+		color: var(--study-module-amount-color);
+	}
+	&__toggler {
+		--size: 24px;
+
+		flex: 0 0 var(--size);
+		height: var(--size);
+		border-radius: 50%;
+		color: var(--study-module-toggler-color);
+		
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		span {
+			transform-origin: center;
+			transform: rotateZ(-90deg);
+			font-size: 16px;
+			transition: 0.3s;
+
+			.study-module_opened {
+				transform: rotateZ(90deg);
+			}
+		}
+	}
+	&__dropdown {
+		overflow: hidden;
+
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 0;
+		opacity: 0;
+
+		transition: 0.3s grid-template-rows, 0.3s opacity, 0.3s padding;
+	}
+	&_opened &__dropdown {
+		padding: 30px 0px;
+		grid-template-rows: 1fr;
+		opacity: 1;
+	}
+	&__lessons {
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+	}
+	&__lesson {
+		width: 100%;
+		border-radius: 15px;
+		padding: 22px;
+
+		background: var(--background);
+		border: var(--study-module-lesson-border-width) solid var(--border-color);
+		
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		position: relative;
+
+		&_done {
+			--background: var(--study-module-lesson-done-background);
+			--border-color: var(--study-module-lesson-done-border-color);
+			--number-background: var(--study-module-lesson-done-number-background);
+			--number-color: var(--study-module-lesson-done-number-color);
+			--title-color: var(--study-module-lesson-done-title-color);
+			--status-color: var(--study-module-lesson-done-status-color);
+		}
+		&_in-process {
+			--background: var(--study-module-lesson-in-process-background);
+			--border-color: var(--study-module-lesson-in-process-border-color);
+			--number-background: var(--study-module-lesson-in-process-number-background);
+			--number-color: var(--study-module-lesson-in-process-number-color);
+			--title-color: var(--study-module-lesson-in-process-title-color);
+			--status-color: var(--study-module-lesson-in-process-status-color);
+		}
+		&_locked {
+			--background: var(--study-module-lesson-locked-background);
+			--border-color: var(--study-module-lesson-locked-border-color);
+			--number-background: var(--study-module-lesson-locked-number-background);
+			--number-color: var(--study-module-lesson-locked-number-color);
+			--title-color: var(--study-module-lesson-locked-title-color);
+			--status-color: var(--study-module-lesson-locked-status-color);
+
+			opacity: 0.4;
+		}
+	}
+	&__lesson-check {
+		--size: 25px;
+
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%) translateY(-50%);
+
+		width: var(--size);
+		height: var(--size);
+		border-radius: 50%;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		font-size: 8px;
+
+		background: var(--study-module-lesson-check-background);
+		color: var(--study-module-lesson-check-color);
+	}
+	&__lesson-left {
+		display: flex;
+		align-items: center;
+		gap: 25px;
+	}
+	&__lesson-number {
+		--size: 50px;
+		
+		flex: 0 0 var(--size);
+		height: var(--size);
+		border-radius: 50%;
+		
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		
+		white-space: nowrap;
+		background: var(--number-background);
+		color: var(--number-color);
+	}
+	&__lesson-name {
+		color: var(--title-color);
+		white-space: nowrap;
+	}
+	&__lesson-status {
+		color: var(--status-color);
+		white-space: nowrap;
 	}
 }

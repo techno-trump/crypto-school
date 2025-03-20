@@ -1,6 +1,12 @@
 ---
+interface Props {
+  horizontal?: boolean
+}
+
+const { horizontal } = Astro.props
+
 ---
-<div class="account-menu">
+<div class:list={["account-menu", horizontal && 'account-menu_horizontal']}>
   <div class="account-menu-info palette">
     <div class="account-menu-info-avatar">
       <div class="account-menu-info-avatar__circle">
@@ -26,7 +32,7 @@
     <div class="account-menu-item__name text color-primary">Dashboard</div>
   </a>
 
-  <a href="#" class="account-menu-item palette palette_hoverable">
+  <a href="study" class="account-menu-item palette palette_hoverable">
     <div class="account-menu-item__icon">
       <span class="icon-video-play color-primary"></span>
     </div>
