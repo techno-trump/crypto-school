@@ -5,7 +5,9 @@ import Layout from 'src/layouts/Layout.astro'
 ---
 <Layout title="Крипто школа" description="Крипто школа">
   <div class="container study__container">
-    <AccountMenu horizontal />
+    <div class="hide-mobile">
+      <AccountMenu horizontal />
+    </div>
 
     <h5 class="h5 color-primary study__title">Основи Crypto Education</h5>
 
@@ -13,7 +15,7 @@ import Layout from 'src/layouts/Layout.astro'
       <div class="study-module study-module_opened">
         <div class="study-module__summary">
           <div class="study-module__left">
-            <div class="study-module__number">Модуль 1</div>
+            <div class="study-module__number text">Модуль 1</div>
             <div class="study-module__name text color-primary">Основи</div>
           </div>
 

@@ -9,6 +9,7 @@ import { isMobile } from "./utils.js";
 // import Lenis from 'lenis';
 
 import './range.js';
+import './study-modules.js';
 
 window.app = window.app || {};
 window.app.hoverMedia = window.matchMedia("(any-hover: hover)");

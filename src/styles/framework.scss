@@ -2086,6 +2086,16 @@ body {
 			margin-bottom: 30px;
 		}
 	}
+	@media (max-width: config.$mbpMM) {
+		&__container {
+			padding-top: 20px;
+			padding-bottom: 20px;
+		}
+		&__title {
+			margin-top: 0;
+			margin-bottom: 20px;
+		}
+	}
 }
 .study-module {
 	width: 100%;
@@ -2098,6 +2108,7 @@ body {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		cursor: pointer;
 	}
 	&_opened &__summary {
 		border-bottom: 1px solid var(--study-module-separator);
@@ -2143,28 +2154,24 @@ body {
 
 		span {
 			transform-origin: center;
-			transform: rotateZ(-90deg);
+			transform: rotateZ(90deg);
 			font-size: 16px;
 			transition: 0.3s;
 
-			.study-module_opened {
-				transform: rotateZ(90deg);
+			.study-module_opened & {
+				transform: rotateZ(-90deg);
 			}
 		}
 	}
 	&__dropdown {
+		max-height: 0px;
 		overflow: hidden;
-
-		display: grid;
-		grid-template-columns: 1fr;
-		grid-template-rows: 0;
 		opacity: 0;
-
-		transition: 0.3s grid-template-rows, 0.3s opacity, 0.3s padding;
+		transition: 0.3s opacity, 0.3s padding;
 	}
 	&_opened &__dropdown {
+		max-height: none;
 		padding: 30px 0px;
-		grid-template-rows: 1fr;
 		opacity: 1;
 	}
 	&__lessons {
@@ -2243,6 +2250,7 @@ body {
 		--size: 50px;
 		
 		flex: 0 0 var(--size);
+		width: var(--size);
 		height: var(--size);
 		border-radius: 50%;
 		
@@ -2261,5 +2269,68 @@ body {
 	&__lesson-status {
 		color: var(--status-color);
 		white-space: nowrap;
+	}
+	@media (max-width: config.$mbpMM) {
+		padding: 0px 16px;
+
+		&__summary {
+			align-items: flex-start;
+			padding: 16px 0px;
+		}
+		&__left {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 20px;
+		}
+		&__name {
+			font-size: 16px;
+		}
+		&__right {
+			flex-direction: column;
+			align-items: flex-end;
+			gap: 20px;
+		}
+		&_opened &__dropdown {
+			padding: 20px 0px;
+		}
+		&__lessons {
+			gap: 10px;
+		}
+		&__lesson {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 10px;
+
+			padding: 0px;
+			padding-bottom: 10px;
+			border-radius: 0px;
+
+			background: transparent;
+			border: none;
+
+			&:not(:last-child) {
+				border-bottom: 1px solid var(--study-module-separator);
+			}
+		}
+		&__lesson-left {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 10px;
+		}
+		&__lesson-number {
+			--size: 35px;
+			font-size: 16px;
+			background: var(--study-module-lesson-in-process-number-background);
+			color: var(--study-module-lesson-in-process-number-color);
+		}
+		&__lesson-check {
+			top: 0;
+			right: 0;
+			left: auto;
+			transform: translateX(0px) translateY(0px);
+		}
+		&__lesson-name {
+			white-space: normal;
+		}
 	}
 }
