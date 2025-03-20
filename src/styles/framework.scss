@@ -83,7 +83,7 @@
 	--horizontal-row-color: #cbd7db80;
 	
 	// Table 
-	--table-hover-gradient: linear-gradient(to top, #D9EBDF3A, #D0E7D72B);
+	--table-hover-gradient: var(--white);
 	--table-header-column-color: var(--dark-600);
 
 	// Portal
@@ -980,6 +980,8 @@ body {
 			}
 			&_hoverable {
 				@media (hover: hover) {
+					transition: background-color 0.3s;
+
 					&:hover {
 						background: var(--table-hover-gradient);
 					}
@@ -2109,6 +2111,7 @@ body {
 		align-items: center;
 		justify-content: space-between;
 		cursor: pointer;
+		user-select: none;
 	}
 	&_opened &__summary {
 		border-bottom: 1px solid var(--study-module-separator);
