@@ -1,9 +1,69 @@
-<svg width="21" height="19" viewBox="0 0 21 19" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<rect x="0.28418" y="0.928955" width="20.347" height="17.2641" fill="url(#pattern0_4219_6530)"/>
-<defs>
-<pattern id="pattern0_4219_6530" patternContentUnits="objectBoundingBox" width="1" height="1">
-<use xlink:href="#image0_4219_6530" transform="scale(0.0151515 0.0178571)"/>
-</pattern>
-<image id="image0_4219_6530" width="66" height="56" preserveAspectRatio="none" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEIAAAA4CAYAAABJ7S5PAAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAQqADAAQAAAABAAAAOAAAAABbz3l5AAAFW0lEQVRoBe1azXIbRRDuHsmWZcWOgJgCLFeWByBRngDlwtV5g0hw4SbnCSy9QfwAwbwB5AmQqzgTFVyo4qJUWYGynSDsOJL1M0P3Siut9bezP2NfdqqknZ3pn5lvu3tnewYgLjECMQIxAjECMQIxAj4RQJ/0Y/IT2LaI+Qk1PKRfHkFlFaBFdUDAlgLVoGqLaGrUfrQFxzW691XahzkLpHyCAm0dSrEOkR3paglUDUU6QOIRCKilS/51OAPyBcQZWDSQXpGYd+lXoJ92GYHzMw28+ik0G4sY1aGV7chuEQTugvKngwBncFjHQbrUrC/SMa9dCwgGAKBXpme9R0+a6mELDxafuQGxAYBuWSmxx088rAYyyxqNt0RW0tCR5QnEKeQKCPLQMXsdobo0pLxyD5pVcoECKHlIA7d0ebXpUFXSpTdVL/qlQLyFXFmCeu4lJEx/5uF5Q3yfsVQqEUaMBy/FKxSPl1nHQiDOYHuffK3ioSFUd+bROaQfXIBaS0A3vwW3CcZcIG4SBAfJ2wZjBojbAOGmwVjD1UdYarQcvXwV7pu3sJM37Q7izsB2B7dep46dAaz8+a9za+iKVgd6P00LvwaEgsEMwTRD2PvsN6dLRYjWFSTfXC6lCd1J65P2iy/23HLGQAxdAi13Z9R1Do5iY+ApNvlXC/DKm85T0BICRNzntYtDYgPBy2UAVXQaTVzZJVJfftAWnfjHrFVQCMh+kP2xVdhAUMQsmFgwuWe9+tmVljU4PMnGhVM1dk2gKjtWMQJC7RvTNhK8/uDctwrxruObxw8DW0UH+nnmEeQW9KZAi+rGCruFTmyYHkDirD3dFPk9fdc8ZaGC3SJy6VMC2S2ClMTf+jEliHybR9mpBF5H4NeBhWgyrt4PPiHTbw92D857EBDK0pzPrZDhZc+4XvqwzLNFWKY1Je/2A6sQtNo0XYTCLFvEeFFhSmGQQDkeS888EJQJY9eICyNwI0DIbgg1KyYTNhMjoNennW2etJioXc187WtrkZS0MV4QGoLS43XTivr/JU2rCCefgaBn9TqcFG/uwbtVb6IFFCqzsqAnuuY1SNbJebEWncj5krrN1PwOj1aZTRnOY9LsEeqcrSIgEjW6bXmMKVR37yQFQQKm3EqH0qvDLBUcMZ24B5y7U+bjxIl/Ex98sqYzl1A0lKB5bgMxlILVUNI0mNt/bGhQTUhuwi14N8zZ67Bf8KMN2tpkGNHX2D26x/qxor9zJ/pBzEicGIBrpTNpnKGPqEHXKgafr4P82KxbUJD80b17PgaCrYJ2rA8imvNcMWwV7d+Xuwhv9PTvb87lj6qRElEt+l0LB2MghkqSFdMrzctXmyAvFq8WBzsb5l+ZSlY5NvDm8+WLXIXnjkMAJv/DAyD4yuRXKafueH9j+qu0b20YtwapsJr57rgymfGwNmURAHxmgc5APDa5tpDvE3Dx60fX1hYcF0y7BMeFeSAwFDMW4SDFliFA/WIysetYhvzKPAiUkjtY/7a558xv+jpjEQ4BW4YEJMvgkydminyfbLV+26r2rU1jOjgwglLPloHAs1toEe6pn8I2H+cpR2wdNXpKJef4kL0XiVCmIVlu3aHqPo4PaQHBgxkGUdgnQMLuitVostV5p+yGp+igCCifhgJkCAC/GUiXXtEGwi2OLKRIA92ltoLm26VOivgAmfYxw/YPuaJCOr1HO9cEftatf16dvyKVxJeUcwt0zDAQEO6B8E6ZAGEpkBYJu+v0kdm/JrAaSN/6ww87p8f/tX24nZdACVbJWw9iAgolVIB+nE+YPvjhX0vMESMQIxAjECMQIxAjECMQDIH/AR8Zx/osgCrzAAAAAElFTkSuQmCC"/>
-</defs>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg
+   version="1.1"
+   id="svg3409"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   sodipodi:docname="mastercard.svg"
+   x="0px"
+   y="0px"
+   width="999.20001"
+   height="618"
+   viewBox="0 0 999.2 618"
+   enable-background="new 0 0 999.2 776"
+   xml:space="preserve"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   id="defs1"><clipPath
+     clipPathUnits="userSpaceOnUse"
+     id="clipPath1"><rect
+       style="fill:#d81010;stroke:#285335;stroke-width:0.001"
+       id="rect2"
+       width="999.20001"
+       height="636.26056"
+       x="0"
+       y="0"
+       rx="4" /></clipPath></defs><sodipodi:namedview
+   id="namedview1"
+   pagecolor="#ffffff"
+   bordercolor="#000000"
+   borderopacity="0.25"
+   inkscape:showpageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   inkscape:deskcolor="#d1d1d1"
+   inkscape:zoom="0.50451031"
+   inkscape:cx="67.392082"
+   inkscape:cy="355.79055"
+   inkscape:window-width="1920"
+   inkscape:window-height="1001"
+   inkscape:window-x="-9"
+   inkscape:window-y="-9"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="svg3409" />
+
+<g
+   id="g1"
+   clip-path="url(#clipPath1)">
+	<rect
+   id="rect19"
+   x="364"
+   y="66.099998"
+   fill="#ff5a00"
+   width="270.39999"
+   height="485.79999" />
+	<path
+   id="XMLID_330_"
+   inkscape:connector-curvature="0"
+   fill="#eb001b"
+   d="M 382,309 C 382,210.3 428.4,122.7 499.6,66.1 447.2,24.9 381.1,0 309,0 138.2,0 0,138.2 0,309 0,479.8 138.2,618 309,618 381.1,618 447.2,593.1 499.6,551.9 428.3,496.1 382,407.7 382,309 Z" />
+	<path
+   id="path22"
+   inkscape:connector-curvature="0"
+   fill="#f79e1b"
+   d="M 999.2,309 C 999.2,479.8 861,618 690.2,618 618.1,618 552,593.1 499.6,551.9 571.7,495.2 617.2,407.7 617.2,309 617.2,210.3 570.8,122.7 499.6,66.1 551.9,24.9 618,0 690.1,0 861,0 999.2,139.1 999.2,309 Z" />
+</g>
 </svg>

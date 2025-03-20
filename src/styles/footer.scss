@@ -21,6 +21,10 @@
   }
   &__payment-item {
     max-height: 17px;
+
+    &:nth-child(4) {
+      max-height: 10px;
+    }
   }
   &__scroll-up {
     justify-self: flex-end;
