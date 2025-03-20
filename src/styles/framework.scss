@@ -2076,6 +2076,16 @@ body {
 		flex-direction: column;
 		gap: 20px;
 	}
+	@media (max-width: config.$mbpT) {
+		&__container {
+			padding-top: 30px;
+			padding-bottom: 30px;
+		}
+		&__title {
+			margin-top: 30px;
+			margin-bottom: 30px;
+		}
+	}
 }
 .study-module {
 	width: 100%;
