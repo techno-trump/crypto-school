@@ -951,6 +951,24 @@ body {
 		border: 0.3px solid var(--horizontal-row-color);
 		margin-bottom: 30px;
 	}
+	&__tabs {
+		margin-bottom: 30px;
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 20px;
+	}
+	&_compressed &__tabs {
+		margin-bottom: 20px;
+	}
+	&__tab {
+		color: var(--dark-600);
+		
+		&_active {
+			color: var(--text-primary-color);
+			font-weight: 600;
+		}
+	}
 	@media (max-width: config.$mbpT) {
 		&_compressed &__title {
 			margin-bottom: 30px;
@@ -967,6 +985,9 @@ body {
 		}
 		&__horizontal-row {
 			border: 0.3px solid var(--horizontal-row-color);
+			margin-bottom: 16px;
+		}
+		&__tabs {
 			margin-bottom: 16px;
 		}
 	}
@@ -2388,6 +2409,9 @@ body {
 	&__container {
 		padding-top: 40px;
 		margin-bottom: 80px;
+	}
+	&__block {
+		margin-bottom: 30px;
 	}
 	&__list {
 		--min-column: 280px;
