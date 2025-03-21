@@ -9,6 +9,7 @@ interface Props {
 
   big?: boolean
   small?: boolean
+  block?: boolean
 
   disabled?: boolean
 }
@@ -23,6 +24,7 @@ const {
   
   big, 
   small,
+  block,
 
   disabled
 } = Astro.props
@@ -37,7 +39,8 @@ const {
     rounded && 'button_rounded', 
     centered && 'button_centered',
     big && 'button_big',
-    small && 'button_small' 
+    small && 'button_small',
+    block && 'button_block'
   ]}
   disabled={disabled}
 >

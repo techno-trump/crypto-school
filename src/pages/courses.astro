@@ -1,0 +1,134 @@
+---
+import AccountMenu from 'src/components/AccountMenu.astro'
+import Button from 'src/components/basic/Button.astro'
+import Layout from 'src/layouts/Layout.astro'
+
+---
+<Layout title="Крипто школа" description="Крипто школа">
+  <div class="container courses__container">
+    <div class="hide-mobile">
+      <AccountMenu horizontal />
+    </div>
+
+    <div class="account-block palette courses__block">
+      <h5 class="h5 color-primary account-block__title">Наши курси</h5>
+
+      <hr class="account-block__horizontal-row">
+
+      <div class="courses__list">
+        <div class="course-card course-card_done">
+          <div class="course-card__header">
+            <div class="text-small course-card__badge">Пройдено</div>
+            <img class="course-card__image" src="./assets/img/temp/course-card-illustration.png">
+          </div>
+          <div class="course-card__body">
+            <div class="h6 course-card__title">Основи</div>
+            <ul class="text-small course-card__list">
+              <li>Знакомство с нами</li>
+              <li>Що таке крипта</li>
+              <li>Что такое блокчейн?</li>
+              <li>Токены и монеты — в чем разница?</li>
+              <li>Експлорер</li>
+            </ul>
+            <div class="course-card__ellipsis text-small">...</div>
+          </div>
+          <div class="course-card__footer">
+            <Button block filled rounded centered>
+              <span class="button__text">Зайти в курс</span>
+            </Button>
+          </div>
+        </div>
+
+        <div class="course-card course-card_done">
+          <div class="course-card__header">
+            <div class="course-card__badge">Пройдено</div>
+            <img class="course-card__image" src="./assets/img/temp/course-card-illustration.png">
+          </div>
+          <div class="course-card__body">
+            <div class="h6 course-card__title">Діскрод і ТГ</div>
+            <ul class="text-small course-card__list">
+              <li>Введение в Discord и поддержка</li>
+              <li>Телеграм бот и ветки</li>
+            </ul>
+            <div class="course-card__ellipsis text-small">...</div>
+          </div>
+          <div class="course-card__footer">
+            <Button block filled rounded centered>
+              <span class="button__text">Зайти в курс</span>
+            </Button>
+          </div>
+        </div>
+
+        <div class="course-card">
+          <div class="course-card__header">
+            <img class="course-card__image" src="./assets/img/temp/course-card-illustration.png">
+          </div>
+          <div class="course-card__body">
+            <div class="h6 course-card__title">CEX</div>
+            <ul class="text-small course-card__list">
+              <li>Робота із Біржами</li>
+              <li>Что такое биржа и как она работает?</li>
+              <li>Как зарегистрироваться на бирже?</li>
+              <li>Как купить первую крипту? п2п + кантор</li>
+              <li>Основы спотовой торговли</li>
+              <li>Фючерсы</li>
+              <li>Риск-менеджмент в торговле</li>
+            </ul>
+            <div class="course-card__ellipsis text-small">...</div>
+          </div>
+          <div class="course-card__footer">
+            <Button block filled rounded centered>
+              <span class="button__text">Зайти в курс</span>
+            </Button>
+          </div>
+        </div>
+
+        <div class="course-card course-card_locked">
+          <div class="course-card__header">
+            <img class="course-card__image" src="./assets/img/temp/course-card-illustration.png">
+          </div>
+          <div class="course-card__body">
+            <div class="h6 course-card__title">Кошельки</div>
+            <ul class="text-small course-card__list">
+              <li>Создание криптокошелька</li>
+              <li>Безопасность</li> 
+              <li>Вывод токенов на кошелек, перевод между кошельками</li>
+              <li>Трасті</li>
+            </ul>
+            <div class="course-card__ellipsis text-small">...</div>
+          </div>
+          <div class="course-card__footer">
+            <Button block filled rounded centered disabled>
+              <span class="button__text">Зайти в курс</span>
+            </Button>
+          </div>
+        </div>
+
+        <div class="course-card course-card_locked">
+          <div class="course-card__header">
+            <div class="course-card__badge">Пройдено</div>
+            <img class="course-card__image" src="./assets/img/temp/course-card-illustration.png">
+          </div>
+          <div class="course-card__body">
+            <div class="h6 course-card__title">DEFI</div>
+            <ul class="text-small course-card__list">
+              <li>Что такое DeFi?</li>
+              <li>Лендінг  і позики в крипті</li>
+              <li>Основы стейкинга</li>
+              <li>Бріджи и межсетевые операции</li>
+              <li>Что такое ЛП та фармінг</li>
+              <li>Хедж</li>
+              <li>Інструменти в крипті</li>
+            </ul>
+            <div class="course-card__ellipsis text-small">...</div>
+          </div>
+          <div class="course-card__footer">
+            <Button block filled rounded centered disabled>
+              <span class="button__text">Зайти в курс</span>
+            </Button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
