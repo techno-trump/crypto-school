@@ -238,6 +238,16 @@
 	--course-card-locked-background: #F2F2F2;
 	--course-card-locked-title-color: var(--primary-color);
 	--course-card-locked-text-color: var(--dark-200);
+
+	// Study daily progress
+	--study-daily-progress-benefit-color: var(--primary-color);
+	--study-daily-progress-last-benefit-color: var(--dark-500);
+	--study-daily-progress-step-color: var(--dark-500);
+	--study-daily-progress-track-background: #EEF4F6;
+	--study-daily-progress-track-fill-background: var(--primary-color);
+	--study-daily-progress-track-tick-color: var(--white);
+	--study-daily-progress-hint-left-color: var(--dark-200);
+	--study-daily-progress-hint-right-color: var(--primary-color);
 }
 html[data-theme="dark"] {
 	--primary-color: #3150FF;
@@ -435,6 +445,16 @@ html[data-theme="dark"] {
 	--course-card-locked-background: #3A3A3ABB;
 	--course-card-locked-title-color: var(--white);
 	--course-card-locked-text-color: #FFFFFF80;
+
+	// Study daily progress
+	--study-daily-progress-benefit-color: #A7B4FF;
+	--study-daily-progress-last-benefit-color: var(--white);
+	--study-daily-progress-step-color: #FFFFFF80;
+	--study-daily-progress-track-background: #3A3A3A;
+	--study-daily-progress-track-fill-background: linear-gradient(to right, #0026FF, #001799);
+	--study-daily-progress-track-tick-color: var(--white);
+	--study-daily-progress-hint-left-color: var(--white);
+	--study-daily-progress-hint-right-color: var(--white);
 }
 @media (max-width: config.$mbpT) {
 	:root {
@@ -2554,6 +2574,146 @@ body {
 			display: block;
 			margin-top: 5px;
 			padding-left: 25px;
+		}
+	}
+}
+
+.study-daily-progress {
+	--steps-amount: 5;
+	--item-base-width: 80px;
+	--last-item-base-width: 140px;
+	--progress-height: 25px;
+	--track-height: 8px;
+	--track-fill-expansion-width: 110px;
+	--progress-steps: 2;
+
+	&__steps {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 5px;
+	}
+	&__step {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 5px;
+		flex: 0 0 var(--item-base-width);
+
+		&:last-child {
+			flex: 0 0 var(--last-item-base-width);
+		}
+	}
+	&__reward {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	
+		&:last-child {
+			gap: 15px;
+		}
+		
+		img {
+			max-height: 30px;
+		}
+	}
+	&__value {
+		color: var(--study-daily-progress-benefit-color);
+	}
+	&__step:last-child &__value {
+		color: var(--study-daily-progress-last-benefit-color);
+		text-align: right;
+	}
+	&__condition {
+		color: var(--study-daily-progress-step-color);
+	}
+	&__progress {
+		height: var(--progress-height);
+		position: relative;
+
+		display: flex;
+		align-items: center;
+	}
+	&__track {
+		height: var(--track-height);
+		width: 100%;
+
+		border-radius: 100px;
+		overflow: hidden;
+
+		background: var(--study-daily-progress-track-background);
+	}
+	&__fill {
+		--base-items-total-width: calc(var(--item-base-width) * (var(--steps-amount) - 1));
+		--all-items-total-width: calc(var(--base-items-total-width) + var(--last-item-base-width));
+		--gap-width: calc((100% - var(--all-items-total-width)) / (var(--steps-amount) - 1));
+
+		height: 100%;
+		width: calc(
+			(var(--progress-steps) - 1) * var(--gap-width) + 
+			var(--progress-steps) * var(--item-base-width) + 
+			(var(--track-fill-expansion-width) - var(--item-base-width)) / 2
+		);
+	
+		background: var(--study-daily-progress-track-fill-background);
+		border-radius: 100px;
+	}
+	&__progress_done &__fill {
+		width: 100%;
+	}
+	&__points {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	&__point {
+		flex: 0 0 var(--item-base-width);
+		height: var(--progress-height);
+
+		display: flex;
+		justify-content: center;
+
+		&:last-child {
+			flex: 0 0 var(--last-item-base-width);
+			justify-content: flex-end;
+		}
+	}
+	&__point-circle {
+		flex: 0 0 var(--progress-height);
+		width: var(--progress-height);
+		height: var(--progress-height);
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		
+		border-radius: 50%;
+		background: var(--study-daily-progress-track-background);
+		
+		span {
+			font-size: 7px;
+			color: var(--study-daily-progress-track-tick-color);
+		}
+	}
+	&__point_filled &__point-circle {
+		background: var(--study-daily-progress-track-fill-background);
+	}
+	&__hints {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 30px;
+	}
+	&__hint {
+		&:first-child {
+			color: var(--study-daily-progress-hint-left-color);
+		}
+		&:last-child {
+			color: var(--study-daily-progress-hint-right-color);
 		}
 	}
 }
