@@ -2428,7 +2428,13 @@ body {
 .courses {
 	&__container {
 		padding-top: 40px;
-		margin-bottom: 80px;
+		padding-bottom: 80px;
+	}
+	&__menu {
+		margin-bottom: 30px;
+	}
+	&__progress {
+		margin-bottom: 30px;
 	}
 	&__block {
 		margin-bottom: 30px;
@@ -2452,6 +2458,15 @@ body {
 			--min-column: 250px;
 			--max-column: 1fr;
 			gap: 20px;
+		}
+	}
+	@media (max-width: config.$mbpM) {
+		&__container {
+			padding-top: 20px;
+			padding-bottom: 40px;
+		}
+		&__progress {
+			display: none;
 		}
 	}
 }
