@@ -51,7 +51,7 @@ import Layout from 'src/layouts/Layout.astro'
       </div>
     </article>
 
-    <div class="account-block palette completion-form">
+    <div class="account-block palette completion-form lesson__form">
       <h5 class="account-block__title h6">Підтвердити виконання</h5>
 
       <hr class="account-block__horizontal-row completion-form__horizontal-row">
@@ -76,6 +76,22 @@ import Layout from 'src/layouts/Layout.astro'
       <Button block centered filled rounded>
         <span class="button__text">Завдання виконано</span>
       </Button>
+    </div>
+
+    <div class="bottom-navigation">
+      <a href="#" class="bottom-navigation__item bottom-navigation__previous">
+        <div class="bottom-navigation__arrow">
+          <span class="icon-nav-arrow-left"></span>
+        </div>
+        <div class="bottom-navigation__label text-small">На головну</div>
+      </a>
+
+      <a href="#" class="bottom-navigation__item bottom-navigation__next">
+        <div class="bottom-navigation__label text-small">Наступний урок</div>
+        <div class="bottom-navigation__arrow">
+          <span class="icon-nav-arrow-right"></span>
+        </div>
+      </a>
     </div>
   </div>
 </Layout>
