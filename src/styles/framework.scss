@@ -266,6 +266,11 @@
 	--team-member-subtitle-color: #8E8C90;
 	--team-member-icon-color: var(--primary-color);
 	--team-member-mail-color: #8E8C90;
+
+	// Breadcrumbs
+	--breadcrumbs-link-color: #8E8C90;
+	--breadcrumbs-arrow-color: #8E8C90;
+	--breadcrumbs-active-link-color: #1E1E1E;
 }
 html[data-theme="dark"] {
 	--primary-color: #3150FF;
@@ -491,6 +496,11 @@ html[data-theme="dark"] {
 	--team-member-subtitle-color: #FFFFFF80;
 	--team-member-icon-color: var(--white);
 	--team-member-mail-color: #FFFFFF80;
+
+	// Breadcrumbs
+	--breadcrumbs-link-color: #FFFFFF80;
+	--breadcrumbs-arrow-color: #FFFFFF80;
+	--breadcrumbs-active-link-color: #FFFFFF;
 }
 @media (max-width: config.$mbpT) {
 	:root {
@@ -3128,5 +3138,25 @@ body {
 		&__body {
 			gap: 10px;
 		}
+	}
+}
+
+.breadcrumbs {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	
+	&__link {
+		color: var(--breadcrumbs-link-color);
+		font-family: 'Inter Tight', sans-serif;
+		font-weight: 500;
+		font-size: 14px;
+	}
+	&__arrow {
+		color: var(--breadcrumbs-arrow-color);
+		font-size: 6px;
+	}
+	&__link_active {
+		color: var(--breadcrumbs-active-link-color);
 	}
 }
