@@ -545,8 +545,6 @@ body {
 .ratio-wrap {
 	display: flex;
 	position: relative;
-	left: 0;
-	top: 0;
 	// &_lazy:not(._loaded) &__inner::after {
 	// 	@include spinner;
 	// }
