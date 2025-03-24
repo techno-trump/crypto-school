@@ -2979,6 +2979,63 @@ body {
 	}
 }
 
+.team {
+	&__container {
+		padding-top: 40px;
+		padding-bottom: 80px;
+	}
+	&__breadcrumbs {
+		margin-bottom: 50px;
+	}
+	&__expanded-member {
+		margin-bottom: 60px;
+	}
+	&__title {
+		text-align: center;
+		margin-bottom: 40px;
+	}
+	&__cards {
+		--min-column: 280px;
+		--max-column: 350px;
+
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(var(--min-column), var(--max-column)));
+		gap: 30px;
+		
+		.team-member {
+			max-width: var(--max-column);
+			min-width: var(--min-column);
+			height: 100%;
+		}
+	}
+	@media (max-width: config.$mbpT) {
+		&__breadcrumbs {
+			margin-bottom: 30px;
+		}
+		&__expanded-member {
+			margin-bottom: 30px;
+		}
+		&__title {
+			margin-bottom: 30px;
+		}
+		&__cards {
+			--max-column: 340px;
+			gap: 20px;
+		}
+	}
+	@media (max-width: config.$mbpM) {
+		&__container {
+			padding-top: 20px;
+			padding-bottom: 40px;
+		}
+		&__expanded-member {
+			margin-bottom: 20px;
+		}
+		&__title {
+			margin-bottom: 20px;
+		}
+	}
+}
 .team-member {
 	display: flex;
 	flex-direction: column;
@@ -3057,9 +3114,12 @@ body {
 		}
 	}
 	@media (max-width: config.$mbpMM) {
+		flex-direction: row;
+
 		&_expanded {
 			gap: 15px;
 		}
+		&__image, 
 		&_expanded &__image {
 			max-height: 60px;
 			max-width: 60px;
