@@ -1,11 +1,9 @@
 ---
 import Button from './basic/Button.astro'
 
-const imageSrc = './assets/img/home-page-illustration-light.png'
-
 ---
 <div class="home-hero">
-  <div class="container">
+  <div class="container home-hero__container">
     <div class="home-hero-content">
       <h1 class="h1 home-hero-content__title">
         <span class="h2">ВАШ ГІД У СВІТ</span>
@@ -32,8 +30,11 @@ const imageSrc = './assets/img/home-page-illustration-light.png'
       </div>
     </div>
 
-    <div class="home-hero-image">
-      <img src={imageSrc} alt="user">  
+    <div class="home-hero__image">
+			<div class="ratio-wrap ratio-wrap_contain home-hero__image-wrap">
+				<img src="assets/img/home-hero-light.png" alt="Hero light" class="ratio-wrap__item home-hero__image-item_light">
+				<img src="assets/img/home-hero-dark.png" alt="Hero dark" class="ratio-wrap__item home-hero__image-item_dark">
+			</div>
     </div>
   </div>
 </div>

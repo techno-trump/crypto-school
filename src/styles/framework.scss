@@ -544,13 +544,16 @@ body {
 }
 .ratio-wrap {
 	display: flex;
+	position: relative;
+	left: 0;
+	top: 0;
 	// &_lazy:not(._loaded) &__inner::after {
 	// 	@include spinner;
 	// }
 	&::before {
 		content: "";
 		display: inline-block;
-		padding-top: var(--height-ratio, 50%);
+		padding-top: var(--ratio, 50%);
 	}
 	& img, & video, & &__item {
 		position: absolute;
@@ -720,6 +723,7 @@ body {
 	color: var(--color, currentColor);
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	gap: 10px;
 	padding: 20px 40px;
 	border-radius: 5px;
@@ -750,6 +754,17 @@ body {
 	}
 	&_outlined {
 		border: 1px solid var(--primary-color);
+		@media (any-hover: hover) {
+			&:hover {
+				color: var(--hover-primary-color);
+				border-color: var(--hover-primary-color);
+			}
+		}
+	}
+	@media (any-hover: hover) {
+		&_outlined:hover &__text {
+			color: var(--hover-primary-color);
+		}
 	}
 	&_white {
 		background-color: var(--white);
@@ -809,7 +824,7 @@ body {
 	font-size: 18px;
 	line-height: 1.2;
 	color: var(--text-primary-color);
-
+	transition: color 0.3s;
 	.button_big & {
 		font-size: 22px;
 	}
@@ -1185,27 +1200,75 @@ body {
 
 // Blocks and Pages
 .home-hero {
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 auto;
 	width: 100%;
-	height: calc(100dvh - var(--header-height) - var(--footer-height));
 	overflow: hidden;
 	background: linear-gradient(180deg, #E2ECEF, #DFF6F2), #CBD7DB;
-	& .container {
-		padding-top: 200px;
-		position: relative;
+	&__container {
+		flex: 1 1 auto;
+		display: grid;
+		& > * {
+			@media (min-width: 951px) {
+				grid-row: 1/span 1;
+				grid-column: 1/span 1;
+			}
+		}
 	}
-	&-image {
-		width: 985px;
-		max-width: 65%;
-		position: absolute;
+	&__image {
+		--ratio: 125%;
+		align-self: end;
+		justify-self: end;
+		width: min(985px, 65%);
+		height: calc(100dvh - var(--header-height) - var(--footer-height));
 		top: 10px;
 		right: 0px;
+		display: flex;
+		align-content: flex-end;
+		@media (max-width: config.$mbpPC) {
+			width: min(985px, 55%);
+		}
+		@media (max-width: 1200px) {
+			width: min(985px, 45%);
+		}
+		@media (max-width: config.$mbpT) {
+			width: min(985px, 55%);
+		}
+		@media (max-width: 950px) {
+			justify-self: center;
+			height: max(65vw, 45vh);
+			width: min(985px, 85%);
+		}
 	}
-	&-image img {
-		max-width: 100%;
+	&__image-wrap {
+		flex: 1 1 100%;
+		margin-top: auto;
+		margin-bottom: 0;
+	}
+	html:not([data-theme="light"]) &__image-item_light {
+		display: none;
+	}
+	html:not([data-theme="dark"]) &__image-item_dark {
+		display: none;
 	}
 	&-content {
+		width: 100%;
 		position: relative;
 		z-index: 1;
+		padding-top: 200px;
+		padding-bottom: 100px;
+		@media (max-width: 1200px) {
+			padding-top: 120px;
+		}
+		@media (max-width: 950px) {
+			padding-top: 80px;
+			padding-bottom: 70px;
+		}
+		@media (max-width: config.$mbpM) {
+			padding-top: 40px;
+			padding-bottom: 40px;
+		}
 	}
 	&-content__title {
 		margin-bottom: 5px;
@@ -1221,37 +1284,17 @@ body {
 		color: var(--dark-300);
 	}
 	&-content__buttons {
-		display: flex;
+		display: inline-flex;
 		align-items: center;
 		flex-wrap: wrap;
 		gap: 40px;
-	}
-	@media (max-width: config.$mbpPC) {
-		&-image {
-			max-width: 55%;
+		& > * {
+			flex: 1 1 auto;
 		}
 	}
 	@media (max-width: config.$mbpT) {
-		& .container {
-			padding-top: 80px;
-			display: flex;
-			flex-direction: column;
-			gap: 70px;
-		}
-		&-image {
-			width: 100%;
-			max-width: 100%;
-			padding-right: 10%;
-			display: flex;
-			justify-content: center;
-			position: relative;
-			overflow: hidden;
-		}
-		&-image img {
-			width: 610px;
-		}
 		&-content__description {
-			color: var(--primary-color);
+			//color: var(--primary-color);
 			max-width: 530px;
 		}
 		&-content__buttons {
@@ -1262,17 +1305,6 @@ body {
 		}
 	}
 	@media (max-width: config.$mbpMM) {
-		& .container {
-			padding-top: 40px;
-			gap: 40px;
-		}
-		&-image {
-			padding-right: 15%;
-		}
-		&-image img {
-			min-width: 130%;
-			max-width: 150%;
-		}
 		&-content__title {
 			margin-top: 0px;
 		}
@@ -1280,6 +1312,7 @@ body {
 			margin-bottom: 20px;
 		}
 		&-content__buttons {
+			display: flex;
 			flex-direction: column;
 			gap: 10px;
 		}

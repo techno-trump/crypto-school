@@ -58,3 +58,34 @@ body main {
 		padding-top: var(--column-gap, var(--gap, 0));
 	}
 }
+main {
+	position: relative;
+	left: 0;
+	top: 0;
+	display: flex;
+	flex-direction: column;
+}
+.page-background {
+	--ratio: 125%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	&__wrap {
+		position: absolute;
+		left: 50%;
+		top: -5%;
+		width: 140vw;
+		min-width: 1200px;
+		transform: translateX(-50%);
+	}
+	html:not([data-theme="light"]) &__img_light {
+		display: none;
+	}
+	html:not([data-theme="dark"]) &__img_dark {
+		display: none;
+	}
+}
