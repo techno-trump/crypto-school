@@ -259,6 +259,13 @@
 	// Bottom Navigation
 	--bottom-navigation-arrow-color: var(--primary-color);
 	--bottom-navigation-label-color: var(--dark-300);
+
+	// Team member
+	--team-member-image-border-color: var(--white);
+	--team-member-title-color: #282828;
+	--team-member-subtitle-color: #8E8C90;
+	--team-member-icon-color: var(--primary-color);
+	--team-member-mail-color: #8E8C90;
 }
 html[data-theme="dark"] {
 	--primary-color: #3150FF;
@@ -477,6 +484,13 @@ html[data-theme="dark"] {
 	// Bottom Navigation
 	--bottom-navigation-arrow-color: var(--primary-color);
 	--bottom-navigation-label-color: var(--white);
+
+	// Team member
+	--team-member-image-border-color: var(--white);
+	--team-member-title-color: var(--white);
+	--team-member-subtitle-color: #FFFFFF80;
+	--team-member-icon-color: var(--white);
+	--team-member-mail-color: #FFFFFF80;
 }
 @media (max-width: config.$mbpT) {
 	:root {
@@ -2961,6 +2975,98 @@ body {
 		
 		&__previous {
 			display: none;
+		}
+	}
+}
+
+.team-member {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	
+	&_expanded {
+		flex-direction: row;
+		gap: 30px;
+	}
+	&__image {
+		max-height: 300px;
+		
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		border-radius: 15px;
+		overflow: hidden;
+	}
+	&__image img {
+		max-height: 100%;
+	}
+	&_expanded &__image {
+		max-height: 400px;
+		max-width: 60%;
+	}
+	&__body {
+		flex: 1 1 auto;
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+	}
+	&__headline {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+	}
+	&__title {
+		color: var(--team-member-title-color);
+	}
+	&__subtitle {
+		color: var(--team-member-subtitle-color);
+	}
+	&__separator {
+		border-bottom: 0.3px solid var(--horizontal-row-color);
+	}
+	&__contacts {
+		--gap: 12px;
+
+		display: flex;
+		align-items: center;
+		gap: var(--gap);
+	}
+	&__contact {
+		color: var(--team-member-icon-color);
+		font-size: 16px;
+
+		&:not(:last-child) {
+			padding-right: var(--gap);
+			border-right: 1px solid var(--horizontal-row-color);
+		}
+	}
+	&__mail {
+		color: var(--team-member-mail-color);
+	}
+	@media (max-width: config.$mbpT) {
+		&_expanded {
+			gap: 20px;
+		}
+		&_expanded &__image {
+			max-height: 300px;
+			max-width: 50%;
+		}
+		&__body {
+			gap: 20px;
+		}
+	}
+	@media (max-width: config.$mbpMM) {
+		&_expanded {
+			gap: 15px;
+		}
+		&_expanded &__image {
+			max-height: 60px;
+			max-width: 60px;
+			border-radius: 10px;
+		}
+		&__body {
+			gap: 10px;
 		}
 	}
 }
