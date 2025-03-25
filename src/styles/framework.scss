@@ -927,6 +927,9 @@ body {
 			opacity: var(--active-opacity);
 		}
 	}
+	&_blurred {
+		backdrop-filter: blur(6px);
+	}
 
 	&_hide-desktop {
 		@media (min-width: mixins.px(config.$mbpTNu + 1)) {
