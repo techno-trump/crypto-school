@@ -271,6 +271,13 @@
 	--breadcrumbs-link-color: #8E8C90;
 	--breadcrumbs-arrow-color: #8E8C90;
 	--breadcrumbs-active-link-color: #1E1E1E;
+
+	// Checkbox
+	--checkbox-base-background: transparent;
+	--checkbox-base-border-color: var(--dark-300);
+	--checkbox-active-background: var(--primary-color);
+	--checkbox-active-border-color: var(--primary-color);
+	--checkbox-active-icon-color: var(--white);
 }
 html[data-theme="dark"] {
 	--primary-color: #3150FF;
@@ -501,6 +508,13 @@ html[data-theme="dark"] {
 	--breadcrumbs-link-color: #FFFFFF80;
 	--breadcrumbs-arrow-color: #FFFFFF80;
 	--breadcrumbs-active-link-color: #FFFFFF;
+
+	// Checkbox
+	--checkbox-base-background: transparent;
+	--checkbox-base-border-color: #FFFFFF80;
+	--checkbox-active-background: var(--primary-color);
+	--checkbox-active-border-color: var(--primary-color);
+	--checkbox-active-icon-color: var(--white);
 }
 @media (max-width: config.$mbpT) {
 	:root {
@@ -1196,6 +1210,55 @@ body {
 			padding-top: 12px;
 			padding-bottom: 12px;
 		}
+	}
+}
+
+.checkbox {
+	--size: 24px;
+	--base-background: var(--checkbox-base-background);
+	--base-border-color: var(--checkbox-base-border-color);
+	--active-background: var(--checkbox-active-background);
+	--active-border-color: var(--checkbox-active-border-color);
+	--active-icon-color: var(--checkbox-active-icon-color);
+
+	display: flex;
+
+  &__input {
+    display: none;
+  }
+
+  &__body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+		width: var(--size);
+    height: var(--size);
+    min-width: var(--size);
+    min-height: var(--size);
+		flex: 0 0 var(--size);
+
+    border: 1px solid var(--base-border-color);
+		background: var(--base-background);
+		border-radius: 5px;
+    cursor: pointer;
+
+    transition: border-color 0.1s, background-color 0.1s;	
+  }
+	&__icon {
+		color: var(--base-background);
+		transition: color 0.1s;
+		font-size: 10px;
+		opacity: 0;
+	}
+  input:checked ~ &__body {
+    background-color: var(--active-background);
+		border-color: var(--active-border-color);
+
+  }
+	input:checked ~ &__body &__icon {
+		color: var(--active-icon-color);
+		opacity: 1;
 	}
 }
 

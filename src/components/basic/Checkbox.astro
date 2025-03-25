@@ -11,9 +11,16 @@ interface Props {
 const { className, checkboxClassName, id, form, name, checked } = Astro.props;
 ---
 
-<span class:list={["cm-checkbox", className]}>
-	<input id={id} type="checkbox" form={form} name={name} checked={checked} class:list={["cm-checkbox__input", checkboxClassName]}>
-	<span class="cm-checkbox__body">
-		<span class="icon-check-arrow cm-checkbox__arrow"></span>
-	</span>
+<span class:list={["checkbox", className]}>
+	<input 
+		id={id} 
+		type="checkbox" 
+		class:list={["checkbox__input", checkboxClassName]}
+		form={form} 
+		name={name} 
+		checked={checked} 
+	>
+	<label for={id} class="checkbox__body">
+		<span class="icon-checkbox-arrow checkbox__icon"></span>
+	</label>
 </span>

@@ -1,6 +1,7 @@
 ---
 import AccountMenu from 'src/components/AccountMenu.astro'
 import Button from 'src/components/basic/Button.astro'
+import Checkbox from 'src/components/basic/Checkbox.astro'
 import Layout from 'src/layouts/Layout.astro'
 
 ---
@@ -58,18 +59,18 @@ import Layout from 'src/layouts/Layout.astro'
 
       <div class="completion-form__fields">
         <div class="completion-form__field">
-          <div class="completion-form__placeholder"></div>
-          <label class="text color-primary">Пункт 1 выполнен</label>
+          <Checkbox id="completion-form-1" name="completion-form-1" />
+          <label for="completion-form-1" class="text color-primary">Пункт 1 выполнен</label>
         </div>
 
         <div class="completion-form__field">
-          <div class="completion-form__placeholder"></div>
-          <label class="text color-primary">Пункт 2 выполнен</label>
+          <Checkbox id="completion-form-2" name="completion-form-2" />
+          <label for="completion-form-2" class="text color-primary">Пункт 2 выполнен</label>
         </div>
         
         <div class="completion-form__field">
-          <div class="completion-form__placeholder"></div>
-          <label class="text color-primary">Пункт 3 выполнен</label>
+          <Checkbox id="completion-form-3" name="completion-form-3" />
+          <label for="completion-form-3" class="text color-primary">Пункт 3 выполнен</label>
         </div>
       </div>
 
