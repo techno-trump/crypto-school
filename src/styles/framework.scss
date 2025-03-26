@@ -3676,3 +3676,33 @@ body {
 		}
 	}
 }
+
+.blog-article-page {
+	&__container {
+		padding-top: 50px;
+		padding-bottom: 60px;
+	}
+	&__breadcrumbs {
+		margin-bottom: 40px;
+	}
+	&__recommendations-title {}
+	&__recommendations {}
+	@media (max-width: config.$mbpT) {
+		&__container {
+			padding-top: 30px;
+			padding-bottom: 40px;
+		}
+		&__breadcrumbs {
+			margin-bottom: 30px;
+		}
+	}
+	@media (max-width: config.$mbpMM) {
+		&__container {
+			padding-top: 20px;
+			padding-bottom: 30px;
+		}
+		&__breadcrumbs {
+			margin-bottom: 20px;
+		}
+	}
+}
