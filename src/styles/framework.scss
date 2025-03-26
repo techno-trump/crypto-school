@@ -296,6 +296,17 @@
 	--blog-article-card-button-color: var(--primary-color);
 	--blog-article-card-button-hover-background: var(--primary-color);
 	--blog-article-card-button-hover-color: var(--white);
+
+	// Pagination
+	--pagination-item-base-background: linear-gradient(to right bottom, #FFFFFF2C, #FFFFFF);
+	--pagination-item-base-border-color: var(--white);
+	--pagination-item-base-color: var(--dark-200);
+	--pagination-item-active-background: linear-gradient(to right bottom, #FFFFFF2C, #FFFFFF);
+	--pagination-item-active-border-color: var(--white);
+	--pagination-item-active-color: var(--primary-color);
+	--pagination-item-control-background: var(--white);
+	--pagination-item-control-border-color: var(--white);
+	--pagination-item-control-color: var(--primary-color);
 }
 html[data-theme="dark"] {
 	--primary-color: #3150FF;
@@ -551,6 +562,17 @@ html[data-theme="dark"] {
 	--blog-article-card-button-color: var(--primary-color);
 	--blog-article-card-button-hover-background: var(--primary-color);
 	--blog-article-card-button-hover-color: var(--white);
+
+	// Chip
+	--pagination-item-base-background: linear-gradient(to right bottom, #5151512C, #1D1D1D);
+	--pagination-item-base-border-color: #757575;
+	--pagination-item-base-color: var(--white);
+	--pagination-item-active-background: linear-gradient(to right bottom, #5151512C, #1D1D1D);
+	--pagination-item-active-border-color: #757575;
+	--pagination-item-active-color: var(--primary-color);
+	--pagination-item-control-background: linear-gradient(to right bottom, #5151512C, #1D1D1D);
+	--pagination-item-control-border-color: #757575;
+	--pagination-item-control-color: var(--white);
 }
 @media (max-width: config.$mbpT) {
 	:root {
@@ -3063,7 +3085,7 @@ body {
 		display: flex;
 		align-items: center;
 		gap: 15px;
-		
+
 		label {
 			cursor: pointer;
 		}
@@ -3328,6 +3350,9 @@ body {
 			height: 100%;
 		}
 	}
+	&__pagination {
+		margin-top: 40px;
+	}
 	@media (max-width: config.$mbpT) {
 		&__title {
 			margin-bottom: 30px;
@@ -3349,6 +3374,9 @@ body {
 		}
 		&__title {
 			margin-bottom: 20px;
+		}
+		&__pagination {
+			margin-top: 20px;
 		}
 	}
 }
@@ -3540,6 +3568,111 @@ body {
 		}
 		&__button {
 			padding: 10px;
+		}
+	}
+}
+
+.pagination {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 10px;
+
+	&__item {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		position: relative;		
+		padding: 11px 20px;
+		border-radius: 15px;
+		backdrop-filter: blur(6px);
+
+		border: 1px solid var(--pagination-item-base-border-color);
+		color: var(--pagination-item-base-color);
+		transition: border-color 0.3s, color 0.3s;
+
+		font-family: 'Inter Tight', sans-serif;
+		font-weight: 500;
+		font-size: 14px;
+
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			z-index: -1;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			border-radius: 15px;
+			transition: opacity 0.3s;
+		}
+
+		&::before {
+			opacity: 1;
+			background: var(--pagination-item-base-background);
+		}
+		&:after {
+			opacity: 0;
+			background: var(--pagination-item-active-background);
+		}
+		&__active {
+			border-color: var(--pagination-item-active-border-color);
+			color: var(--pagination-item-active-color);
+
+			&::before {
+				opacity: 0;
+			}
+			&::after {
+				opacity: 1;
+			}
+		}
+		&_control {
+			padding: 15px 18px;
+
+			&::before,
+			&::after {
+				background: var(--pagination-item-control-background);
+				border: 1px solid var(--pagination-item-control-border-color);
+				color: var(--pagination-item-control-color);
+			}
+
+			&-left {
+				span {
+					display: block;
+					padding-right: 2px;
+					font-size: 10px;
+				}
+			}
+			&-right {
+				span {
+					display: block;
+					padding-left: 2px;
+					font-size: 10px;
+				}
+			}
+		}
+	}
+	@media (hover: hover) {
+		&__item:hover {
+			border-color: var(--pagination-item-active-border-color);
+			color: var(--pagination-item-active-color);
+
+			&::before {
+				opacity: 0;
+			}
+			&::after {
+				opacity: 1;
+			}
+		}
+		&__item_control:hover {
+			&::before {
+				opacity: 1;
+			}
+			&::after {
+				opacity: 0;
+			}
 		}
 	}
 }
