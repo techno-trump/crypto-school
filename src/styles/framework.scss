@@ -3741,7 +3741,7 @@ body {
 	padding: 60px 40px 0px 60px;
 	gap: 40px;
 
-	&__content {
+	&__center {
 		flex: 1 1 auto;
 		padding-right: 35px;
 		padding-bottom: 50px;
@@ -3801,6 +3801,40 @@ body {
 	}
 	&__title {
 		margin-bottom: 40px;
+	}
+
+	&__content {
+		margin-top: 30px;
+	}
+	&__block {
+		--title-margin: 25px;
+		--paragraph-margin: 20px;
+		--block-margin: 40px;
+
+		&:not(:last-child) {
+			margin-bottom: var(--block-margin);
+		}
+
+		&-title {
+			margin-bottom: var(--title-margin);
+		}
+		&-paragraph {
+			margin-bottom: var(--paragraph-margin);
+		}
+		&-image {
+			width: 100%;
+			margin-bottom: var(--paragraph-margin);
+
+			display: flex;
+			justify-content: center;
+
+			border-radius: 15px;
+			overflow: hidden;
+
+			img {
+				max-width: 100%;
+			}
+		}
 	}
 }
 
