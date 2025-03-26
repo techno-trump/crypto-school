@@ -301,9 +301,12 @@
 	--pagination-item-base-background: linear-gradient(to right bottom, #FFFFFF2C, #FFFFFF);
 	--pagination-item-base-border-color: var(--white);
 	--pagination-item-base-color: var(--dark-200);
-	--pagination-item-active-background: linear-gradient(to right bottom, #FFFFFF2C, #FFFFFF);
+	--pagination-item-active-background: var(--white);
 	--pagination-item-active-border-color: var(--white);
 	--pagination-item-active-color: var(--primary-color);
+	--pagination-item-hover-background: linear-gradient(to right bottom, #FFFFFF2C, #FFFFFF);
+	--pagination-item-hover-border-color: var(--white);
+	--pagination-item-hover-color: var(--primary-color);
 	--pagination-item-control-background: var(--white);
 	--pagination-item-control-border-color: var(--white);
 	--pagination-item-control-color: var(--primary-color);
@@ -570,6 +573,9 @@ html[data-theme="dark"] {
 	--pagination-item-active-background: linear-gradient(to right bottom, #5151512C, #1D1D1D);
 	--pagination-item-active-border-color: #757575;
 	--pagination-item-active-color: var(--primary-color);
+	--pagination-item-hover-background: linear-gradient(to right bottom, #5151512C, #1D1D1D);
+	--pagination-item-hover-border-color: #757575;
+	--pagination-item-hover-color: var(--primary-color);
 	--pagination-item-control-background: linear-gradient(to right bottom, #5151512C, #1D1D1D);
 	--pagination-item-control-border-color: #757575;
 	--pagination-item-control-color: var(--white);
@@ -3615,27 +3621,26 @@ body {
 		}
 		&:after {
 			opacity: 0;
-			background: var(--pagination-item-active-background);
+			background: var(--pagination-item-hover-background);
 		}
-		&__active {
+
+		&_active {
 			border-color: var(--pagination-item-active-border-color);
 			color: var(--pagination-item-active-color);
 
 			&::before {
-				opacity: 0;
-			}
-			&::after {
-				opacity: 1;
+				background: var(--pagination-item-active-background);
 			}
 		}
+
 		&_control {
 			padding: 15px 18px;
+			
+			border: 1px solid var(--pagination-item-control-border-color);
+			color: var(--pagination-item-control-color);
 
-			&::before,
-			&::after {
+			&::before {
 				background: var(--pagination-item-control-background);
-				border: 1px solid var(--pagination-item-control-border-color);
-				color: var(--pagination-item-control-color);
 			}
 
 			&-left {
@@ -3656,22 +3661,13 @@ body {
 	}
 	@media (hover: hover) {
 		&__item:hover {
-			border-color: var(--pagination-item-active-border-color);
-			color: var(--pagination-item-active-color);
+			color: var(--pagination-item-hover-color);
 
 			&::before {
 				opacity: 0;
 			}
 			&::after {
 				opacity: 1;
-			}
-		}
-		&__item_control:hover {
-			&::before {
-				opacity: 1;
-			}
-			&::after {
-				opacity: 0;
 			}
 		}
 	}
