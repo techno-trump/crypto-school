@@ -2779,29 +2779,10 @@ body {
 	}
 	&__list {
 		--bullet-size: 4px;
+		--color: var(--course-card-text-color);
+		--gap: 10px;		
 		
-		color: var(--course-card-text-color);
-		
-		display: flex;
-		flex-direction: column;
-		gap: 10px;
-		
-		li {
-			display: flex;
-			align-items: center;
-			font-family: Arial, sans-serif;
-			
-			&::before {
-				content: '';
-				
-				display: inline-block;
-				margin: 0px 10px;
-				width: var(--bullet-size);
-				height: var(--bullet-size);
-				border-radius: 50%;
-				background-color: currentColor;
-			}
-		}
+		font-family: Arial, sans-serif;
 	}
 	&__ellipsis {
 		display: none;
@@ -3709,8 +3690,26 @@ body {
 	&__breadcrumbs {
 		margin-bottom: 40px;
 	}
-	&__recommendations-title {}
-	&__recommendations {}
+	&__layout {
+		margin-bottom: 60px;
+	}
+	&__recommendations-title {
+		margin-bottom: 40px;
+	}
+	&__recommendations {
+		--min-column: 280px;
+		--max-column: 340px;
+
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(var(--min-column), var(--max-column)));
+		gap: 30px;
+		
+		.blog-article-card {
+			max-width: var(--max-column);
+			min-width: var(--min-column);
+			height: 100%;
+		}
+	}
 	@media (max-width: config.$mbpT) {
 		&__container {
 			padding-top: 30px;
@@ -3718,6 +3717,12 @@ body {
 		}
 		&__breadcrumbs {
 			margin-bottom: 30px;
+		}
+		&__articles {
+			--min-column: 280px;
+			--max-column: 1fr;
+	
+			gap: 20px;
 		}
 	}
 	@media (max-width: config.$mbpMM) {
@@ -3731,7 +3736,7 @@ body {
 	}
 }
 
-.blog-article-page-layout {
+.blog-article-layout {
 	display: flex;
 	padding: 60px 40px 0px 60px;
 	gap: 40px;
@@ -3752,6 +3757,12 @@ body {
 	&__contents,
 	&__share {
 		padding: 30px;
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+	&__contents-list {
+		--gap: 15px;
 	}
 	&__categories {
 		display: grid;
@@ -3761,5 +3772,15 @@ body {
 		.chip {
 			padding: 20px;
 		}
+	}
+	&__share-links {
+		display: flex;
+		align-items: center;
+		gap: 20px;
+	}
+	&__share-link {
+		display: block;
+		color: var(--text-primary-color);
+		font-size: 20px;
 	}
 }

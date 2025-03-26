@@ -22,14 +22,25 @@ import Layout from 'src/layouts/Layout.astro'
       </a>
     </div>
 
-    <div class="blog-article-page-layout palette palette_blurred palette_hide-tablet palette_hide-mobile">
-      <div class="blog-article-page-layout__content palette palette_hide-desktop">content</div>
-      <div class="blog-article-page-layout__sidebar">
-        <div class="blog-article-page-layout__contents palette">
+    <div class="blog-article-layout palette palette_blurred palette_hide-tablet palette_hide-mobile blog-article-page__layout">
+      <div class="blog-article-layout__content palette palette_hide-desktop"></div>
+
+      <div class="blog-article-layout__sidebar">
+        <div class="blog-article-layout__contents palette">
           <h6 class="text color-primary">Содержание</h6>
+
+          <ul class="account-list blog-article-layout__contents-list">
+            <li>Общая информация о MEXC</li>
+            <li>Общая информация о MEXC</li>
+            <li>Общая информация о MEXC</li>
+            <li>Общая информация о MEXC</li>
+            <li>Общая информация о MEXC</li>
+            <li>Общая информация о MEXC</li>
+            <li>Общая информация о MEXC</li>
+          </ul>
         </div>
 
-        <div class="blog-article-page-layout__categories">
+        <div class="blog-article-layout__categories">
           <a href="#" class="chip">
             <div class="text chip__text">
               Категория 1
@@ -79,8 +90,23 @@ import Layout from 'src/layouts/Layout.astro'
           </a>
         </div>
 
-        <div class="blog-article-page-layout__share palette">
+        <div class="blog-article-layout__share palette">
           <h6 class="text color-primary">Поділитися</h6>
+
+          <div class="blog-article-layout__share-links">
+            <a href="" class="blog-article-layout__share-link">
+              <span class="icon-telegram"></span>
+            </a>
+            <a href="" class="blog-article-layout__share-link">
+              <span class="icon-instagram"></span>
+            </a>
+            <a href="" class="blog-article-layout__share-link">
+              <span class="icon-youtube-filled"></span>
+            </a>
+            <a href="" class="blog-article-layout__share-link">
+              <span class="icon-twitter"></span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
