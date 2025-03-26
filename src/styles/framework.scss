@@ -3063,6 +3063,10 @@ body {
 		display: flex;
 		align-items: center;
 		gap: 15px;
+		
+		label {
+			cursor: pointer;
+		}
 	}
 	&__placeholder {
 		--size: 24px;
