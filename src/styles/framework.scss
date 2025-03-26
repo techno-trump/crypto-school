@@ -310,6 +310,15 @@
 	--pagination-item-control-background: var(--white);
 	--pagination-item-control-border-color: var(--white);
 	--pagination-item-control-color: var(--primary-color);
+
+	// Blog Article Layout
+	--blog-article-layout-contents-list-color: var(--primary-color);
+	--blog-article-layout-block-paragraph-color: var(--dark-200);
+
+	// Blog Article Info
+	--blog-article-info-subtitle-color: #8E8C90;
+	--blog-article-info-detail-icon-color: var(--primary-color);
+	--blog-article-info-detail-text-color: #8E8C90;
 }
 html[data-theme="dark"] {
 	--primary-color: #3150FF;
@@ -579,6 +588,15 @@ html[data-theme="dark"] {
 	--pagination-item-control-background: linear-gradient(to right bottom, #5151512C, #1D1D1D);
 	--pagination-item-control-border-color: #757575;
 	--pagination-item-control-color: var(--white);
+
+	// Blog Article Layout
+	--blog-article-layout-contents-list-color: var(--primary-color);
+	--blog-article-layout-block-paragraph-color: #FFFFFF80;
+
+	// Blog Article Info
+	--blog-article-info-subtitle-color: #8E8C90;
+	--blog-article-info-detail-icon-color: var(--white);
+	--blog-article-info-detail-text-color: #8E8C90;
 }
 @media (max-width: config.$mbpT) {
 	:root {
@@ -3820,6 +3838,10 @@ body {
 
 	&__content {
 		margin-top: 30px;
+
+		a {
+			border-bottom: 1px solid currentColor;
+		}
 	}
 	&__block {
 		--title-margin: 25px;
@@ -3835,6 +3857,8 @@ body {
 		}
 		&-paragraph {
 			margin-bottom: var(--paragraph-margin);
+			color: var(--blog-article-layout-block-paragraph-color);
+			line-height: 1.4;
 		}
 		&-image {
 			width: fit-content;
@@ -4005,6 +4029,13 @@ body {
 		display: flex;
 		align-items: center;
 		gap: 10px;
+
+		color: var(--blog-article-info-detail-text-color);
+
+		span {
+			color: var(--blog-article-info-detail-icon-color);
+			font-size: 20px;
+		}
 	}
 	&__content {
 		margin-top: 30px;
@@ -4034,5 +4065,23 @@ body {
 		flex-direction: column;
 		gap: 5px;
 	}
-	// &__author-subtitle {}
+	&__author-subtitle {
+		color: var(--blog-article-info-subtitle-color);
+	}
+	@media (max-width: config.$mbpT) {
+		padding-top: 20px;
+	}
+	@media (max-width: config.$mbpMM) {
+		padding: 20px 0px;
+
+		&__header {
+			flex-direction: column-reverse;
+			align-items: flex-start;
+			gap: 20px;
+		}
+		&__content {
+			margin-top: 15px;
+			gap: 15px;
+		}
+	}
 }
