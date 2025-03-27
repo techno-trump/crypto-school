@@ -1,4 +1,5 @@
 ---
+import Button from 'src/components/basic/Button.astro'
 import Layout from 'src/layouts/Layout.astro'
 
 ---
@@ -291,6 +292,93 @@ import Layout from 'src/layouts/Layout.astro'
               <span class="icon-twitter"></span>
             </a>
           </div>
+        </div>
+
+        <div class="blog-article-comments palette palette_hide-mobile">
+          <div class="blog-article-comments__header">
+            <div class="blog-article-comments__title text-small">16 Comments</div>
+
+            <div class="blog-article-comments__settings">
+              <div class="blog-article-comments__settings-item">
+                <label>Sort by</label>
+              
+                <button class="blog-article-comments__sort-button">
+                  <span>Oldest</span>
+                  <span class="icon-sort blog-article-comments__sort-button-icon"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="blog-article-comments__compose">
+            <img class="blog-article-comments__avatar" src="./assets/img/temp/blog-article-comment-avatar.png">
+
+            <div class="blog-article-comments__textbox">
+              <textarea class="blog-article-comments__textarea"></textarea>
+              <div class="blog-article-comments__publish"></div>
+            </div>
+          </div>
+
+          <div class="blog-article-comments__list">
+            <div class="blog-article-comment">
+              <img class="blog-article-comment__avatar" src="./assets/img/temp/blog-article-comment-avatar.png">
+              <div class="blog-article-comment__content">
+                <div class="text-small color-primary blog-article-comment__name">Courtney Henry</div>
+                <div class="text-small blog-article-comment__text">
+                  Ultricies ultricies interdum dolor sodales. Vitae feugiat vitae vitae 
+                  quis id consectetur. Aenean urna, lectus enim suscipit eget. Tristique bibendum nibh enim dui.
+                </div>
+                <div class="blog-article-comment__actions">
+                  <div class="blog-article-comment__action">Like</div>
+                  <div class="blog-article-comment__actions-separator"></div>
+                  <div class="blog-article-comment__action">Reply</div>
+                  <div class="blog-article-comment__actions-separator"></div>
+                  <div class="blog-article-comment__info">20h</div>
+                </div>
+
+                <div class="blog-article-comment__replies">
+                  <div class="blog-article-comment">
+                    <img class="blog-article-comment__avatar" src="./assets/img/temp/blog-article-comment-avatar.png">
+                    <div class="blog-article-comment__content">
+                      <div class="text-small color-primary blog-article-comment__name">Ronald Richards</div>
+                      <div class="text-small blog-article-comment__text">
+                        Lorem fringilla pretium magna purus orci faucibus morbi. 
+                      </div>
+                      <div class="blog-article-comment__actions">
+                        <div class="blog-article-comment__action">Like</div>
+                        <div class="blog-article-comment__actions-separator"></div>
+                        <div class="blog-article-comment__action">Reply</div>
+                        <div class="blog-article-comment__actions-separator"></div>
+                        <div class="blog-article-comment__info">6h</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="blog-article-comment">
+              <img class="blog-article-comment__avatar" src="./assets/img/temp/blog-article-comment-avatar.png">
+              <div class="blog-article-comment__content">
+                <div class="text-small color-primary blog-article-comment__name">Theresa Webb</div>
+                <div class="text-small blog-article-comment__text">
+                  Donec sed sed feugiat sit. Enim, urna euismod magna enim. Sit cras eget id 
+                  sagittis consequat at.
+                </div>
+                <div class="blog-article-comment__actions">
+                  <div class="blog-article-comment__action">Like</div>
+                  <div class="blog-article-comment__actions-separator"></div>
+                  <div class="blog-article-comment__action">Reply</div>
+                  <div class="blog-article-comment__actions-separator"></div>
+                  <div class="blog-article-comment__info">23h</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button class="blog-article-comments__load">
+            Load 13 more comments
+          </button>
         </div>
       </div>
 
