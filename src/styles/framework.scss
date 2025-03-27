@@ -2341,6 +2341,7 @@ body {
 }
 
 .slider {
+	--slides-gap: 0px;
 	--control-size: 40px;
 	--control-arrow-size: 14px;
 	--control-margin: 40px;
@@ -2358,6 +2359,7 @@ body {
 	&__slides {
 		display: flex;
 		align-items: center;
+		gap: var(--slides-gap);
 		transition: transform var(--transition);
 	}
 	&__slide {
@@ -2373,7 +2375,7 @@ body {
 	&__controls {
 		display: contents;
 	}
-	&__control {
+	&-control {
 		flex: var(--control-size);
 		width: var(--control-size);
 		height: var(--control-size);
@@ -2390,22 +2392,12 @@ body {
 		cursor: pointer;
 
 		&-left {
-			position: absolute;
-			top: 50%;
-			left: var(--control-margin);
-			transform: translateY(-50%);
-
 			span {
 				display: block;
 				padding-right: 5%;
 			}
 		}
 		&-right {
-			position: absolute;
-			top: 50%;
-			right: var(--control-margin);
-			transform: translateY(-50%);
-
 			span {
 				display: block;
 				padding-left: 5%;
@@ -2415,6 +2407,20 @@ body {
 		&_disabled {
 			background: var(--slider-control-disabled-background);
 			cursor: auto;
+		}
+	}
+	&__controls &-control {
+		&-left {
+			position: absolute;
+			top: 50%;
+			left: var(--control-margin);
+			transform: translateY(-50%);
+		}
+		&-right {
+			position: absolute;
+			top: 50%;
+			right: var(--control-margin);
+			transform: translateY(-50%);
 		}
 	}
 	&__nav {
@@ -3830,8 +3836,17 @@ body {
 	&__layout {
 		margin-bottom: 60px;
 	}
-	&__recommendations-title {
+
+	&__recommendations-header {
 		margin-bottom: 40px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: 10px;
+	}
+	&__recommendations-slider-controls {
+		display: none;
 	}
 	&__recommendations {
 		--min-column: 280px;
@@ -3841,12 +3856,17 @@ body {
 		grid-template-columns: repeat(auto-fit, minmax(var(--min-column), var(--max-column)));
 		gap: 30px;
 		
+		.slider__slides {
+			display: contents;
+		}
+
 		.blog-article-card {
 			max-width: var(--max-column);
 			min-width: var(--min-column);
 			height: 100%;
 		}
 	}
+	
 	@media (max-width: config.$mbpT) {
 		&__container {
 			padding-top: 30px;
@@ -3858,11 +3878,28 @@ body {
 		&__layout {
 			margin-bottom: 40px;
 		}
-		&__recommendations {
-			--min-column: 280px;
-			--max-column: 1fr;
-	
+		&__recommendations-slider-controls {
+			--control-size: 40px;
+			--control-arrow-size: 14px;
+			
+			display: flex;
+			align-items: center;
 			gap: 20px;
+		}
+		&__recommendations {
+			--min-column: 0px;
+			--max-column: none;
+			--slides-gap: 20px;
+
+			display: block;
+
+			.slider__slides {
+				display: flex;
+			}
+
+			.blog-article-card {
+				flex: 0 0 calc(50% - var(--slides-gap) / 2);
+			}
 		}
 	}
 	@media (max-width: config.$mbpMM) {
@@ -3875,6 +3912,14 @@ body {
 		}
 		&__layout {
 			margin-bottom: 20px;
+		}
+		&__recommendations-header {
+			margin-bottom: 20px;
+		}
+		&__recommendations {
+			.blog-article-card {
+				flex: 0 0 100%;
+			}
 		}
 	}
 }

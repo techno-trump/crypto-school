@@ -216,7 +216,7 @@ import Layout from 'src/layouts/Layout.astro'
             </p>
           </div>
 
-          <div class="slider blog-article-layout__block blog-article-layout__slider" data-slider="article-slider" data-slider-amount="4">
+          <div class="slider blog-article-layout__block blog-article-layout__slider" data-slider="article-slider">
             <div class="slider__slides" data-slider-for="article-slider" data-slider-slides>
               <div class="slider__slide">
                 <img class="slider__image" src="./assets/img/temp/article-slider-image.png">
@@ -233,10 +233,10 @@ import Layout from 'src/layouts/Layout.astro'
             </div>
 
             <div class="slider__controls">
-              <div class="slider__control slider__control-left" data-slider-for="article-slider" data-slider-control-left>
+              <div class="slider-control slider-control-left" data-slider-for="article-slider" data-slider-control-left>
                 <span class="icon-nav-arrow-left"></span>
               </div>
-              <div class="slider__control slider__control-right" data-slider-for="article-slider" data-slider-control-right>
+              <div class="slider-control slider-control-right" data-slider-for="article-slider" data-slider-control-right>
                 <span class="icon-nav-arrow-right"></span>
               </div>
             </div>
@@ -380,82 +380,95 @@ import Layout from 'src/layouts/Layout.astro'
       </div>
     </div>
 
-    <h4 class="h4 color-primary blog-article-page__recommendations-title">Наш блог</h4>
+    <div class="blog-article-page__recommendations-header">
+      <h4 class="h4 color-primary blog-article-page__recommendations-title">Наш блог</h4>
 
-    <div class="blog-article-page__recommendations">
-      <div class="blog-article-card">
-        <div class="blog-article-card__image">
-          <img src="./assets/img/temp/blog-article-placeholder.png">
+      <div class="blog-article-page__recommendations-slider-controls">
+        <div class="slider-control slider-control-left" data-slider-for="recommendations-slider" data-slider-control-left>
+          <span class="icon-nav-arrow-left"></span>
         </div>
-        <div class="blog-article-card__body">
-          <div class="blog-article-card__title text">
-            22 идеи подарков для криптоэнтузиаста: для всех праздников и...
-          </div>
-          <div class="blog-article-card__text text-small">
-            Рынки предсказаний стали одним из главных трендов 2024 года. Так, Polymarket удалось привлечь ставок на общую сумму...
-          </div>
-        </div>
-        <div class="blog-article-card__footer">
-          <button class="blog-article-card__button text-small">
-            Читать статью
-          </button>
+        <div class="slider-control slider-control-right" data-slider-for="recommendations-slider" data-slider-control-right>
+          <span class="icon-nav-arrow-right"></span>
         </div>
       </div>
+    </div>
 
-      <div class="blog-article-card">
-        <div class="blog-article-card__image">
-          <img src="./assets/img/temp/blog-article-placeholder.png">
-        </div>
-        <div class="blog-article-card__body">
-          <div class="blog-article-card__title text">
-            22 идеи подарков для криптоэнтузиаста: для всех праздников и...
+    <div class="slider blog-article-page__recommendations" data-slider="recommendations-slider">
+      <div class="slider__slides" data-slider-for="recommendations-slider" data-slider-slides>
+        <div class="blog-article-card">
+          <div class="blog-article-card__image">
+            <img src="./assets/img/temp/blog-article-placeholder.png">
           </div>
-          <div class="blog-article-card__text text-small">
-            Рынки предсказаний стали одним из главных трендов 2024 года. Так, Polymarket удалось привлечь ставок на общую сумму...
+          <div class="blog-article-card__body">
+            <div class="blog-article-card__title text">
+              22 идеи подарков для криптоэнтузиаста: для всех праздников и...
+            </div>
+            <div class="blog-article-card__text text-small">
+              Рынки предсказаний стали одним из главных трендов 2024 года. Так, Polymarket удалось привлечь ставок на общую сумму...
+            </div>
           </div>
-        </div>
-        <div class="blog-article-card__footer">
-          <button class="blog-article-card__button text-small">
-            Читать статью
-          </button>
-        </div>
-      </div>
-
-      <div class="blog-article-card">
-        <div class="blog-article-card__image">
-          <img src="./assets/img/temp/blog-article-placeholder.png">
-        </div>
-        <div class="blog-article-card__body">
-          <div class="blog-article-card__title text">
-            22 идеи подарков для криптоэнтузиаста: для всех праздников и...
-          </div>
-          <div class="blog-article-card__text text-small">
-            Рынки предсказаний стали одним из главных трендов 2024 года. Так, Polymarket удалось привлечь ставок на общую сумму...
+          <div class="blog-article-card__footer">
+            <button class="blog-article-card__button text-small">
+              Читать статью
+            </button>
           </div>
         </div>
-        <div class="blog-article-card__footer">
-          <button class="blog-article-card__button text-small">
-            Читать статью
-          </button>
-        </div>
-      </div>
-
-      <div class="blog-article-card">
-        <div class="blog-article-card__image">
-          <img src="./assets/img/temp/blog-article-placeholder.png">
-        </div>
-        <div class="blog-article-card__body">
-          <div class="blog-article-card__title text">
-            22 идеи подарков для криптоэнтузиаста: для всех праздников и...
+  
+        <div class="blog-article-card">
+          <div class="blog-article-card__image">
+            <img src="./assets/img/temp/blog-article-placeholder.png">
           </div>
-          <div class="blog-article-card__text text-small">
-            Рынки предсказаний стали одним из главных трендов 2024 года. Так, Polymarket удалось привлечь ставок на общую сумму...
+          <div class="blog-article-card__body">
+            <div class="blog-article-card__title text">
+              22 идеи подарков для криптоэнтузиаста: для всех праздников и...
+            </div>
+            <div class="blog-article-card__text text-small">
+              Рынки предсказаний стали одним из главных трендов 2024 года. Так, Polymarket удалось привлечь ставок на общую сумму...
+            </div>
+          </div>
+          <div class="blog-article-card__footer">
+            <button class="blog-article-card__button text-small">
+              Читать статью
+            </button>
           </div>
         </div>
-        <div class="blog-article-card__footer">
-          <button class="blog-article-card__button text-small">
-            Читать статью
-          </button>
+  
+        <div class="blog-article-card">
+          <div class="blog-article-card__image">
+            <img src="./assets/img/temp/blog-article-placeholder.png">
+          </div>
+          <div class="blog-article-card__body">
+            <div class="blog-article-card__title text">
+              22 идеи подарков для криптоэнтузиаста: для всех праздников и...
+            </div>
+            <div class="blog-article-card__text text-small">
+              Рынки предсказаний стали одним из главных трендов 2024 года. Так, Polymarket удалось привлечь ставок на общую сумму...
+            </div>
+          </div>
+          <div class="blog-article-card__footer">
+            <button class="blog-article-card__button text-small">
+              Читать статью
+            </button>
+          </div>
+        </div>
+  
+        <div class="blog-article-card">
+          <div class="blog-article-card__image">
+            <img src="./assets/img/temp/blog-article-placeholder.png">
+          </div>
+          <div class="blog-article-card__body">
+            <div class="blog-article-card__title text">
+              22 идеи подарков для криптоэнтузиаста: для всех праздников и...
+            </div>
+            <div class="blog-article-card__text text-small">
+              Рынки предсказаний стали одним из главных трендов 2024 года. Так, Polymarket удалось привлечь ставок на общую сумму...
+            </div>
+          </div>
+          <div class="blog-article-card__footer">
+            <button class="blog-article-card__button text-small">
+              Читать статью
+            </button>
+          </div>
         </div>
       </div>
     </div>

@@ -1,21 +1,21 @@
-const sliderControlDisabledClass = 'slider__control_disabled'
+const sliderControlDisabledClass = 'slider-control_disabled'
 const sliderNavItemActiveClass = 'slider__nav-item_active'
 
 document.querySelectorAll('[data-slider]').forEach(slider => {
   let activeIndex = 0
 
-  // get data
-  const slidesAmount = Number(slider.getAttribute('data-slider-amount')) || 1
-  const sliderMinIndex = 0
-  const sliderMaxIndex = slidesAmount - 1 
-
   // get controls
   const sliderName = slider.getAttribute('data-slider')
 
-  const slidesList = Array.from(document.querySelectorAll(`[data-slider-for="${sliderName}"][data-slider-slides]`))
+  const slides = document.querySelector(`[data-slider-for="${sliderName}"][data-slider-slides]`)
   const controlLeftList = Array.from(document.querySelectorAll(`[data-slider-for="${sliderName}"][data-slider-control-left]`))
   const controlRightList = Array.from(document.querySelectorAll(`[data-slider-for="${sliderName}"][data-slider-control-right]`))
   const sliderNavItems = Array.from(document.querySelectorAll(`[data-slider-for="${sliderName}"][data-slider-nav-item]`))
+
+  // get data
+  let slidesAmount = Math.round(slides.scrollWidth / slider.clientWidth)
+  let sliderMinIndex = 0
+  let sliderMaxIndex = slidesAmount - 1
 
   // setup initial styles
   updateSlider(activeIndex)
@@ -46,9 +46,7 @@ document.querySelectorAll('[data-slider]').forEach(slider => {
     }
 
     // move slides
-    slidesList.filter(Boolean).forEach(slides => {
-      slides.style.transform = `translateX(-${100 * activeIndex}%)`
-    })
+    slides.style.transform = `translateX(calc(0px - var(--slides-gap) * ${activeIndex} - ${100 * activeIndex}%))`
 
     // update nav items
     sliderNavItems.forEach(navItem => {
@@ -76,6 +74,13 @@ document.querySelectorAll('[data-slider]').forEach(slider => {
 
       updateSlider(index)
     })
+  })
+
+  window.addEventListener('resize', () => {
+    slidesAmount = Math.round(slides.scrollWidth / slider.clientWidth)
+    sliderMaxIndex = slidesAmount - 1
+
+    updateSlider(clamp(0, activeIndex, sliderMaxIndex))
   })
 })
 
