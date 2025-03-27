@@ -1,3 +1,4 @@
+const sliderControlDisabledClass = 'slider__control_disabled'
 const sliderNavItemActiveClass = 'slider__nav-item_active'
 
 document.querySelectorAll('[data-slider]').forEach(slider => {
@@ -5,6 +6,8 @@ document.querySelectorAll('[data-slider]').forEach(slider => {
 
   // get data
   const slidesAmount = Number(slider.getAttribute('data-slider-amount')) || 1
+  const sliderMinIndex = 0
+  const sliderMaxIndex = slidesAmount - 1 
 
   // get controls
   const sliderName = slider.getAttribute('data-slider')
@@ -18,7 +21,29 @@ document.querySelectorAll('[data-slider]').forEach(slider => {
   updateSlider(activeIndex)
 
   function updateSlider(index) {
-    activeIndex = clamp(0, (index + slidesAmount) % slidesAmount, slidesAmount - 1)
+    activeIndex = clamp(sliderMinIndex, index, sliderMaxIndex)
+
+    // remove disabled styles
+    controlLeftList.filter(Boolean).forEach(control => {
+      control.classList.remove(sliderControlDisabledClass)
+    })
+    controlRightList.filter(Boolean).forEach(control => {
+      control.classList.remove(sliderControlDisabledClass)
+    })
+
+    // add disabled styles where needed
+    if (activeIndex <= sliderMinIndex) {
+      activeIndex = sliderMinIndex
+      controlLeftList.filter(Boolean).forEach(control => {
+        control.classList.add(sliderControlDisabledClass)
+      })
+    }
+    if (activeIndex >= sliderMaxIndex) {
+      activeIndex = sliderMaxIndex
+      controlRightList.filter(Boolean).forEach(control => {
+        control.classList.add(sliderControlDisabledClass)
+      })
+    }
 
     // move slides
     slidesList.filter(Boolean).forEach(slides => {

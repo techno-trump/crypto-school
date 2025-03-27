@@ -323,6 +323,7 @@
 	// Slider
 	--slider-control-background: var(--white);
 	--slider-control-color: var(--dark-100);
+	--slider-control-disabled-background: #FFFFFF3C;
 	--slider-nav-item-background: #FFFFFF3C;
 	--slider-nav-item-active-background: #FFFFFF;
 }
@@ -607,6 +608,7 @@ html[data-theme="dark"] {
 	// Slider
 	--slider-control-background: var(--white);
 	--slider-control-color: var(--dark-100);
+	--slider-control-disabled-background: #FFFFFF3C;
 	--slider-nav-item-background: #FFFFFF3C;
 	--slider-nav-item-active-background: #FFFFFF;
 }
@@ -4158,6 +4160,7 @@ body {
 		font-size: var(--control-arrow-size);
 
 		background: var(--slider-control-background);
+		transition: background-color 0.3s;
 		color: var(--slider-control-color);
 
 		display: flex;
@@ -4187,6 +4190,11 @@ body {
 				display: block;
 				padding-left: 5%;
 			}
+		}
+
+		&_disabled {
+			background: var(--slider-control-disabled-background);
+			cursor: auto;
 		}
 	}
 	&__nav {
