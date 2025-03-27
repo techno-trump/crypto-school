@@ -11,6 +11,7 @@ import { isMobile } from "./utils.js";
 import './range.js';
 import './study-modules.js';
 import './scroll-up.js';
+import './slider.js';
 
 window.app = window.app || {};
 window.app.hoverMedia = window.matchMedia("(any-hover: hover)");

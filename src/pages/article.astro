@@ -216,6 +216,39 @@ import Layout from 'src/layouts/Layout.astro'
             </p>
           </div>
 
+          <div class="slider blog-article-layout__block blog-article-layout__slider" data-slider="article-slider" data-slider-amount="4">
+            <div class="slider__slides" data-slider-for="article-slider" data-slider-slides>
+              <div class="slider__slide">
+                <img class="slider__image" src="./assets/img/temp/article-slider-image.png">
+              </div>
+              <div class="slider__slide">
+                <img class="slider__image" src="./assets/img/temp/article-slider-image.png">
+              </div>
+              <div class="slider__slide">
+                <img class="slider__image" src="./assets/img/temp/article-slider-image.png">
+              </div>
+              <div class="slider__slide">
+                <img class="slider__image" src="./assets/img/temp/article-slider-image.png">
+              </div>
+            </div>
+
+            <div class="slider__controls">
+              <div class="slider__control slider__control-left" data-slider-for="article-slider" data-slider-control-left>
+                <span class="icon-nav-arrow-left"></span>
+              </div>
+              <div class="slider__control slider__control-right" data-slider-for="article-slider" data-slider-control-right>
+                <span class="icon-nav-arrow-right"></span>
+              </div>
+            </div>
+
+            <div class="slider__nav">
+              <div class="slider__nav-item slider__nav-item_active" data-slider-for="article-slider" data-slider-nav-item="0"></div>
+              <div class="slider__nav-item" data-slider-for="article-slider" data-slider-nav-item="1"></div>
+              <div class="slider__nav-item" data-slider-for="article-slider" data-slider-nav-item="2"></div>
+              <div class="slider__nav-item" data-slider-for="article-slider" data-slider-nav-item="3"></div>
+            </div>
+          </div>
+
           <div class="blog-article-layout__block">
             <h5 class="h6 color-primary blog-article-layout__block-title">Абстракция аккаунта для повышения безопасности</h5>
 
