@@ -4605,9 +4605,13 @@ body {
 		padding-bottom: 80px;
 	}
 	&__breadcrumbs {
+		width: fit-content;
+		margin: 0 auto;
 		margin-bottom: 20px;
 	}
 	&__title {
+		width: fit-content;
+		margin: 0 auto;
 		margin-bottom: 60px;
 	}
 	&__block {
@@ -4623,6 +4627,44 @@ body {
 		button {
 			margin: 0px auto;
 			min-width: 280px;
+		}
+	}
+	@media (max-width: config.$mbpT) {
+		&__container {
+			padding-top: 30px;
+			padding-bottom: 30px;
+		}
+		&__breadcrumbs {
+			width: 100%;
+			margin: 0;
+			margin-bottom: 20px;
+		}
+		&__title {
+			width: 100%;
+			margin: 0;
+			margin-bottom: 30px;
+		}
+		&__block {
+			margin-bottom: 30px;
+		}
+		&__list {
+			margin-bottom: 30px;
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 20px;
+		}
+	}
+	@media (max-width: config.$mbpMM) {
+		&__title {
+			margin-bottom: 20px;
+		}
+		&__block {
+			margin-bottom: 20px;
+		}
+		&__list {
+			margin-bottom: 20px;
+			grid-template-columns: 1fr;
+			gap: 16px;
 		}
 	}
 }
@@ -4658,9 +4700,49 @@ body {
 			border-right: 1px solid var(--feedbacks-results-item-separator);
 		}
 	}
-	// &__item-title {}
 	&__item-description {
 		color: var(--feedbacks-results-item-subtitle-color);
+		text-align: center;
+	}
+	@media (max-width: config.$mbpT) {
+		padding: 30px 30px 35px 30px;
+
+		&__title {
+			margin-bottom: 30px;
+		}
+		&__content {
+			gap: 15px;
+		}
+		&__item {
+			padding: 0px;
+			
+			&:not(:last-child) {
+				border-right: none;
+			}
+		}
+		&__item-title {
+			font-size: 26px;
+			font-weight: 500;
+		}
+	}
+	@media (max-width: config.$mbpT) {
+		padding: 15px 8px;
+
+		&__title {
+			margin-bottom: 20px;
+		}
+		&__content {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			align-items: start;
+			gap: 0px;
+		}
+		&__item-title {
+			font-size: 20px;
+		}
+		&__item-description {
+			text-align: center;
+		}
 	}
 }
 
@@ -4730,6 +4812,14 @@ body {
 			border-radius: var(--decor-size);
 			
 			background-color: currentColor;
+		}
+	}
+	@media (max-width: config.$mbpMM) {
+		padding: 16px;
+		gap: 10px;
+
+		&__header {
+			gap: 15px;
 		}
 	}
 }
