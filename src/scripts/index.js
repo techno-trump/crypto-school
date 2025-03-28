@@ -12,6 +12,7 @@ import './range.js';
 import './study-modules.js';
 import './scroll-up.js';
 import './slider.js';
+import './comments-sort-button.js';
 
 window.app = window.app || {};
 window.app.hoverMedia = window.matchMedia("(any-hover: hover)");

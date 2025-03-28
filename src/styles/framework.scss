@@ -4533,6 +4533,10 @@ body {
 
 		position: relative;
 		padding-left: 12px;
+
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
 		
 		&::before {
 			content: '';
@@ -4568,6 +4572,9 @@ body {
 		&__action,
 		&__info {
 			font-size: 8px;
+		}
+		&__replies {
+			gap: 8px;
 		}
 	}
 }
