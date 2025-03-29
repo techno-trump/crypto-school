@@ -355,6 +355,19 @@
 	--feedback-palette-title-color: var(--dark-100);
 	--feedback-palette-content-color: var(--dark-200);
 	--feedback-palette-date-color: var(--primary-color);
+
+	// Rate Card
+	--rate-card-background: var(--white);
+	--rate-card-text-color: var(--black);
+	--rate-card-secondary-text-color: #151515;
+	--rate-card-inactive-text-color: #00000032;
+	--rate-card-separator-color: #15151532;
+	--rate-card-toggler-color: var(--primary-color);
+	--rate-card-active-background: linear-gradient(to right top, #0D2E17 50%, #285335);
+	--rate-card-active-text-color: var(--white);
+	--rate-card-active-secondary-color: var(--white);
+	--rate-card-active-separator-color: #FFFFFF32;
+	--rate-card-active-toggler-color: var(--white);
 }
 html[data-theme="dark"] {
 	--primary-color: #3150FF;
@@ -669,6 +682,19 @@ html[data-theme="dark"] {
 	--feedback-palette-title-color: var(--white);
 	--feedback-palette-content-color: #FFFFFFCD;
 	--feedback-palette-date-color: var(--primary-color);
+
+	// Rate Card
+	--rate-card-background: linear-gradient(to top, #F0F0F0, #FFFFFF);
+	--rate-card-text-color: var(--black);
+	--rate-card-secondary-text-color: #151515;
+	--rate-card-inactive-text-color: #15151532;
+	--rate-card-separator-color: #15151532;
+	--rate-card-toggler-color: var(--black);
+	--rate-card-active-background: linear-gradient(to top, #001799, #0026FF);
+	--rate-card-active-text-color: var(--white);
+	--rate-card-active-secondary-color: var(--white);
+	--rate-card-active-separator-color: #FFFFFF32;
+	--rate-card-active-toggler-color: var(--white);
 }
 @media (max-width: config.$mbpT) {
 	:root {
@@ -4828,6 +4854,271 @@ body {
 
 		&__header {
 			gap: 15px;
+		}
+	}
+}
+
+.rates {
+	&__container {
+		padding-top: 50px;
+		padding-bottom: 80px;
+	}
+	&__breadcrumbs {
+		width: fit-content;
+		margin: 0px auto;
+		margin-bottom: 20px;
+	}
+	&__title {
+		width: fit-content;
+		margin: 0px auto;
+		margin-bottom: 60px;
+	}
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		align-items: center;
+	}
+	@media (max-width: config.$mbpT) {
+		&__container {
+			padding-top: 30px;
+			padding-bottom: 30px;
+		}
+		&__breadcrumbs {
+			width: 100%;
+			margin: 0px;
+			margin-bottom: 20px;
+		}
+		&__title {
+			width: 100%;
+			margin: 0px;
+			margin-bottom: 30px;
+		}
+		&__list {
+			grid-template-columns: 1fr;
+			gap: 20px;
+
+			.rate-card {
+				width: 100%;
+
+				&:nth-child(1) {
+					grid-row: 1 / 1;
+				}
+				&:nth-child(2) {
+					grid-row: 3 / 3;
+				}
+				&:nth-child(3) {
+					grid-row: 2 / 2;
+				}
+			}
+		}
+	}
+}
+.rate-card {
+	--background: var(--rate-card-background);
+	--text-color: var(--rate-card-text-color);
+	--secondary-text-color: var(--rate-card-secondary-text-color);
+	--inactive-text-color: var(--rate-card-inactive-text-color);
+	--separator-color: var(--rate-card-separator-color);
+	--toggler-color: var(--rate-card-toggler-color);
+	
+	position: relative;
+	background: var(--background);
+	padding: 40px 30px;
+	border-radius: 15px;
+	overflow: hidden;
+
+	&_primary {
+		--background: var(--rate-card-active-background);
+		--text-color: var(--rate-card-active-text-color);
+		--secondary-text-color: var(--rate-card-active-text-color);
+		--inactive-text-color: var(--rate-card-active-text-color);
+		--separator-color: var(--rate-card-active-separator-color);
+		--toggler-color: var(--rate-card-active-toggler-color);
+
+		padding: 60px 30px;
+
+		&-decor-1 {
+			--size: 240px;
+
+			position: absolute;
+			top: -12.5%;
+			right: 17%;
+
+			width: var(--size);
+			height: var(--size);
+		}
+		&-decor-2 {
+			--size: 300px;
+
+			position: absolute;
+			width: var(--size);
+			height: var(--size);
+
+			bottom: -13.5%;
+			right: -20%;
+		}
+	}
+
+	&__header {
+		margin-bottom: 50px;
+		position: relative;
+
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&__title {
+		color: var(--text-color);
+		line-height: 1;
+	}
+	&__conditions {
+		position: relative;
+		margin-bottom: 50px;
+	}
+	&__condition {
+		display: flex;
+		align-items: center;
+		gap: 20px;
+
+		padding: 25px 0px;
+		border-bottom: 1px solid var(--separator-color);
+
+		&:first-child {
+			padding-top: 0;
+		}
+		&:last-child {
+			border-bottom: none;
+			padding-bottom: 0;
+		}
+		&_locked {
+			--text-color: var(--inactive-text-color);
+		}
+
+		&-number {
+			flex: 0 0 35px;
+			color: var(--text-color);
+		}
+		&-content {
+			color: var(--text-color);
+		}
+	}
+	&__data {
+		position: relative;
+		margin-bottom: 35px;
+
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&__price {
+		color: var(--text-color);
+	}
+	&__rest {
+		color: var(--text-color);
+	}
+	&__button {
+		position: relative;
+
+		.button__text {
+			text-transform: uppercase;
+			font-weight: 600;
+		}
+	}
+	@media (max-width: config.$mbpT) {
+		padding: 30px;
+
+		&_primary {
+			&-decor-1 {
+				--size: 200px;
+			}
+			&-decor-2 {
+				--size: 240px;
+
+				bottom: -12%;
+				right: -5%;
+			}
+		}
+
+		&__header {
+			margin-bottom: 40px;
+		}
+		&__conditions {
+			margin-bottom: 40px;
+		}
+		&__condition_locked {
+			display: none;
+		}
+		&__data {
+			margin-bottom: 30px;
+		}
+	}
+	@media (max-width: config.$mbpMM) {
+		padding: 20px;
+
+		&_primary {
+			&-decor-1 {
+				--size: 150px;
+				top: -75px;
+			}
+			&-decor-2 {
+				display: none;
+			}
+		}
+
+		&__toggler {
+			--size: 14px;
+			--line-width: 2px;
+
+			position: relative;
+			width: var(--size);
+			height: var(--size);
+
+			&::before,
+			&::after {
+				content: '';
+
+				position: absolute;
+				top: calc((var(--size) - var(--line-width)) / 2);
+				left: 0px;
+
+				width: 100%;
+				border: 1px solid var(--toggler-color);
+				border-radius: var(--line-width);
+
+				transform-origin: center;
+			}
+		}
+		&__collapsed &__toggler::after {
+			transform: rotateZ(90deg);
+		}
+
+		&__header {
+			margin-bottom: 20px;
+		}
+		&__conditions {
+			margin-bottom: 20px;
+			border-top: 1px solid var(--separator-color);
+		}
+		&__collapsed &__conditions {
+			overflow: hidden;
+			margin-bottom: 0px;
+			max-height: 0px;
+			opacity: 0;
+		}
+		&__condition {
+			padding: 20px 0px;
+			align-items: flex-start;
+			gap: 0px;
+
+			&:first-child {
+				padding-top: 20px;
+			}
+		}
+		&__condition-number {
+			flex: 0 0 30px;
+		}
+		&__data {
+			margin-bottom: 20px;
 		}
 	}
 }

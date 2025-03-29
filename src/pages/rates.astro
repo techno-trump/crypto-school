@@ -1,0 +1,225 @@
+---
+import Button from 'src/components/basic/Button.astro'
+import Layout from 'src/layouts/Layout.astro'
+
+---
+<Layout title="Крипто школа" description="Крипто школа">
+  <div class="container rates__container">
+    <div class="breadcrumbs rates__breadcrumbs">
+      <a href="/" class="breadcrumbs__link">
+        Головна
+      </a>
+      <div class="breadcrumbs__arrow">
+        <span class="icon-nav-arrow-right"></span>
+      </div>
+      <a href="#" class="breadcrumbs__link breadcrumbs__link_active">
+        Вартість
+      </a>
+    </div>
+
+    <h4 class="rates__title h4 color-primary">Обери свій тариф</h4>
+
+    <div class="rates__list">
+      <div class="rate-card" data-rate-card>
+        <div class="rate-card__header">
+          <h3 class="rate-card__title h3">Basic</h3>
+          
+          <div class="rate-card__toggler" data-rate-card-toggler></div>
+        </div>
+
+        <div class="rate-card__conditions">
+          <div class="rate-card__condition">
+            <div class="rate-card__condition-number text">01</div>
+            <div class="rate-card__condition-content text">Більше 10 каналів з ідеями по напрямам</div>
+          </div>
+
+          <div class="rate-card__condition">
+            <div class="rate-card__condition-number text">02</div>
+            <div class="rate-card__condition-content text">Вчасні та актуальні інвест-ідеї</div>
+          </div>
+
+          <div class="rate-card__condition">
+            <div class="rate-card__condition-number text">03</div>
+            <div class="rate-card__condition-content text">Детальні гайди та розбори проектів</div>
+          </div>
+
+          <div class="rate-card__condition rate-card__condition_locked">
+            <div class="rate-card__condition-number text">04</div>
+            <div class="rate-card__condition-content text">Стріми та зіздвони</div>
+          </div>
+
+          <div class="rate-card__condition rate-card__condition_locked">
+            <div class="rate-card__condition-number text">05</div>
+            <div class="rate-card__condition-content text">Огляди ринку та ситуації</div>
+          </div>
+
+          <div class="rate-card__condition rate-card__condition_locked">
+            <div class="rate-card__condition-number text">06</div>
+            <div class="rate-card__condition-content text">Перевірка Д/З</div>
+          </div>
+
+          <div class="rate-card__condition rate-card__condition_locked">
+            <div class="rate-card__condition-number text">07</div>
+            <div class="rate-card__condition-content text">Вчасні та актуальні інвест-ідеї</div>
+          </div>
+
+          <div class="rate-card__condition rate-card__condition_locked">
+            <div class="rate-card__condition-number text">08</div>
+            <div class="rate-card__condition-content text">Підтримка</div>
+          </div>
+        </div>
+
+        <div class="rate-card__data">
+          <div class="rate-card__price h6">
+            <span class="h3">6 000</span> грн
+          </div>
+          <div class="rate-card__rest text-small">
+            Залишилось <br />
+            60 місць
+          </div>
+        </div>
+
+        <div class="rate-card__button">
+          <Button filled rounded centered block>
+            <span class="button__text">Хочу Basic</span>
+          </Button>
+        </div>
+      </div>
+
+      <div class="rate-card rate-card_primary" data-rate-card>
+        <img class="rate-card_primary-decor-1" src="./assets/img/rates/active-rate-card-decor-1.png">
+        <img class="rate-card_primary-decor-2" src="./assets/img/rates/active-rate-card-decor-2.png">
+
+        <div class="rate-card__header">
+          <h3 class="rate-card__title h3">Pro</h3>
+          
+          <div class="rate-card__toggler" data-rate-card-toggler></div>
+        </div>
+
+        <div class="rate-card__conditions">
+          <div class="rate-card__condition">
+            <div class="rate-card__condition-number text">01</div>
+            <div class="rate-card__condition-content text">Більше 10 каналів з ідеями по напрямам</div>
+          </div>
+
+          <div class="rate-card__condition">
+            <div class="rate-card__condition-number text">02</div>
+            <div class="rate-card__condition-content text">Вчасні та актуальні інвест-ідеї</div>
+          </div>
+
+          <div class="rate-card__condition">
+            <div class="rate-card__condition-number text">03</div>
+            <div class="rate-card__condition-content text">Детальні гайди та розбори проектів</div>
+          </div>
+
+          <div class="rate-card__condition">
+            <div class="rate-card__condition-number text">04</div>
+            <div class="rate-card__condition-content text">Стріми та зіздвони</div>
+          </div>
+
+          <div class="rate-card__condition">
+            <div class="rate-card__condition-number text">05</div>
+            <div class="rate-card__condition-content text">Огляди ринку та ситуації</div>
+          </div>
+
+          <div class="rate-card__condition">
+            <div class="rate-card__condition-number text">06</div>
+            <div class="rate-card__condition-content text">Перевірка Д/З</div>
+          </div>
+
+          <div class="rate-card__condition">
+            <div class="rate-card__condition-number text">07</div>
+            <div class="rate-card__condition-content text">Вчасні та актуальні інвест-ідеї</div>
+          </div>
+
+          <div class="rate-card__condition">
+            <div class="rate-card__condition-number text">08</div>
+            <div class="rate-card__condition-content text">Підтримка</div>
+          </div>
+        </div>
+
+        <div class="rate-card__data">
+          <div class="rate-card__price h6">
+            <span class="h3">32 000</span> грн
+          </div>
+          <div class="rate-card__rest text-small">
+            Залишилось <br />
+            20 місць
+          </div>
+        </div>
+
+        <div class="rate-card__button">
+          <Button white rounded centered block>
+            <span class="button__text button__text_black">Хочу Pro</span>
+          </Button>
+        </div>
+      </div>
+
+      <div class="rate-card" data-rate-card>
+        <div class="rate-card__header">
+          <h3 class="rate-card__title h3">Premium</h3>
+          
+          <div class="rate-card__toggler" data-rate-card-toggler></div>
+        </div>
+
+        <div class="rate-card__conditions">
+          <div class="rate-card__condition">
+            <div class="rate-card__condition-number text">01</div>
+            <div class="rate-card__condition-content text">Більше 10 каналів з ідеями по напрямам</div>
+          </div>
+
+          <div class="rate-card__condition">
+            <div class="rate-card__condition-number text">02</div>
+            <div class="rate-card__condition-content text">Вчасні та актуальні інвест-ідеї</div>
+          </div>
+
+          <div class="rate-card__condition">
+            <div class="rate-card__condition-number text">03</div>
+            <div class="rate-card__condition-content text">Детальні гайди та розбори проектів</div>
+          </div>
+
+          <div class="rate-card__condition">
+            <div class="rate-card__condition-number text">04</div>
+            <div class="rate-card__condition-content text">Стріми та зіздвони</div>
+          </div>
+
+          <div class="rate-card__condition">
+            <div class="rate-card__condition-number text">05</div>
+            <div class="rate-card__condition-content text">Огляди ринку та ситуації</div>
+          </div>
+
+          <div class="rate-card__condition rate-card__condition_locked">
+            <div class="rate-card__condition-number text">06</div>
+            <div class="rate-card__condition-content text">Перевірка Д/З</div>
+          </div>
+
+          <div class="rate-card__condition rate-card__condition_locked">
+            <div class="rate-card__condition-number text">07</div>
+            <div class="rate-card__condition-content text">Вчасні та актуальні інвест-ідеї</div>
+          </div>
+
+          <div class="rate-card__condition rate-card__condition_locked">
+            <div class="rate-card__condition-number text">08</div>
+            <div class="rate-card__condition-content text">Підтримка</div>
+          </div>
+        </div>
+
+        <div class="rate-card__data">
+          <div class="rate-card__price h6">
+            <span class="h3">12 000</span> грн
+          </div>
+          <div class="rate-card__rest text-small">
+            Залишилось <br />
+            3 місця
+          </div>
+        </div>
+
+        <div class="rate-card__button">
+          <Button filled rounded centered block>
+            <span class="button__text">Хочу Premium</span>
+          </Button>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
