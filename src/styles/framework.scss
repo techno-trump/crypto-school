@@ -5086,24 +5086,33 @@ body {
 				border-radius: var(--line-width);
 
 				transform-origin: center;
+				transition: transform 0.3s;
+			}
+			&::after {
+				transform: rotateZ(-90deg);
 			}
 		}
-		&__collapsed &__toggler::after {
-			transform: rotateZ(90deg);
+		&_opened &__toggler::after {
+			transform: rotateZ(0deg);
 		}
 
 		&__header {
 			margin-bottom: 20px;
 		}
 		&__conditions {
-			margin-bottom: 20px;
-			border-top: 1px solid var(--separator-color);
-		}
-		&__collapsed &__conditions {
-			overflow: hidden;
 			margin-bottom: 0px;
+			
 			max-height: 0px;
+			overflow: hidden;			
 			opacity: 0;
+			
+			transition: 0.3s opacity, 0.3s margin;
+		}
+		&_opened &__conditions {
+			border-top: 1px solid var(--separator-color);
+			margin-bottom: 20px;
+			max-height: fit-content;
+			opacity: 1;
 		}
 		&__condition {
 			padding: 20px 0px;

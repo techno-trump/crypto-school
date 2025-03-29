@@ -3,6 +3,6 @@ document.querySelectorAll('[data-rate-card]').forEach(card => {
   if (!toggler) return
 
   toggler.addEventListener('click', () => {
-    card.classList.toggle('rate-card__collapsed')
+    card.classList.toggle('rate-card_opened')
   })
 })
