@@ -375,6 +375,8 @@
 	--faq-item-active-opacity: 1;
 
 	// Categories
+	--categories-search-icon-color: var(--dark-100);
+	--categories-search-text-color: var(--primary-color);
 	--categories-link-color: var(--primary-color);
 	--categories-primary-text-color: var(--primary-color);
 	--categories-secondary-text-color: var(--dark-200);
@@ -713,6 +715,8 @@ html[data-theme="dark"] {
 	--faq-item-active-opacity: 0.8;
 
 	// Categories
+	--categories-search-icon-color: #C0C0C0;
+	--categories-search-text-color: var(--white);
 	--categories-link-color: var(--white);
 	--categories-primary-text-color: var(--white);
 	--categories-secondary-text-color: #FFFFFF80;
@@ -5326,11 +5330,45 @@ body {
 		margin-bottom: 60px;
 
 		display: flex;
+		align-items: center;
 		gap: 30px;
 
 		border-bottom: 1px solid var(--categories-separator-color);
 	}
-	&__search {}
+	&__search {
+		--opacity: 1;
+
+		flex: 0 0 420px;
+		padding: 25px 40px 25px 25px;
+
+		display: flex;
+		align-items: center;
+		gap: 10px;
+
+		span {
+			--size: 30px;
+
+			display: block;
+			width: var(--size);
+			height: var(--size);
+			font-size: var(--size);
+
+			color: var(--categories-search-icon-color);
+		}
+		input {
+			flex: 1 1 auto;
+
+			border: none;
+			outline: none;
+
+			background: transparent;
+			color: var(--categories-search-text-color);
+
+			&::placeholder {
+				color: var(--categories-secondary-text-color);
+			}
+		}
+	}
 	&__links {
 		display: flex;
 		justify-content: space-between;
@@ -5398,9 +5436,23 @@ body {
 			padding-bottom: 0px;
 
 			flex-direction: column;
+			align-items: flex-start;
 			gap: 20px;
 
 			border-bottom: none;
+		}
+		&__search {
+			flex: 0 0 auto;
+			width: 100%;
+
+			padding: 20px 30px 20px 20px;
+
+			span {
+				--size: 24px;
+			}
+		}
+		&__links {
+			width: 100%;
 		}
 		&__content {
 			gap: 30px;
@@ -5426,6 +5478,13 @@ body {
 		&__header {
 			margin-bottom: 20px;
 			gap: 20px;
+		}
+		&__search {
+			padding: 10px 20px 10px 10px;
+
+			span {
+				--size: 20px;
+			}
 		}
 		&__links {
 			flex-wrap: nowrap;
