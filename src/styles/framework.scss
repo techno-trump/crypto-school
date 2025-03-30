@@ -368,6 +368,11 @@
 	--rate-card-active-secondary-color: var(--white);
 	--rate-card-active-separator-color: #FFFFFF32;
 	--rate-card-active-toggler-color: var(--white);
+
+	// FAQ
+	--faq-item-text-color: var(--dark-300);
+	--faq-item-active-background: linear-gradient(to right bottom, #FFFFFF5A, #D4F4D1);
+	--faq-item-active-opacity: 1;
 }
 html[data-theme="dark"] {
 	--primary-color: #3150FF;
@@ -695,6 +700,11 @@ html[data-theme="dark"] {
 	--rate-card-active-secondary-color: var(--white);
 	--rate-card-active-separator-color: #FFFFFF32;
 	--rate-card-active-toggler-color: var(--white);
+
+	// FAQ
+	--faq-item-text-color: #FFFFFF80;
+	--faq-item-active-background: linear-gradient(to right bottom, #9090905A, #4E4E4E);
+	--faq-item-active-opacity: 0.8;
 }
 @media (max-width: config.$mbpT) {
 	:root {
@@ -4877,6 +4887,7 @@ body {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		align-items: center;
+		margin-bottom: 80px;
 	}
 	@media (max-width: config.$mbpT) {
 		&__container {
@@ -4894,6 +4905,7 @@ body {
 			margin-bottom: 30px;
 		}
 		&__list {
+			margin-bottom: 30px;
 			grid-template-columns: 1fr;
 			gap: 20px;
 
@@ -4910,6 +4922,11 @@ body {
 					grid-row: 2 / 2;
 				}
 			}
+		}
+	}
+	@media (max-width: config.$mbpMM) {
+		&__list {
+			margin-bottom: 20px;
 		}
 	}
 }
@@ -5072,6 +5089,7 @@ body {
 			position: relative;
 			width: var(--size);
 			height: var(--size);
+			padding: calc(var(--size) / 2);
 
 			&::before,
 			&::after {
@@ -5106,12 +5124,12 @@ body {
 			overflow: hidden;			
 			opacity: 0;
 			
-			transition: 0.3s opacity, 0.3s margin;
+			transition: 0.3s opacity, 0.3s margin, 0.3s max-height;
 		}
 		&_opened &__conditions {
 			border-top: 1px solid var(--separator-color);
 			margin-bottom: 20px;
-			max-height: fit-content;
+			max-height: none;
 			opacity: 1;
 		}
 		&__condition {
@@ -5129,5 +5147,129 @@ body {
 		&__data {
 			margin-bottom: 20px;
 		}
+	}
+}
+
+.faq {
+	&__title {
+		width: fit-content;
+		margin: 0 auto;
+		margin-bottom: 40px;
+	}
+	&__content {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 20px;
+	}
+	@media (max-width: config.$mbpT) {
+		&__title {
+			width: 100%;
+			margin: 0px;
+			margin-bottom: 30px;
+		}
+		&__content {
+			grid-template-columns: 1fr;
+			gap: 10px;
+		}
+	}
+	@media (max-width: config.$mbpMM) {
+		&__title {
+			margin-bottom: 20px;
+		}
+	}
+}
+.faq-item {
+	--active-background: var(--faq-item-active-background);
+	--active-opacity: var(--faq-item-active-opacity);
+
+	height: fit-content;
+	padding: 40px 40px 20px 40px;
+
+	&__header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 10px;
+		padding-bottom: 20px;
+	}
+	&__toggler {
+		--size: 25px;
+		--line-width: 2px;
+
+		position: relative;
+		width: var(--size);
+		height: var(--size);
+		padding: calc(var(--size) / 2);
+
+		&::before,
+		&::after {
+			content: '';
+
+			position: absolute;
+			top: calc((var(--size) - var(--line-width)) / 2);
+			left: 0px;
+
+			width: 100%;
+			border: 1px solid var(--text-primary-color);
+			border-radius: var(--line-width);
+
+			transform-origin: center;
+			transition: transform 0.3s;
+		}
+		&::after {
+			transform: rotateZ(-90deg);
+		}
+	}
+	&_opened &__toggler::after {
+		transform: rotateZ(0deg);
+	}
+	&__content {
+		max-width: 70%;
+		color: var(--faq-item-text-color);
+
+		padding-bottom: 0px;
+		max-height: 0px;
+		overflow: hidden;			
+		opacity: 0;
+		
+		transition: 0.3s opacity, 0.3s padding, 0.3s max-height;
+	}
+	&_opened &__content {
+		padding-bottom: 5px;
+		max-height: none;
+		opacity: 1;
+	}
+	@media (max-width: config.$mbpT) {
+		padding: 30px 30px 10px 30px;
+
+		&__header {
+			padding-bottom: 20px;
+		}
+		&__content {
+			max-width: 75%;
+			padding-top: 0px;
+			padding-bottom: 0px;
+		}
+		&_opened &__content {
+			padding-bottom: 30px;
+ 		}
+	}
+	@media (max-width: config.$mbpMM) {
+		padding: 20px 20px 5px 20px;
+
+		&__header {
+			padding-bottom: 15px;
+		}
+		&__toggler {
+			--size: 20px;
+		}
+		&__content {
+			max-width: 100%;
+			padding-top: 0px;
+			padding-bottom: 0px;
+		}
+		&_opened &__content {
+			padding-bottom: 30px;
+ 		}
 	}
 }
