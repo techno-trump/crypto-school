@@ -3410,7 +3410,6 @@ body {
 .bottom-navigation {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
-	justify-content: space-between;
 
 	&__item {
 		display: flex;
@@ -3434,11 +3433,15 @@ body {
 	&__label {
 		display: block;
 		line-height: 1;
+		font-size: 18px;
 		font-weight: 600;
 		color: var(--bottom-navigation-label-color);
 	}
 	@media (max-width: config.$mbpMM) {
-		justify-content: flex-end;
+		&__label {
+			width: min-content;
+			font-size: 16px;
+		}
 	}
 }
 
