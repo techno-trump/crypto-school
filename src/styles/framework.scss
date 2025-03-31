@@ -3408,14 +3408,22 @@ body {
 }
 
 .bottom-navigation {
-	display: flex;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
 	justify-content: space-between;
-	align-items: center;
 
 	&__item {
 		display: flex;
 		align-items: center;
 		gap: 10px;
+	}
+	&__previous {
+		grid-column: 1 / 1;
+		justify-content: flex-start;
+	}
+	&__next {
+		grid-column: 2 / 2;
+		justify-content: flex-end;
 	}
 	&__arrow {
 		display: block;
