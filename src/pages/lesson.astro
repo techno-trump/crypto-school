@@ -1,98 +1,101 @@
 ---
+import AccountLayout from 'src/layouts/AccountLayout.astro'
 import AccountMenu from 'src/components/AccountMenu.astro'
-import Button from 'src/components/basic/Button.astro'
 import Checkbox from 'src/components/basic/Checkbox.astro'
+import Button from 'src/components/basic/Button.astro'
 import Layout from 'src/layouts/Layout.astro'
 
 ---
 <Layout title="Крипто школа" description="Крипто школа">
   <div class="container lesson__container">
-    <div class="lesson__menu hide-mobile">
-      <AccountMenu horizontal />  
-    </div>    
-
-    <article class="account-block palette palette_blurred account-article lesson__article">
-      <div class="account-article__header">
-        <div class="account-article__header-column">
-          <h6 class="text-small account-article__pretitle">Модуль 1. Основы</h6>
-          <h5 class="h6 color-primary">Урок 1. Основи Crypto Education</h5>
+    <AccountLayout>
+      <AccountMenu slot="sidebar-top" />
+      
+      <Fragment slot="center-bottom">
+        <article class="account-block palette palette_blurred account-article">
+          <div class="account-article__header">
+            <div class="account-article__header-column">
+              <h6 class="text-small account-article__pretitle">Модуль 1. Основы</h6>
+              <h5 class="h6 color-primary">Урок 1. Основи Crypto Education</h5>
+            </div>
+    
+            <div class="account-article__header-column">
+              <button class="account-article__support">
+                <span class="icon-telegram"></span>
+                <span class="text-small">Потрібна допомога</span>
+              </button>
+            </div>
+          </div>
+    
+          <hr class="account-block__horizontal-row account-article__separator">
+    
+          <div class="account-article__content">
+            <h6 class="text account-article__content-title">Как будет проходить этот курс?</h6>
+            
+            <p class="text-small account-article__content-text">Тариф Easy та Medium підходять для абсолютних новачків, а на тарифі Hard ми будемо більш інтенсивно працювати зі студентами, які вже мають мінімальний досвід у дизайні Тариф Easy та Medium підходять для абсолютних новачків, а на тарифі Hard ми будемо більш інтенсивно працювати зі студентами, які вже мають мінімальний досвід у дизайні Тариф Easy та Medium підходять для абсолютних новачків, а на тарифі Hard ми будемо більш інтенсивно працювати зі студентами, які вже мають мінімальний досвід у дизайніТариф Easy та Medium підходять для абсолютних новачків, а на тарифі Hard ми будемо більш інтенсивно працювати зі студентами, які вже мають мінімальний досвід у дизайніТариф Easy та Medium підходять для абсолютних новачків, а на тарифі Hard ми будемо більш інтенсивно працювати зі студентами, які вже мають мінімальний досвід у дизайніТариф Easy та Medium підходять для абсолютних новачків, а на тарифі </p>
+            
+            <div class="account-article__content-images">
+              <img src="./assets/img/temp/article-placeholder.png" alt="">
+            </div>
+    
+            <h6 class="text account-article__content-title">Как будет проходить этот курс?</h6>
+            
+            <p class="text-small account-article__content-text">Тариф Easy та Medium підходять для абсолютних новачків, а на тарифі Hard ми будемо більш інтенсивно працювати зі студентами, які вже мають мінімальний досвід у дизайні Тариф Easy та Medium підходять для абсолютних новачків, а на тарифі Hard ми будемо більш інтенсивно працювати зі студентами, які вже мають мінімальний досвід у дизайні Тариф Easy та Medium підходять для абсолютних новачків, а на тарифі Hard ми будемо більш інтенсивно працювати зі студентами, які вже мають мінімальний досвід у дизайніТариф Easy та Medium підходять для абсолютних новачків, а на тарифі Hard ми будемо більш інтенсивно працювати зі студентами, які вже мають мінімальний досвід у дизайніТариф Easy та Medium підходять для абсолютних новачків, а на тарифі Hard ми будемо більш інтенсивно працювати зі студентами, які вже мають мінімальний досвід у дизайніТариф Easy та Medium підходять для абсолютних новачків, а на тарифі </p>
+    
+            <div class="account-article__content-images">
+              <img src="./assets/img/temp/article-placeholder.png" alt="">
+              <img src="./assets/img/temp/article-placeholder.png" alt="">
+            </div>
+    
+            <h6 class="text account-article__content-title">Как будет проходить этот курс?</h6>
+            
+            <p class="text-small account-article__content-text">Тариф Easy та Medium підходять для абсолютних новачків, а на тарифі Hard ми будемо більш інтенсивно працювати зі студентами, які вже мають мінімальний досвід у дизайні Тариф Easy та Medium підходять для абсолютних новачків, а на тарифі Hard ми будемо більш інтенсивно працювати зі студентами, які вже мають мінімальний досвід у дизайні Тариф Easy та Medium підходять для абсолютних новачків, а на тарифі Hard ми будемо більш інтенсивно працювати зі студентами, які вже мають мінімальний досвід у дизайніТариф Easy та Medium підходять для абсолютних новачків, а на тарифі Hard ми будемо більш інтенсивно працювати зі студентами, які вже мають мінімальний досвід у дизайніТариф Easy та Medium підходять для абсолютних новачків, а на тарифі Hard ми будемо більш інтенсивно працювати зі студентами, які вже мають мінімальний досвід у дизайніТариф Easy та Medium підходять для абсолютних новачків, а на тарифі </p>
+          </div>
+        </article>
+    
+        <div class="account-block palette palette_blurred completion-form lesson__form">
+          <h5 class="account-block__title h6">Підтвердити виконання</h5>
+    
+          <hr class="account-block__horizontal-row completion-form__horizontal-row">
+    
+          <div class="completion-form__fields">
+            <div class="completion-form__field">
+              <Checkbox id="completion-form-1" name="completion-form-1" />
+              <label for="completion-form-1" class="text color-primary">Пункт 1 выполнен</label>
+            </div>
+    
+            <div class="completion-form__field">
+              <Checkbox id="completion-form-2" name="completion-form-2" />
+              <label for="completion-form-2" class="text color-primary">Пункт 2 выполнен</label>
+            </div>
+            
+            <div class="completion-form__field">
+              <Checkbox id="completion-form-3" name="completion-form-3" />
+              <label for="completion-form-3" class="text color-primary">Пункт 3 выполнен</label>
+            </div>
+          </div>
+    
+          <Button block centered filled rounded>
+            <span class="button__text">Завдання виконано</span>
+          </Button>
         </div>
-
-        <div class="account-article__header-column">
-          <button class="account-article__support">
-            <span class="icon-telegram"></span>
-            <span class="text-small">Потрібна допомога</span>
-          </button>
+    
+        <div class="bottom-navigation">
+          <a href="#" class="bottom-navigation__item bottom-navigation__previous">
+            <div class="bottom-navigation__arrow">
+              <span class="icon-nav-arrow-left"></span>
+            </div>
+            <div class="bottom-navigation__label text-small">На головну</div>
+          </a>
+    
+          <a href="#" class="bottom-navigation__item bottom-navigation__next">
+            <div class="bottom-navigation__label text-small">Наступний урок</div>
+            <div class="bottom-navigation__arrow">
+              <span class="icon-nav-arrow-right"></span>
+            </div>
+          </a>
         </div>
-      </div>
-
-      <hr class="account-block__horizontal-row account-article__separator">
-
-      <div class="account-article__content">
-        <h6 class="text account-article__content-title">Как будет проходить этот курс?</h6>
-        
-        <p class="text-small account-article__content-text">Тариф Easy та Medium підходять для абсолютних новачків, а на тарифі Hard ми будемо більш інтенсивно працювати зі студентами, які вже мають мінімальний досвід у дизайні Тариф Easy та Medium підходять для абсолютних новачків, а на тарифі Hard ми будемо більш інтенсивно працювати зі студентами, які вже мають мінімальний досвід у дизайні Тариф Easy та Medium підходять для абсолютних новачків, а на тарифі Hard ми будемо більш інтенсивно працювати зі студентами, які вже мають мінімальний досвід у дизайніТариф Easy та Medium підходять для абсолютних новачків, а на тарифі Hard ми будемо більш інтенсивно працювати зі студентами, які вже мають мінімальний досвід у дизайніТариф Easy та Medium підходять для абсолютних новачків, а на тарифі Hard ми будемо більш інтенсивно працювати зі студентами, які вже мають мінімальний досвід у дизайніТариф Easy та Medium підходять для абсолютних новачків, а на тарифі </p>
-        
-        <div class="account-article__content-images">
-          <img src="./assets/img/temp/article-placeholder.png" alt="">
-        </div>
-
-        <h6 class="text account-article__content-title">Как будет проходить этот курс?</h6>
-        
-        <p class="text-small account-article__content-text">Тариф Easy та Medium підходять для абсолютних новачків, а на тарифі Hard ми будемо більш інтенсивно працювати зі студентами, які вже мають мінімальний досвід у дизайні Тариф Easy та Medium підходять для абсолютних новачків, а на тарифі Hard ми будемо більш інтенсивно працювати зі студентами, які вже мають мінімальний досвід у дизайні Тариф Easy та Medium підходять для абсолютних новачків, а на тарифі Hard ми будемо більш інтенсивно працювати зі студентами, які вже мають мінімальний досвід у дизайніТариф Easy та Medium підходять для абсолютних новачків, а на тарифі Hard ми будемо більш інтенсивно працювати зі студентами, які вже мають мінімальний досвід у дизайніТариф Easy та Medium підходять для абсолютних новачків, а на тарифі Hard ми будемо більш інтенсивно працювати зі студентами, які вже мають мінімальний досвід у дизайніТариф Easy та Medium підходять для абсолютних новачків, а на тарифі </p>
-
-        <div class="account-article__content-images">
-          <img src="./assets/img/temp/article-placeholder.png" alt="">
-          <img src="./assets/img/temp/article-placeholder.png" alt="">
-        </div>
-
-        <h6 class="text account-article__content-title">Как будет проходить этот курс?</h6>
-        
-        <p class="text-small account-article__content-text">Тариф Easy та Medium підходять для абсолютних новачків, а на тарифі Hard ми будемо більш інтенсивно працювати зі студентами, які вже мають мінімальний досвід у дизайні Тариф Easy та Medium підходять для абсолютних новачків, а на тарифі Hard ми будемо більш інтенсивно працювати зі студентами, які вже мають мінімальний досвід у дизайні Тариф Easy та Medium підходять для абсолютних новачків, а на тарифі Hard ми будемо більш інтенсивно працювати зі студентами, які вже мають мінімальний досвід у дизайніТариф Easy та Medium підходять для абсолютних новачків, а на тарифі Hard ми будемо більш інтенсивно працювати зі студентами, які вже мають мінімальний досвід у дизайніТариф Easy та Medium підходять для абсолютних новачків, а на тарифі Hard ми будемо більш інтенсивно працювати зі студентами, які вже мають мінімальний досвід у дизайніТариф Easy та Medium підходять для абсолютних новачків, а на тарифі </p>
-      </div>
-    </article>
-
-    <div class="account-block palette palette_blurred completion-form lesson__form">
-      <h5 class="account-block__title h6">Підтвердити виконання</h5>
-
-      <hr class="account-block__horizontal-row completion-form__horizontal-row">
-
-      <div class="completion-form__fields">
-        <div class="completion-form__field">
-          <Checkbox id="completion-form-1" name="completion-form-1" />
-          <label for="completion-form-1" class="text color-primary">Пункт 1 выполнен</label>
-        </div>
-
-        <div class="completion-form__field">
-          <Checkbox id="completion-form-2" name="completion-form-2" />
-          <label for="completion-form-2" class="text color-primary">Пункт 2 выполнен</label>
-        </div>
-        
-        <div class="completion-form__field">
-          <Checkbox id="completion-form-3" name="completion-form-3" />
-          <label for="completion-form-3" class="text color-primary">Пункт 3 выполнен</label>
-        </div>
-      </div>
-
-      <Button block centered filled rounded>
-        <span class="button__text">Завдання виконано</span>
-      </Button>
-    </div>
-
-    <div class="bottom-navigation">
-      <a href="#" class="bottom-navigation__item bottom-navigation__previous">
-        <div class="bottom-navigation__arrow">
-          <span class="icon-nav-arrow-left"></span>
-        </div>
-        <div class="bottom-navigation__label text-small">На головну</div>
-      </a>
-
-      <a href="#" class="bottom-navigation__item bottom-navigation__next">
-        <div class="bottom-navigation__label text-small">Наступний урок</div>
-        <div class="bottom-navigation__arrow">
-          <span class="icon-nav-arrow-right"></span>
-        </div>
-      </a>
-    </div>
+      </Fragment>
+    </AccountLayout>
   </div>
 </Layout>

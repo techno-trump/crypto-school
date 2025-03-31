@@ -871,6 +871,7 @@ body {
 
 	&-column,
 	&-column-slice {
+		min-width: 0px;
 		display: flex;
 		flex-direction: column;
 		gap: 32px;
@@ -885,7 +886,6 @@ body {
 	@media (max-width: config.$mbpT) {
 		display: grid;
 		grid-template-columns: 1fr;
-		grid-template-rows: repeat(4, auto);
 
 		&-column {
 			display: contents;
@@ -3216,40 +3216,50 @@ body {
 
 .lesson {
 	&__container {
-		padding-top: 40px;
-		padding-bottom: 80px;
-	}
-	&__menu {
-		margin-bottom: 30px;
-	}
-	&__article {
-		margin-bottom: 30px;
-	}
-	&__form {
-		margin-bottom: 40px;
+		.account-layout {
+			padding: 40px 0px 60px 0px; 
+		}
+		.account-layout-center__top {
+			display: none;
+		}
+		.account-layout-sidebar__bottom {
+			display: none;
+		}
 	}
 	@media (max-width: config.$mbpT) {
-		&__article {
-			margin-bottom: 20px;
+		&__container {
+			.account-layout {
+				padding: 30px 0px;
+				gap: 30px;
+			}
+			.account-layout-sidebar__top {
+				grid-row: 1 / 1;
+			}
+			.account-layout-column-slice {
+				gap: 20px;
+			}
 		}
 		&__form {
-			margin-bottom: 30px;
+			margin-bottom: 10px;
 		}
 	}
 	@media (max-width: config.$mbpM) {
 		&__container {
-			padding-top: 20px;
-			padding-bottom: 40px;
-		}
-		&__article {
-			margin-bottom: 15px;
+			.account-layout {
+				padding: 20px 0px 25px 0px;
+			}
+			.account-layout-column-slice {
+				gap: 15px;
+			}
 		}
 		&__form {
-			margin-bottom: 15px;
+			margin-bottom: 0;
 		}
 	}
 }
 .account-article {
+	padding: 60px;
+
 	&__header {
 		display: flex;
 		justify-content: space-between;
@@ -3303,6 +3313,8 @@ body {
 		}
 	}
 	@media (max-width: config.$mbpT) {
+		padding: 30px;
+
 		&__content {
 			&-text {
 				margin-bottom: 30px;
@@ -3313,6 +3325,8 @@ body {
 		}
 	}
 	@media (max-width: config.$mbpMM) {
+		padding: 20px;
+
 		&__header {
 			flex-direction: column;
 			gap: 20px;
