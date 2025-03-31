@@ -314,8 +314,16 @@ import Layout from 'src/layouts/Layout.astro'
             <img class="blog-article-comments__avatar" src="./assets/img/temp/blog-article-comment-avatar.png">
 
             <div class="blog-article-comments__textbox">
-              <textarea class="blog-article-comments__textarea"></textarea>
-              <div class="blog-article-comments__publish"></div>
+              <textarea placeholder="Add a comment..." class="blog-article-comments__textarea"></textarea>
+              <div class="blog-article-comments__publish">
+                <label for="comments-upload" class="blog-article-comments__publish-upload">
+                  <input id="comments-upload" type="file">
+                  <span class="icon-picture"></span>
+                  <div>Фото или видео</div>
+                </label>
+
+                <button class="blog-article-comments__send">Post</button>
+              </div>
             </div>
           </div>
 
