@@ -5132,6 +5132,7 @@ body {
 
 		&__header {
 			margin-bottom: 20px;
+			cursor: pointer;
 		}
 		&__conditions {
 			margin-bottom: 0px;
@@ -5199,14 +5200,18 @@ body {
 	--active-opacity: var(--faq-item-active-opacity);
 
 	height: fit-content;
-	padding: 40px 40px 20px 40px;
+	padding: 0px 40px 20px 40px;
 
 	&__header {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		gap: 10px;
+
+		padding-top: 40px;
 		padding-bottom: 20px;
+
+		cursor: pointer;
 	}
 	&__toggler {
 		--size: 25px;
@@ -5256,9 +5261,10 @@ body {
 		opacity: 1;
 	}
 	@media (max-width: config.$mbpT) {
-		padding: 30px 30px 10px 30px;
+		padding: 0px 30px 10px 30px;
 
 		&__header {
+			padding-top: 30px;
 			padding-bottom: 20px;
 		}
 		&__content {
@@ -5271,9 +5277,10 @@ body {
  		}
 	}
 	@media (max-width: config.$mbpMM) {
-		padding: 20px 20px 5px 20px;
+		padding: 0px 20px 5px 20px;
 
 		&__header {
+			padding-top: 20px;
 			padding-bottom: 15px;
 		}
 		&__toggler {
