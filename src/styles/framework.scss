@@ -2659,6 +2659,7 @@ body {
 		margin-bottom: 40px;
 	}
 	&__modules {
+		margin-bottom: 40px;
 		width: 100%;
 		display: flex;
 		flex-direction: column;
@@ -2673,14 +2674,20 @@ body {
 			margin-top: 30px;
 			margin-bottom: 30px;
 		}
+		&__modules {
+			margin-bottom: 30px;
+		}
 	}
 	@media (max-width: config.$mbpMM) {
 		&__container {
 			padding-top: 20px;
-			padding-bottom: 20px;
+			padding-bottom: 30px;
 		}
 		&__title {
 			margin-top: 0;
+			margin-bottom: 20px;
+		}
+		&__modules {
 			margin-bottom: 20px;
 		}
 	}
@@ -3424,10 +3431,6 @@ body {
 	}
 	@media (max-width: config.$mbpMM) {
 		justify-content: flex-end;
-		
-		&__previous {
-			display: none;
-		}
 	}
 }
 
