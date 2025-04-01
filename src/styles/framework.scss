@@ -1009,6 +1009,14 @@ body {
 	&_white {
 		background-color: var(--white);
 	}
+	@media (any-hover: hover) {
+		&_white:hover {
+			background: var(--hover-primary-color);
+		}
+		&_white:hover &__text {
+			color: var(--white);
+		}
+	}
 	&_centered {
 		justify-content: center;
 	}
