@@ -1,4 +1,6 @@
+import throttle from "lodash.throttle";
 const MAX_DELTA = 10
+
 
 document.querySelectorAll('[data-hero-coins]').forEach(container => {
   let windowHeight = window.innerHeight
@@ -7,7 +9,7 @@ document.querySelectorAll('[data-hero-coins]').forEach(container => {
   let centerX = windowWidth / 2
   let centerY = windowHeight / 2
   
-  document.addEventListener('mousemove', (e) => {
+  document.addEventListener('mousemove', throttle((e) => {
     const pageX = e.pageX
     const pageY = e.pageY
 
@@ -16,13 +18,13 @@ document.querySelectorAll('[data-hero-coins]').forEach(container => {
 
     container.style.setProperty('--dx', `${dx}px`)
     container.style.setProperty('--dy', `${dy}px`)
-  })
+  }, 50))
 
-  window.addEventListener('resize', () => {
+  window.addEventListener('resize', throttle(() => {
     windowHeight = window.innerHeight
     windowWidth = window.innerWidth
 
     centerX = windowWidth / 2
     centerY = windowHeight / 2
-  })
+  }, 50))
 })
