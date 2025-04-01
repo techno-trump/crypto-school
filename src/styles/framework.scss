@@ -263,6 +263,7 @@
 	// Bottom Navigation
 	--bottom-navigation-arrow-color: var(--primary-color);
 	--bottom-navigation-label-color: var(--dark-300);
+	--bottom-navigation-hover-arrow-color: var(--hover-primary-color);
 
 	// Team member
 	--team-member-image-border-color: var(--white);
@@ -621,6 +622,7 @@ html[data-theme="dark"] {
 	// Bottom Navigation
 	--bottom-navigation-arrow-color: var(--primary-color);
 	--bottom-navigation-label-color: var(--white);
+	--bottom-navigation-hover-arrow-color: var(--hover-primary-color);
 
 	// Team member
 	--team-member-image-border-color: var(--white);
@@ -3794,6 +3796,7 @@ body {
 		display: block;
 		transform-origin: center;
 		color: var(--bottom-navigation-arrow-color);
+		transition: 0.3s color;
 		font-size: 12px;
 	}
 	&__label {
@@ -3802,6 +3805,11 @@ body {
 		font-size: 18px;
 		font-weight: 600;
 		color: var(--bottom-navigation-label-color);
+	}
+	@media (hover: hover) {
+		&__item:hover &__arrow {
+			color: var(--bottom-navigation-hover-arrow-color);
+		}
 	}
 	@media (max-width: config.$mbpMM) {
 		&__label {
