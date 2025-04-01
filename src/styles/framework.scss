@@ -279,8 +279,10 @@
 	--breadcrumbs-active-link-color: #1E1E1E;
 
 	// Checkbox
-	--checkbox-base-background: transparent;
+	--checkbox-base-background: #FFFFFF00;
 	--checkbox-base-border-color: var(--dark-300);
+	--checkbox-hover-background: #E0F5E7;
+	--checkbox-hover-border-color: var(--primary-color);
 	--checkbox-active-background: var(--primary-color);
 	--checkbox-active-border-color: var(--primary-color);
 	--checkbox-active-icon-color: var(--white);
@@ -641,8 +643,10 @@ html[data-theme="dark"] {
 	--breadcrumbs-active-link-color: #FFFFFF;
 
 	// Checkbox
-	--checkbox-base-background: transparent;
+	--checkbox-base-background: #FFFFFF00;
 	--checkbox-base-border-color: #FFFFFF80;
+	--checkbox-hover-background: #D2D8F6;
+	--checkbox-hover-border-color: #0B1B75;
 	--checkbox-active-background: var(--primary-color);
 	--checkbox-active-border-color: var(--primary-color);
 	--checkbox-active-icon-color: var(--white);
@@ -1516,6 +1520,8 @@ body {
 	--size: 24px;
 	--base-background: var(--checkbox-base-background);
 	--base-border-color: var(--checkbox-base-border-color);
+	--hover-background: var(--checkbox-hover-background);
+	--hover-border-color: var(--checkbox-hover-border-color);
 	--active-background: var(--checkbox-active-background);
 	--active-border-color: var(--checkbox-active-border-color);
 	--active-icon-color: var(--checkbox-active-icon-color);
@@ -1542,7 +1548,7 @@ body {
 		border-radius: 5px;
     cursor: pointer;
 
-    transition: border-color 0.1s, background-color 0.1s;	
+    transition: border-color 0.3s, background-color 0.3s;	
   }
 	&__icon {
 		color: var(--base-background);
@@ -1550,6 +1556,14 @@ body {
 		font-size: 10px;
 		opacity: 0;
 	}
+
+	@media (hover: hover) {
+		&__body:hover {
+			background-color: var(--hover-background);
+			border-color: var(--hover-border-color);
+		}
+	}
+
   input:checked ~ &__body {
     background-color: var(--active-background);
 		border-color: var(--active-border-color);
