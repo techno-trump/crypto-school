@@ -85,10 +85,18 @@
     padding-bottom: calc(0.07 * var(--size));
     cursor: pointer;
 
+    transition: 0.3s color;
+
     span {
       display: block;
       transform-origin: center;
       transform: rotateZ(180deg);
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--footer-scroll-top-hover-icon-color);
+      }
     }
   }
   @media (max-width: config.$mbpT) {

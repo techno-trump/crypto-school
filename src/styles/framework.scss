@@ -186,6 +186,7 @@
 	--footer-scroll-top-text-color: var(--white);
 	--footer-scroll-top-background-color: #C8D4D8;
 	--footer-scroll-top-icon-color: var(--primary-color);
+	--footer-scroll-top-hover-icon-color: var(--hover-primary-color);
 
 	// Study module
 	--study-module-background: var(--white);
@@ -543,6 +544,7 @@ html[data-theme="dark"] {
 	--footer-scroll-top-text-color: #9FA8B0;
 	--footer-scroll-top-background-color: #0B1B75;
 	--footer-scroll-top-icon-color: var(--white); 
+	--footer-scroll-top-hover-icon-color: #FFFFFF80;
 
 	// Study module
 	--study-module-background: linear-gradient(to right bottom, #5151514E, #1D1D1D46);
