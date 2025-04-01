@@ -1358,11 +1358,19 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	gap: 12px;
+	gap: 8px;
 
 	&__icon {
 		color: var(--more-link-icon-color);
 		font-size: 8px;
+
+		transition: 0.3s transform;
+	}
+
+	@media (hover: hover) {
+		&:hover &__icon {
+			transform: translateX(10px);
+		}
 	}
 }
 
