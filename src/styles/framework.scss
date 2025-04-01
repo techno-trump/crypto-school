@@ -255,6 +255,7 @@
 	--article-pretitle-mobile-color: var(--dark-100);
 	--article-support-background: #0088CC;
 	--article-support-color: var(--white);
+	--article-support-hover-background: #0CA2EC;
 	--article-content-title-color: var(--dark-200);
 	--article-content-text-color: var(--dark-300);
 
@@ -392,6 +393,10 @@
 	--categories-primary-text-color: var(--primary-color);
 	--categories-secondary-text-color: var(--dark-200);
 	--categories-separator-color: #CBD7DB80;
+
+	// Social Media link
+	--social-media-link-color: var(--primary-color);
+	--social-media-link-hover-color: var(--hover-primary-color);
 }
 html[data-theme="dark"] {
 	--primary-color: #3150FF;
@@ -607,6 +612,7 @@ html[data-theme="dark"] {
 	--article-pretitle-mobile-color: #FFFFFF80;
 	--article-support-background: #0088CC;
 	--article-support-color: var(--white);
+	--article-support-hover-background: #0CA2EC;
 	--article-content-title-color: var(--white);
 	--article-content-text-color: var(--white);
 
@@ -744,6 +750,10 @@ html[data-theme="dark"] {
 	--categories-primary-text-color: var(--white);
 	--categories-secondary-text-color: #FFFFFF80;
 	--categories-separator-color: #FFFFFF1E;
+
+	// Social Media link
+	--social-media-link-color: var(--white);
+	--social-media-link-hover-color: #FFFFFF80;
 }
 @media (max-width: config.$mbpT) {
 	:root {
@@ -1111,6 +1121,18 @@ body {
 @media (max-width: mixins.px(config.$mbpMNu - 1)) {
 	.hide-mobile {
 		display: none !important;
+	}
+}
+
+.social-media-link {
+	color: var(--social-media-link-color);
+	transition: 0.3s color;
+	cursor: pointer;
+
+	@media(hover: hover) {
+		&:hover {
+			color: var(--social-media-link-hover-color);
+		}
 	}
 }
 
@@ -3591,6 +3613,8 @@ body {
 		background: var(--article-support-background);
 		color: var(--article-support-color);
 
+		transition: 0.3s background-color;
+
 		padding: 13px 24px;
 		border-radius: 5px;
 	
@@ -3603,6 +3627,12 @@ body {
 
 		span {
 			font-size: 17px;
+		}
+
+		@media (hover: hover) {
+			&:hover {
+				background-color: var(--article-support-hover-background);
+			}
 		}
 	}
 	&__content {
