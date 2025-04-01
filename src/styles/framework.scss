@@ -140,6 +140,7 @@
 	--last-tasks-subtitle-color: var(--dark-500);
 	--last-tasks-amount-color: var(--status-warning);
 	--last-tasks-reference-background: var(--primary-color);
+	--last-tasks-reference-hover-background: var(--hover-primary-color);
 	--last-tasks-reference-color: var(--white); 
 
 	// Menu info
@@ -506,7 +507,8 @@ html[data-theme="dark"] {
 	--last-tasks-title-color: var(--white);
 	--last-tasks-subtitle-color: #FFFFFF80;
 	--last-tasks-amount-color: #A7B4FF;
-	--last-tasks-reference-background: linear-gradient(to right bottom, #0026FF, #001799);
+	--last-tasks-reference-background: #0B1B75;
+	--last-tasks-reference-hover-background: #243AB4;
 	--last-tasks-reference-color: var(--white);
 
 	// Menu info
@@ -2315,6 +2317,7 @@ body {
 			aspect-ratio: 1;
 			
 			background: var(--last-tasks-reference-background);
+			transition: 0.3s background-color;
 			
 			padding-left: 2px;
 			display: flex;
@@ -2326,6 +2329,12 @@ body {
 			span {
 				display: block;
 				line-height: 1;
+			}
+
+			@media (hover: hover) {
+				&:hover {
+					background: var(--last-tasks-reference-hover-background);
+				}
 			}
 		}
 	}
