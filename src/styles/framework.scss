@@ -3664,10 +3664,19 @@ body {
 	gap: 10px;
 	
 	&__link {
+		display: block;
+		min-width: 0px;
+
 		color: var(--breadcrumbs-link-color);
 		font-family: 'Inter Tight', sans-serif;
 		font-weight: 500;
 		font-size: 14px;
+
+		&:last-child {
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
 	}
 	&__arrow {
 		color: var(--breadcrumbs-arrow-color);
