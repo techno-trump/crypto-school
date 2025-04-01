@@ -341,6 +341,7 @@
 	--blog-article-comments-sort-button-background: #F5F6F7;
 	--blog-article-comments-sort-button-color: var(--dark-300);
 	--blog-article-comments-button-background: var(--primary-color);
+	--blog-article-comments-button-hover-background: var(--hover-primary-color);
 	--blog-article-comments-button-color: var(--white);
 	--blog-article-comments-textbox-background: var(--white);
 	--blog-article-comments-textbox-border: #2D394C19;
@@ -356,6 +357,7 @@
 	--blog-article-comment-title-color: var(--primary-color);
 	--blog-article-comment-text-color: var(--dark-100);
 	--blog-article-comment-action-color: var(--primary-color);
+	--blog-article-comment-action-hover-color: var(--hover-primary-color);
 	--blog-article-comment-info-color: #90949C;
 	--blog-article-comment-separator-background: var(--dark-100);
 	--blog-article-comment-replies-border-color: #90949C1E;
@@ -700,15 +702,8 @@ html[data-theme="dark"] {
 	--blog-article-comments-sort-button-background: #F5F6F7;
 	--blog-article-comments-sort-button-color: var(--dark-300);
 	--blog-article-comments-button-background: var(--primary-color);
+	--blog-article-comments-button-hover-background: var(--hover-primary-color);
 	--blog-article-comments-button-color: var(--white);
-
-	// Blog Article Comment
-	--blog-article-comment-title-color: var(--white);
-	--blog-article-comment-text-color: #FFFFFF80;
-	--blog-article-comment-action-color: var(--white);
-	--blog-article-comment-info-color: #FFFFFF80;
-	--blog-article-comment-separator-background: #FFFFFF80;
-	--blog-article-comment-replies-border-color: #90949C1E;
 	--blog-article-comments-textbox-background: var(--white);
 	--blog-article-comments-textbox-border: #2D394C19;
 	--blog-article-comments-textbox-placeholder-color: #0000004d;
@@ -718,6 +713,15 @@ html[data-theme="dark"] {
 	--blog-article-comments-publish-upload-background: linear-gradient(to right bottom, #FFFFFF2C, #FFFFFF);
 	--blog-article-comments-publish-upload-color: var(--black);
 	--blog-article-comments-publish-upload-border: #FFFFFF40;
+
+	// Blog Article Comment
+	--blog-article-comment-title-color: var(--white);
+	--blog-article-comment-text-color: #FFFFFF80;
+	--blog-article-comment-action-color: var(--white);
+	--blog-article-comment-action-hover-color: #FFFFFF80;
+	--blog-article-comment-info-color: #FFFFFF80;
+	--blog-article-comment-separator-background: #FFFFFF80;
+	--blog-article-comment-replies-border-color: #90949C1E;
 
 	// Feedbacks Results
 	--feedbacks-results-title-icon-color: var(--status-warning);
@@ -4961,8 +4965,10 @@ body {
 		background: var(--primary-color);
 		transition: 0.3s background-color;
 
-		&:hover {
-			background: var(--hover-primary-color);
+		@media (hover: hover) {
+			&:hover {
+				background: var(--hover-primary-color);
+			}
 		}
 	}
 	&__list {
@@ -4978,10 +4984,17 @@ body {
 
 		background-color: var(--blog-article-comments-button-background);
 		color: var(--blog-article-comments-button-color);
+		transition: 0.3s background-color;
 		
 		font-family: 'Helvetica', Arial, sans-serif;
 		font-weight: 700;
 		font-size: 14px;
+
+		@media (hover: hover) {
+			&:hover {
+				background: var(--blog-article-comments-button-hover-background);
+			}
+		}
 	}
 	@media (max-width: config.$mbpM) {
 		padding: 0px;
@@ -5066,6 +5079,14 @@ body {
 		font-family: 'Helvetica', Arial, sans-serif;
 		font-size: 12px;
 		cursor: pointer;
+
+		transition: 0.3s color;
+
+		@media (hover: hover) {
+			&:hover {
+				color: var(--blog-article-comment-action-hover-color);
+			}
+		}
 	}
 	&__info {
 		color: var(--blog-article-comment-info-color);
