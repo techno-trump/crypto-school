@@ -20,8 +20,7 @@
 
 	--header-height: 100px;
 	--footer-height: 100px;
-	--container-width: 1580px;
-	--container-padding: 30px;
+	
 
 	// Shared
 	--separator-color: #CACACA33;
@@ -756,7 +755,6 @@ html[data-theme="dark"] {
 	:root {
 		--header-height: 95px;
 		--footer-height: 120px;
-		--container-padding: 15px;
 	}
 }
 
@@ -771,6 +769,9 @@ body {
 	font-size: 0;
 	&_header {
 		width: 176px;
+		@media (max-width: config.$mbpRetinaLaptop) {
+			width: 150px;
+		}
 		@media (max-width: config.$mbpT) {
 			width: 140px;
 		}
@@ -878,14 +879,6 @@ body {
 	&:not(#{&}_modal) {
 		pointer-events: none;
 	}
-}
-
-// UI KIT
-.container {
-	width: 100%;
-	max-width: var(--container-width);
-	padding: 0px var(--container-padding);
-	margin: 0 auto;
 }
 
 .account-layout {
@@ -1921,6 +1914,9 @@ body {
 		color: var(--cabinet-menu-item-color);
 		padding: 28px 24px;
 
+		@media (max-width: config.$mbpRetinaLaptop) {
+			padding: 23px 21px;
+		}
 		@media (max-width: config.$mbpT) {
 			padding: 20px 24px;
 		}

@@ -1,7 +1,14 @@
 @use "./config.scss" as config;
 :root {
-	--container-save-space: 32px;
+	--container-save-space: 30px;
 	--section-space: 50px;
+
+	--container-width: 1580px;
+	// --container-padding: 30px;
+	@media (max-width: 1680px) {
+		--container-width: 1320px;
+	}
+	
 	@media (max-width: config.$mbpT) {
 		--section-space: 36px;
 	}
@@ -10,7 +17,7 @@
 	// }
 	
 	@media (max-width: config.$mbpMM) {
-		--container-save-space: 16px;
+		--container-save-space: 15px;
 	}
 }
 html {
@@ -40,9 +47,17 @@ body main {
 	padding-left: var(--container-save-space);
 	padding-right: var(--container-save-space);
 	&_wide {
-		max-width: 1440px;
+		max-width: calc(var(--container-width) - var(--container-save-space) * 2);
+		
 	}
 }
+// UI KIT
+// .container {
+// 	width: 100%;
+// 	max-width: var(--container-width);
+// 	padding: 0px var(--container-padding);
+// 	margin: 0 auto;
+// }
 
 .flex-even {
 	&__inner {
