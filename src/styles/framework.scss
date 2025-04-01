@@ -253,6 +253,7 @@
 
 	// Article
 	--article-pretitle-color: var(--dark-200);
+	--article-pretitle-mobile-color: var(--dark-100);
 	--article-support-background: #0088CC;
 	--article-support-color: var(--white);
 	--article-content-title-color: var(--dark-200);
@@ -604,6 +605,7 @@ html[data-theme="dark"] {
 
 	// Article
 	--article-pretitle-color: #FFFFFF80;
+	--article-pretitle-mobile-color: #FFFFFF80;
 	--article-support-background: #0088CC;
 	--article-support-color: var(--white);
 	--article-content-title-color: var(--white);
@@ -3079,7 +3081,9 @@ body {
 		--color: var(--course-card-text-color);
 		--gap: 10px;		
 		
-		font-family: Arial, sans-serif;
+		font-family: 'Exo 2', Arial, sans-serif;
+		font-weight: 500;
+		font-size: 16px;
 	}
 	&__ellipsis {
 		display: none;
@@ -3095,6 +3099,9 @@ body {
 		&__container {
 			padding-top: 30px;
 			padding-bottom: 30px;
+		}
+		&__list {
+			font-size: 14px;
 		}
 	}
 	@media (max-width: config.$mbpMM) {
@@ -3316,6 +3323,9 @@ body {
 	}
 	&__pretitle {
 		color: var(--article-pretitle-color);
+		font-family: 'Exo 2', Arial, sans-serif;
+		font-weight: 500;
+		font-size: 16px;
 	}
 	&__support {
 		background: var(--article-support-background);
@@ -3359,6 +3369,11 @@ body {
 	@media (max-width: config.$mbpT) {
 		padding: 30px;
 
+		&__pretitle {
+			font-family: 'Inter Tight', sans-serif;
+			font-size: 12px;
+		}
+
 		&__content {
 			&-text {
 				margin-bottom: 30px;
@@ -3380,6 +3395,13 @@ body {
 			border-bottom: 1px solid var(--separator-color);
 			padding-bottom: 18px;
 			gap: 10px;
+		}
+		&__pretitle {
+			color: var(--article-pretitle-mobile-color);
+		}
+		&__title {
+			font-weight: 500;
+			font-size: 20px;
 		}
 		&__support {
 			width: 100%;
