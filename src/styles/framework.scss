@@ -124,6 +124,8 @@
 	--greeting-date-color: var(--dark-300);
 	--greeting-button-background: var(--white);
 	--greeting-button-text: var(--primary-color);
+	--greeting-button-hover-text: var(--white);
+	--greeting-button-hover-background: var(--primary-color);
 
 	// More
 	--more-link-icon-color: var(--status-warning);
@@ -479,6 +481,8 @@ html[data-theme="dark"] {
 	--greeting-date-color: #FFFFFF80;
 	--greeting-button-background: linear-gradient(to right bottom, #0026FF, #001799);
 	--greeting-button-text: var(--white);
+	--greeting-button-hover-background: linear-gradient(to right bottom, #0026FF, #001799);
+	--greeting-button-hover-text: #FFFFFF80;
 
 	// More
 	--more-link-icon-color: var(--primary-color);
@@ -1870,6 +1874,13 @@ body {
 			color: var(--greeting-button-text);
 			font-weight: 600;
 			font-size: 14px;
+
+			transition: 0.3s;
+
+			&:hover {
+				background: var(--greeting-button-hover-background);
+				color: var(--greeting-button-hover-text);
+			}
 
 			span {
 				display: block;
@@ -3527,6 +3538,7 @@ body {
 	gap: 20px;
 	
 	&_expanded {
+		max-width: none;
 		flex-direction: row;
 		gap: 30px;
 	}
