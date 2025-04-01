@@ -3078,18 +3078,18 @@ body {
 		margin-bottom: 30px;
 	}
 	&__progress {
-		margin-bottom: 30px;
+		margin-bottom: 20px;
 	}
 	&__block {
 		margin-bottom: 30px;
 	}
 	&__list {
 		--min-column: 280px;
-		--max-column: 340px;
+		--max-column: 330px;
 
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(var(--min-column), var(--max-column)));
-		gap: 30px;
+		gap: 25px;
 		
 		.course-card {
 			max-width: var(--max-column);
@@ -3098,6 +3098,16 @@ body {
 		}
 	}
 	@media (max-width: config.$mbpT) {
+		&__container {
+			padding-top: 30px;
+			padding-bottom: 30px;
+		}
+		&__progress {
+			margin-bottom: 30px;
+		}
+		&__block {
+			margin-bottom: 30px;
+		}
 		&__list {
 			--min-column: 250px;
 			--max-column: 1fr;
@@ -3107,10 +3117,17 @@ body {
 	@media (max-width: config.$mbpM) {
 		&__container {
 			padding-top: 20px;
-			padding-bottom: 40px;
+			padding-bottom: 20px;
 		}
 		&__progress {
 			display: none;
+		}
+		&__block {
+			margin-bottom: 20px;
+		}
+		&__block-title {
+			font-weight: 500;
+			font-size: 20px;
 		}
 	}
 }
