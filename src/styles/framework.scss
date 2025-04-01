@@ -1746,6 +1746,150 @@ body {
 			right: auto !important;
 		}
 	}
+	@media (max-width: config.$mbpPC) {
+		&__coins {
+			&-1 {
+				top: -5% !important;
+				bottom: auto !important;
+				left: 27% !important;
+				right: auto !important;
+			}
+			&-2 {
+				top: 5% !important;
+				bottom: auto !important;
+				left: 3% !important;
+				right: auto !important;
+			}
+			&-3 {
+				top: 4% !important;
+				bottom: auto !important;
+				left: 17% !important;
+				right: auto !important;
+			}
+			&-4 {
+				top: -9% !important;
+				bottom: auto !important;
+				left: auto !important;
+				right: -2% !important;
+			}
+			&-5 {
+				top: 14% !important;
+				bottom: auto !important;
+				left: auto !important;
+				right: -8% !important;
+			}
+			&-6 {
+				top: auto !important;
+				bottom: 49% !important;
+				left: 12% !important;
+				right: auto !important;
+			}
+			&-7 {
+				top: 25% !important;
+				bottom: auto !important;
+				left: auto !important;
+				right: -2% !important;
+			}
+			&-8 {
+				top: auto !important;
+				bottom: 41% !important;
+				left: 3% !important;
+				right: auto !important;
+			}
+			&-9 {
+				top: auto !important;
+				bottom: 24% !important;
+				left: auto !important;
+				right: 5% !important;
+			}
+			&-10 {
+				top: auto !important;
+				bottom: 36% !important;
+				left: auto !important;
+				right: -15% !important;
+			}
+			&-11 {
+				top: auto !important;
+				bottom: 12% !important;
+				left: -19% !important;
+				right: auto !important;
+			}
+		}
+	}
+	@media (max-width: config.$mbpMM) {
+		&__coins {
+			img {
+				scale: 0.3;
+			}
+
+			&-1 {
+				top: -5% !important;
+				bottom: auto !important;
+				left: 27% !important;
+				right: auto !important;
+			}
+			&-2 {
+				top: 15% !important;
+				bottom: auto !important;
+				left: -10% !important;
+				right: auto !important;
+			}
+			&-3 {
+				top: 4% !important;
+				bottom: auto !important;
+				left: -3% !important;
+				right: auto !important;
+			}
+			&-4 {
+				top: -9% !important;
+				bottom: auto !important;
+				left: auto !important;
+				right: -12% !important;
+			}
+			&-5 {
+				top: 14% !important;
+				bottom: auto !important;
+				left: auto !important;
+				right: -18% !important;
+			}
+			&-6 {
+				top: auto !important;
+				bottom: 49% !important;
+				left: 8% !important;
+				right: auto !important;
+			}
+			&-7 {
+				top: 25% !important;
+				bottom: auto !important;
+				left: auto !important;
+				right: -8% !important;
+			}
+			&-8 {
+				top: auto !important;
+				bottom: 41% !important;
+				left: -3% !important;
+				right: auto !important;
+			}
+			&-9 {
+				top: auto !important;
+				bottom: 24% !important;
+				left: auto !important;
+				right: -15% !important;
+			}
+			&-10 {
+				top: auto !important;
+				bottom: 22% !important;
+				left: auto !important;
+				right: -29% !important;
+			}
+			&-11 {
+				top: auto !important;
+				bottom: 12% !important;
+				left: -19% !important;
+				right: auto !important;
+			}
+		}
+	}
 }
 
 .account-menu {

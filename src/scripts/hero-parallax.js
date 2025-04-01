@@ -13,8 +13,8 @@ document.querySelectorAll('[data-hero-coins]').forEach(container => {
     const pageX = e.pageX
     const pageY = e.pageY
 
-    const dx = (centerX - pageX) / centerX * MAX_DELTA
-    const dy = (centerY - pageY) / centerY * MAX_DELTA
+    const dx = (pageX - centerX) / centerX * MAX_DELTA
+    const dy = (pageY - centerX) / centerY * MAX_DELTA
 
     container.style.setProperty('--dx', `${dx}px`)
     container.style.setProperty('--dy', `${dy}px`)
