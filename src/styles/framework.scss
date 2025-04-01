@@ -1650,6 +1650,109 @@ body {
 			@include button_block;
 		}
 	}
+
+	&__coins {
+		--coefficient: 1;
+		--dx: 0px;
+		--dy: 0px;
+
+		display: contents;
+
+		&-layer-1 {
+			--coefficient: 4;
+			display: contents;
+		}
+		&-layer-2 {
+			--coefficient: 2;
+			display: contents;
+		}
+		&-layer-3 {
+			--coefficient: 1;
+			display: contents;
+		}
+		
+		img {
+			position: absolute;
+			display: block;
+
+			width: auto;
+			height: auto;
+			scale: 0.5;
+
+			transition: 0.1s;
+
+			@media (hover: hover) {
+				transform: translateX(calc(var(--dx) * var(--coefficient))) translateY(calc(var(--dy) * var(--coefficient)));
+			}
+		}
+
+		&-1 {
+			top: 3% !important;
+			bottom: auto !important;
+			left: 36% !important;
+			right: auto !important;
+		}
+		&-2 {
+			top: 13% !important;
+			bottom: auto !important;
+			left: 10% !important;
+			right: auto !important;
+		}
+		&-3 {
+			top: 9% !important;
+			bottom: auto !important;
+			left: 27% !important;
+			right: auto !important;
+		}
+		&-4 {
+			top: 3% !important;
+			bottom: auto !important;
+			left: auto !important;
+			right: 13% !important;
+		}
+		&-5 {
+			top: 9% !important;
+			bottom: auto !important;
+			left: auto !important;
+			right: -3% !important;
+		}
+		&-6 {
+			top: auto !important;
+			bottom: 69% !important;
+			left: 27% !important;
+			right: auto !important;
+		}
+		&-7 {
+			top: 20% !important;
+			bottom: auto !important;
+			left: auto !important;
+			right: 8% !important;
+		}
+		&-8 {
+			top: auto !important;
+			bottom: 61% !important;
+			left: 20% !important;
+			right: auto !important;
+		}
+		&-9 {
+			top: auto !important;
+			bottom: 64% !important;
+			left: auto !important;
+			right: 15% !important;
+		}
+		&-10 {
+			top: auto !important;
+			bottom: 56% !important;
+			left: auto !important;
+			right: -1% !important;
+		}
+		&-11 {
+			top: auto !important;
+			bottom: 42% !important;
+			left: -3% !important;
+			right: auto !important;
+		}
+	}
 }
 
 .account-menu {
