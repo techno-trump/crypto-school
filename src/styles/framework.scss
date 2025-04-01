@@ -3597,6 +3597,13 @@ body {
 		display: flex;
 		align-items: center;
 		gap: 15px;
+
+		font-weight: 600;
+		font-size: 14px;
+
+		span {
+			font-size: 17px;
+		}
 	}
 	&__content {
 		&-title {
