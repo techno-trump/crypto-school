@@ -3730,6 +3730,10 @@ body {
 		&:not(:last-child) {
 			margin-bottom: var(--title-margin);
 		}
+
+		&_primary {
+			color: var(--text-primary-color);
+		}
 	}
 	&__text {
 		color: var(--article-content-text-color);
@@ -3754,6 +3758,9 @@ body {
 		&:not(:last-child) {
 			margin-bottom: var(--images-margin);
 		}
+	}
+	&__link {
+		border-bottom: 1px solid currentColor;
 	}
 	@media (max-width: config.$mbpT) {
 		--block-margin: 30px;
