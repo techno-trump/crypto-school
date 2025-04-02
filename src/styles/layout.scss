@@ -4,6 +4,7 @@
 	--section-space: 50px;
 
 	--container-width: 1580px;
+	--container-small-width: 990px;
 	// --container-padding: 30px;
 	@media (max-width: 1680px) {
 		--container-width: 1320px;
@@ -48,7 +49,9 @@ body main {
 	padding-right: var(--container-save-space);
 	&_wide {
 		max-width: calc(var(--container-width) - var(--container-save-space) * 2);
-		
+	}
+	&_small {
+		max-width: calc(var(--container-small-width) + var(--container-save-space) * 2);
 	}
 }
 // UI KIT
