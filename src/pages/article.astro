@@ -71,34 +71,33 @@ import Layout from 'src/layouts/Layout.astro'
           </div>
         </div>
 
-        <div class="blog-article-layout__content">
-          <div class="blog-article-layout__block">
-            <h5 class="h6 color-primary blog-article-layout__block-title">Что такое абстракция аккаунта?</h5>
+        <div class="account-article-content blog-article-layout__content">
+          <div class="account-article-content__block">
+            <h5 class="h6 color-primary account-article-content__title">Что такое абстракция аккаунта?</h5>
     
-            <p class="blog-article-layout__block-paragraph text-small">
+            <p class="account-article-content__text text-small">
               Абстракция аккаунта - это процесс облегчения взаимодействия пользователей с блокчейном через 
               кастомизацию определенных элементов учетных записей <a href="#">смарт-контрактов</a>, начиная от методов 
               оплаты комиссии и заканчивая механизмами одобрения транзакций.
-              
             </p>
     
-            <p class="blog-article-layout__block-paragraph text-small">
+            <p class="account-article-content__text text-small">
               Это широко обсуждалось в сообществе Ethereum, при этом Виталик Бутерин выдвинул 
               множество предложений (ERC 4337, EIP 2938, и другие), которые описывают, как сделать 
               транзакции проще для конечного пользователя.
             </p>
           </div>
   
-          <div class="blog-article-layout__block">
-            <h5 class="h6 color-primary blog-article-layout__block-title">Общие сведения об аккаунтах Ethereum</h5>
+          <div class="account-article-content__block">
+            <h5 class="h6 color-primary account-article-content__title">Общие сведения об аккаунтах Ethereum</h5>
     
-            <p class="blog-article-layout__block-paragraph text-small">
+            <p class="account-article-content__text text-small">
               Чтобы понять ценность абстракции учетных записей, необходимо сначала разобраться 
               в основах аккаунтов Ethereum. В Ethereum существует два типа сущностей: Внешние 
               аккаунты (External Owned Accounts или EOA), и аккаунты смарт-контрактов.
             </p>
               
-            <p class="blog-article-layout__block-paragraph text-small">
+            <p class="account-article-content__text text-small">
               EOA состоит из пары криптографических ключей: открытого и закрытого. Он представлен 
               адресом, который создается после того, как пользователь настроил свою пару ключей. 
               <a href="#">Закрытый ключ</a> используется для подписывания транзакций; он предоставляет пользователям 
@@ -109,7 +108,7 @@ import Layout from 'src/layouts/Layout.astro'
               В случае утери или кражи ключа, аккаунт, скорее всего, будет потерян навсегда.
             </p>
               
-            <p class="blog-article-layout__block-paragraph text-small">
+            <p class="account-article-content__text text-small">
               EOA также представляют собой проблему, потому что, будучи индивидуальными аккаунтами, 
               они могут выставлять единичные транзакции, которые нужно верифицировать по одной, каждый 
               раз платя за газ.
@@ -120,14 +119,14 @@ import Layout from 'src/layouts/Layout.astro'
             </p>
           </div>
 
-          <div class="blog-article-layout__block">
-            <h5 class="h6 color-primary blog-article-layout__block-title">Абстракция аккаунта для улучшения пользовательского опыта</h5>
-
-            <div class="blog-article-layout__block-image">
+          <div class="account-article-content__block">
+            <h5 class="h6 color-primary account-article-content__title">Абстракция аккаунта для улучшения пользовательского опыта</h5>
+  
+            <div class="account-article-content__block account-article-content__images">
               <img src="./assets/img/temp/blog-article-image-placeholder.png" alt="">
             </div>
-
-            <p class="blog-article-layout__block-paragraph text-small">
+  
+            <p class="account-article-content__text text-small">
               Абстракция аккаунта - это способ решения этих проблем путем преобразования EOA в 
               смарт-контракт с собственной логикой принятия решения о том, что является 
               подтвержденной транзакцией. Это означает, что подписант и аккаунт могут быть 
@@ -135,34 +134,34 @@ import Layout from 'src/layouts/Layout.astro'
               учетной записи.
             </p>
             
-            <p class="blog-article-layout__block-paragraph text-small">
+            <p class="account-article-content__text text-small">
               Например, абстракция аккаунта может позволить EOA выполнять широкий спектр 
               действий, таких как использование нескольких ключей (или ни одного) для 
               авторизации транзакций или смена подписанта счета каждую неделю.
             </p>
-
-            <p class="blog-article-layout__block-paragraph text-small">
+  
+            <p class="account-article-content__text text-small">
               Существенным преимуществом абстракции аккаунта является улучшение пользовательского 
               опыта (UX) и безопасности из-за бесшовности получающихся взаимодействий.
             </p>
-
-            <p class="blog-article-layout__block-paragraph text-small">
+  
+            <p class="account-article-content__text text-small">
               У технологии множество сценариев использования, которые снимают часть существующих 
               проблем, особенно в масштабировании проектов и онбординге.
             </p>
           </div>
 
-          <div class="blog-article-layout__block">
-            <h5 class="h6 color-primary blog-article-layout__block-title">Социальное восстановление и абстракция аккаунта</h5>
-
-            <p class="blog-article-layout__block-paragraph text-small">
+          <div class="account-article-content__block">
+            <h5 class="h6 color-primary account-article-content__title">Социальное восстановление и абстракция аккаунта</h5>
+  
+            <p class="account-article-content__text text-small">
               Социальное восстановление - это одно из улучшений UX, принесенных 
               абстракцией аккаунта. Оно позволяет избежать проблемы единой точки 
               отказа с закрытым ключом. Абстракция аккаунта позволяет создавать 
               сеть безопасности из нескольких подписывающих сторон.
             </p>
             
-            <p class="blog-article-layout__block-paragraph text-small">
+            <p class="account-article-content__text text-small">
               Абстракция аккаунта также может быть использована для создания 
               лучших блокчейн-игр с собственными микроэкономиками. <a href="#">Play-to-earn</a> 
               уже становится довольно прибыльной сценой, но её сдерживает 
@@ -173,10 +172,10 @@ import Layout from 'src/layouts/Layout.astro'
             </p>
           </div>
 
-          <div class="blog-article-layout__block">
-            <h5 class="h6 color-primary blog-article-layout__block-title">Улучшенные транзакции и абстракция аккаунта</h5>
-
-            <p class="blog-article-layout__block-paragraph text-small">
+          <div class="account-article-content__block">
+            <h5 class="h6 color-primary account-article-content__title">Улучшенные транзакции и абстракция аккаунта</h5>
+  
+            <p class="account-article-content__text text-small">
               Наконец, атомарные (пакетные) транзакции через абстракцию 
               аккаунтов могут позволить пользователям оплачивать комиссии 
               в нативном токене вместо ETH, используемого сейчас. Это 
@@ -185,7 +184,7 @@ import Layout from 'src/layouts/Layout.astro'
               использованием блокчейна.
             </p>
             
-            <p class="blog-article-layout__block-paragraph text-small">
+            <p class="account-article-content__text text-small">
               Абстракция акканта также позволяет осуществлять мета-транзакции. 
               Они подобны ассистенту, который выполняет транзакцию, подписанную 
               другой стороной, от имени первоначального подписанта. Это устраняет 
@@ -193,8 +192,8 @@ import Layout from 'src/layouts/Layout.astro'
               заниматься ретрансляционной сети, в то время как от пользователя 
               требуется лишь подписать транзакцию одним кликом.
             </p>
-
-            <p class="blog-article-layout__block-paragraph text-small">
+  
+            <p class="account-article-content__text text-small">
               Эти мета-транзакции позволяют абстрагировать оплату транзакции от 
               пользователя и отдать её в распоряжение dApp, тем самым упрощая весь процесс. 
               Это особенно полезно в таких областях, как игры "play-to-earn" и 
@@ -217,7 +216,7 @@ import Layout from 'src/layouts/Layout.astro'
             </p>
           </div>
 
-          <div class="slider blog-article-layout__block blog-article-layout__slider" data-slider="article-slider">
+          <div class="slider account-article-content__block blog-article-layout__slider" data-slider="article-slider">
             <div class="slider__slides" data-slider-for="article-slider" data-slider-slides>
               <div class="slider__slide">
                 <img class="slider__image" src="./assets/img/temp/article-slider-image.png">
@@ -250,16 +249,16 @@ import Layout from 'src/layouts/Layout.astro'
             </div>
           </div>
 
-          <div class="blog-article-layout__block">
-            <h5 class="h6 color-primary blog-article-layout__block-title">Абстракция аккаунта для повышения безопасности</h5>
+          <div class="account-article-content__block">
+            <h5 class="h6 color-primary account-article-content__title">Абстракция аккаунта для повышения безопасности</h5>
 
-            <p class="blog-article-layout__block-paragraph text-small">
+            <p class="account-article-content__text text-small">
               Абстракция аккаунта может упростить взаимодействие с dApps и 
               пользовательский опыт в web3, но она также обеспечивает 
               повышенную безопасность.
             </p>
             
-            <p class="blog-article-layout__block-paragraph text-small">
+            <p class="account-article-content__text text-small">
               Абстракция учетной записи позволяет настроить аккаунты так, чтобы они работали 
               только при выполнении определенных условий, например при достижении 
               количества подписавших. Это кастомизируется для всех учетных записей, 
