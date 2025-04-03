@@ -5202,12 +5202,17 @@ body {
 	}
 	&__block {
 		margin-bottom: 80px;
+		overflow: hidden;
 	}
 	&__list {
+		transition: linear;
 		margin-bottom: 40px;
 		display: flex;
-		flex-wrap: wrap;
 		gap: 30px;
+
+		.feedback-palette {
+			flex: 0 0 var(--max-width);
+		}
 	}
 	&__expand {
 		button {
