@@ -264,6 +264,7 @@
 	--article-content-definition-border-color: transparent;
 	--article-content-definition-indicator-color: var(--primary-color);
 	--article-content-definition-text-color: var(--dark-200);
+	--article-content-definition-primary-background: #EFF7F6;
 
 	// Bottom Navigation
 	--bottom-navigation-arrow-color: var(--primary-color);
@@ -413,6 +414,10 @@
 	--glossary-article-level-background: #FFCC8E;
 	--glossary-article-level-color: var(--dark-200);
 	--glossary-article-level-indicator-color: var(--primary-color); 
+
+	// Crypto Article
+	--crypto-article-background: var(--white);
+	--crypto-article-separator: #00000020;
 }
 html[data-theme="dark"] {
 	--primary-color: #3150FF;
@@ -632,11 +637,12 @@ html[data-theme="dark"] {
 	--article-support-color: var(--white);
 	--article-support-hover-background: #0CA2EC;
 	--article-content-title-color: var(--white);
-	--article-content-text-color: var(--white);
+	--article-content-text-color: #FFFFFF80;
 	--article-content-definition-background: #FFFFFFCD;
 	--article-content-definition-border-color: var(--palette-active-gradient);
 	--article-content-definition-indicator-color: var(--primary-color);
 	--article-content-definition-text-color: var(--white);
+	--article-content-definition-primary-background: #3150FF30;
 
 	// Bottom Navigation
 	--bottom-navigation-arrow-color: var(--primary-color);
@@ -786,6 +792,10 @@ html[data-theme="dark"] {
 	--glossary-article-level-background: var(--primary-color);
 	--glossary-article-level-color: var(--white);
 	--glossary-article-level-indicator-color: var(--white); 
+
+	// Crypto Article
+	--crypto-article-background: #1D1D1D;
+	--crypto-article-separator: #FFFFFF30;
 }
 @media (max-width: config.$mbpT) {
 	:root {
@@ -3743,7 +3753,7 @@ body {
 		}
 	}
 	&__title {
-		color: var(--article-content-text-color);
+		color: var(--article-content-title-color);
 
 		&:not(:last-child) {
 			margin-bottom: var(--title-margin);
@@ -3769,8 +3779,8 @@ body {
 
 		img {
 			min-width: 0px;
-			max-width: fit-content;
-			flex: 1 1 auto;
+			width: fit-content;
+			max-width: 100%;
 			border-radius: 15px;
 		}
 		&:not(:last-child) {
@@ -3791,6 +3801,10 @@ body {
 		color: var(--article-content-definition-text-color);
 
 		border-left: 2px solid var(--article-content-definition-indicator-color);
+
+		&_primary {
+			background: var(--article-content-definition-primary-background);
+		}
 	}
 	@media (max-width: config.$mbpT) {
 		--block-margin: 30px;
@@ -6193,6 +6207,254 @@ body {
 		}
 		&__contacts {
 			--gap: 15px;
+		}
+	}
+}
+
+.crypto-article-page {
+	&__container {
+		padding-top: 50px;
+		padding-bottom: 60px;
+	}
+	&__breadcrumbs {
+		margin-bottom: 40px;
+	}
+	&__article {
+		margin-bottom: 60px;
+	}
+	&__recommendations-header {
+		margin-bottom: 40px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: 10px;
+	}
+	&__recommendations-slider-controls {
+		display: none;
+	}
+	&__recommendations {
+		--min-column: 280px;
+		--max-column: 340px;
+
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(var(--min-column), var(--max-column)));
+		gap: 30px;
+		
+		.slider__slides {
+			display: contents;
+		}
+
+		.blog-article-card {
+			max-width: var(--max-column);
+			min-width: var(--min-column);
+			height: 100%;
+		}
+	}
+	@media (max-width: config.$mbpT) {
+		&__container {
+			padding-top: 30px;
+			padding-bottom: 40px;
+		}
+		&__breadcrumbs {
+			margin-bottom: 30px;
+		}
+		&__article {
+			margin-bottom: 40px;
+		}
+		&__recommendations-header {
+			margin-bottom: 30px;
+		}
+		&__recommendations {
+			.blog-article-card {
+				flex: 0 0 100%;
+			}
+		}
+		&__recommendations-slider-controls {
+			--control-size: 40px;
+			--control-arrow-size: 14px;
+			
+			display: flex;
+			align-items: center;
+			gap: 20px;
+		}
+		&__recommendations {
+			--min-column: 0px;
+			--max-column: none;
+			--slides-gap: 20px;
+
+			display: block;
+
+			.slider__slides {
+				display: flex;
+			}
+
+			.blog-article-card {
+				flex: 0 0 calc(50% - var(--slides-gap) / 2);
+			}
+		}
+	}
+	@media (max-width: config.$mbpMM) {
+		&__container {
+			padding-top: 20px;
+			padding-bottom: 30px;
+		}
+		&__breadcrumbs {
+			margin-bottom: 20px;
+		}
+		&__article {
+			margin-bottom: 20px;
+		}
+		&__recommendations-header {
+			margin-bottom: 20px;
+		}
+		&__recommendations {
+			.blog-article-card {
+				flex: 0 0 100%;
+			}
+		}
+	}
+}
+
+.crypto-article {
+	--sidebar-width: 480px;
+	--padding: 60px;
+	--gap: 40px;
+
+	padding: var(--padding);
+	border-radius: 15px;
+
+	display: grid;
+	grid-template-columns: 1fr var(--sidebar-width);
+
+	background: var(--crypto-article-background);
+
+	&__header {
+		grid-column: 1 / -1;
+		grid-row: 1 / 1;
+
+		display: flex;
+	}
+	&__center {
+		flex: 1 1 auto;
+		display: flex;
+		flex-direction: column;
+	}
+	&__sidebar {
+		flex: 0 0 var(--sidebar-width);
+		display: flex;
+		flex-direction: column;
+	}
+	&__chart {
+		padding-bottom: var(--gap);
+		padding-right: var(--gap);
+
+		border-bottom: 1px solid var(--crypto-article-separator);
+		border-right: 1px solid var(--crypto-article-separator);
+	}
+	&__statistics {
+		flex: 1 1 auto;
+
+		padding-top: var(--gap);
+		padding-right: var(--gap);
+
+		border-bottom: 1px solid var(--crypto-article-separator);
+		border-right: 1px solid var(--crypto-article-separator);
+	}
+	&__price {
+		padding-left: var(--gap);
+		padding-bottom: var(--gap);
+
+		border-bottom: 1px solid var(--crypto-article-separator);
+	}
+	&__analysis {
+		padding-left: var(--gap);
+		padding-bottom: var(--gap);
+		padding-top: var(--gap);
+
+		border-bottom: 1px solid var(--crypto-article-separator);
+	}
+	&__profile {
+		padding-left: var(--gap);
+		padding-bottom: var(--gap);
+		padding-top: var(--gap);
+
+		border-bottom: 1px solid var(--crypto-article-separator);
+	}
+	&__content {
+		grid-column: 1 / 1;
+		grid-row: 2 / 2;
+
+		padding-right: var(--gap);
+		padding-top: var(--gap);
+
+		border-right: 1px solid var(--crypto-article-separator);
+	}
+	@media (max-width: config.$mbpT) {
+		--padding: 30px;
+		--gap: 25px;
+
+		grid-template-columns: 1fr;
+
+		&__header {
+			flex-direction: column;
+		}
+		&__sidebar {
+			flex: auto;
+			flex-direction: row;
+			border-bottom: 1px solid var(--crypto-article-separator);
+		}
+		&__chart,
+		&__statistics {
+			border: none;
+			border-bottom: 1px solid var(--crypto-article-separator);
+			padding: var(--gap) 0px;
+		}
+		&__chart {
+			padding: 0;
+		}
+		&__price,
+		&__analysis,
+		&__profile {
+			padding: 20px 10px;
+			flex: 1 0 auto;
+			border: none;
+		}
+		&__price,
+		&__analysis {
+			border-right: 1px solid var(--crypto-article-separator);
+		}
+		&__price {
+			padding-left: 0;
+		}
+		&__profile {
+			padding-right: 0;
+		}
+		&__content {
+			padding: 0;
+			padding-top: 40px;
+			border: none;
+		}
+	}
+	@media (max-width: config.$mbpM) {
+		--padding: 20px;
+		--gap: 15px;
+
+		&__sidebar {
+			flex-direction: column;
+			border: none;
+		}
+		&__chart,
+		&__statistics,
+		&__price,
+		&__analysis,
+		&__profile {
+			padding: var(--gap) 0px;
+			border: none;
+			border-bottom: 1px solid var(--crypto-article-separator);
+		}
+		&__chart {
+			padding-top: 0;
 		}
 	}
 }
