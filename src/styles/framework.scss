@@ -418,6 +418,13 @@
 	// Crypto Article
 	--crypto-article-background: var(--white);
 	--crypto-article-separator: #00000020;
+
+	// Community cards
+	--community-cards-background: linear-gradient(to right top, #1B5C2F 10%, #16301E);
+	--community-cards-title-color: var(--white);
+	--community-cards-text-color: #B0B0B0;
+	--community-cards-icon-background: linear-gradient(to top, #DAEBDF50, #D0E7D720);
+	--community-cards-icon-color: var(--white);
 }
 html[data-theme="dark"] {
 	--primary-color: #3150FF;
@@ -796,6 +803,13 @@ html[data-theme="dark"] {
 	// Crypto Article
 	--crypto-article-background: #1D1D1D;
 	--crypto-article-separator: #FFFFFF30;
+
+	// Community cards
+	--community-cards-background: linear-gradient(to top, #001799, #0026FF);
+	--community-cards-title-color: var(--white);
+	--community-cards-text-color: #B0B0B0;
+	--community-cards-icon-background: linear-gradient(to top, #DAEBDF50, #D0E7D720);
+	--community-cards-icon-color: var(--white);
 }
 @media (max-width: config.$mbpT) {
 	:root {
@@ -1131,6 +1145,9 @@ body {
 	}
 	.dark-theme & {
 		color: var(--white);
+	}
+	.button_white & {
+		color: var(--primary-color);
 	}
 	&_uppercase {
 		text-transform: uppercase;
@@ -6455,6 +6472,153 @@ body {
 		}
 		&__chart {
 			padding-top: 0;
+		}
+	}
+}
+
+.community {
+	&__container {
+		padding-top: 120px;
+		padding-bottom: 100px;
+	}
+	&__chats {
+		margin-bottom: 80px;
+	}
+	@media (max-width: config.$mbpT) {
+		&__container {
+			padding-top: 100px;
+			padding-bottom: 50px;
+		}
+		&__chats {
+			margin-bottom: 40px;
+		}
+	}
+}
+
+.community-chats {
+	--title-max-width: 900px;
+	--icon-width: 60px;
+	--icon-size: 24px;
+
+	&__title {
+		width: 100%;
+		max-width: var(--title-max-width);
+
+		margin: 0px auto;
+		text-align: center;
+		margin-bottom: 60px;
+	}
+	&__cards {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 30px;
+	}
+	&__card {
+		position: relative;
+		border-radius: 15px;
+
+		padding: 40px;
+		padding-bottom: 50px;
+		
+		background: var(--community-cards-background);
+	}
+	&__card-icon {
+		border-radius: 5px;
+		width: var(--icon-width);
+		height: var(--icon-width);
+		flex: 0 0 var(--icon-width);
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 20px;
+
+		background: var(--community-cards-icon-background);
+		font-size: var(--icon-size);
+		color: var(--community-cards-icon-color)
+	}
+	&__card-title {
+		margin-bottom: 15px;
+		color: var(--community-cards-title-color);
+	}
+	&__card-text {
+		margin-bottom: 30px;
+		color: var(--community-cards-text-color);
+	}
+	&-decor-1 {
+		--size: 180px;
+		max-width: var(--size);
+
+		position: absolute;
+		top: -15%;
+		right: 10%;
+	}
+	&-decor-2 {
+		--size: 190px;
+		max-width: var(--size);
+
+		position: absolute;
+		top: -20%;
+		right: 10%;
+	}
+	@media (min-width: config.$mbpT) {
+		&__card-text {
+			font-size: 14px;
+		}
+	}
+	@media (max-width: config.$mbpT) {
+		--title-max-width: 650px;
+		--icon-width: 40px;
+		--icon-size: 16px;
+
+		&__title {
+			margin-bottom: 40px;
+		}
+		&__cards {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 20px;
+		}
+		&__card {
+			padding: 30px;
+			padding-bottom: 40px;
+		}
+		&__card-title {
+			margin-bottom: 25px;
+		}
+		&-decor-1 {
+			--size: 130px;
+			top: -10%;
+			right: -2%;
+		}
+		&-decor-2 {
+			--size: 110px;
+			top: -10%;
+			right: -8%;
+		}
+	}
+	@media (max-width: config.$mbpM) {
+		--title-max-width: 100%;
+
+		&__title {
+			margin-bottom: 40px;
+		}
+		&__cards {
+			grid-template-columns: 1fr;
+			gap: 20px;
+		}
+		&__card {
+			padding: 20px;
+			padding-bottom: 40px;
+		}
+		&-decor-1 {
+			--size: 100px;
+			top: -15%;
+			right: 1%;
+		}
+		&-decor-2 {
+			--size: 90px;
+			top: -10%;
+			right: 2%;
 		}
 	}
 }
