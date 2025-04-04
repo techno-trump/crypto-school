@@ -419,6 +419,9 @@
 	--crypto-article-background: var(--white);
 	--crypto-article-separator: #00000020;
 
+	// Community Hero
+	--community-hero-subtitle-color: var(--dark-300);
+	
 	// Community cards
 	--community-cards-background: linear-gradient(to right top, #1B5C2F 10%, #16301E);
 	--community-cards-title-color: var(--white);
@@ -803,6 +806,9 @@ html[data-theme="dark"] {
 	// Crypto Article
 	--crypto-article-background: #1D1D1D;
 	--crypto-article-separator: #FFFFFF30;
+
+	// Community Hero
+	--community-hero-subtitle-color: #FFFFFF80;
 
 	// Community cards
 	--community-cards-background: linear-gradient(to top, #001799, #0026FF);
@@ -6484,13 +6490,228 @@ body {
 	&__chats {
 		margin-bottom: 80px;
 	}
+
+	&__hero {
+		--max-width: 1000px;
+
+		position: relative;
+		margin-bottom: 80px;
+
+		width: 100%;
+		max-width: var(--max-width);
+		margin: 0px auto;
+		
+		&-decor {
+			position: absolute;
+			
+			img {
+				max-width: var(--max-width);
+			}
+		}
+		&-nft-1 {
+			--max-width: 313px;
+
+			bottom: -10px;
+			right: calc(100% + 100px);
+		}
+		&-nft-2 {
+			--max-width: 213px;
+			
+			top: 10px;
+			left: calc(100% + 150px);
+		}
+		&-glass-1 {
+			--max-width: 245px;
+
+			bottom: 25%;
+			right: calc(100% + 300px);
+		}
+		&-glass-2 {
+			--max-width: 260px;
+
+			top: 25%;
+			right: -30px;
+		}
+	}
+	&__hero-content {
+		position: relative;
+	}
+	&__hero-title {
+		margin-bottom: 40px;
+		text-align: center;
+	}
+	&__hero-text {
+		color: var(--community-hero-subtitle-color);
+		margin-bottom: 40px;
+		text-align: center;
+	}
+	&__hero-content button {
+		margin: 0px auto;
+	}
+	&__flow {
+		--height: 400px;
+
+		margin-bottom: 60px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		html:not([data-theme="light"]) &_light {
+			display: none;
+		}
+		html:not([data-theme="dark"]) &_dark {
+			display: none;
+		}
+
+		img {
+			height: var(--height);
+		}
+	}
+	@media (min-width: config.$mbpT) {
+		&__hero-text {
+			font-size: 22px;
+		}
+	}
+	@media (max-width: 1880px) {
+		&__hero {
+			&-nft-1 {
+				right: 100%;
+			}
+			&-nft-2 {
+				left: 100%;
+			}
+			&-glass-1 {
+				right: calc(100% + 150px);
+			}
+		}
+	}
+	@media (max-width: 1690px) {
+		&__hero {
+			--max-width: 550px;
+
+			&-nft-1 {
+				--max-width: 185px;
+				right: 100%;
+			}
+			&-nft-2 {
+				--max-width: 125px;
+				left: calc(100% + 100px);
+			}
+			&-glass-1 {
+				--max-width: 150px;
+				right: calc(100% + 100px);
+			}
+			&-glass-2 {
+				--max-width: 140px;
+				top: 30%;
+			}
+		}
+		&__hero-title {
+			margin-bottom: 20px;
+		}
+		&__hero-text {
+			margin-bottom: 20px;
+		}
+	}
 	@media (max-width: config.$mbpT) {
 		&__container {
 			padding-top: 100px;
 			padding-bottom: 50px;
 		}
+		&__hero {
+			--max-width: 550px;
+
+			margin-bottom: 130px;
+
+			&-nft-1 {
+				--max-width: 185px;
+
+				top: calc(100% + 5px);
+				left: -80px;
+				right: auto;
+			}
+			&-nft-2 {
+				--max-width: 125px;
+				top: -80px;
+				right: -100px;
+				left: auto;
+			}
+			&-glass-1 {
+				--max-width: 150px;
+				
+				top: auto;
+				bottom: -100px;
+				right: 100%;
+			}
+			&-glass-2 {
+				--max-width: 140px;
+				top: 30%;
+			}
+		}
+		&__flow {
+			margin-bottom: -90px;
+		}
 		&__chats {
 			margin-bottom: 40px;
+		}
+	}
+	@media (max-width: config.$mbpM) {
+		&__hero {
+			margin-bottom: 210px;
+
+			&-nft-1 {
+				--max-width: 120px;
+
+				top: calc(100% + 80px);;
+				left: 0%;
+				right: auto;
+			}
+			&-nft-2 {
+				--max-width: 100px;
+				top: calc(100% + 30px);
+				right: 0%;
+				left: auto;
+			}
+			&-glass-1 {
+				--max-width: 95px;
+				
+				top: calc(100% + 40px);
+				bottom: auto;
+				left: auto;
+				right: calc(100% - 50px);
+			}
+			&-glass-2 {
+				--max-width: 65px;
+				top: 50%;
+				right: -10px;
+			}
+		}
+		&__flow {
+			img {
+				transform: translateX(-60px);
+			}
+		}
+	}
+	@media (max-width: config.$mbpMM) {
+		&__container {
+			padding-top: 60px;
+			padding-bottom: 30px;
+		}
+		&__hero {
+			&-glass-2 {
+				top: 20%;
+			}
+			button {
+				display: block;
+				width: 100%;
+			}
+		}
+		&__flow {
+			--height: 200px;
+			margin-bottom: -35px;
+		}
+		&__chats {
+			margin-bottom: 30px;
 		}
 	}
 }
