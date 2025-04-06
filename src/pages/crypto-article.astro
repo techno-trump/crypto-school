@@ -2,7 +2,7 @@
 import Layout from 'src/layouts/Layout.astro'
 
 ---
-<Layout title="Крипто школа" description="Крипто школа" client:load>
+<Layout title="Крипто школа" description="Крипто школа">
   <div class="container container_wide crypto-article-page__container">
     <div class="breadcrumbs crypto-article-page__breadcrumbs">
       <a href="/" class="breadcrumbs__link">
@@ -29,7 +29,7 @@ import Layout from 'src/layouts/Layout.astro'
             <!-- TradingView Widget BEGIN -->
             <div class="tradingview-widget-container">
               <div class="tradingview-widget-container__widget"></div>
-              <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js" async>
+              <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js" async >
               {
                 "symbols": [
                   [
@@ -79,7 +79,7 @@ import Layout from 'src/layouts/Layout.astro'
             <!-- TradingView Widget BEGIN -->
             <div class="tradingview-widget-container">
               <div class="tradingview-widget-container__widget"></div>
-              <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-financials.js" async>
+              <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-financials.js" async is:inline>
               {
                 "isTransparent": false,
                 "largeChartUrl": "",
@@ -100,7 +100,7 @@ import Layout from 'src/layouts/Layout.astro'
             <!-- TradingView Widget BEGIN -->
             <div class="tradingview-widget-container">
               <div class="tradingview-widget-container__widget"></div>
-              <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-info.js" async>
+              <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-info.js" async is:inline>
               {
                 "symbol": "BITSTAMP:BTCUSD",
                 "width": "100%",
@@ -116,7 +116,7 @@ import Layout from 'src/layouts/Layout.astro'
             <!-- TradingView Widget BEGIN -->
             <div class="tradingview-widget-container">
               <div class="tradingview-widget-container__widget"></div>
-              <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js" async>
+              <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js" async is:inline>
               {
                 "interval": "1m",
                 "width": 425,
@@ -136,7 +136,7 @@ import Layout from 'src/layouts/Layout.astro'
             <!-- TradingView Widget BEGIN -->
             <div class="tradingview-widget-container">
               <div class="tradingview-widget-container__widget"></div>
-              <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-profile.js" async>
+              <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-profile.js" async is:inline>
               {
               "width": 400,
               "height": 550,
