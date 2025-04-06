@@ -1,0 +1,54 @@
+---
+import Layout from 'src/layouts/Layout.astro'
+
+---
+<Layout title="Крипто школа" description="Крипто школа">
+  <div class="container container_wide crypto-charts-page__container">
+    <div class="breadcrumbs crypto-charts-page__breadcrumbs">
+      <a href="/" class="breadcrumbs__link">
+        Головна
+      </a>
+      <div class="breadcrumbs__arrow">
+        <span class="icon-nav-arrow-right"></span>
+      </div>
+      <a href="#" class="breadcrumbs__link">
+        Криптовалюта
+      </a>
+      <div class="breadcrumbs__arrow">
+        <span class="icon-nav-arrow-right"></span>
+      </div>
+      <a href="#" class="breadcrumbs__link breadcrumbs__link_active">
+        Bitcoin (Биткоин)
+      </a>
+    </div>
+
+    <div class="crypto-charts palette palette_blurred">
+      <h6 class="h6 color-primary crypto-charts__title">Top Rehypothecated Crypto (Wrapped, Staked, and Restaked) by Market Capitalization</h6>
+
+      <div class="text-small crypto-charts__content">
+        Listed below are the top staked and wrapped assets by Market Capitalization.
+
+       <ol>
+          <li>
+            Wrapped crypto assets are tokens backed one-to-one by an underlying asset 
+            and aim to enable interoperability between different blockchains. Wrapped BTC, 
+            issued by BitGo, was the first ERC20 token backed 1:1 with Bitcoin.
+          </li>
+          <li>
+            Staking is the act of locking crypto assets for a period of time to support 
+            the operation of a blockchain in exchange, with the goal of earning more 
+            cryptoassets. Lido offers staking solutions.
+          </li>
+          <li>
+            Restaking allows staked assets to be reused for additional rewards, enhancing 
+            utility, and liquidity. Protocols like Eigenlayer offer restaking.
+          </li>
+       </ol>
+       
+        This asset class has a separate rank because they are rehypothecated.
+      </div>
+
+      <hr class="crypto-charts__separator">
+    </div>
+  </div>
+</Layout>

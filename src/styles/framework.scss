@@ -428,6 +428,10 @@
 	--community-cards-text-color: #B0B0B0;
 	--community-cards-icon-background: linear-gradient(to top, #DAEBDF50, #D0E7D720);
 	--community-cards-icon-color: var(--white);
+
+	// Crypto Charts
+	--crypto-charts-background: var(--white);
+	--crypto-charts-text-color: var(--dark-200);
 }
 html[data-theme="dark"] {
 	--primary-color: #3150FF;
@@ -816,6 +820,10 @@ html[data-theme="dark"] {
 	--community-cards-text-color: #B0B0B0;
 	--community-cards-icon-background: linear-gradient(to top, #DAEBDF50, #D0E7D720);
 	--community-cards-icon-color: var(--white);
+
+	// Crypto Charts
+	--crypto-charts-background: #1D1D1DE6;
+	--crypto-charts-text-color: #FFFFFF80;
 }
 @media (max-width: config.$mbpT) {
 	:root {
@@ -3045,6 +3053,7 @@ body {
 
 .study {
 	&__container {
+		flex: 1 1 auto;
 		padding-top: 40px;
 		padding-bottom: 80px;
 	}
@@ -3327,6 +3336,7 @@ body {
 
 .courses {
 	&__container {
+		flex: 1 1 auto;
 		padding-top: 40px;
 		padding-bottom: 80px;
 	}
@@ -3940,6 +3950,7 @@ body {
 
 .team {
 	&__container {
+		flex: 1 1 auto;
 		padding-top: 40px;
 		padding-bottom: 80px;
 	}
@@ -4123,6 +4134,7 @@ body {
 
 .blog {
 	&__container {
+		flex: 1 1 auto;
 		padding-top: 40px;
 		padding-bottom: 80px;
 	}
@@ -4468,6 +4480,7 @@ body {
 
 .blog-article-page {
 	&__container {
+		flex: 1 1 auto;
 		padding-top: 50px;
 		padding-bottom: 60px;
 	}
@@ -5224,6 +5237,7 @@ body {
 
 .feedbacks {
 	&__container {
+		flex: 1 1 auto;
 		padding-top: 50px;
 		padding-bottom: 80px;
 	}
@@ -5462,6 +5476,7 @@ body {
 
 .rates {
 	&__container {
+		flex: 1 1 auto;
 		padding-top: 50px;
 		padding-bottom: 80px;
 	}
@@ -5875,6 +5890,7 @@ body {
 
 .categories {
 	&__container {
+		flex: 1 1 auto;
 		padding-top: 50px;
 		padding-bottom: 60px;
 	}
@@ -6107,6 +6123,7 @@ body {
 
 .glossary-article {
 	&__container {
+		flex: 1 1 auto;
 		padding-top: 50px;
 		padding-bottom: 60px;
 	}
@@ -6236,6 +6253,7 @@ body {
 
 .crypto-article-page {
 	&__container {
+		flex: 1 1 auto;
 		padding-top: 50px;
 		padding-bottom: 60px;
 	}
@@ -6484,6 +6502,7 @@ body {
 
 .community {
 	&__container {
+		flex: 1 1 auto;
 		padding-top: 120px;
 		padding-bottom: 100px;
 	}
@@ -6715,7 +6734,6 @@ body {
 		}
 	}
 }
-
 .community-chats {
 	--title-max-width: 900px;
 	--icon-width: 60px;
@@ -6840,6 +6858,69 @@ body {
 			--size: 90px;
 			top: -10%;
 			right: 2%;
+		}
+	}
+}
+
+.crypto-charts-page {
+	&__container {
+		flex: 1 1 auto;
+		padding-top: 50px;
+		padding-bottom: 40px;
+	}
+	&__breadcrumbs {
+		margin-bottom: 40px;
+	}
+	@media (max-width: config.$mbpT) {
+		&__container {
+			padding-top: 30px;
+			padding-bottom: 30px;
+		}
+		&__breadcrumbs {
+			margin-bottom: 30px;
+		}
+	}
+	@media (max-width: config.$mbpMM) {
+		&__container {
+			padding-top: 20px;
+			padding-bottom: 20px;
+		}
+		&__breadcrumbs {
+			margin-bottom: 20px;
+		}
+	}
+}
+.crypto-charts {
+	--background: var(--crypto-charts-background);
+
+	padding: 60px 60px 100px 60px;
+
+	&__title {
+		margin-bottom: 25px;
+	}
+	&__content {
+		color: var(--crypto-charts-text-color);
+
+		ol {
+			list-style-position: inside;
+			padding-left: 5px;
+		}
+	}
+	&__separator {
+		margin: 40px 0px;
+		border-bottom: 1px solid var(--horizontal-row-color);
+	}
+	@media (max-width: config.$mbpT) {
+		padding: 30px;
+	}
+	@media (max-width: config.$mbpMM) {
+		padding: 20px;
+		
+		&__title {
+			margin-bottom: 10px;
+		}
+		&__separator {
+			margin: 20px 0px;
 		}
 	}
 }
