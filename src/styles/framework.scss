@@ -6362,6 +6362,12 @@ body {
 	--padding: 60px;
 	--gap: 40px;
 
+	--chart-height: 445px;
+	--statistics-height: 570px;
+	--price-height: 260px;
+	--analysis-height: 370px;
+	--profile-height: 310px;
+
 	padding: var(--padding);
 	border-radius: 15px;
 
@@ -6375,6 +6381,17 @@ body {
 		grid-row: 1 / 1;
 
 		display: flex;
+
+		.tv-embed-widget-wrapper__body {
+			border: none !important;
+			width: 100% !important;
+			height: 100% !important;
+		}
+		iframe {
+			border: none !important;
+			width: 100% !important;
+			height: 100% !important;
+		}
 	}
 	&__center {
 		flex: 1 1 auto;
@@ -6392,35 +6409,56 @@ body {
 
 		border-bottom: 1px solid var(--crypto-article-separator);
 		border-right: 1px solid var(--crypto-article-separator);
+
+		.tradingview-widget-container {
+			height: var(--chart-height) !important;
+		}
 	}
 	&__statistics {
 		flex: 1 1 auto;
-
+		
 		padding-top: var(--gap);
 		padding-right: var(--gap);
-
+		padding-bottom: var(--gap);
+		
 		border-bottom: 1px solid var(--crypto-article-separator);
 		border-right: 1px solid var(--crypto-article-separator);
+		
+		.tradingview-widget-container {
+			height: var(--statistics-height) !important;
+		}
 	}
 	&__price {
 		padding-left: var(--gap);
 		padding-bottom: var(--gap);
-
+		
 		border-bottom: 1px solid var(--crypto-article-separator);
+		
+		.tradingview-widget-container {
+			height: var(--price-height) !important;
+		}
 	}
 	&__analysis {
 		padding-left: var(--gap);
 		padding-bottom: var(--gap);
 		padding-top: var(--gap);
-
+		
 		border-bottom: 1px solid var(--crypto-article-separator);
+		
+		.tradingview-widget-container {
+			height: var(--analysis-height) !important;
+		}
 	}
 	&__profile {
 		padding-left: var(--gap);
 		padding-bottom: var(--gap);
 		padding-top: var(--gap);
-
+		
 		border-bottom: 1px solid var(--crypto-article-separator);
+		
+		.tradingview-widget-container {
+			height: var(--profile-height) !important;
+		}
 	}
 	&__content {
 		grid-column: 1 / 1;
@@ -6435,14 +6473,20 @@ body {
 		--padding: 30px;
 		--gap: 25px;
 
+		--chart-height: 310px;
+		--statistics-height: 310px;
+		--price-height: 130px;
+		--analysis-height: 180px;
+		--profile-height: 160px;
+
 		grid-template-columns: 1fr;
 
 		&__header {
 			flex-direction: column;
 		}
 		&__sidebar {
-			flex: auto;
-			flex-direction: row;
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
 			border-bottom: 1px solid var(--crypto-article-separator);
 		}
 		&__chart,
@@ -6481,7 +6525,14 @@ body {
 		--padding: 20px;
 		--gap: 15px;
 
+		--chart-height: 230px;
+		--statistics-height: 315px;
+		--price-height: 130px;
+		--analysis-height: 220px;
+		--profile-height: 155px;
+
 		&__sidebar {
+			display: flex;
 			flex-direction: column;
 			border: none;
 		}
