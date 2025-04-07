@@ -1120,6 +1120,10 @@ body {
 	&:disabled {
 		opacity: 0.5;
 	}
+	@media (max-width: config.$mbpRetinaLaptop) {
+		padding: 10px 24px;
+		min-height: 45px;
+	}
 	@media (max-width: config.$mbpT) {
 		&_big {
 			padding: 22px 40px;
@@ -1402,6 +1406,9 @@ body {
 			font-weight: 600;
 		}
 	}
+	@media (max-width: config.$mbpRetinaLaptop) {
+		padding: 24px;
+	}
 	@media (max-width: config.$mbpT) {
 		&_compressed &__title {
 			margin-bottom: 30px;
@@ -1563,14 +1570,14 @@ body {
 		align-items: center;
 		
 		&::before {
-			content: '';
-			
+			content: '●';
+			font-size: 0.72em;
 			display: inline-block;
-			margin: 0px 10px;
-			width: var(--bullet-size);
-			height: var(--bullet-size);
-			border-radius: 50%;
-			background-color: var(--color);
+			margin: 0px 0.7em;
+			// width: var(--bullet-size);
+			// height: var(--bullet-size);
+			//border-radius: 50%;
+			//background-color: var(--color);
 		}
 	}
 }
@@ -2006,12 +2013,12 @@ body {
 }
 
 .account-menu {
-	max-width: 350px;
 	display: flex;
 	flex-direction: column;
 	gap: 5px;
 
 	&_as-drop-down {
+		max-width: 350px;
 		@media (max-width: config.$mbpM) {
 			display: grid;
 			grid-template-columns: 1fr 1fr;
@@ -2019,10 +2026,10 @@ body {
 	}
 
 	&_horizontal {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
 		width: 100%;
 		max-width: none;
-		flex-direction: row;
-		flex-wrap: wrap;
 	}
 	@media (max-width: config.$mbpT) {
 		max-width: 100%;
@@ -2044,7 +2051,7 @@ body {
 	padding: 15px 20px;
 
 	.account-menu_horizontal & {
-		max-width: 300px;
+		//max-width: 300px;
 		padding: 10px 16px;
 	}
 	
@@ -2157,7 +2164,7 @@ body {
 	border-radius: 15px;
 
 	.account-menu_horizontal & {
-		max-width: 300px;
+		//max-width: 300px;
 		padding: 21px 14px;
 	}
 
@@ -2231,6 +2238,10 @@ body {
 		flex-wrap: wrap;
 		gap: 20px;
 
+		@media (max-width: config.$mbpRetinaLaptop) {
+			padding: 16px 24px;
+		}
+
 		&__button {
 			background: var(--greeting-button-background);
 			border-radius: 100px;
@@ -2295,18 +2306,25 @@ body {
 	align-items: center;
 	justify-content: space-between;
 	padding: 67px 85px;
-
+	@media (max-width: config.$mbpRetinaLaptop) {
+		padding: 42px 64px;
+	}
 	&-item {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		flex: 0 0 33%;
 		max-width: 170px;
+		
 	}
 	&-item__icon {
 		flex: 0 0 70px;
 		height: 70px;
 		margin-bottom: 24px;
+		@media (max-width: config.$mbpRetinaLaptop) {
+			flex: 0 0 48px;
+			height: 48px;
+		}
 	}
 	&-item__icon img {
 		height: 100%;
@@ -3350,16 +3368,14 @@ body {
 		margin-bottom: 30px;
 	}
 	&__list {
-		--min-column: 280px;
-		--max-column: 330px;
+		--min-column: 320px;
 
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(var(--min-column), var(--max-column)));
-		gap: 25px;
+		grid-template-columns: repeat(auto-fill, minmax(var(--min-column), 1fr));
+		gap: 20px;
 		
 		.course-card {
-			max-width: var(--max-column);
-			min-width: var(--min-column);
+			width: 100%;
 			height: 100%;
 		}
 	}
@@ -3399,11 +3415,11 @@ body {
 }
 .course-card {
 	--badge-offset: 18px;
-	--padding: 30px;
+	--padding: 24px 24px 30px;
 
 	display: flex;
 	flex-direction: column;
-	max-width: 340px;
+	//max-width: 340px;
 
 	background: var(--course-card-background);
 	border: var(--course-card-border-width) solid var(--course-card-border-color);
@@ -3427,9 +3443,9 @@ body {
 
 	&__header {
 		width: 100%;
-		max-height: 220px;
+		aspect-ratio: 34/22;
 		position: relative;
-
+		z-index: 0;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -3447,7 +3463,13 @@ body {
 		border-radius: 100px;
 	}
 	&__image {
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: -1;
+		width: 100%;
 		height: 100%;
+		object-fit: cover;
 	}
 	&__body {
 		width: 100%;
@@ -3476,6 +3498,9 @@ body {
 	}
 	&_locked &__footer button {
 		opacity: 0.5;
+	}
+	@media (max-width: config.$mbpRetinaLaptop) {
+		--padding: 18px 18px 30px;
 	}
 	@media (max-width: config.$mbpT) {
 		&__container {
@@ -5238,8 +5263,12 @@ body {
 .feedbacks {
 	&__container {
 		flex: 1 1 auto;
-		padding-top: 50px;
-		padding-bottom: 80px;
+		&:nth-child(2) {
+			padding-top: 50px;
+		}
+		&:last-child {
+			padding-bottom: 80px;
+		}
 	}
 	&__breadcrumbs {
 		width: fit-content;
@@ -5253,13 +5282,15 @@ body {
 	}
 	&__block {
 		margin-bottom: 80px;
+	}
+	&__slider {
 		overflow: hidden;
 	}
 	&__list {
 		transition: linear;
 		margin-bottom: 40px;
 		display: flex;
-		gap: 30px;
+		//gap: 30px;
 
 		.feedback-palette {
 			flex: 0 0 var(--max-width);
@@ -5851,7 +5882,7 @@ body {
 		max-height: none;
 		opacity: 1;
 	}
-	@media (max-width: config.$mbpT) {
+	@media (max-width: config.$mbpRetinaLaptop) {
 		padding: 0px 30px 10px 30px;
 
 		&__header {

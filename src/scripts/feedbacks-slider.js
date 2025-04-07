@@ -1,5 +1,5 @@
-import { Autoplay } from 'swiper/modules'
-import Swiper from 'swiper'
+// import  from 'swiper/modules'
+import Swiper, { Autoplay } from 'swiper'
 
 document.querySelectorAll("[data-feedbacks-slider]").forEach(root => {
   const direction = root.getAttribute('data-direction')
@@ -11,7 +11,9 @@ document.querySelectorAll("[data-feedbacks-slider]").forEach(root => {
 
     modules: [Autoplay],
     loop: true,
-    speed: 4000,
+		loopedSlides: 6,
+		loopAdditionalSlides: 6,
+    speed: 12000,
     autoplay: {
       delay: 0,
       disableOnInteraction: false,

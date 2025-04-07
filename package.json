@@ -19,7 +19,7 @@
     "lodash.debounce": "^4.0.8",
     "lodash.throttle": "^4.1.1",
     "sass": "^1.83.0",
-    "swiper": "^11.2.6",
+    "swiper": "8.4.6",
     "tom-select": "^2.4.1",
     "vite-plugin-mkcert": "^1.17.6"
   },
