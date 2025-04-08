@@ -4043,20 +4043,30 @@ body {
 		gap: 30px;
 	}
 	&__image {
-		max-height: 300px;
+		aspect-ratio: 1;
+		
+		position: relative;
+		z-index: 0;
 		
 		display: flex;
 		justify-content: center;
 		align-items: center;
-
+		
 		border-radius: 15px;
 		overflow: hidden;
+		flex: 1 1 auto;
 	}
 	&__image img {
-		max-height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
 	}
 	&_expanded &__image {
-		max-height: 400px;
+		flex: 0 0 60%;
+		aspect-ratio: 2 / 1;
 		max-width: 60%;
 	}
 	&__body {
@@ -4103,7 +4113,8 @@ body {
 			gap: 20px;
 		}
 		&_expanded &__image {
-			max-height: 300px;
+			flex: 0 0 50%;
+			aspect-ratio: 1;
 			max-width: 50%;
 		}
 		&__body {
