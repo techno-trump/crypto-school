@@ -841,6 +841,40 @@ html[data-theme="dark"] {
 body {
 	background: var(--background);
 }
+.body_custom {
+	--image: url("./assets/img/temp/background-custom.png");
+
+	background-attachment: fixed;
+	background-image: var(--image);
+	background-size: cover;
+
+	.page-background {
+		display: none !important;
+	}
+
+	// Override styles
+	--palette-gradient: var(--white);
+	--palette-active-gradient: var(--white);
+	--palette-opacity: 1;
+	--palette-active-opacity: 1;
+
+	--bottom-navigation-arrow-color: var(--white);
+	--bottom-navigation-label-color: var(--white);
+	--bottom-navigation-label-color: var(--white);
+
+	.account-menu-info {
+		--opacity: 1;
+	}
+	.account-menu-item {
+		--opacity: 1;
+		--active-opacity: 1;
+		--background: var(--white);
+		--active-background: var(--white);
+	}
+	.headline {
+		--text-primary-color: var(--white);
+	}
+}
 .logo {
 	display: inline-block;
 	position: relative;

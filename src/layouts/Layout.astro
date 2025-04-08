@@ -6,9 +6,10 @@ interface Props {
 	title: string;
 	description: string;
 	empty?: boolean;
+	custom?: boolean;
 }
 
-const { title, description, empty = false } = Astro.props;
+const { title, description, empty = false, custom = false } = Astro.props;
 
 const mode = import.meta.env.MODE as ("development" | "production");
 ---
@@ -31,7 +32,7 @@ const mode = import.meta.env.MODE as ("development" | "production");
 		<script is:inline src="./assets/main.js" type="module"></script>
 		<title>{title}</title>
 	</head>
-	<body class="tg-regular">
+	<body class=`tg-regular ${custom ? "body_custom" : ''}`>
 		{empty ? null : <Header></Header>}
 		<main>
 			<div class="page-background">
