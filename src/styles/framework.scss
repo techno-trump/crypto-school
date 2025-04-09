@@ -7077,7 +7077,9 @@ body {
 
 .auth {
 	&__container {
-		padding: 60px 0px;
+		padding-top: 60px;
+		padding-bottom: 60px;
+
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -7213,12 +7215,64 @@ body {
 			max-height: 24px;
 		}
 	}
+	@media (max-width: config.$mbpT) {
+		&__header {
+			gap: 10px;
+		}
+		&__additional {
+			&_margin-big {
+				margin-bottom: 25px;
+			}
+		}
+		&__submit {
+			padding: 15px;
+		}
+		&__separator {
+			margin: 25px 0px;
+		}
+		&__helper {
+			padding: 11px;
+		}
+	}
 	@media (max-width: config.$mbpMM) {
 		&__container {
-			padding: 40px 0px;
+			padding-top: 40px;
+			padding-bottom: 40px;
 		}
 		&__block {
 			padding: 20px;
+		}
+		&__fields {
+			margin-bottom: 15px;
+		}
+		&__additional {
+			&_margin-big {
+				margin-bottom: 20px;
+			}
+		}
+		&__remember {
+			gap: 8px;
+
+			.checkbox {
+				--size: 18px;
+			}
+		}
+		&__footer {
+			gap: 16px;
+		}
+		&__submit {
+			padding: 14px;
+		}
+		&__separator {
+			margin-top: 20px;
+			margin-bottom: 15px;
+		}
+		&__helper {
+			padding: 9px;
+
+			img {
+				max-height: 20px;
+			}
 		}
 	}
 }
@@ -7267,5 +7321,20 @@ body {
 		color: var(--auth-input-icon-color);
 		
 		cursor: pointer;
+	}
+	@media (max-width: config.$mbpT) {
+		&__label {
+			font-weight: 500;
+			font-size: 12px;
+		}
+	}
+	@media (max-width: config.$mbpMM) {
+		&__label {
+			left: 10px;
+			font-size: 10px;
+		}
+		&__input {
+			padding: 13px 16px;
+		}
 	}
 }
