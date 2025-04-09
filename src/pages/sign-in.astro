@@ -22,12 +22,12 @@ import Layout from 'src/layouts/Layout.astro'
             </div>
           </div>
 
-          <div class="auth-field">
+          <div class="auth-field" data-auth-field-protected>
             <div class="auth-field__control">
               <label for="" class="auth-field__label">Пароль</label>
               <input type="password" class="auth-field__input text-small">
-              <div class="auth-field__icon">
-  
+              <div class="auth-field__icon" data-auth-field-protected-icon>
+                <span class="icon-eye-off"></span>
               </div>
             </div>
           </div>

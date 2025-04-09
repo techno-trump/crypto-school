@@ -7229,6 +7229,7 @@ body {
 		flex: 1 1 auto;
 
 		display: flex;
+		align-items: center;
 		position: relative;
 
 		border: 1px solid var(--auth-input-border-color);
@@ -7236,6 +7237,7 @@ body {
 	}
 	&__label {
 		position: absolute;
+		top: 0px;
 		left: 16px;
 
 		transform: translateY(-50%);
@@ -7259,5 +7261,11 @@ body {
 		background-color: transparent;
 	}
 	&__icon {
+		padding: 12px;
+
+		font-size: 24px;
+		color: var(--auth-input-icon-color);
+		
+		cursor: pointer;
 	}
 }
