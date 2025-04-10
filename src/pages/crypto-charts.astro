@@ -65,9 +65,13 @@ const chartsWidget = `
       <hr class="crypto-charts__separator">
 
       <!-- TradingView Widget BEGIN -->
-      <div class="tradingview-widget-container">
-        <div class="tradingview-widget-container__widget"></div>
-        <Fragment set:html={chartsWidget}></Fragment>
+      <div class="chart-container-scrollable crypto-charts__chart">
+        <div class="chart-container">
+          <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <Fragment set:html={chartsWidget}></Fragment>
+          </div>
+        </div>
       </div>
       <!-- TradingView Widget END -->
     </div>

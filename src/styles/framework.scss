@@ -7079,8 +7079,15 @@ body {
 		margin: 40px 0px;
 		border-bottom: 1px solid var(--horizontal-row-color);
 	}
+	&__chart {
+		--ratio: 149 / 52;
+	}
 	@media (max-width: config.$mbpT) {
 		padding: 30px;
+
+		&__chart {
+			--min-height: 400px;
+		}
 	}
 	@media (max-width: config.$mbpMM) {
 		padding: 20px;
