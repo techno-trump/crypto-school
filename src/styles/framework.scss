@@ -7136,6 +7136,9 @@ body {
 		color: var(--auth-text-color);
 		opacity: var(--auth-block-message-opacity);
 	}
+	&_base {
+		color: var(--auth-text-color);
+	}
 	&_highlight {
 		color: var(--auth-text-highlight-color);
 		opacity: 1;
@@ -7265,6 +7268,10 @@ body {
 		&__fields {
 			&_margin-big {
 				margin-bottom: 25px;
+			}
+
+			&-row {
+				flex-direction: column;
 			}
 		}
 		&__additional {

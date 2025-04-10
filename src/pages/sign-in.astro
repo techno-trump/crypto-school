@@ -26,8 +26,8 @@ import Layout from 'src/layouts/Layout.astro'
             <div class="auth-field__control">
               <label for="" class="auth-field__label">Пароль</label>
               <input type="password" class="auth-field__input text-small">
-              <div class="auth-field__icon" data-auth-field-protected-icon>
-                <span class="icon-eye-off"></span>
+              <div class="auth-field__icon">
+                <span class="icon-eye-off" data-auth-field-protected-icon></span>
               </div>
             </div>
           </div>
@@ -36,7 +36,7 @@ import Layout from 'src/layouts/Layout.astro'
         <div class="auth__additional auth__additional_margin-big">
           <div class="auth__remember">
             <Checkbox id="remember" name="remember" />
-            <label for="remember" class="text-small">Запам'ятай мене</label>
+            <label for="remember" class="auth_base text-small">Запам'ятай мене</label>
           </div>
 
           <a href="#" class="auth__forgot-password text-small auth_highlight">Забули пароль</a>
@@ -45,7 +45,7 @@ import Layout from 'src/layouts/Layout.astro'
         <div class="auth__footer">
           <button class="auth__submit text">Увійти</button>
   
-          <a href="#" class="auth__other-way text-small">
+          <a href="#" class="auth__other-way auth_base text-small">
             Не маєте облікового запису? <span class="auth_highlight">Зареєструватися</span>
           </a>
         </div>
