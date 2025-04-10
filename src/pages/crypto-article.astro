@@ -113,17 +113,25 @@ const w5 = `<script type="text/javascript" src="https://s3.tradingview.com/exter
         <div class="crypto-article__center">
           <div class="crypto-article__chart">
             <!-- TradingView Widget BEGIN -->
-            <div class="tradingview-widget-container">
-              <div class="tradingview-widget-container__widget"></div>
-              <Fragment set:html={w1}></Fragment>
+            <div class="chart-container-scrollable">
+              <div class="chart-container">
+                <div class="tradingview-widget-container">
+                  <div class="tradingview-widget-container__widget"></div>
+                  <Fragment set:html={w1}></Fragment>
+                </div>
+              </div>
             </div>
             <!-- TradingView Widget END -->
           </div>
           <div class="crypto-article__statistics">
             <!-- TradingView Widget BEGIN -->
-            <div class="tradingview-widget-container">
-              <div class="tradingview-widget-container__widget"></div>
-							<Fragment set:html={w2}></Fragment>
+            <div class="chart-container-scrollable">
+              <div class="chart-container">
+                <div class="tradingview-widget-container">
+                  <div class="tradingview-widget-container__widget"></div>
+    							<Fragment set:html={w2}></Fragment>
+                </div>
+              </div>
             </div>
             <!-- TradingView Widget END -->
           </div>
@@ -131,25 +139,37 @@ const w5 = `<script type="text/javascript" src="https://s3.tradingview.com/exter
         <div class="crypto-article__sidebar">
           <div class="crypto-article__price">
             <!-- TradingView Widget BEGIN -->
-            <div class="tradingview-widget-container">
-              <div class="tradingview-widget-container__widget"></div>
-							<Fragment set:html={w3}></Fragment>
+            <div class="chart-container-scrollable">
+              <div class="chart-container">
+                <div class="tradingview-widget-container">
+                  <div class="tradingview-widget-container__widget"></div>
+    							<Fragment set:html={w3}></Fragment>
+                </div>
+              </div>
             </div>
             <!-- TradingView Widget END -->
           </div>
           <div class="crypto-article__analysis">
             <!-- TradingView Widget BEGIN -->
-            <div class="tradingview-widget-container">
-              <div class="tradingview-widget-container__widget"></div>
-							<Fragment set:html={w4}></Fragment>
+            <div class="chart-container-scrollable">
+              <div class="chart-container">
+                <div class="tradingview-widget-container">
+                  <div class="tradingview-widget-container__widget"></div>
+    							<Fragment set:html={w4}></Fragment>
+                </div>
+              </div>
             </div>
             <!-- TradingView Widget END -->
           </div>
           <div class="crypto-article__profile">
             <!-- TradingView Widget BEGIN -->
-            <div class="tradingview-widget-container">
-              <div class="tradingview-widget-container__widget"></div>
-              <Fragment set:html={w5}></Fragment>
+            <div class="chart-container-scrollable">
+              <div class="chart-container">
+                <div class="tradingview-widget-container">
+                  <div class="tradingview-widget-container__widget"></div>
+                  <Fragment set:html={w5}></Fragment>
+                </div>
+              </div>
             </div>
             <!-- TradingView Widget END -->
           </div>
