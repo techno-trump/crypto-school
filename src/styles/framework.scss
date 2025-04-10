@@ -7089,9 +7089,12 @@ body {
 		align-items: center;
 	}
 	&__block {
+		--background: var(--auth-block-background);
+		--opacity: 1;
+
 		width: 100%;
 		max-width: 600px;
-		background: var(--auth-block-background);
+		background-color: var(--auth-block-background);
 		border: 1px solid var(--auth-block-border-color);
 		padding: 40px;
 	}
@@ -7137,7 +7140,6 @@ body {
 		color: var(--auth-text-highlight-color);
 		opacity: 1;
 	}
-	// &__form {}
 	&__fields {
 		width: 100%;
 		margin-bottom: 24px;
@@ -7173,7 +7175,10 @@ body {
 		align-items: center;
 		gap: 15px;
 	}
-	// &__forgot-password {}
+	&__retry {
+		margin-bottom: 35px;
+		color: var(--auth-text-color);
+	}
 	&__footer {
 		display: flex;
 		flex-direction: column;
@@ -7269,6 +7274,9 @@ body {
 				margin-bottom: 25px;
 			}
 		}
+		&__retry {
+			margin-bottom: 25px;
+		}
 		&__submit {
 			padding: 15px;
 		}
@@ -7313,6 +7321,9 @@ body {
 				margin-bottom: 20px;
 			}
 		}
+		&__retry {
+			margin-bottom: 20px;
+		}
 		&__remember {
 			gap: 8px;
 
@@ -7354,6 +7365,7 @@ body {
 		align-items: center;
 		position: relative;
 
+		background-color: var(--auth-block-background);
 		border: 1px solid var(--auth-input-border-color);
 		border-radius: 5px;
 	}
@@ -7381,6 +7393,8 @@ body {
 		
 		border-radius: 5px;
 		background-color: transparent;
+
+		color: var(--auth-text-color);
 	}
 	&__icon {
 		padding: 0px 12px;
