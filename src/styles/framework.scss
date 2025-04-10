@@ -7173,10 +7173,16 @@ body {
 			margin-bottom: 40px;
 		}
 	}
-	&__remember {
+	&__checkbox {
 		display: flex;
 		align-items: center;
 		gap: 15px;
+
+		.checkbox {
+			--base-border-color: var(--primary-color);
+			--hover-border-color: var(--primary-color);
+			--active-border-color: var(--primary-color);
+		}
 	}
 	&__retry {
 		margin-bottom: 35px;
@@ -7331,7 +7337,7 @@ body {
 		&__retry {
 			margin-bottom: 20px;
 		}
-		&__remember {
+		&__checkbox {
 			gap: 8px;
 
 			.checkbox {
