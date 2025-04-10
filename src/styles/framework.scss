@@ -7134,7 +7134,7 @@ body {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		margin-bottom: 25px;
+		margin-bottom: 35px;
 
 		&_margin-big {
 			margin-bottom: 40px;
@@ -7194,7 +7194,7 @@ body {
 		}
 
 		&_margin-big {
-			margin: 50px 0px;
+			margin: 48px 0px;
 		}
 	}
 	&__helpers {
@@ -7218,6 +7218,15 @@ body {
 	@media (max-width: config.$mbpT) {
 		&__header {
 			gap: 10px;
+
+			&_margin-big {
+				margin-bottom: 35px;
+			}
+		}
+		&__fields {
+			&_margin-big {
+				margin-bottom: 25px;
+			}
 		}
 		&__additional {
 			margin-bottom: 25px;
@@ -7231,6 +7240,10 @@ body {
 		}
 		&__separator {
 			margin: 25px 0px;
+
+			&_margin-big {
+				margin: 25px 0px;
+			}
 		}
 		&__helper {
 			padding: 11px;
@@ -7246,6 +7259,10 @@ body {
 		}
 		&__fields {
 			margin-bottom: 15px;
+
+			&_margin-big {
+				margin-bottom: 20px;
+			}
 		}
 		&__additional {
 			margin-bottom: 20px;
@@ -7270,6 +7287,11 @@ body {
 		&__separator {
 			margin-top: 20px;
 			margin-bottom: 15px;
+
+			&-margin-big {
+				margin-top: 20px;
+				margin-bottom: 15px;
+			}
 		}
 		&__helper {
 			padding: 9px;
@@ -7319,7 +7341,7 @@ body {
 		background-color: transparent;
 	}
 	&__icon {
-		padding: 12px;
+		padding: 0px 12px;
 
 		font-size: 24px;
 		color: var(--auth-input-icon-color);
@@ -7339,6 +7361,16 @@ body {
 		}
 		&__input {
 			padding: 13px 16px;
+		}
+	}
+}
+
+.sign-in-block {
+	.auth__text {
+		@media (max-width: config.$mbpMM) {
+			font-weight: 500;
+			font-size: 12px;
+			line-height: 1.4;
 		}
 	}
 }
