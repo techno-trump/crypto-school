@@ -446,6 +446,8 @@
 	--auth-separator-text-opacity: 0.5;
 	--auth-separator-line-opacity: 0.25;
 	--auth-helper-border-color: var(--primary-color);
+	--auth-nav-arrow-color: #313131;
+	--auth-nav-label-color: var(--dark-100);
 }
 html[data-theme="dark"] {
 	--primary-color: #3150FF;
@@ -852,6 +854,8 @@ html[data-theme="dark"] {
 	--auth-separator-text-opacity: 0.5;
 	--auth-separator-line-opacity: 0.25;
 	--auth-helper-border-color: var(--primary-color);
+	--auth-nav-arrow-color: var(--primary-color);
+	--auth-nav-label-color: var(--white);
 }
 @media (max-width: config.$mbpT) {
 	:root {
@@ -7104,6 +7108,23 @@ body {
 			margin-bottom: 48px;
 		}
 	}
+	&__nav {
+		display: flex;
+		align-items: center;
+		gap: 4px;
+
+		&-arrow {
+			color: var(--auth-nav-arrow-color);
+			font-size: 14px;
+			padding: 5px;
+		}
+		&-label {
+			padding-top: 1px;
+			color: var(--auth-nav-label-color);
+			font-weight: 400;
+			font-size: 14px;
+		}
+	}
 	&__title {
 		color: var(--auth-text-color);
 		line-height: 1;
@@ -7230,6 +7251,12 @@ body {
 				margin-bottom: 35px;
 			}
 		}
+		&__nav {
+			&-label {
+				font-weight: 500;
+				font-size: 12px;
+			}
+		}
 		&__fields {
 			&_margin-big {
 				margin-bottom: 25px;
@@ -7263,6 +7290,14 @@ body {
 		}
 		&__block {
 			padding: 20px;
+		}
+		&__nav {
+			gap: 10px;
+
+			&-arrow {
+				font-size: 10px;
+				padding: 0px;
+			}
 		}
 		&__fields {
 			margin-bottom: 15px;
@@ -7379,5 +7414,10 @@ body {
 			font-size: 12px;
 			line-height: 1.4;
 		}
+	}
+}
+.sign-up-block {
+	.auth__text {
+		max-width: 380px;
 	}
 }
