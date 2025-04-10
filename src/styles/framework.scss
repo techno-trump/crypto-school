@@ -7129,6 +7129,13 @@ body {
 		&_margin-big {
 			margin-bottom: 32px;
 		}
+
+		&-row {
+			width: 100%;
+			display: flex;
+			align-items: center;
+			gap: 24px;
+		}
 	}
 	&__additional {
 		display: flex;

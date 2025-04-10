@@ -1,0 +1,101 @@
+---
+import Checkbox from 'src/components/basic/Checkbox.astro'
+import Layout from 'src/layouts/Layout.astro'
+
+---
+<Layout title="Крипто школа" description="Крипто школа">
+  <div class="container container_wide auth__container">
+    <div class="palette palette_blurred auth__block sign-in-block">
+      <div class="auth__header">
+        <h4 class="h4 auth__title">Зареєструватися</h4>
+        <div class="text-small auth__text">
+          Давайте налаштуємо вас, щоб ви могли отримати доступ до свого особистого кабінету.
+        </div>
+      </div>
+
+      <div class="auth__form">
+        <div class="auth__fields">
+          <div class="auth-field">
+            <div class="auth-field__control">
+              <label for="" class="auth-field__label">Нікнейм</label>
+              <input type="text" class="auth-field__input text-small">
+            </div>
+          </div>
+
+          <div class="auth__fields-row">
+            <div class="auth-field">
+              <div class="auth-field__control">
+                <label for="" class="auth-field__label">Email</label>
+                <input type="text" class="auth-field__input text-small">
+              </div>
+            </div>
+
+            <div class="auth-field">
+              <div class="auth-field__control">
+                <label for="" class="auth-field__label">Номер телефону</label>
+                <input type="tel" class="auth-field__input text-small">
+              </div>
+            </div>
+          </div>
+
+          <div class="auth-field" data-auth-field-protected>
+            <div class="auth-field__control">
+              <label for="" class="auth-field__label">Пароль</label>
+              <input type="password" class="auth-field__input text-small">
+              <div class="auth-field__icon" data-auth-field-protected-icon>
+                <span class="icon-eye-off"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="auth-field" data-auth-field-protected>
+            <div class="auth-field__control">
+              <label for="" class="auth-field__label">Підтвердити пароль</label>
+              <input type="password" class="auth-field__input text-small">
+              <div class="auth-field__icon" data-auth-field-protected-icon>
+                <span class="icon-eye-off"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="auth__additional">
+          <div class="auth__remember">
+            <Checkbox id="remember" name="remember" />
+            <label for="remember" class="text-small">
+              Я погоджуюся з усіма <a class="auth_highlight">Умовами</a> та <a class="auth_highlight">Політикою конфіденційності</a>
+            </label>
+          </div>
+        </div>
+
+        <div class="auth__footer">
+          <button class="auth__submit text">Створити обліковий запис</button>
+  
+          <a href="#" class="auth__other-way text-small">
+            Вже маєте обліковий запис? <span class="auth_highlight">Увійдіть</span>
+          </a>
+        </div>
+
+        <div class="auth__separator">
+          <div class="auth__separator-line"></div>
+          <span class="text-small">Або увійдіть за допомогою</span>
+          <div class="auth__separator-line"></div>
+        </div>
+
+        <div class="auth__helpers">
+          <a href="#" class="auth__helper">
+            <img src="./assets/img/auth/facebook.svg" />
+          </a>
+
+          <a href="#" class="auth__helper">
+            <img src="./assets/img/auth/google.svg" />
+          </a>
+
+          <a href="#" class="auth__helper">
+            <img src="./assets/img/auth/apple.svg" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
