@@ -1049,6 +1049,7 @@ body {
 	@media (max-width: config.$mbpT) {
 		display: grid;
 		grid-template-columns: 1fr;
+		padding: 30px 0px;
 
 		&-column {
 			display: contents;
@@ -1080,6 +1081,7 @@ body {
 		}
 	}
 	@media (max-width: config.$mbpMM) {
+		padding: 20px 0px;
 		gap: 16px;
 
 		&-column,
@@ -7476,34 +7478,27 @@ body {
 
 .settings {
 	&__wrapper {
+		padding: 0px;
 		display: flex;
 		gap: 36px;
 		align-items: start;
 		border-radius: 15px;
 		justify-content: space-between;
-		border: 1px solid #fff;
-		opacity: 0.9;
-		background: linear-gradient(
-			153deg,
-			rgba(255, 255, 255, 0.39) 25.99%,
-			rgba(255, 255, 255, 0.88) 100.03%
-		);
-		backdrop-filter: blur(22px);
-		align-items: stretch;
+		
+		button {
+			width: fit-content;
+			align-self: flex-start;
+		}
 	}
 
 	&__data {
 		padding: 30px 0 30px 30px;
 		display: flex;
 		flex-direction: column;
-		flex: 0 0 606px;
+		flex: 1 1 auto;
 	}
 
 	&-title {
-		font-family: 'Inter Tight';
-		font-size: 26px;
-		font-weight: 600;
-		color: var(--light-primary-color);
 		margin-bottom: 30px;
 	}
 
@@ -7524,9 +7519,6 @@ body {
 
 	&__main-text {
 		color: var(--dark-300);
-		font-family: 'Inter Tight';
-		font-size: 20px;
-		font-weight: 600;
 	}
 	&__main-label {
 		margin-bottom: 31px;
@@ -7540,27 +7532,23 @@ body {
 		flex-direction: column;
 		gap: 15px;
 	}
-&__safety{
-	margin-top: 30px;
-}
+	&__safety{
+		margin-top: 30px;
+	}
 	&__main {
 		margin-bottom: 30px;
 	}
 	&__main-input,
 	&__safety-input {
 		display: flex;
-		padding: 21.5px;
+		padding: 20.5px 21.5px;
 		align-items: center;
 		flex: 1 0 0;
 		align-self: stretch;
 		border-radius: 15px;
-		border: 1px solid #fff;
-		opacity: 0.9;
-		background: linear-gradient(
-			153deg,
-			rgba(255, 255, 255, 0.39) 25.99%,
-			rgba(255, 255, 255, 0.88) 100.03%
-		);
+		border: 1px solid var(--palette-outline);
+		opacity: var(--palette-active-opacity);
+		background: var(--palette-active-gradient);
 		backdrop-filter: blur(22px);
 		color: #4b4f4b;
 		font-family: 'Inter Tight';
@@ -7571,6 +7559,11 @@ body {
 	}
 	&__safety-input {
 		margin-bottom: 15px;
+	}
+	&__safety-input--wrapper {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
 	}
 
 	&__safety-input:nth-child(4) {
@@ -7591,34 +7584,16 @@ body {
 		line-height: 140%; /* 22.4px */
 	}
 
-	&-btn {
-		display: inline-flex;
-		align-self: start;
-		border-radius: 999px;
-		padding: 20px 40px;
-		color: #fff;
-		font-family: 'Inter Tight';
-		font-size: 18px;
-		font-weight: 600;
-		background: var(--light-primary-color);
-	}
-
 	&__photo {
-		flex: 0 0 480px;
+		flex: 0 0 33%;
+		height: 100%;
 		padding: 30px;
 		border-radius: 15px;
-		border: 1px solid #fff;
-		opacity: 0.9;
-		background: linear-gradient(
-			153deg,
-			rgba(255, 255, 255, 0.39) 25.99%,
-			rgba(255, 255, 255, 0.88) 100.03%
-		);
-		backdrop-filter: blur(22px);
 		display: flex;
 		align-items: start;
-		gap: 48px;
 		justify-content: space-between;
+		gap: 48px;
+		overflow: visible;
 	}
 
 	&__photo-left {
@@ -7645,7 +7620,7 @@ body {
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		padding: 60px 65px;
+		padding: 59px 65px;
 		border-radius: 5px;
 		border: 1px solid var(--dark-700);
 		background: linear-gradient(
@@ -7659,16 +7634,10 @@ body {
 	&__photo-description {
 		color: #b0b0b0;
 		text-align: center;
-		font-family: 'Inter Tight';
-		font-size: 16px;
-		font-weight: 500;
-		line-height: 130%; /* 20.8px */
+		line-height: 130%;
 	}
-	&__photo-icon {
-		font-size: 24px;
-	}
-
 	&__icon-download {
+		font-size: 28px;
 		margin-bottom: 25px;
 	}
 
@@ -7678,13 +7647,11 @@ body {
 
 	&__photo-text {
 		color: var(--dark-500);
-		font-family: 'Inter Tight';
-		font-size: 16px;
-		font-weight: 500;
-		line-height: 140%; /* 22.4px */
-	}
-	&__photo-text {
-		margin-bottom: 20px;
+		line-height: 140%; 
+
+		&:not(:last-child) {
+			margin-bottom: 15px;
+		}
 	}
 
 	&__photo-mobile {
@@ -7696,12 +7663,84 @@ body {
 	.settings {
 		&__wrapper {
 			display: block;
+
+			button {
+				padding: 19px 40px;
+			}
 		}
 		&__data {
 			padding: 30px;
 		}
 		&__main{
 			margin-bottom: 30px;
+		}
+		&__photo-mobile {
+			display: flex;
+			justify-content: flex-start;
+			gap: 40px;
+		}
+		&__photo-desktop {
+			display: none;
+		}
+		&__photo-texts {
+			margin-bottom: 32px;
+		}
+		&__photo-box {
+			margin-bottom: 20px;
+		}
+		
+		&__photo {
+			padding-left: 0;
+			padding-right: 0;
+			background: none;
+			backdrop-filter: none;
+			border: none;
+			border-bottom: 1px solid rgba(203, 215, 219, 0.5);
+			flex: initial;
+		}
+		&__photo-right {
+			width: 100%;
+			max-width: 462px;
+		}
+	}
+}
+
+@media (max-width: 700px) {
+	.settings {
+		&__wrapper {
+			button {
+				min-height: 0px;
+				padding: 9px;
+				flex: 1 1 auto;
+				width: 100%;
+			}
+			.button__text {
+				font-size: 12px;
+				line-height: 1.3;
+				font-weight: 500;
+			}
+		}
+		&__data {
+			width: 100%;
+			padding: 16px;
+		}
+
+		&__icon-download {
+			margin-bottom: 15px;
+		}
+
+		&__photo-left {
+			display: none;
+		}
+		&__photo-right {
+			max-width: none;
+		}
+		&__photo-text:nth-child(2) {
+			margin-bottom: 0;
+		}
+		&__main {
+			padding-top: 15px;
+			margin-bottom: 15px;
 		}
 		&__main-label--wrapper {
 			margin-bottom: 15px;
@@ -7715,62 +7754,8 @@ body {
 		&__main-label--crypto{
 			margin-bottom: 30px;
 		}
-		&__photo-mobile {
-			display: flex;
-		}
-		&__photo-desktop {
-			display: none;
-		}
-		&-title {
-			font-size: 22px;
-		}
-		&__photo-text {
-			font-size: 12px;
-		}
-		&__photo-description {
-			font-size: 12px;
-		}
-		&__photo-box {
-			margin-bottom: 20px;
-		}
-
-		&__photo {
-			padding-left: 0;
-			padding-right: 0;
-			background: none;
-			backdrop-filter: none;
-			border: none;
-			border-bottom: 1px solid rgba(203, 215, 219, 0.5);
-			flex: initial;
-		}
-		&__photo-right {
-			width: 100%;
-		}
-	}
-}
-
-@media (max-width: 700px) {
-	.settings {
-		&__data {
-			width: 100%;
-			padding: 16px;
-		}
-
-		&__icon-download {
-			margin-bottom: 15px;
-		}
-
-		&__photo-left {
-			display: none;
-		}
-		&__photo-text:nth-child(2) {
-			margin-bottom: 0;
-		}
-		&__main {
-			padding-top: 15px;
-		}
 		&__safety {
-			margin-top: 30px;
+			margin-top: 15px;
 		}
 		&-title {
 			margin-bottom: 15px;
@@ -7778,33 +7763,28 @@ body {
 		&-btn {
 			margin-top: 15px;
 		}
-		&__photo-btn {
+		&__photo button {
 			display: none;
 		}
 		&__photo {
 			flex: initial;
 		}
-		&__photo-right {
-			display: flex;
-			flex-direction: row;
-			align-items: stretch;
-			gap: 15px;
+		&__photo-mobile {
+			padding: 15px 0px;
+			border-radius: 0px;
 		}
 		&__photo-right {
 			display: flex;
-			align-items: stretch;
-			gap: 20px;
+			flex-direction: row;
+			gap: 15px;
+		}
+		&__photo-texts {
+			margin-bottom: 0;
 		}
 
 		&__photo-box {
 			margin-bottom: 0;
 			padding: 15px;
-		}
-
-		&__photo-right {
-			display: flex;
-			align-items: stretch;
-			gap: 20px;
 		}
 
 		&__photo-box,
@@ -7817,15 +7797,30 @@ body {
 			width: 50%;
 			box-sizing: border-box;
 		}
+		&__icon-download {
+			font-size: 14px;
+		}
 
 		&__main-label {
 			gap: 6px;
 			margin-bottom: 0;
 		}
+		&__main-label--crypto {
+			margin-bottom: 10px;
+		}
 		&__safety-input,
 		&__main-input {
 			width: 100%;
 			padding: 10px;
+			border-radius: 5px;
+		}
+		&__safety-input:nth-child(4) {
+			margin-bottom: 15px;
+		}
+		&__safety-input--wrapper {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-gap: 15px;
 		}
 
 		&__main-input::placeholder,
