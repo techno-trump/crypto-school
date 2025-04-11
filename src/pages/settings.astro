@@ -23,19 +23,19 @@ import Layout from "src/layouts/Layout.astro"
 					<hr class="settings__data-hr" />
 					<div class="settings__photo settings__photo-mobile">
 						<div class="settings__photo-left">
-							<div class="settings__photo-subtitle">Фото</div>
-							<img
-								class="settings__photo-img"
-								src="/src/icon-fonts/svg/profile-photo.svg"
-								alt=""
-							/>
+							<div class="text settings__photo-subtitle">Фото</div>
+							<div class="account-menu-info-avatar settings__avatar">
+								<div class="account-menu-info-avatar__circle">
+									<span class="icon-profile"></span>
+								</div>
+							</div>
 						</div>
 						<div class="settings__photo-right">
 							<div
 								class="settings__photo-box"
 								onclick="document.getElementById('fileInput').click()"
 							>
-								<span class="settings__icon-download icon-download"></span>
+								<span class="settings__icon-download color-primary icon-download"></span>
 								<p class="text-small settings__photo-description">
 									Завантажити фотографію<br />для профілю
 								</p>
@@ -142,19 +142,19 @@ import Layout from "src/layouts/Layout.astro"
 				</div>
 				<div class="palette palette_blurred palette_active settings__photo settings__photo-desktop">
 					<div class="settings__photo-left">
-						<div class="settings__photo-subtitle">Фото</div>
-						<img
-							class="settings__photo-img"
-							src="/src/icon-fonts/svg/profile-photo.svg"
-							alt=""
-						/>
+						<div class="text settings__photo-subtitle">Фото</div>
+						<div class="account-menu-info-avatar">
+							<div class="account-menu-info-avatar__circle">
+								<span class="icon-profile"></span>
+							</div>
+						</div>
 					</div>
 					<div class="settings__photo-right">
 						<div
 							class="settings__photo-box"
 							onclick="document.getElementById('fileInput').click()"
 						>
-							<span class="settings__icon-download icon-download"></span>
+							<span class="settings__icon-download color-primary icon-download"></span>
 							<p class="text-small settings__photo-description">
 								Завантажити фотографію<br />для профілю
 							</p>

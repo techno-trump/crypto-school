@@ -448,6 +448,18 @@
 	--auth-helper-border-color: var(--primary-color);
 	--auth-nav-arrow-color: #313131;
 	--auth-nav-label-color: var(--dark-100);
+
+	// Settings 
+	--settings-label-color: var(--dark-300);
+	--settings-separator-color: #CBD7DB80;
+	--settings-input-color: var(--dark-300);
+	--settings-upload-border: #C8D4D8;
+	--settings-upload-background: linear-gradient(
+		197deg,
+		rgba(200, 212, 216, 0) 11.63%,
+		var(--dark-700) 290.02%
+	);
+	--settings-upload-text-color: var(--dark-600);
 }
 html[data-theme="dark"] {
 	--primary-color: #3150FF;
@@ -856,6 +868,14 @@ html[data-theme="dark"] {
 	--auth-helper-border-color: var(--primary-color);
 	--auth-nav-arrow-color: var(--primary-color);
 	--auth-nav-label-color: var(--white);
+
+	// Settings 
+	--settings-label-color: var(--white);
+	--settings-separator-color: #FFFFFF27;
+	--settings-input-color: #FFFFFF80;
+	--settings-upload-border: #757575;
+	--settings-upload-background: var(--palette-active-gradient);
+	--settings-upload-text-color: var(--dark-600);
 }
 @media (max-width: config.$mbpT) {
 	:root {
@@ -7518,7 +7538,7 @@ body {
 	}
 
 	&__main-text {
-		color: var(--dark-300);
+		color: var(--settings-label-color);
 	}
 	&__main-label {
 		margin-bottom: 31px;
@@ -7550,7 +7570,7 @@ body {
 		opacity: var(--palette-active-opacity);
 		background: var(--palette-active-gradient);
 		backdrop-filter: blur(22px);
-		color: #4b4f4b;
+		color: var(--settings-input-color);
 		font-family: 'Inter Tight';
 		font-size: 16px;
 		font-weight: 500;
@@ -7577,7 +7597,8 @@ body {
 
 	&__main-input::placeholder,
 	&__safety-input::placeholder {
-		color: rgba(75, 79, 75, 0.4);
+		color: var(--settings-input-color);
+		opacity: 0.4;
 		font-family: 'Inter Tight';
 		font-size: 16px;
 		font-weight: 500;
@@ -7585,7 +7606,7 @@ body {
 	}
 
 	&__photo {
-		flex: 0 0 33%;
+		flex: 0 0 45%;
 		height: 100%;
 		padding: 30px;
 		border-radius: 15px;
@@ -7606,12 +7627,16 @@ body {
 		display: flex;
 		flex-direction: column;
 	}
+	&__avatar {
+		--size: 50px;
+		
+		span {
+			font-size: 19px;
+		}
+	}
 
 	&__photo-subtitle {
-		color: #4b4f4b;
-		font-family: 'Inter Tight';
-		font-size: 20px;
-		font-weight: 600;
+		color: var(--settings-label-color);
 		margin-bottom: 9px;
 	}
 
@@ -7622,12 +7647,8 @@ body {
 		justify-content: center;
 		padding: 59px 65px;
 		border-radius: 5px;
-		border: 1px solid var(--dark-700);
-		background: linear-gradient(
-			197deg,
-			rgba(200, 212, 216, 0) 11.63%,
-			var(--dark-700) 290.02%
-		);
+		border: 1px solid var(--settings-upload-border);
+		background: var(--settings-upload-background);
 		cursor: pointer;
 		margin-bottom: 30px;
 	}
@@ -7697,6 +7718,7 @@ body {
 			border: none;
 			border-bottom: 1px solid rgba(203, 215, 219, 0.5);
 			flex: initial;
+			border-radius: 0px;
 		}
 		&__photo-right {
 			width: 100%;
