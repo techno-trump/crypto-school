@@ -1,0 +1,185 @@
+---
+import AccountGreeting from 'src/components/AccountGreeting.astro'
+import AccountLayout from "src/layouts/AccountLayout.astro"
+import AccountMenu from "src/components/AccountMenu.astro"
+import Button from "src/components/basic/Button.astro"
+import Layout from "src/layouts/Layout.astro"
+---
+
+<Layout title="Крипто школа" description="Крипто школа">
+	<div class="container container_wide">
+		<AccountLayout>
+			<div slot="sidebar-top">
+				<AccountMenu />
+			</div>
+
+			<div slot="center-top">
+				<AccountGreeting title="Привіт, Володимір" />
+			</div>
+
+			<div slot="center-bottom" class="account-block palette palette_blurred settings__wrapper">
+				<div class="settings__data">
+					<h6 class="h6 color-primary settings__data-title settings-title">Налаштування</h6>
+					<hr class="settings__data-hr" />
+					<div class="settings__photo settings__photo-mobile">
+						<div class="settings__photo-left">
+							<div class="text settings__photo-subtitle">Фото</div>
+							<div class="account-menu-info-avatar settings__avatar">
+								<div class="account-menu-info-avatar__circle">
+									<span class="icon-profile"></span>
+								</div>
+							</div>
+						</div>
+						<div class="settings__photo-right">
+							<div
+								class="settings__photo-box"
+								onclick="document.getElementById('fileInput').click()"
+							>
+								<span class="settings__icon-download color-primary icon-download"></span>
+								<p class="text-small settings__photo-description">
+									Завантажити фотографію<br />для профілю
+								</p>
+								<input
+									class="settings__photo-input"
+									type="file"
+									id="fileInput"
+									accept="image/*"
+									onchange="previewImage(event)"
+								/>
+								<img id="preview" />
+							</div>
+							<div class="settings__photo-content">
+								<div class="settings__photo-texts">
+									<p class="text-small settings__photo-text">
+										Розмір обкладинки повинен бути не менший 200х200 px і не
+										більший ніж 5 Мб. Формат обкладинки JPG, PNG
+									</p>
+									<p class="text-small settings__photo-text">
+										Після завантаження натисніть “Зберегти”
+									</p>
+								</div>
+								<Button filled rounded>
+									<span class="button__text">Зберегти</span>
+								</Button>
+							</div>
+						</div>
+					</div>
+					<form class="settings__main">
+						<h6 class="h6 color-primary settings__main-title settings-title">Основні</h6>
+						<div class="settings__main-label--wrapper">
+							<label class="settings__main-label">
+								<p class="text settings__main-text">Ник</p>
+								<input
+									class="settings__main-input" 
+									type="text"
+									placeholder="Ник"
+									value="Володимир"
+								/>
+							</label>
+							<label class="settings__main-label" for="">
+								<p class="text settings__main-text">E-mail</p>
+								<input
+									class="settings__main-input"
+									type="email"
+									placeholder="E-mail"
+									value="hello@gmail.com"
+								/>
+							</label>
+							<label class="settings__main-label" for="">
+								<p class="text settings__main-text">Телеграм</p>
+								<input
+									class="settings__main-input"
+									type="text"
+									placeholder="@username"
+								/>
+							</label>
+							<label class="settings__main-label" for="">
+								<p class="text settings__main-text">Дискорд</p>
+								<input
+									class="settings__main-input"
+									type="text"
+									placeholder="@username"
+								/>
+							</label>
+						</div>
+						<label class="settings__main-label settings__main-label--crypto" for="">
+							<p class="text settings__main-text">Криптокошелек</p>
+							<input
+								class="settings__main-input"
+								type="text"
+								value="XKFDFJ4325LDFEXKFDFJ4325LDFE"
+								readonly
+							/>
+						</label>
+						<Button filled rounded>
+							<span class="button__text">Зберегти</span>
+						</Button>
+					</form>
+					<hr class="settings__data-hr" />
+					<form class="settings__safety">
+						<h6 class="h6 color-primary settings__safety-title settings-title">Безпека</h6>
+						<div class="settings__safety-input--wrapper">
+							<input
+								class="settings__safety-input"
+								type="password"
+								placeholder="Старий пароль"
+							/>
+							<input
+								class="settings__safety-input"
+								type="password"
+								placeholder="Новий пароль"
+							/>
+						</div>
+						<input
+							class="settings__safety-input"
+							type="password"
+							placeholder="Повторіть новий пароль"
+						/>
+						<Button filled rounded>
+							<span class="button__text">Зберегти</span>
+						</Button>
+					</form>
+				</div>
+				<div class="palette palette_blurred palette_active settings__photo settings__photo-desktop">
+					<div class="settings__photo-left">
+						<div class="text settings__photo-subtitle">Фото</div>
+						<div class="account-menu-info-avatar">
+							<div class="account-menu-info-avatar__circle">
+								<span class="icon-profile"></span>
+							</div>
+						</div>
+					</div>
+					<div class="settings__photo-right">
+						<div
+							class="settings__photo-box"
+							onclick="document.getElementById('fileInput').click()"
+						>
+							<span class="settings__icon-download color-primary icon-download"></span>
+							<p class="text-small settings__photo-description">
+								Завантажити фотографію<br />для профілю
+							</p>
+							<input
+								class="settings__photo-input"
+								type="file"
+								id="fileInput"
+								accept="image/*"
+								onchange="previewImage(event)"
+							/>
+							<img id="preview" />
+						</div>
+						<p class="text-small settings__photo-text">
+							Розмір обкладинки повинен бути не менший 200х200 px і не більший
+							ніж 5 Мб. Формат обкладинки JPG, PNG
+						</p>
+						<p class="text-small settings__photo-text">
+							Після завантаження натисніть “Зберегти”
+						</p>
+						<Button filled rounded>
+							<span class="button__text">Зберегти</span>
+						</Button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</Layout>

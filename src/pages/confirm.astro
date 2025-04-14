@@ -1,0 +1,40 @@
+---
+import Layout from 'src/layouts/Layout.astro'
+
+---
+<Layout title="Крипто школа" description="Крипто школа">
+  <div class="container container_wide auth__container">
+    <div class="palette palette_blurred auth__block confirm-block">
+      <div class="auth__header auth__header_margin-big">
+        <a href="#" class="auth__nav">
+          <span class="icon-nav-arrow-left auth__nav-arrow"></span>
+          <div class="auth__nav-label text-small">Повернутися до входу</div>
+        </a>
+
+        <h4 class="h4 auth__title">Підтвердити код</h4>
+        <div class="text-small auth__text">
+          Код автентифікації було надіслано на вашу електронну пошту.
+        </div>
+      </div>
+
+      <div class="auth__form">
+        <div class="auth__fields auth__fields_margin-big">
+          <div class="auth-field">
+            <div class="auth-field__control">
+              <label for="" class="auth-field__label">Введіть код</label>
+              <input type="text" class="auth-field__input text-small">
+            </div>
+          </div>
+        </div>
+
+        <div class="auth__retry text-small">
+          Не отримав код? <a href="#" class="auth_highlight">Відправте повторно</a>
+        </div>
+
+        <div class="auth__footer">
+          <button class="auth__submit text">Надіслати</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
