@@ -28,7 +28,7 @@ const mode = import.meta.env.MODE as ("development" | "production");
 		</style>
 		{mode === "production" && <link rel="stylesheet" href="./assets/main.css" />}
 		<script is:inline src="https://cdn.jsdelivr.net/npm/vanilla-drawers@1.1.22/dist/drawers.umd.js" type="module"></script>
-		<script is:inline src="./libs/fslightbox.js" type="module"></script>
+		<!-- <script is:inline src="./libs/fslightbox.js" type="module"></script> -->
 		<script is:inline src="./assets/main.js" type="module"></script>
 		<title>{title}</title>
 	</head>
