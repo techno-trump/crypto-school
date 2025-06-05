@@ -18,6 +18,7 @@ import './faq.js';
 import './hero-parallax.js';
 import './feedbacks-slider.js';
 import './auth-protected-field.js';
+import './tabs.js';
 
 window.app = window.app || {};
 window.app.hoverMedia = window.matchMedia("(any-hover: hover)");
