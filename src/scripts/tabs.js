@@ -1,17 +1,18 @@
+import { Swiper } from 'swiper'
+import 'swiper/css'
+
 document.querySelectorAll('[data-tabs]').forEach(tabs => {
-  const slider = tabs.querySelector('[data-tabs-slider]')
-  
   const links = tabs.querySelectorAll('[data-tabs-link-index]')
   const pages = tabs.querySelectorAll('[data-tabs-page-index]')
 
-  if (slider) {
-    slider.addEventListener('wheel', (e) => {
-      if (e.deltaY !== 0) {
-        slider.scrollLeft += e.deltaY
-        e.preventDefault()
-      }
-    }, { passive: false })
-  }
+  new Swiper('[data-tabs-slider]', {
+    slidesPerView: 'auto',
+    spaceBetween: 20, // gap from css
+    freeMode: true,
+    mousewheel: true, // enables wheel
+    simulateTouch: true, // enables "touch-like" manipulation with mouse
+    grabCursor: true,
+  })
 
   links.forEach((link, index) => {
     link.addEventListener('click', () => {
