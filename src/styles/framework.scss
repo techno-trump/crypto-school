@@ -2848,22 +2848,14 @@ body {
 		}
 	}
 	&__slider {
-		flex: 1 1 auto;
-		min-width: 0px;
-		overflow-x: auto;
-		overflow-y: clip;
-	
-		&::-webkit-scrollbar {
-			display: none;
-		}
+		overflow: hidden;
 	}
 	&__links {
-		display: flex;
-		align-items: center;
-		border-radius: 15px;
-		gap: 20px;
+		width: max-content;
+		cursor: grab;
 	}
 	&__link {
+		flex: 0 0 fit-content;
 		min-width: fit-content;
 		padding: 13px 20px;
 		user-select: none;

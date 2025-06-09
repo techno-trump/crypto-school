@@ -22,12 +22,12 @@ const tabs = new Array(20).fill(null)
       <Fragment slot="center-bottom">
         <div data-tabs class="tabs">
           <div class="tabs__header">
-            <div data-tabs-slider class="tabs__slider">
-              <div class="tabs__links">
+            <div data-tabs-slider class="tabs__slider swiper">
+              <div class="tabs__links swiper-wrapper">
                 {tabs.map((_, index) => (
                   <div 
                     class:list={[
-                      "tabs__link text-small color-primary palette palette_blurred palette_hoverable", 
+                      "tabs__link text-small color-primary swiper-slide palette palette_blurred palette_hoverable", 
                       index === 0 ? 'palette_active' : ''
                     ]} 
                     data-tabs-link-index={index}

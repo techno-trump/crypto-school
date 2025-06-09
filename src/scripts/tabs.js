@@ -12,6 +12,7 @@ document.querySelectorAll('[data-tabs]').forEach(tabs => {
     mousewheel: true, // enables wheel
     simulateTouch: true, // enables "touch-like" manipulation with mouse
     grabCursor: true,
+    setWrapperSize: true, // to make wrapper width equal to width of all slides
   })
 
   links.forEach((link, index) => {
