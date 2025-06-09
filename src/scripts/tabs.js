@@ -6,11 +6,12 @@ document.querySelectorAll('[data-tabs]').forEach(tabs => {
   const pages = tabs.querySelectorAll('[data-tabs-page-index]')
 
   new Swiper('[data-tabs-slider]', {
+		wrapperClass: "tabs__links",
+		slideClass: "tabs__link",
     slidesPerView: 'auto',
     spaceBetween: 20, // gap from css
     freeMode: true,
     mousewheel: true, // enables wheel
-    simulateTouch: true, // enables "touch-like" manipulation with mouse
     grabCursor: true,
     setWrapperSize: true, // to make wrapper width equal to width of all slides
   })
