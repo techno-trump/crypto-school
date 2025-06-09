@@ -13,8 +13,6 @@ document.querySelectorAll('[data-tabs]').forEach(tabs => {
     mousewheel: true, // enables wheel
     grabCursor: true,
     setWrapperSize: true, // to make wrapper width equal to width of all slides
-    preventClicks: true, // to prevent accidental clicks after dragging
-    preventClicksPropagation: true,
   })
 
   links.forEach((link, index) => {
