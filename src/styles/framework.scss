@@ -2851,6 +2851,7 @@ body {
 		overflow: hidden;
 	}
 	&__links {
+		display: flex;
 		width: max-content;
 		cursor: grab;
 	}
