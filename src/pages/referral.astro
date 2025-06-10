@@ -5,193 +5,231 @@ import AccountMenu from 'src/components/AccountMenu.astro'
 import Layout from 'src/layouts/Layout.astro'
 import Button from 'src/components/basic/Button.astro'
 
+// placeholder data for tabs 
+const tabs = new Array(20).fill(null)
+
 ---
 <Layout title="Крипто школа" description="Крипто школа">
   <div class="container container_wide">
     <AccountLayout>
       <AccountMenu slot="sidebar-top" />
 
-      <AccountGreeting
-        title='Реферальна програма' 
-        slot="center-top" 
+      <AccountGreeting 
+        slot='center-top'
+        title='Реферальна програма'
       />
 
       <Fragment slot="center-bottom">
-        <div class="account-block palette palette_blurred account-block_compressed account-discount-constructor">
-          <h5 class="account-block__title text">Конструктор знижок</h5>
-
-          <hr class="account-block__horizontal-row" />
-
-          <div class="range account-discount-constructor__range">
-            <div class="range__body">
-              <div class="range__value range__value_left color-primary text">
-                <span data-left="">20</span>%
-              </div>
-
-              <input class="range-slider range__control" type="range" min="0" max="40" step="0.1" />
-              
-              <div class="range__value range__value_right color-primary text">
-                <span data-right="">20</span>%
+        <div data-tabs class="tabs">
+          <div class="tabs__header">
+            <div data-tabs-slider class="tabs__slider swiper">
+              <div class="tabs__links swiper-wrapper">
+                {tabs.map((_, index) => (
+                  <div 
+                    class:list={[
+                      "tabs__link text-small color-primary swiper-slide palette palette_blurred palette_hoverable", 
+                      index === 0 ? 'palette_active' : ''
+                    ]} 
+                    data-tabs-link-index={index}
+                  >
+                    Реф-код {index + 1}
+                  </div>
+                ))}
               </div>
             </div>
 
-            <div class="range__footer">
-              <div class="range__caption range__caption_left text-small">Ваш REF-BACK</div>
-              <div class="range__tip text-small">
-                <span data-left="">20</span>% на <span data-right="">20</span>%
-              </div>
-              <div class="range__caption range__caption_right text-small">Знижка реферала</div>
-            </div>
+            <Button filled rounded centered small>
+              <span class="button__icon icon-plus"></span>
+              <span class="text-small">Новий код</span>
+            </Button>
           </div>
 
-          <hr class="account-block__horizontal-row account-discount-constructor__separator" />
-
-          <div class="account-discount-constructor-reference">
-            <label for="discount-constructor-input" class="account-discount-constructor-reference__label text color-primary">Ваше реферальне посилання</label>
-
-            <label for="discount-constructor-input" class="account-discount-constructor-reference__block palette palette_hide-tablet palette_hide-mobile">
-              <div class="account-discount-constructor-reference__input-block palette palette_hide-desktop">
-                <input id="discount-constructor-input" placeholder="Ваше посилання" type="text" class="account-discount-constructor-reference__input text-small">
+          <div class="tabs__pages">
+            {tabs.map((_, index) => (
+              <div 
+                class:list={[ "tabs__page", index === 0 ? 'tabs__page_active' : '']} 
+                data-tabs-page-index={index}
+              >
+                <div class="account-block palette palette_blurred account-block_compressed account-discount-constructor">
+                  <h5 class="account-block__title text">Конструктор знижок</h5>
+        
+                  <hr class="account-block__horizontal-row" />
+        
+                  <div class="range account-discount-constructor__range">
+                    <div class="range__body">
+                      <div class="range__value range__value_left color-primary text">
+                        <span data-left="">20</span>%
+                      </div>
+        
+                      <input class="range-slider range__control" type="range" min="0" max="40" step="0.1" />
+                      
+                      <div class="range__value range__value_right color-primary text">
+                        <span data-right="">20</span>%
+                      </div>
+                    </div>
+        
+                    <div class="range__footer">
+                      <div class="range__caption range__caption_left text-small">Ваш REF-BACK</div>
+                      <div class="range__tip text-small">
+                        <span data-left="">20</span>% на <span data-right="">20</span>%
+                      </div>
+                      <div class="range__caption range__caption_right text-small">Знижка реферала</div>
+                    </div>
+                  </div>
+        
+                  <hr class="account-block__horizontal-row account-discount-constructor__separator" />
+        
+                  <div class="account-discount-constructor-reference">
+                    <label for="discount-constructor-input" class="account-discount-constructor-reference__label text color-primary">Ваше реферальне посилання</label>
+        
+                    <label for="discount-constructor-input" class="account-discount-constructor-reference__block palette palette_hide-tablet palette_hide-mobile">
+                      <div class="account-discount-constructor-reference__input-block palette palette_hide-desktop">
+                        <input id="discount-constructor-input" placeholder="Ваше посилання" type="text" class="account-discount-constructor-reference__input text-small">
+                      </div>
+        
+                      <Button filled rounded small>
+                        <span class="button__text">Сгенерувати</span>
+                      </Button>
+                    </label>
+                  </div>
+                </div>
+        
+                <div class="account-block palette palette_blurred account-block_compressed account-total-statistics">
+                  <h5 class="account-block__title text">Загальна статистика</h5>
+        
+                  <hr class="account-block__horizontal-row" />
+        
+                  <div class="account-total-statistics__content">
+                    <div class="account-total-statistics__item">
+                      <h5 class="h5 color-primary">434</h5>
+                      <div class="text-small account-total-statistics__description">Запрошено людей</div>
+                    </div>
+        
+                    <div class="account-total-statistics__item">
+                      <h5 class="h5 color-primary">214</h5>
+                      <div class="text-small account-total-statistics__description">Придбали програму</div>
+                    </div>
+        
+                    <div class="account-total-statistics__item">
+                      <h5 class="h5 color-primary">$1 400</h5>
+                      <div class="text-small account-total-statistics__description">Загальна сума виплат</div>
+                    </div>
+        
+                    <div class="account-total-statistics__item">
+                      <h5 class="h5 color-primary">$650</h5>
+                      <div class="text-small account-total-statistics__description">Доступно для виведення</div>
+                    </div>
+                  </div>
+                </div>
+        
+                <div class="account-block palette palette_blurred account-block_compressed">
+                  <h5 class="account-block__title text">Останні виплати</h5>
+                  
+                  <table class="account-table account-table_status account-table_compressed account-last-payments-table">
+                    <thead class="account-table-head">
+                      <td class="account-table-head__column">Дата</td>
+                      <td class="account-table-head__column">Сумма <span class="hide-mobile">виплати</span></td>
+                      <td class="account-table-head__column">Статус <span class="hide-mobile">виплати</span></td>
+                      <td class="account-table-head__column hide-mobile">Коментар</td>
+                    </thead>
+        
+                    <tbody class="account-table-body">
+                      <tr>
+                        <td class="status-line palette">
+                          <div class="status-line-indicator status-line-indicator_orange"></div>
+        
+                          <div class="account-table-body__item">
+                            <div class="text color-primary"><span class="hide-mobile">24.05.2024</span> 16:30</div>
+                            <div class="text color-primary">$230</div>
+                            <div class="text color-orange">Виконується</div>
+                            <div class="text account-last-payments-table__comment hide-mobile"></div>
+                          </div>
+                        </td>
+                      </tr>
+        
+                      <tr>
+                        <td class="status-line palette">
+                          <div class="status-line-indicator status-line-indicator_green"></div>
+        
+                          <div class="account-table-body__item">
+                            <div class="text color-primary"><span class="hide-mobile">24.05.2024</span> 16:30</div>
+                            <div class="text color-primary">$130</div>
+                            <div class="text color-success">Успішно</div>
+                            <div class="text account-last-payments-table__comment hide-mobile"></div>
+                          </div>
+                        </td>
+                      </tr>
+        
+                      <tr>
+                        <td class="status-line palette">
+                          <div class="status-line-indicator status-line-indicator_red"></div>
+        
+                          <div class="account-table-body__item">
+                            <div class="text color-primary"><span class="hide-mobile">24.05.2024</span> 16:30</div>
+                            <div class="text color-primary">$230</div>
+                            <div class="text color-danger">Помилка</div>
+                            <div class="text account-last-payments-table__comment hide-mobile">Неправильні реквізити</div>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+        
+                <div class="account-block palette palette_blurred account-block_compressed">
+                  <h5 class="account-block__title text">Мої реферали</h5>
+                  
+                  <table class="account-table account-table_status account-table_compressed account-my-referrals-table">
+                    <thead class="account-table-head">
+                      <td class="account-table-head__column">Дата</td>
+                      <td class="account-table-head__column">Ник <span class="hide-mobile">Telegram</span></td>
+                      <td class="account-table-head__column">Статус</td>
+                    </thead>
+        
+                    <tbody class="account-table-body">
+                      <tr>
+                        <td class="status-line palette">
+                          <div class="status-line-indicator status-line-indicator_green"></div>
+        
+                          <div class="account-table-body__item">
+                            <div class="text color-primary"><span class="hide-mobile">24.05.2024</span> 16:30</div>
+                            <div class="text color-primary">@ho*****pce</div>
+                            <div class="text color-success">Успішно</div>
+                          </div>
+                        </td>
+                      </tr>
+        
+                      <tr>
+                        <td class="status-line palette">
+                          <div class="status-line-indicator status-line-indicator_orange"></div>
+        
+                          <div class="account-table-body__item">
+                            <div class="text color-primary"><span class="hide-mobile">24.05.2024</span> 16:30</div>
+                            <div class="text color-primary">@ho*****pce</div>
+                            <div class="text account-my-referrals-table__status-default">Зареєстрований</div>
+                          </div>
+                        </td>
+                      </tr>
+        
+                      <tr>
+                        <td class="status-line palette">
+                          <div class="status-line-indicator status-line-indicator_orange"></div>
+        
+                          <div class="account-table-body__item">
+                            <div class="text color-primary"><span class="hide-mobile">24.05.2024</span> 16:30</div>
+                            <div class="text color-primary">@ho*****pce</div>
+                            <div class="text account-my-referrals-table__status-default">Зареєстрований</div>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
-
-              <Button filled rounded small>
-                <span class="button__text">Сгенерувати</span>
-              </Button>
-            </label>
+            ))}
           </div>
         </div>
 
-        <div class="account-block palette palette_blurred account-block_compressed account-total-statistics">
-          <h5 class="account-block__title text">Загальна статистика</h5>
-
-          <hr class="account-block__horizontal-row" />
-
-          <div class="account-total-statistics__content">
-            <div class="account-total-statistics__item">
-              <h5 class="h5 color-primary">434</h5>
-              <div class="text-small account-total-statistics__description">Запрошено людей</div>
-            </div>
-
-            <div class="account-total-statistics__item">
-              <h5 class="h5 color-primary">214</h5>
-              <div class="text-small account-total-statistics__description">Придбали програму</div>
-            </div>
-
-            <div class="account-total-statistics__item">
-              <h5 class="h5 color-primary">$1 400</h5>
-              <div class="text-small account-total-statistics__description">Загальна сума виплат</div>
-            </div>
-
-            <div class="account-total-statistics__item">
-              <h5 class="h5 color-primary">$650</h5>
-              <div class="text-small account-total-statistics__description">Доступно для виведення</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="account-block palette palette_blurred account-block_compressed">
-          <h5 class="account-block__title text">Останні виплати</h5>
-          
-          <table class="account-table account-table_status account-table_compressed account-last-payments-table">
-            <thead class="account-table-head">
-              <td class="account-table-head__column">Дата</td>
-              <td class="account-table-head__column">Сумма <span class="hide-mobile">виплати</span></td>
-              <td class="account-table-head__column">Статус <span class="hide-mobile">виплати</span></td>
-              <td class="account-table-head__column hide-mobile">Коментар</td>
-            </thead>
-
-            <tbody class="account-table-body">
-              <tr>
-                <td class="status-line palette">
-                  <div class="status-line-indicator status-line-indicator_orange"></div>
-
-                  <div class="account-table-body__item">
-                    <div class="text color-primary"><span class="hide-mobile">24.05.2024</span> 16:30</div>
-                    <div class="text color-primary">$230</div>
-                    <div class="text color-orange">Виконується</div>
-                    <div class="text account-last-payments-table__comment hide-mobile"></div>
-                  </div>
-                </td>
-              </tr>
-
-              <tr>
-                <td class="status-line palette">
-                  <div class="status-line-indicator status-line-indicator_green"></div>
-
-                  <div class="account-table-body__item">
-                    <div class="text color-primary"><span class="hide-mobile">24.05.2024</span> 16:30</div>
-                    <div class="text color-primary">$130</div>
-                    <div class="text color-success">Успішно</div>
-                    <div class="text account-last-payments-table__comment hide-mobile"></div>
-                  </div>
-                </td>
-              </tr>
-
-              <tr>
-                <td class="status-line palette">
-                  <div class="status-line-indicator status-line-indicator_red"></div>
-
-                  <div class="account-table-body__item">
-                    <div class="text color-primary"><span class="hide-mobile">24.05.2024</span> 16:30</div>
-                    <div class="text color-primary">$230</div>
-                    <div class="text color-danger">Помилка</div>
-                    <div class="text account-last-payments-table__comment hide-mobile">Неправильні реквізити</div>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="account-block palette palette_blurred account-block_compressed">
-          <h5 class="account-block__title text">Мої реферали</h5>
-          
-          <table class="account-table account-table_status account-table_compressed account-my-referrals-table">
-            <thead class="account-table-head">
-              <td class="account-table-head__column">Дата</td>
-              <td class="account-table-head__column">Ник <span class="hide-mobile">Telegram</span></td>
-              <td class="account-table-head__column">Статус</td>
-            </thead>
-
-            <tbody class="account-table-body">
-              <tr>
-                <td class="status-line palette">
-                  <div class="status-line-indicator status-line-indicator_green"></div>
-
-                  <div class="account-table-body__item">
-                    <div class="text color-primary"><span class="hide-mobile">24.05.2024</span> 16:30</div>
-                    <div class="text color-primary">@ho*****pce</div>
-                    <div class="text color-success">Успішно</div>
-                  </div>
-                </td>
-              </tr>
-
-              <tr>
-                <td class="status-line palette">
-                  <div class="status-line-indicator status-line-indicator_orange"></div>
-
-                  <div class="account-table-body__item">
-                    <div class="text color-primary"><span class="hide-mobile">24.05.2024</span> 16:30</div>
-                    <div class="text color-primary">@ho*****pce</div>
-                    <div class="text account-my-referrals-table__status-default">Зареєстрований</div>
-                  </div>
-                </td>
-              </tr>
-
-              <tr>
-                <td class="status-line palette">
-                  <div class="status-line-indicator status-line-indicator_orange"></div>
-
-                  <div class="account-table-body__item">
-                    <div class="text color-primary"><span class="hide-mobile">24.05.2024</span> 16:30</div>
-                    <div class="text color-primary">@ho*****pce</div>
-                    <div class="text account-my-referrals-table__status-default">Зареєстрований</div>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
       </Fragment>
     </AccountLayout>
   </div>
