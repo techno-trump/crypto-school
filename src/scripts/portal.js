@@ -23,7 +23,7 @@ export function initPortals() {
 			const mediaMatch = window.matchMedia(portalMedia);
 			mediaIndex[portalMedia] = mediaMatch;
 			pairsMemo[mediaMatch.media] = { mediaMatch, stack: [{ src: elem, dest: destMap[portalName] }], swaped: false };
-			mediaMatch.addListener(swapContent);
+			mediaMatch.addEventListener("change", swapContent);
 		} else {
 			const trueMedia = mediaIndex[portalMedia].media;
 			pairsMemo[trueMedia].stack.push({ src: elem, dest: destMap[portalName] });

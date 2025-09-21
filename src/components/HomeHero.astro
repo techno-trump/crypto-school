@@ -1,60 +1,66 @@
 ---
 import Button from './basic/Button.astro'
+interface Props {
+  container: "split" | "mono";
+}
 
+const { container } = Astro.props;
 ---
 <div class="home-hero">
-  <div class="container container_wide home-hero__container">
-    <div class="home-hero-content">
-      <h1 class="h1 home-hero-content__title">
-        <span class="h2">ВАШ ГІД У СВІТ</span>
-        <span>КРИПТОВАЛЮТ</span>
-      </h1>
+  <div class:list={["container container_wide home-hero__container", container == "split" ? "home-hero__container_split" : "home-hero__container_mono" ]}>
     
-      <p class="text home-hero-content__description">
-        Наші продукти та сервіси допоможуть на кожному етапі криптана, 
-        щоб ваш шлях був простим та максимально ефективним
-      </p>
-    
-      <div class="home-hero-content__buttons">
-        <Button filled big>
-          <span class="button__text button__text_uppercase">
-            Купити курс
-          </span>
-        </Button>
-    
-        <Button outlined big>
-          <span class="button__text button__text_black button__text_uppercase">
-            У мене точно вийде?
-          </span>
-        </Button>
-      </div>
-    </div>
-
-    <div class="home-hero__image">
-			<div class="ratio-wrap ratio-wrap_contain home-hero__image-wrap">
-				<img src="assets/img/home-hero-light.png" alt="Hero light" class="ratio-wrap__item home-hero__image-item_light">
-				<img src="assets/img/home-hero-dark.png" alt="Hero dark" class="ratio-wrap__item home-hero__image-item_dark">
-
-        <div class="home-hero__coins" data-hero-coins>
-          <div class="home-hero__coins-layer-1">
-            <img class="home-hero__coins-4" src="./assets/img/hero/coins/coin4.png" alt="" srcset="">
-            <img class="home-hero__coins-10" src="./assets/img/hero/coins/coin10.png" alt="" srcset="">
-            <img class="home-hero__coins-11" src="./assets/img/hero/coins/coin11.png" alt="" srcset="">
-          </div>
-          <div class="home-hero__coins-layer-2">
-            <img class="home-hero__coins-2" src="./assets/img/hero/coins/coin2.png" alt="" srcset="">
-            <img class="home-hero__coins-3" src="./assets/img/hero/coins/coin3.png" alt="" srcset="">
-            <img class="home-hero__coins-7" src="./assets/img/hero/coins/coin7.png" alt="" srcset="">
-            <img class="home-hero__coins-8" src="./assets/img/hero/coins/coin8.png" alt="" srcset="">
-          </div>
-          <div class="home-hero__coins-layer-3">
-            <img class="home-hero__coins-1" src="./assets/img/hero/coins/coin1.png" alt="" srcset="">
-            <img class="home-hero__coins-5" src="./assets/img/hero/coins/coin5.png" alt="" srcset="">
-            <img class="home-hero__coins-6" src="./assets/img/hero/coins/coin6.png" alt="" srcset="">
-            <img class="home-hero__coins-9" src="./assets/img/hero/coins/coin9.png" alt="" srcset="">
-          </div>
-        </div>
+		<slot name="content">
+			<div class="home-hero-content">
+				<h1 class="h1 home-hero-content__title" >
+					<span class="h2">ВАШ ГІД У СВІТ</span>
+					<span>КРИПТОВАЛЮТ</span>
+				</h1>
+				<p class="text home-hero-content__description">
+					Наші продукти та сервіси допоможуть на кожному етапі криптана, 
+					щоб ваш шлях був простим та максимально ефективним
+				</p>
+			
+				<div class="home-hero-content__buttons">
+					<Button filled big>
+						<span class="button__text button__text_uppercase">
+							Купити курс
+						</span>
+					</Button>
+			
+					<Button outlined big>
+						<span class="button__text button__text_uppercase">
+							У мене точно вийде?
+						</span>
+					</Button>
+				</div>
 			</div>
-    </div>
+		</slot>
+		<slot name="media">
+			<div class="home-hero__image">
+				<div class="ratio-wrap ratio-wrap_contain home-hero__image-wrap">
+					<img src="assets/img/home-hero-light.png" alt="Hero light" class="ratio-wrap__item home-hero__image-item_light">
+					<img src="assets/img/home-hero-dark.png" alt="Hero dark" class="ratio-wrap__item home-hero__image-item_dark">
+				</div>
+			</div>
+		</slot>
+		<div class="home-hero__coins" data-hero-coins>
+			<div class="home-hero__coins-layer-1">
+				<img class="home-hero__coins-4" src="./assets/img/hero/coins/coin4.png" alt="" srcset="">
+				<img class="home-hero__coins-10" src="./assets/img/hero/coins/coin10.png" alt="" srcset="">
+				<img class="home-hero__coins-11" src="./assets/img/hero/coins/coin11.png" alt="" srcset="">
+			</div>
+			<div class="home-hero__coins-layer-2">
+				<img class="home-hero__coins-2" src="./assets/img/hero/coins/coin2.png" alt="" srcset="">
+				<img class="home-hero__coins-3" src="./assets/img/hero/coins/coin3.png" alt="" srcset="">
+				<img class="home-hero__coins-7" src="./assets/img/hero/coins/coin7.png" alt="" srcset="">
+				<img class="home-hero__coins-8" src="./assets/img/hero/coins/coin8.png" alt="" srcset="">
+			</div>
+			<div class="home-hero__coins-layer-3">
+				<img class="home-hero__coins-1" src="./assets/img/hero/coins/coin1.png" alt="" srcset="">
+				<img class="home-hero__coins-5" src="./assets/img/hero/coins/coin5.png" alt="" srcset="">
+				<img class="home-hero__coins-6" src="./assets/img/hero/coins/coin6.png" alt="" srcset="">
+				<img class="home-hero__coins-9" src="./assets/img/hero/coins/coin9.png" alt="" srcset="">
+			</div>
+		</div>
   </div>
 </div>

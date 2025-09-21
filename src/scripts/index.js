@@ -28,8 +28,8 @@ document.documentElement.classList.toggle("is-mobile", isMobile.any());
 
 window.app.drawers.init();
 document.documentElement.classList.add("is-loaded");
-window.app.drawers.get("cabinet-menu").setOptions({ lockPageScroll: false });
-window.app.drawers.get("main-menu").setOptions({ lockPageScroll: false });
+window.app.drawers.get("cabinet-menu")?.setOptions({ lockPageScroll: false });
+window.app.drawers.get("main-menu")?.setOptions({ lockPageScroll: false });
 
 initThemes();
 initPortals();
@@ -49,3 +49,12 @@ function initThemes() {
 
 	elems.forEach(elem => elem.addEventListener("click", switchTheme));
 }
+
+document.querySelectorAll(`[data-component~="video"]`).forEach(root => {
+	const video = root.querySelector("video");
+	const playBtn = root.querySelector("button");
+	playBtn.addEventListener("click", () => {
+		video.play();
+		playBtn.style.setProperty("display", "none");
+	});
+});

@@ -1,0 +1,28 @@
+---
+import RatioWrap from 'src/components/basic/RatioWrap.astro';
+import Layout from '../layouts/Layout.astro';
+import HomeHero from 'src/components/HomeHero.astro'
+import Button from 'src/components/basic/Button.astro'
+
+---
+
+<Layout title="Крипто школа" description="Крипто школа">
+	<HomeHero container="split">
+		<div class="home-hero-content" slot="content">
+			<h1 class="h1 home-hero-content__title"><span class="h2">У мене точно вийде?</span></h1>
+			<p class="text home-hero-content__description">Наші продукти та сервіси допоможуть на кожному етапі криптана, щоб ваш шлях був простим та максимально ефективним</p>
+		
+			<div class="home-hero-content__buttons">
+				<Button filled big><span class="button__text button__text_uppercase">Купити курс</span></Button>
+				<Button outlined big><span class="button__text button__text_uppercase">Ком'юніті</span></Button>
+			</div>
+		</div>
+		<div class="ratio-wrap ratio-wrap_cover home-hero__video" slot="media" data-component="video">
+			<video src="https://kalikso.pl/qumen-kitchen/video.mp4"></video>
+			<button type="button" class="home-hero__video-btn btn">
+				<div class="btn__icon icon-play-triangle-right"></div>
+				<div class="btn__label btn__label_hidden">Play</div>
+			</button>
+		</div>
+	</HomeHero>
+</Layout>
