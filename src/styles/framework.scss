@@ -2185,10 +2185,15 @@ body {
 	}
 
 	&_horizontal {
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-		width: 100%;
-		max-width: none;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+	&_horizontal &-item,
+	&_horizontal &-info {
+		flex: 1 1 auto;
+		width: fit-content;
+		min-width: 0px;
 	}
 	@media (max-width: config.$mbpT) {
 		max-width: 100%;
@@ -2299,7 +2304,9 @@ body {
 		flex-basis: calc(var(--size) * 0.8);
 		width: calc(var(--size) * 0.8);
 		height: calc(var(--size) * 0.8);
+
 		border-radius: 50%;
+		overflow: hidden;
 
 		transition: background-color 0.3s;
 
@@ -3752,6 +3759,11 @@ body {
 		font-family: 'Exo 2', Arial, sans-serif;
 		font-weight: 500;
 		font-size: 16px;
+	}
+	&_done &__list li:before {
+		content: '\2713';
+		font-size: 1em;
+		font-weight: 700;
 	}
 	&__ellipsis {
 		display: none;
